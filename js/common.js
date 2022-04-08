@@ -111,36 +111,48 @@
 				inputMax = document.getElementById('maxval');
 					
 			var noUi = noUiSlider.create(slider, {
-				connect: true,
-				behaviour: 'tap',
-				start: [0, 1000],
+				connect: [true, false],
+				// behaviour: 'tap',
+				start: [200],
+				// padding: 50,
 				range: {
-					min: 0,
-					max: 5000 
-				}
-				// format: wNumb({
-				// 	decimals: 0,
-				// 	thousand: ' '
-				// }),
+					'min': [0],
+					'10%': [   100,  100 ],
+					'30%': [   200,  200 ],
+					'50%': [  300, 300 ],
+					'70%': [  400, 400 ],
+					'90%': [  500, 500 ],
+					'max': [ 550]
+				},
+				pips: {mode: 'range', density: 100}
+
 			});
 
 			slider.noUiSlider.on('update', getValues);
-			slider.noUiSlider.on('set', getValues);
+			// slider.noUiSlider.on('set', getValues);
 
 			function getValues() {
-				console.log(slider.noUiSlider.get()[0])
-				inputMin.value = slider.noUiSlider.get()[0];
-				inputMax.value = slider.noUiSlider.get()[1];			
+				console.log(slider.noUiSlider.get())
+				inputMin.value = slider.noUiSlider.get();
+
+				$('.item-results-filter__dd .noUi-pips .noUi-value-horizontal').each(function(i, item) {
+					if(Number(slider.noUiSlider.get().slice(0, -3)) >= Number(item.firstChild.textContent)){
+						$(item).prev().addClass('active');
+					}else{
+						$(item).prev().removeClass('active');
+					}
+				});
 			}
 
-			inputMax.addEventListener('change', function() {
-				slider.noUiSlider.set([null, +inputMax.value]);
-			});
-			inputMin.addEventListener('change', function() {
-				console.log('min change!')
-				slider.noUiSlider.set([+inputMin.value, null]);
-			});
+			if($('.item-results-filter__dd .noUi-pips').length > 0){
+				$('.item-results-filter__dd .noUi-pips .noUi-value-horizontal').each(function(i, item) {
+					if(i == 1 || i == 5){
+						var $km = $('<span class="pips-km"> км</span>')
+						$(item).append($km)
+					}
+				});
 
+			}
 		}
 		// END noUiSlider
 	});

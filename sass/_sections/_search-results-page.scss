@@ -127,12 +127,15 @@
 .item-results-filter__buttons{
 	display: flex;
 	justify-content: space-between;
+	gap: 16px;
 	// padding: 0 24px;
-
+	.btn-sm{
+		flex: 1 1 50%;
+	}
 }
 .btn-sm{
 	height: 40px;
-	width: 163px;
+	// width: 163px;
 	font-size: 14px;
 }
 .item-results-filter {}
@@ -140,6 +143,11 @@
 .item-results-filter__name {
 	margin-right: 12px;
 	font-size: 14px;
+}
+.item-results-filter__caption{
+	margin-bottom: 25px;
+	font-size: 16px;
+	line-height: 22px;
 }
 .icon-faq_arrow {}
 .item-results-filter__dd {
@@ -154,7 +162,7 @@
 	opacity: 0;
 	visibility: hidden;
 	transition: all .3s;
-	overflow: hidden;
+	// overflow: hidden;
 
 	.place_service-item {
 		&:last-child{
@@ -177,6 +185,95 @@
 	.easepick-wrapper{
 		position: relative !important;
 		// pointer-events: all !important;
+	}
+	.range-top{
+		display: none;
+	}
+	.range{
+		height: 50px;
+
+		.noUi-target{
+			background-color: #E5E5E5;
+			// border: none;
+			border-color:  #E5E5E5;
+		}
+		.noUi-horizontal{
+			height: 3px;
+		}
+		.noUi-marker-horizontal.noUi-marker-large{
+			height: 10px;
+			width: 3px;
+			background-color: #E5E5E5;
+
+			&.active{
+
+				background-color: $accent;
+			}
+		}
+		.noUi-value{
+			padding-top: 7px;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 14px;
+			color: rgba(34, 34, 34, 0.4);
+		}
+		.noUi-connect{
+			top: 0;
+			background-color: $accent;
+			margin-left: -15px;
+		}
+		.noUi-horizontal .noUi-handle{
+			width: 19px;
+			height: 19px;
+			margin-top: -9px;
+			background-color: #fff;
+			border-color: $accent;
+
+			&:before {
+			  content: "\e923";
+			  font-family: 'icomoon' !important;
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				text-transform: none;
+				line-height: 1;
+				color: $accent;
+				display: block;
+				@include absolute-center-old;
+				// left: 0;
+				font-size: 8px;
+				width: 15px;
+				height: 15px;
+				background-color: #fff;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 50%;
+
+			}
+		}
+	}
+	.noUi-pips{
+		// position: relative;
+		top: -14px;
+		div{
+			&:first-of-type{
+				display: none;
+			}
+
+			&:last-of-type{
+				
+				display: none;
+			}
+			&:nth-child(2), &:nth-child(13){
+				display: none;
+			}
+			&:nth-child(4), &:nth-child(12){
+				color: #000;
+			}
+			&:not(:last-child){
+			}
+		}
 	}
 }
 .results-filter__map-open{
