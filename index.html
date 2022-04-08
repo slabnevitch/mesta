@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Выдача</title>
+    <title>Страница выдачи</title>
     <meta name="description" content="">
     <link rel="icon" href="img/favicon.png">
     <meta name="viewport" content="width=device-width">
@@ -34,7 +34,77 @@
         </div>
       </div>
     </header>
-    <section class="place"></section>
+    <div class="page-search-resuls">
+      <section class="place">
+        <div class="container">
+          <div class="crumbs"><a href="#" class="crumbs_back"><span class="icon-back"></span></a></div>
+          <div class="title-with-dd"><span>Куда поехать из</span><a href="#">Нижний Новгород</a></div>
+          <div class="filter-tags">
+            <div class="filter-tag"><span class="filter-tag__icon icon-type"></span><span class="filter-tag__name">Комплекс для отдыха</span><span class="icon-close"></span></div>
+            <div class="filter-tag"><span class="filter-tag__icon icon-camera"></span><span class="filter-tag__name">Интересные локации</span><span class="icon-close"></span></div>
+            <div class="filter-tag active"><span class="filter-tag__icon icon-children"></span><span class="filter-tag__name">Отдых с детьми</span><span class="icon-close"></span></div>
+            <div class="filter-tag"><span class="filter-tag__icon icon-helmet"></span><span class="filter-tag__name">Активный отдых</span><span class="icon-close"></span></div>
+            <div class="filter-tag"><span class="filter-tag__icon icon-lotus"></span><span class="filter-tag__name">Оздоровительный отдых</span><span class="icon-close"></span></div>
+            <div class="filter-tag"><span class="filter-tag__icon icon-lotus"></span><span class="filter-tag__name">Оздоровительный отдых</span><span class="icon-close"></span></div>
+            <div class="filter-tag"><span class="filter-tag__icon icon-minibus"></span><span class="filter-tag__name">Туры</span><span class="icon-close"></span></div>
+            <div class="filter-tag active"><span class="filter-tag__icon icon-lotus"></span><span class="filter-tag__name">Эко-отдых</span><span class="icon-close"></span></div>
+            <div class="filter-tag"><span class="filter-tag__icon icon-grape"></span><span class="filter-tag__name">Винодельни</span><span class="icon-close"></span></div>
+            <div class="filter-tag"><span class="filter-tag__icon icon-cities"></span><span class="filter-tag__name">Туристические города</span><span class="icon-close"></span></div>
+          </div>
+          <div class="results-filter">
+            <div class="results-filter__items">
+              <div class="results-filter__item item-results-filter results-filter__item--services">
+                <div class="item-results-filter__name">Услуги</div>
+                <div class="icon-faq_arrow"></div>
+                <div class="item-results-filter__dd">
+                  <div class="place_service-items">
+                    <div class="place_service-item"><span class="place_service-item-icon icon-place_service1"></span>Кафе на территории
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-residence"></span>Проживание
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-place_service2"></span>Беседки / Мангальная зона 
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-daylight"></span>Дневное посещение
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-bath"></span>Баня
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-spa"></span>Spa программы
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-spa"></span>Бассейн
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-beach"></span>Пляж
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-zoo"></span>Зоодвор
+                    </div>
+                    <div class="place_service-item disabled"><span class="place_service-item-icon icon-fishing"></span>Рыбалка
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-carousel"></span>Развлечения для детей
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-horse"></span>Конные прогулки
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-place_service3"></span>Можно с питомцами
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="results-filter__item item-results-filter results-filter__item--dates">
+                <div class="item-results-filter__name">Свободные даты</div>
+                <div class="icon-faq_arrow"></div>
+                <div class="item-results-filter__dd"></div>
+                <input id="datepicker" type="text" name="" readonly="" class="form_inp">
+                <input id="datepicker2" type="text" name="" readonly="" class="form_inp">
+              </div>
+              <div class="results-filter__item item-results-filter results-filter__item--dates">
+                <div class="item-results-filter__name">Расстояние от города</div>
+                <div class="icon-faq_arrow"></div>
+                <div class="item-results-filter__dd"></div>
+              </div>
+            </div>
+            <div class="results-filter__map-open results-filter__item"> <span class="icon-place_contacts-item2"></span>Показать на карте</div>
+          </div>
+        </div>
+      </section>
+    </div>
     <footer class="footer">
       <div class="container">
         <div class="footer_wrapper">

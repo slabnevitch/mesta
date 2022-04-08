@@ -18,36 +18,36 @@
 // 	color: $text;
 // }
 
-ul, li{
-	margin: 0;
-	padding: 0;
-}
-input
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea{
-	appearance: none;
-}
-.input,
-input{
-	outline: none;
-	display: block;
-	width: 100%;
-}
-textarea.input{
-	resize: none;
-	padding: 0 0;
-}
+// ul, li{
+// 	margin: 0;
+// 	padding: 0;
+// }
+// input
+// input[type="text"],
+// input[type="email"],
+// input[type="tel"],
+// textarea{
+// 	appearance: none;
+// }
+// .input,
+// input{
+// 	outline: none;
+// 	display: block;
+// 	width: 100%;
+// }
+// textarea.input{
+// 	resize: none;
+// 	padding: 0 0;
+// }
 //END input
-.wrapper{
-	margin: 0 auto;
-	padding-left: $containerPaddings / 2 + px;
-	padding-right: $containerPaddings / 2 + px;
-	max-width: $maxContainerWidth + px;
+// .wrapper{
+// 	margin: 0 auto;
+// 	padding-left: $containerPaddings / 2 + px;
+// 	padding-right: $containerPaddings / 2 + px;
+// 	max-width: $maxContainerWidth + px;
 	// @include row-flex();
 	// @include wrapper();
-}
+// }
 // classes for smartgrid(c) structure
 // .wrapper-smart{
 // 	@include wrapper();
@@ -59,7 +59,16 @@ textarea.input{
 // 	@include col();
 // 	@include size(1);	
 // }
-
+.main-wrapper{
+	display: flex;
+	flex-direction: column;
+	.main-content{
+		flex: 1 1 auto;
+	}
+	.footer{
+		flex: 0 0 auto;
+	}
+}
 .hidden{
 	display: none;
 }

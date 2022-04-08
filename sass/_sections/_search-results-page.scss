@@ -1,0 +1,178 @@
+/*--------------------search-results-page----------------------*/
+.page-search-resuls {
+	.title-with-dd {
+		padding-top: 40px;
+	}
+}
+.place {}
+.container {}
+.crumbs {}
+.crumbs_back {}
+.icon-back {}
+.title-with-dd {
+	padding-top: 40px;
+	@include adaptive-value('font-size', 42, 31, 1);
+	@include adaptive-value('margin-bottom', 45, 31, 1);
+	font-size: 42px;
+	line-height: calc(50 / 42);
+	font-weight: 500;
+
+	span{
+		margin-right: 16px;
+	}
+	a{
+		position: relative;
+		color: $accent;
+		border-bottom: 1px dashed #FC6733;
+
+		// &:after{
+		// 	content: '';
+		// }
+	}
+}
+.filter-tags {
+	display: flex;
+	flex-wrap:wrap;
+	gap: 10px;
+	padding-bottom: 24px;
+	border-bottom: 1px solid rgba(#222222, .05);
+
+	&:not(:last-child){
+		margin-bottom: 24px;
+		
+	}
+
+}
+.filter-tag {
+	display: flex;
+	align-items: center;
+	height: 40px;
+	padding: 10px 15.44px;
+	background: #FFFFFF;
+	border-radius: 20px;
+
+	&.active{
+		background-color: $accent;
+		color: #fff;
+		.icon-close {
+			display: block;
+		}
+
+	}
+	.icon-close {
+		display: none;
+		color: #fff;
+	}
+
+}
+
+.filter-tag__icon{
+	font-size: 17px;
+	&.icon-type {
+		font-size: 24px;
+	}
+}
+.filter-tag__name {
+	margin-left: 8.6px;
+	margin-right: 9.73px;
+	font-size: 14px;
+}
+.results-filter {
+	display: flex;
+	justify-content: space-between;
+}
+.results-filter__items{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.results-filter__item {
+	display: flex;
+	position: relative;
+	height: 48px;
+	align-items: center;
+	padding: 8px 20px;
+	background: #FFFFFF;
+	border-radius: 44px;
+	cursor: pointer;
+
+	&--services{
+		.item-results-filter__dd{
+			width: 421px;
+		}
+	}
+	.form_inp{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0;
+	}
+	
+}
+.item-results-filter {}
+
+.item-results-filter__name {
+	margin-right: 12px;
+	font-size: 14px;
+}
+.icon-faq_arrow {}
+.item-results-filter__dd {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 368px;
+	padding: 16px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 24px rgba(34, 34, 34, 0.25);
+	border-radius: 12px;
+	opacity: 0;
+	visibility: hidden;
+	display: none;
+
+	.place_service-item {
+
+		&.disabled{
+			background-color: rgba(34, 34, 34, 0.1);
+			color: #fff;
+			// border-color: rgba(34, 34, 34, 0.1);
+
+			.place_service-item-icon{
+				color: #fff;
+			}
+		}
+		.place_service-item-icon{
+			color: $accent;
+		}
+
+
+	}
+}
+.results-filter__map-open{
+	font-size: 14px;
+	.icon-place_contacts-item2{
+		margin-right: 10px;
+
+		&:before{
+		font-size: 19px;
+			color: #222222;
+		}
+	}
+}
+.place_service-items {}
+
+.icon-place_service1 {}
+.icon-residence {}
+.icon-place_service2 {}
+.icon-daylight {}
+.icon-bath {}
+.icon-spa {}
+.icon-beach {}
+.icon-zoo {}
+.disabled {}
+.icon-fishing {}
+.icon-carousel {}
+.icon-horse {}
+.icon-place_service3 {}
+/*--------------------END search-results-page----------------------*/ 
