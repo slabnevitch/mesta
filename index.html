@@ -90,14 +90,24 @@
               <div class="results-filter__item item-results-filter results-filter__item--dates">
                 <div class="item-results-filter__name">Свободные даты</div>
                 <div class="icon-faq_arrow"></div>
-                <div class="item-results-filter__dd"></div>
-                <input id="datepicker" type="text" name="" readonly="" class="form_inp">
-                <input id="datepicker2" type="text" name="" readonly="" class="form_inp">
+                <div class="item-results-filter__dd">
+                  <input id="datepicker-static" type="text" name="" readonly="" class="form_inp">
+                  <input id="datepicker-static2" type="text" name="" readonly="" class="form_inp">
+                  <div class="item-results-filter__buttons"><a href="#" class="btn2 btn-sm">Очистить</a><a href="#" class="btn btn-sm">Выбрать</a></div>
+                </div>
               </div>
-              <div class="results-filter__item item-results-filter results-filter__item--dates">
+              <div class="results-filter__item item-results-filter">
                 <div class="item-results-filter__name">Расстояние от города</div>
                 <div class="icon-faq_arrow"></div>
-                <div class="item-results-filter__dd"></div>
+                <div class="item-results-filter__dd">
+                  <div class="range">
+                    <div class="range-top">
+                      <input autocomplete="off" type="text" name="" value="100" id="minval" class="range__input">
+                      <input autocomplete="off" type="text" name="" value="1000" id="maxval" class="range__input">
+                    </div>
+                    <div class="range-slider"></div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="results-filter__map-open results-filter__item"> <span class="icon-place_contacts-item2"></span>Показать на карте</div>
@@ -133,6 +143,7 @@
     <script src="js/main.js"></script>
     
     
+    <script src="js/libs/noUiSlider/nouislider.min.js"></script>
     <script src="js/common.js"></script>
   </body>
 </html>

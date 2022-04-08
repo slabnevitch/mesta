@@ -40,13 +40,22 @@ block content
 							.item-results-filter__name Свободные даты
 							.icon-faq_arrow
 							.item-results-filter__dd
-							input#datepicker.form_inp(type='text' name='' readonly='')
-							input#datepicker2.form_inp(type='text' name='' readonly='')
+								input#datepicker-static.form_inp(type='text' name='' readonly='')
+								input#datepicker-static2.form_inp(type='text' name='' readonly='')
+								
+								.item-results-filter__buttons
+									a(href="#").btn2.btn-sm Очистить
+									a(href="#").btn.btn-sm Выбрать
 
-						.results-filter__item.item-results-filter.results-filter__item--dates
+						.results-filter__item.item-results-filter
 							.item-results-filter__name Расстояние от города
 							.icon-faq_arrow
 							.item-results-filter__dd
+								.range
+									.range-top
+										input(autocomplete="off" type="text" name="" value="100" class="range__input" id="minval")
+										input(autocomplete="off" type="text" name="" value="1000" class="range__input" id="maxval")
+									.range-slider
 
 					.results-filter__map-open.results-filter__item 
 						span.icon-place_contacts-item2
@@ -136,7 +145,7 @@ block page-scripts
 	//- script(src="js/libs/swiper/swiper.min.js")
 
 	//- noUiSlider--------------------------
-	//- script(src="js/libs/noUiSlider/nouislider.min.js")
+	script(src="js/libs/noUiSlider/nouislider.min.js")
 
 	//- iMask--------------------------
 	//- script(src="js/libs/imask/imask.js")
