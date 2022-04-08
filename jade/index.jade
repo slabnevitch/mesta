@@ -58,6 +58,30 @@ block content
 										input(autocomplete="off" type="text" name="" value="" class="range__input" id="maxval")
 									.range-slider
 
+								a(href="#").btn.btn-sm Применить
+
+						.results-filter__item.item-results-filter
+							.item-results-filter__name Сортировать по:
+								span.item-results-filter__sort-key возрастанию цены
+							.icon-faq_arrow
+							.item-results-filter__dd
+								.item-results-filter__caption Сортировать по:
+								form.item-results-filter__form
+									-var sorts = ['Рекомендуемые', 'По возрастанию цены', 'По убыванию цены', 'По расстоянию'];
+									each item, ind in sorts
+										if(ind === 1)
+											label.item-results-filter__label
+												input(type="radio" name="sort-value" class="item-results-filter__input" value=item checked)
+												span.item-results-filter__radio
+												span.item-results-filter__radio-value= item
+										else
+											label.item-results-filter__label
+												input(type="radio" name="sort-value" class="item-results-filter__input" value=item)
+												span.item-results-filter__radio
+												span.item-results-filter__radio-value= item
+								
+								a(href="#").btn.btn-sm Применить
+
 					.results-filter__map-open.results-filter__item 
 						span.icon-place_contacts-item2
 						| Показать на карте

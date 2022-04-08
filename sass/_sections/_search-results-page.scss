@@ -144,6 +144,9 @@
 	margin-right: 12px;
 	font-size: 14px;
 }
+.item-results-filter__sort-key{
+	margin-left: 10px;
+}
 .item-results-filter__caption{
 	margin-bottom: 25px;
 	font-size: 16px;
@@ -152,6 +155,7 @@
 .icon-faq_arrow {}
 .item-results-filter__dd {
 	position: absolute;
+	z-index: 2;
 	top: 105%;
 	left: 0;
 	width: 368px;
@@ -278,6 +282,7 @@
 }
 .results-filter__map-open{
 	font-size: 14px;
+	flex-shrink: 0;
 	.icon-place_contacts-item2{
 		margin-right: 10px;
 
@@ -302,4 +307,51 @@
 .icon-carousel {}
 .icon-horse {}
 .icon-place_service3 {}
+
+.item-results-filter__form {
+	margin-bottom: 24px;
+}
+.item-results-filter__label {
+	display: flex;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+
+	&:not(:last-child){
+		margin-bottom: 17px;
+	}
+}
+.item-results-filter__input {
+	@include checkbox;
+
+	&:checked + .item-results-filter__radio {
+		border-color: $accent;
+		&:before{
+			display: block;
+		}
+	}
+}
+.item-results-filter__radio {
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
+	border-radius: 50%;
+	border: 2px solid rgba(#222222, .2);
+	position: relative;
+	margin-right: 10px;
+
+	&:before{
+		content: '';
+		width: 10px;
+		height: 10px;
+		@include absolute-center;
+		display: none;
+		border-radius: inherit;
+		background-color: $accent;
+	}
+
+}
+.item-results-filter__radio-value {
+	font-size: 14px;
+}
 /*--------------------END search-results-page----------------------*/ 

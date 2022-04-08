@@ -85,7 +85,7 @@ $(document).ready(function () {
                 "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.2/dist/index.css",
                 "../css/calendar-static.css"
             ],
-            zIndex: 10,
+            zIndex: 50,
             lang: "ru-RU",
             format: "DD MMMM YYYY",
             grid: 3,

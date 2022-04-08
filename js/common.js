@@ -132,7 +132,7 @@
 			// slider.noUiSlider.on('set', getValues);
 
 			function getValues() {
-				console.log(slider.noUiSlider.get())
+				// console.log(slider.noUiSlider.get())
 				inputMin.value = slider.noUiSlider.get();
 
 				$('.item-results-filter__dd .noUi-pips .noUi-value-horizontal').each(function(i, item) {
@@ -155,5 +155,15 @@
 			}
 		}
 		// END noUiSlider
+
+		// result-form check
+		if($('.item-results-filter__form').length > 0){
+			$('.item-results-filter__form .item-results-filter__input').on('change', function() {
+				console.log('change', $(this))
+				$(this).closest('.results-filter__item').find('.item-results-filter__sort-key')
+					.text($(this).val().toLowerCase());
+			});
+		}
+		// END result-form check
 	});
 })();
