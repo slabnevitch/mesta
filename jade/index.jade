@@ -15,13 +15,7 @@ block content
 					span Куда поехать из
 					a(href="#") Нижний Новгород
 
-				.filter-tags
-					-var tags = [{name: 'Комплекс для отдыха', icon: 'type'}, {name: 'Интересные локации', icon: 'camera'}, {name: 'Отдых с детьми', icon: 'children'}, {name: 'Активный отдых', icon: 'helmet'}, {name: 'Оздоровительный отдых', icon: 'lotus'}, {name: 'Оздоровительный отдых', icon: 'lotus'}, {name: 'Туры', icon: 'minibus'}, {name: 'Эко-отдых', icon: 'lotus'}, {name: 'Винодельни', icon: 'grape'}, {name: 'Туристические города', icon: 'cities'}];
-					each tag, ind in tags
-						div(class=ind === 2 || ind === 7 ? "filter-tag active" : "filter-tag")
-							span(class="filter-tag__icon icon-" + tag.icon)
-							span.filter-tag__name= tag.name
-							span.icon-close
+				include _blocks/_filter-tags
 
 				.results-filter
 					.results-filter__items
@@ -85,15 +79,25 @@ block content
 					.results-filter__map-open.results-filter__item 
 						span.icon-place_contacts-item2
 						| Показать на карте
+
+		.resuls-map
+			.resuls-map__close
+				span.icon-delete
+			#map.resuls-map__map
+			.resuls-map__bottom
+				include _blocks/_filter-tags
+
 //- img(src=img + "demo.jpg")
 //- img(src=ico + "amex.svg")
 
 block page-scripts
+	script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
 	script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
 	script(src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.3/dist/index.umd.min.js")
 	script(src="js/jquery.fancybox.min.js")
 	script(src="js/slider.js")
 	script(src="js/main.js")
+	script(src="js/map-init.js")
 	
 	//- SERVIVE FUNCTIONS==================
 

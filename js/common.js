@@ -79,9 +79,10 @@
 	document.addEventListener('DOMContentLoaded', function() {
 		console.log('DOMContentLoaded!');
 
-		// item-results-filter__dd toggle
 		$(document).on('click', function(e) {
 			var $target = $(e.target);
+			console.log(e.target)
+			// item-results-filter__dd toggle
 			if($('.item-results-filter__dd').length > 0){
 
 				var $filterDropdowns = $('.item-results-filter__dd');
@@ -92,17 +93,39 @@
 					$parent.toggleClass('active');
 					$parent.siblings().removeClass('active');
 
-					if($parent.hasClass('results-filter__item--dates')){
-						console.log($parent.find('.show').height());
-					}
 				}else if(!$target.hasClass('results-filter__item') && !$target.closest('.results-filter__item').length > 0){
 					console.log('click else')
 					$('.results-filter__item').removeClass('active');
 				}
 
 			}
+			// END item-results-filter__dd toggle
+
+			// results-map toggle
+			if($target.closest('.results-filter__map-open').length > 0 || $target.hasClass('results-filter__map-open')){
+				$('.resuls-map').addClass('active');
+			}
+			if($target.hasClass('resuls-map__close') || $target.closest('.resuls-map__close').length > 0){			
+				$('.resuls-map').removeClass('active');
+			}
+			// END results-map toggle
+
+			// filter-tags active class toggle
+			if($target.closest('.filter-tag').length > 0){
+					console.log('filter tag active')
+				$target.closest('.filter-tag').addClass('active');
+			}
+			if($target.hasClass('icon-close') && $target.closest('.filter-tag').length > 0){
+					console.log('filter tag deactive')
+				$target.closest('.filter-tag').removeClass('active');
+			}
+			// END filter-tags active class toggle
 		});
-		// END item-results-filter__dd toggle
+		
+		// $('.results-filter__map-open').on('click', function() {
+		// 	$('#datepicker-static').click();
+
+		// });
 
 		// noUiSlider
 		if(document.querySelector('.range-slider') !== null){

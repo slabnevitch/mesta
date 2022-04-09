@@ -50,6 +50,7 @@
 	padding: 10px 15.44px;
 	background: #FFFFFF;
 	border-radius: 20px;
+	cursor: pointer;
 
 	&.active{
 		background-color: $accent;
@@ -354,4 +355,68 @@
 .item-results-filter__radio-value {
 	font-size: 14px;
 }
+.resuls-map {
+	position: fixed;
+	z-index: 11;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: rgba(#000, .3);
+	transition: all .3s;
+	transform: translate3d(100%, 0, 0);
+
+	&.active{
+		transform: translate3d(0, 0, 0);
+	}
+}
+.resuls-map__close {
+	width: 36px;
+	height: 36px;
+	position: absolute;
+	top: 32px;
+	right: 32px;
+	border-radius: 50%;
+	background-color: #f9f9fa;
+	cursor: pointer;
+	z-index: 2;
+	
+	.icon-delete {
+		@include absolute-center;
+	}
+}
+.resuls-map__map {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.resuls-map__bottom {
+	max-width: 902px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	
+	.filter-tags {
+		justify-content: center;
+	}
+	.filter-tag {
+		box-shadow: 0px 4px 24px rgba(34, 34, 34, 0.25);
+	}
+}
+.filter-tag__icon {}
+.icon-type {}
+.filter-tag__name {}
+.icon-camera {}
+.active {}
+.icon-children {}
+.icon-helmet {}
+.icon-lotus {}
+.icon-minibus {}
+.icon-grape {}
+.icon-cities {}
 /*--------------------END search-results-page----------------------*/ 
