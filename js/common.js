@@ -88,14 +88,16 @@
 				var $filterDropdowns = $('.item-results-filter__dd');
 
 				if($target.hasClass('results-filter__item') || $target.closest('.results-filter__item').length > 0 && !$target.closest('.item-results-filter__dd').length > 0){
-					console.log('click if')
 					var $parent = $target.closest('.results-filter__item');
 					$parent.toggleClass('active');
 					$parent.siblings().removeClass('active');
 
+					if($target.closest('.results-filter__item').hasClass('results-filter__item--dates')){
+						$('#datepicker-static').click();
+					}
+
 				}else if(!$target.hasClass('results-filter__item') && !$target.closest('.results-filter__item').length > 0){
-					console.log('click else')
-					$('.results-filter__item').removeClass('active');
+						$('.results-filter__item').removeClass('active');
 				}
 
 			}
@@ -110,6 +112,21 @@
 			}
 			// END results-map toggle
 
+			// results-map mobile toggle
+			if($target.attr('id') === 'mob-map-show'){
+				$('.resuls-map').addClass('active');
+			}
+			if($target.attr('id') === 'mob-filters-show'){			
+				$('.resuls-map').removeClass('active');
+			}
+			// END results-map mobile toggle
+
+			// mobile filters toggle
+			if($target.attr('id') === 'mob-filters-show'){
+				$('.results-filter').addClass('active');
+			}
+			// END mobile filters toggle
+
 			// filter-tags active class toggle
 			if($target.closest('.filter-tag').length > 0){
 					console.log('filter tag active')
@@ -120,11 +137,20 @@
 				$target.closest('.filter-tag').removeClass('active');
 			}
 			// END filter-tags active class toggle
+
+			// calendar mobile toggle
+			if($target.closest('.item-results-filter__calendar-button').length > 0 || $target.hasClass('item-results-filter__calendar-button')){
+				$('html').addClass('filter-calendar-open');
+			}
+			if($target.hasClass('filter-cover')){
+				$('html').removeClass('filter-calendar-open');
+			}
+			// .item-results-filter__calendar-button
+			// END calendar mobile toggle
 		});
 		
 		// $('.results-filter__map-open').on('click', function() {
-		// 	$('#datepicker-static').click();
-
+		
 		// });
 
 		// noUiSlider

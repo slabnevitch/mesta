@@ -15,8 +15,11 @@ block content
 					span Куда поехать из
 					a(href="#") Нижний Новгород
 
-				include _blocks/_filter-tags
-
+				.filter-tags-wrapper
+					include _blocks/_filter-tags
+					.filter-tags-wrapper__cover
+				
+				
 				.results-filter
 					.results-filter__items
 						.results-filter__item.item-results-filter.results-filter__item--services
@@ -34,8 +37,12 @@ block content
 							.item-results-filter__name Свободные даты
 							.icon-faq_arrow
 							.item-results-filter__dd
-								input#datepicker-static.form_inp(type='text' name='' readonly='')
-								input#datepicker-static2.form_inp(type='text' name='' readonly='')
+								.item-results-filter__inputs
+									span.item-results-filter__divide
+									.item-results-filter__calendar-button
+										span.icon-calendar-white
+								input#datepicker-static.form_inp(data-da="item-results-filter__inputs,991,first" type='text' name='' readonly='')
+								input#datepicker-static2.form_inp(data-da="item-results-filter__inputs,991,1" type='text' name='' readonly='')
 								
 								.item-results-filter__buttons
 									a(href="#").btn2.btn-sm Очистить
@@ -75,10 +82,19 @@ block content
 												span.item-results-filter__radio-value= item
 								
 								a(href="#").btn.btn-sm Применить
-
+					.filter-cover
 					.results-filter__map-open.results-filter__item 
 						span.icon-place_contacts-item2
 						| Показать на карте
+
+
+		.results-mobile-toggler
+			.results-mobile-toggler__item#mob-map-show
+				span.results-mobile-toggler__icon.icon-place_contacts-item2
+				| На карте
+			.results-mobile-toggler__item#mob-filters-show
+				span.results-mobile-toggler__icon.icon-filter
+				| Фильтры
 
 		.resuls-map
 			.resuls-map__close
@@ -86,6 +102,7 @@ block content
 			#map.resuls-map__map
 			.resuls-map__bottom
 				include _blocks/_filter-tags
+		
 
 //- img(src=img + "demo.jpg")
 //- img(src=ico + "amex.svg")
@@ -147,7 +164,7 @@ block page-scripts
 
 	//- VANILLA JS===================================
 	//- dynamic-adaptive--------------------------
-	//- script(src="js/libs/dynamic-adaptive/da.min.js")
+	script(src="js/libs/dynamic-adaptive/da.min.js")
 		
 	//- slideout--------------------------
 	//- script(src="js/libs/slideout/slideout.js")

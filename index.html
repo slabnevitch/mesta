@@ -39,17 +39,20 @@
         <div class="container">
           <div class="crumbs"><a href="#" class="crumbs_back"><span class="icon-back"></span></a></div>
           <div class="title-with-dd"><span>Куда поехать из</span><a href="#">Нижний Новгород</a></div>
-          <div class="filter-tags">
-            <div class="filter-tag"><span class="filter-tag__icon icon-type"></span><span class="filter-tag__name">Комплекс для отдыха</span><span class="icon-close"></span></div>
-            <div class="filter-tag"><span class="filter-tag__icon icon-camera"></span><span class="filter-tag__name">Интересные локации</span><span class="icon-close"></span></div>
-            <div class="filter-tag active"><span class="filter-tag__icon icon-children"></span><span class="filter-tag__name">Отдых с детьми</span><span class="icon-close"></span></div>
-            <div class="filter-tag"><span class="filter-tag__icon icon-helmet"></span><span class="filter-tag__name">Активный отдых</span><span class="icon-close"></span></div>
-            <div class="filter-tag"><span class="filter-tag__icon icon-lotus"></span><span class="filter-tag__name">Оздоровительный отдых</span><span class="icon-close"></span></div>
-            <div class="filter-tag"><span class="filter-tag__icon icon-lotus"></span><span class="filter-tag__name">Оздоровительный отдых</span><span class="icon-close"></span></div>
-            <div class="filter-tag"><span class="filter-tag__icon icon-minibus"></span><span class="filter-tag__name">Туры</span><span class="icon-close"></span></div>
-            <div class="filter-tag active"><span class="filter-tag__icon icon-lotus"></span><span class="filter-tag__name">Эко-отдых</span><span class="icon-close"></span></div>
-            <div class="filter-tag"><span class="filter-tag__icon icon-grape"></span><span class="filter-tag__name">Винодельни</span><span class="icon-close"></span></div>
-            <div class="filter-tag"><span class="filter-tag__icon icon-cities"></span><span class="filter-tag__name">Туристические города</span><span class="icon-close"></span></div>
+          <div class="filter-tags-wrapper">
+            <div class="filter-tags">
+              <div class="filter-tag"><span class="filter-tag__icon icon-type"></span><span class="filter-tag__name">Комплекс для отдыха</span><span class="icon-close"></span></div>
+              <div class="filter-tag"><span class="filter-tag__icon icon-camera"></span><span class="filter-tag__name">Интересные локации</span><span class="icon-close"></span></div>
+              <div class="filter-tag active"><span class="filter-tag__icon icon-children"></span><span class="filter-tag__name">Отдых с детьми</span><span class="icon-close"></span></div>
+              <div class="filter-tag"><span class="filter-tag__icon icon-helmet"></span><span class="filter-tag__name">Активный отдых</span><span class="icon-close"></span></div>
+              <div class="filter-tag"><span class="filter-tag__icon icon-lotus"></span><span class="filter-tag__name">Оздоровительный отдых</span><span class="icon-close"></span></div>
+              <div class="filter-tag"><span class="filter-tag__icon icon-lotus"></span><span class="filter-tag__name">Оздоровительный отдых</span><span class="icon-close"></span></div>
+              <div class="filter-tag"><span class="filter-tag__icon icon-minibus"></span><span class="filter-tag__name">Туры</span><span class="icon-close"></span></div>
+              <div class="filter-tag active"><span class="filter-tag__icon icon-lotus"></span><span class="filter-tag__name">Эко-отдых</span><span class="icon-close"></span></div>
+              <div class="filter-tag"><span class="filter-tag__icon icon-grape"></span><span class="filter-tag__name">Винодельни</span><span class="icon-close"></span></div>
+              <div class="filter-tag"><span class="filter-tag__icon icon-cities"></span><span class="filter-tag__name">Туристические города</span><span class="icon-close"></span></div>
+            </div>
+            <div class="filter-tags-wrapper__cover"></div>
           </div>
           <div class="results-filter">
             <div class="results-filter__items">
@@ -91,8 +94,11 @@
                 <div class="item-results-filter__name">Свободные даты</div>
                 <div class="icon-faq_arrow"></div>
                 <div class="item-results-filter__dd">
-                  <input id="datepicker-static" type="text" name="" readonly="" class="form_inp">
-                  <input id="datepicker-static2" type="text" name="" readonly="" class="form_inp">
+                  <div class="item-results-filter__inputs"><span class="item-results-filter__divide"></span>
+                    <div class="item-results-filter__calendar-button"><span class="icon-calendar-white"></span></div>
+                  </div>
+                  <input id="datepicker-static" data-da="item-results-filter__inputs,991,first" type="text" name="" readonly="" class="form_inp">
+                  <input id="datepicker-static2" data-da="item-results-filter__inputs,991,1" type="text" name="" readonly="" class="form_inp">
                   <div class="item-results-filter__buttons"><a href="#" class="btn2 btn-sm">Очистить</a><a href="#" class="btn btn-sm">Выбрать</a></div>
                 </div>
               </div>
@@ -132,10 +138,15 @@
                 </div>
               </div>
             </div>
+            <div class="filter-cover"></div>
             <div class="results-filter__map-open results-filter__item"> <span class="icon-place_contacts-item2"></span>Показать на карте</div>
           </div>
         </div>
       </section>
+      <div class="results-mobile-toggler">
+        <div id="mob-map-show" class="results-mobile-toggler__item"><span class="results-mobile-toggler__icon icon-place_contacts-item2"></span>На карте</div>
+        <div id="mob-filters-show" class="results-mobile-toggler__item"><span class="results-mobile-toggler__icon icon-filter"></span>Фильтры</div>
+      </div>
       <div class="resuls-map">
         <div class="resuls-map__close"><span class="icon-delete"></span></div>
         <div id="map" class="resuls-map__map"></div>
@@ -185,6 +196,7 @@
     <script src="js/map-init.js"></script>
     
     
+    <script src="js/libs/dynamic-adaptive/da.min.js"></script>
     <script src="js/libs/noUiSlider/nouislider.min.js"></script>
     <script src="js/common.js"></script>
   </body>
