@@ -124,6 +124,11 @@
 			// mobile filters toggle
 			if($target.attr('id') === 'mob-filters-show'){
 				$('.results-filter').addClass('active');
+				$('html').addClass('filter-buttons-open');
+			}
+			if($target.hasClass('header-results-filter__close') || $target.closest('.header-results-filter__close').length > 0){
+				$('.results-filter').removeClass('active');
+				$('html').removeClass('filter-buttons-open');
 			}
 			// END mobile filters toggle
 

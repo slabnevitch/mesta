@@ -1,11 +1,16 @@
 /*--------------------search-results-page----------------------*/
 html{
+	&.filter-buttons-open{
+		.results-filter__buttons{
+			display: flex;
+		}
+	}
 	&.filter-calendar-open{
-
-		.results-filter__item--dates{
+		.filter-cover{
+			// display: block;
 			.item-results-filter__dd{
 				width: 100%;	
-				position: fixed;
+				position: absolute;
 				bottom: 0;
 				left: 0;
 				top: auto;
@@ -26,15 +31,23 @@ html{
 			visibility: visible;
 			opacity: 1;
 		}
-		.filter-cover{
-			visibility: visible;
-			opacity: .34;
-		}
+		// .filter-cover{
+		// 	visibility: visible;
+		// 	opacity: .34;
+		// }
 	}
 }
 .page-search-resuls {
 	.title-with-dd {
 		padding-top: 40px;
+		@include max-screen($md){
+			padding-top: 0;
+		}
+	}
+	.crumbs{
+		@include max-screen($sm){
+			margin-bottom: 12px;
+		}
 	}
 }
 .place {}
@@ -43,7 +56,6 @@ html{
 .crumbs_back {}
 .icon-back {}
 .title-with-dd {
-	padding-top: 40px;
 	@include adaptive-value('font-size', 42, 31, 1);
 	@include adaptive-value('margin-bottom', 45, 31, 1);
 	font-size: 42px;
@@ -51,7 +63,7 @@ html{
 	font-weight: 500;
 
 	span{
-		margin-right: 16px;
+		// margin-right: 16px;
 	}
 	a{
 		position: relative;
@@ -73,14 +85,15 @@ html{
 	}
 }
 .filter-cover{
-	visibility: hidden;
-	opacity: 0;
+	// visibility: hidden;
+	// opacity: 0;
+	display: none;
 	position: fixed;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: #222222;
+	background: rgba(#222222, .34);
 	z-index: 11;
 	transition: all .3s;
 }
@@ -125,6 +138,11 @@ html{
 	border-radius: 20px;
 	cursor: pointer;
 
+	@include max-screen($xs){
+		height: 26px;
+		padding: 5px 8px;
+	}
+
 	&.active{
 		background-color: $accent;
 		color: #fff;
@@ -150,6 +168,13 @@ html{
 	margin-left: 8.6px;
 	margin-right: 9.73px;
 	font-size: 14px;
+
+	@include max-screen($xs){
+		font-size: 12px;
+	}
+}
+.results-filter-wrapper{
+
 }
 .results-filter {
 	display: flex;
@@ -157,6 +182,7 @@ html{
 
 	@include max-screen($md){
 		position: fixed;
+		display: block;
 		width: 100%;
 		height: 100%;
 		left: 0;
@@ -167,11 +193,59 @@ html{
 		visibility: hidden;
 		opacity: 0;
 		transition: all .4s;
+		transform: translate3d(100%, 0, 0);
 	}
 
 	&.active{
 		visibility: visible;
 		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+
+	// @include max-screen($md){
+	// 	display: block;
+	// }
+}
+.results-filter__header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 23px 16px 39px 16px;
+
+	@include min-screen($md){
+		display: none;
+	}
+}
+.header-results-filter__title{
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 26px;
+} 
+.header-results-filter__close{
+	width: 36px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.results-filter__buttons{
+	position: fixed;
+	display: none;
+	padding: 13px 16px;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	gap: 10px;
+	background: #FFFFFF;
+	box-shadow: 0px -4px 54px rgba(157, 157, 157, 0.2);
+
+	// @include min-screen($md){
+	// 	display: none;
+	// }
+
+	a{
+		flex: 0 0 50%;
 	}
 }
 .results-filter__items{
@@ -180,8 +254,8 @@ html{
 	gap: 10px;
 
 	@include max-screen($md){
-		// flex-direction: column;
-		display: block;
+		flex-direction: column;
+		display: flex;
 	}
 }
 .results-filter__item {
@@ -227,6 +301,11 @@ html{
 			@include max-screen($md){
 				margin-bottom: 16px;
 			}
+		}
+	}
+	&--cities{
+		@include max-screen($md){
+			// order:1;
 		}
 	}
 	&.active{
@@ -303,6 +382,10 @@ html{
 }
 .item-results-filter__sort-key{
 	margin-left: 10px;
+
+	@include max-screen($md){
+		display: none;
+	}
 }
 .item-results-filter__caption{
 	margin-bottom: 25px;
@@ -341,6 +424,11 @@ html{
 	}
 
 	.place_service-item {
+		@include max-screen($xs){
+			font-size: 14px;
+			line-height: 1.5;
+			padding: 8px 8px 8px 40px;
+		}
 		&:last-child{
 			margin-right: 0;	
 		}
@@ -352,6 +440,12 @@ html{
 
 			.place_service-item-icon{
 				color: #fff;
+			}
+		}
+		span{
+			@include max-screen($xs){
+				font-size: 24px;
+				height: inherit;
 			}
 		}
 		.place_service-item-icon{
@@ -367,6 +461,7 @@ html{
 			opacity: 0;
 			bottom: 60px;
 			width: 100%;
+			left: 0;
 		}
 	}
 	.range-top{
