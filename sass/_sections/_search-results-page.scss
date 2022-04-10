@@ -1,16 +1,11 @@
 /*--------------------search-results-page----------------------*/
 html{
-	&.filter-buttons-open{
-		.results-filter__buttons{
-			display: flex;
-		}
-	}
 	&.filter-calendar-open{
-		.filter-cover{
-			// display: block;
+
+		.results-filter__item--dates{
 			.item-results-filter__dd{
 				width: 100%;	
-				position: absolute;
+				position: fixed;
 				bottom: 0;
 				left: 0;
 				top: auto;
@@ -31,10 +26,10 @@ html{
 			visibility: visible;
 			opacity: 1;
 		}
-		// .filter-cover{
-		// 	visibility: visible;
-		// 	opacity: .34;
-		// }
+		.filter-cover{
+			visibility: visible;
+			opacity: .34;
+		}
 	}
 }
 .page-search-resuls {
@@ -49,6 +44,9 @@ html{
 			margin-bottom: 12px;
 		}
 	}
+	.place_service-item-icon {
+		color: $accent;
+	}
 }
 .place {}
 .container {}
@@ -56,6 +54,7 @@ html{
 .crumbs_back {}
 .icon-back {}
 .title-with-dd {
+	padding-top: 40px;
 	@include adaptive-value('font-size', 42, 31, 1);
 	@include adaptive-value('margin-bottom', 45, 31, 1);
 	font-size: 42px;
@@ -63,7 +62,7 @@ html{
 	font-weight: 500;
 
 	span{
-		// margin-right: 16px;
+		margin-right: 16px;
 	}
 	a{
 		position: relative;
@@ -85,15 +84,14 @@ html{
 	}
 }
 .filter-cover{
-	// visibility: hidden;
-	// opacity: 0;
-	display: none;
+	visibility: hidden;
+	opacity: 0;
 	position: fixed;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(#222222, .34);
+	background: #222222;
 	z-index: 11;
 	transition: all .3s;
 }
@@ -173,44 +171,46 @@ html{
 		font-size: 12px;
 	}
 }
-.results-filter-wrapper{
-
-}
 .results-filter {
 	display: flex;
 	justify-content: space-between;
 
 	@include max-screen($md){
 		position: fixed;
-		display: block;
 		width: 100%;
 		height: 100%;
-		left: 0;
+		display: block;
+		left: -100%;
 		top: 0;
-		overflow: auto;
-		z-index: 10;
+		overflow-y: auto;
+		overflow-x: hidden;
+		z-index: 11;
 		background-color: #fff;
 		visibility: hidden;
 		opacity: 0;
 		transition: all .4s;
-		transform: translate3d(100%, 0, 0);
+		// transform: translateX(-100%);
 	}
 
 	&.active{
 		visibility: visible;
 		opacity: 1;
-		transform: translate3d(0, 0, 0);
+		left: 0;
+		// transform: translateX(0);
 	}
-
-	// @include max-screen($md){
-	// 	display: block;
-	// }
 }
 .results-filter__header{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 23px 16px 39px 16px;
+	height: 98px;
+	position: fixed;
+  z-index: 11;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
 
 	@include min-screen($md){
 		display: none;
@@ -228,26 +228,6 @@ html{
 	align-items: center;
 	justify-content: center;
 }
-.results-filter__buttons{
-	position: fixed;
-	display: none;
-	padding: 13px 16px;
-	width: 100%;
-	bottom: 0;
-	left: 0;
-	z-index: 10;
-	gap: 10px;
-	background: #FFFFFF;
-	box-shadow: 0px -4px 54px rgba(157, 157, 157, 0.2);
-
-	// @include min-screen($md){
-	// 	display: none;
-	// }
-
-	a{
-		flex: 0 0 50%;
-	}
-}
 .results-filter__items{
 	display: flex;
 	flex-wrap: wrap;
@@ -256,6 +236,8 @@ html{
 	@include max-screen($md){
 		flex-direction: column;
 		display: flex;
+		padding-top: 98px;
+		padding-bottom: 66px;
 	}
 }
 .results-filter__item {
@@ -305,8 +287,8 @@ html{
 	}
 	&--cities{
 		@include max-screen($md){
-			// order:1;
-		}
+			order: 1;
+		}  
 	}
 	&.active{
 		.item-results-filter__dd {
@@ -343,6 +325,29 @@ html{
 	}
 	@include max-screen($md){
 		display: none;
+	}
+}
+.results-filter__buttons{
+	position: fixed;
+	// display: none;
+	display: flex;
+	padding: 13px 16px;
+	width: 100%;
+	height: 66px;
+	overflow: hidden;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	gap: 10px;
+	background: #FFFFFF;
+	box-shadow: 0px -4px 54px rgba(157, 157, 157, 0.2);
+
+	@include min-screen($md){
+		display: none;
+	}
+
+	a{
+		flex: 1 1 50%;
 	}
 }
 .btn-sm{
@@ -382,10 +387,6 @@ html{
 }
 .item-results-filter__sort-key{
 	margin-left: 10px;
-
-	@include max-screen($md){
-		display: none;
-	}
 }
 .item-results-filter__caption{
 	margin-bottom: 25px;
@@ -429,6 +430,7 @@ html{
 			line-height: 1.5;
 			padding: 8px 8px 8px 40px;
 		}
+
 		&:last-child{
 			margin-right: 0;	
 		}
@@ -461,7 +463,6 @@ html{
 			opacity: 0;
 			bottom: 60px;
 			width: 100%;
-			left: 0;
 		}
 	}
 	.range-top{
@@ -682,7 +683,7 @@ html{
 .resuls-map__bottom {
 	max-width: 902px;
 	position: absolute;
-	bottom: 0;
+	bottom: 30px;
 	left: 0;
 	right: 0;
 	left: 0;
@@ -693,6 +694,13 @@ html{
 
 		@include max-screen($md){
 			flex-wrap: wrap;
+			overflow: visible;
+		}
+		@include max-screen($sm){
+			row-gap: 8px;
+			column-gap: 24px;
+			padding: 0 15px;
+
 		}
 	}
 	.filter-tags__cover{
@@ -700,18 +708,52 @@ html{
 	}
 	.filter-tag {
 		box-shadow: 0px 4px 24px rgba(34, 34, 34, 0.25);
+
+		@include max-screen($sm){
+			border-radius: 50%;
+			width: 44px;
+			height: 44px;
+			padding: 0;
+			justify-content: center;
+			align-items: center;
+			
+		}  
+
+		&.active{
+			.filter-tag__icon{
+				color: #fff;
+			}
+		}
+
+		.filter-tag__icon{
+			color: #7A7A7A;
+			@include max-screen($sm){
+				font-size: 21px;
+			}
+			&.icon-type{
+				@include max-screen($sm){
+					font-size: 30px;
+				}
+			}
+		}
+		.filter-tag__name,
+		.icon-close{
+			@include max-screen($sm){
+				display: none;
+			}  
+		}
 	}
 }
 .results-mobile-toggler {
 	display: flex;
 	align-items: center;
 	position: fixed;
+	z-index: 10;
 	bottom: 30px;
 	left: 0;
 	right: 0;
 	margin: auto;
 	width: 285px;
-	height: 44px;
 	padding: 0 4px;
 	background: #FFFFFF;
 	box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
@@ -727,6 +769,7 @@ html{
 	padding-left: 25px;
 	padding-right: 5px;
 	display: flex;
+	height: 44px;
 	align-items: center;
 	font-size: 14px;
 
@@ -748,6 +791,27 @@ html{
 	margin-right: 10px;
 	color: $accent;
 }
-.icon-place_contacts-item2 {}
-.icon-filter {}
+.search-resuls-plug {
+	padding-top: 74px;
+	min-height: 300px;
+	text-align: center;
+	p{
+		margin: 0 auto;
+		max-width: 492px;
+		font-size: 14px;
+		line-height: 22px;
+		color: rgba(#222222, .4);
+	}
+}
+.search-resuls-plug__icon {
+	width: 45px;
+	height: 45px;
+	margin: 0 auto 24px auto;
+}
+.search-resuls-plug__title {
+	margin-bottom: 12px;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+}
 /*--------------------END search-results-page----------------------*/ 

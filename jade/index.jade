@@ -19,14 +19,12 @@ block content
 					include _blocks/_filter-tags
 					.filter-tags-wrapper__cover
 				
-
 				
 				.results-filter
 					.results-filter__header.header-results-filter
 						.header-results-filter__title Фильтры
 						.header-results-filter__close
 							span.icon-close
-
 					.results-filter__items
 						.results-filter__item.item-results-filter.results-filter__item--services
 							.item-results-filter__name Услуги
@@ -51,8 +49,8 @@ block content
 								input#datepicker-static2.form_inp(data-da="item-results-filter__inputs,991,1" type='text' name='' readonly='')
 								
 								.item-results-filter__buttons
-									a(href="#").btn2.btn-sm Очистить
-									a(href="#").btn.btn-sm Выбрать
+									a(href="#").btn2.btn-sm#calendar-reset Очистить
+									a(href="#").btn.btn-sm#calendar-select Выбрать
 
 						.results-filter__item.item-results-filter.results-filter__item--cities
 							.item-results-filter__name Расстояние от города
@@ -89,11 +87,22 @@ block content
 								
 								a(href="#").btn.btn-sm Применить
 					
-					
+					.results-filter__buttons
+						a(href="#").btn2.btn-sm Очистить
+						a(href="#").btn.btn-sm 63 места
+
+					.filter-cover
 					.results-filter__map-open.results-filter__item 
 						span.icon-place_contacts-item2
 						| Показать на карте
 
+				include _blocks/_search-results-cards
+
+				.search-resuls-plug
+					.search-resuls-plug__icon
+						img(src="img/search-results-page/magnifier-big.svg" alt="alt")
+					.search-resuls-plug__title Результаты не найдены
+					p К сожалению, мы не можем сопоставить результаты с вашим запросом. Попробуйте изменить некоторые фильтры, чтобы получить больше результатов.
 
 		.results-mobile-toggler
 			.results-mobile-toggler__item#mob-map-show
@@ -103,12 +112,6 @@ block content
 				span.results-mobile-toggler__icon.icon-filter
 				| Фильтры
 
-		.results-filter__buttons
-			a(href="#").btn2.btn-sm Очистить
-			a(href="#").btn.btn-sm 63 места
-		
-		.filter-cover
-		
 		.resuls-map
 			.resuls-map__close
 				span.icon-delete
@@ -122,12 +125,12 @@ block content
 
 block page-scripts
 	script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+	script(src="js/map-init.js")
 	script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
 	script(src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.3/dist/index.umd.min.js")
 	script(src="js/jquery.fancybox.min.js")
 	script(src="js/slider.js")
 	script(src="js/main.js")
-	script(src="js/map-init.js")
 	
 	//- SERVIVE FUNCTIONS==================
 

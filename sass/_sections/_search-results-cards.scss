@@ -1,0 +1,240 @@
+/*--------------------search-results-cards----------------------*/
+.search-results-cards{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -12px;
+	margin-right: -12px;
+	margin-top: 24px;
+
+	@include max-screen($sm){
+		margin-left: 0;
+		margin-right: 0;
+	}  
+}
+.similar_slide{
+	width: auto;
+}
+.result-card{
+	width: calc((100% / 2) - 24px);
+	margin-bottom: 32px;
+	display: flex;
+	flex-direction: column;
+
+	@include max-screen($sm){
+		width: 100%;
+	}  
+
+	&:not(.result-card--services){
+		.room_card-title{
+			text-overflow: clip;
+			overflow: visible;
+			white-space: normal;
+
+			@include dots-family-multi(2);
+
+			@include max-screen($sm){
+				-webkit-line-clamp: none;
+				-webkit-box-orient: horizontal;
+				overflow: visible;
+			}  
+		}
+		.similar_slide-link{
+			@include max-screen($xss){
+				display: block;
+			}  
+			.similar_slide-btn{
+				@include max-screen($xss){
+					margin-top: 10px;
+					width: 100%;
+				}  
+			}
+		}
+		.similar_slide-btn{
+			height: 52px;
+		}
+	}
+	&--services{
+		.room_card-title{
+			@media screen and (max-width: 1200px) {
+				overflow: hidden;
+   		 white-space: nowrap;
+			}
+			@include max-screen($sm){
+				overflow: visible;
+				white-space: normal;
+			}  
+		}
+		 .similar_slide-text{
+			@include dots-family-multi(2);
+
+			@include max-screen($sm){
+				-webkit-line-clamp: none;
+				-webkit-box-orient: horizontal;
+				overflow: visible;
+			}  
+		}
+		.similar_slide-link{
+			@include max-screen(1100px){
+				display: block;
+			}  
+		}
+	}
+
+	.similar_slide-info{
+		padding: 24px;
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+	}
+	.similar_slide-top{
+		position: relative;
+	}
+	.room_card-title{
+		margin-bottom: 8px;
+		padding-right: 8px;
+		font-weight: 500;
+		font-size: 32px;
+		line-height: 38px;
+
+		@include max-screen($md){
+			font-size: 24px;
+    line-height: 29px;
+		}  
+	}
+	.similar_slide-img{
+		padding-bottom: 20.2%;
+	}
+	.similar_slide-text{
+		padding-right: 29px;
+		margin-bottom: 16px;
+	}
+	.place_service-items{
+		margin-bottom: 27px;
+	}
+	.similar_slide-link{
+		margin-top: auto;
+
+		.similar_slide-btn{
+			width: 134px;
+
+			@include max-screen($xss){
+				height: 40px;
+			}  
+		}
+	}
+	.similar_slide-sutitle{
+		display: flex;
+		align-items: center;
+		padding-left: 0;
+		color: #222222;
+	}
+	.similar_slide-rating{
+		padding-left: 35px;
+		margin-left: -15px;
+	}
+	.result-card__bottom-box{
+		display: flex;
+		align-items: center;
+
+		@include max-screen(1100px){
+			margin-top: 17px;
+			justify-content: space-between;
+		}  
+	}
+	.result-card__reservation{
+		display: flex;
+		align-items: center;
+		margin-right: 20px;
+		font-size: 12px;
+		color: #256FFB;
+
+		.icon-hotel{
+			margin-right: 5px;
+			font-size: 16px;
+		}
+	}
+}
+.place_service-item--adding{
+	padding-right: 12px;
+	.place_service-item-icon{
+		margin-left: 5px;
+		font-size: 16px;
+
+		@include max-screen($xs){
+			margin-top: 2px;
+			font-size: 13px;
+		}  
+	}
+}
+
+.search-results-cards__bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 15px;
+	width: 100%;
+
+	@include max-screen($sm){
+		justify-content: center;
+	}
+}
+.search-results-cards__offers {
+	display: flex;
+	align-items: center;
+	color: rgba(#222222, .4);
+
+	@include max-screen($sm){
+		display: none;
+	}  
+}
+.search-results-cards__offers-count {
+	margin-right: 4px;
+	color: #222222;
+}
+.search-results-cards__offers-all {}
+.search-results-cards__more {
+		width: 154px;
+		height: 52px;
+		
+		@include max-screen($sm){
+			width: 100%;
+			background-color: $accent;
+			color: #fff;
+		}
+
+		.desk{
+			@include max-screen($sm){
+				display: none;
+			}  
+		}
+		.mob{
+			@include min-screen($sm){
+				display: none;
+			}  
+		}
+}
+.search-results-cards__pagin {
+	display: flex;
+	align-items: center;
+
+	@include max-screen($sm){
+		display: none;
+	}
+}
+.search-results-cards__places {
+	margin-right: 16px;
+	color: #222222;
+}
+.search-results-cards__places-count {
+	padding: 0 23px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	border: 1px solid #F0F0F0;
+	border-radius: 34px;
+	
+	.icon-faq_arrow {
+		margin-left: 10px;
+	}
+}
+/*--------------------END search-results-cards----------------------*/ 

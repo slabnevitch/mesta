@@ -4,7 +4,7 @@
 @import "_misc/_media-mixins";
 @import "libs";
 
-// @import "_misc/_functions";
+@import "_misc/_functions";
 // @import "_misc/smart-grid";
 
 @import "_misc/_vars";
@@ -13,6 +13,7 @@
 
 @import "_sections/_header";
 @import "_sections/_search-results-page";
+@import "_sections/_search-results-cards";
 @import "_sections/_footer";
 
 // @import "_media";

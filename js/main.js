@@ -87,7 +87,7 @@ $(document).ready(function () {
             ],
             zIndex: 50,
             lang: "ru-RU",
-            format: "DD MMMM YYYY",
+            format: "DD/ MM/ YY",
             grid: 3,
             RangePlugin: {
                 elementEnd: "#datepicker-static2",

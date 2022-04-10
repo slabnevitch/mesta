@@ -82,6 +82,7 @@
 		$(document).on('click', function(e) {
 			var $target = $(e.target);
 			console.log(e.target)
+			
 			// item-results-filter__dd toggle
 			if($('.item-results-filter__dd').length > 0){
 
@@ -99,6 +100,13 @@
 				}else if(!$target.hasClass('results-filter__item') && !$target.closest('.results-filter__item').length > 0){
 						$('.results-filter__item').removeClass('active');
 				}
+				if(screen.width >= 991){
+						if($target.attr('id') === 'calendar-select'){
+						$target.closest('.results-filter__item').removeClass('active');
+						return false;
+					}
+
+				}
 
 			}
 			// END item-results-filter__dd toggle
@@ -113,41 +121,45 @@
 			// END results-map toggle
 
 			// results-map mobile toggle
-			if($target.attr('id') === 'mob-map-show'){
+			if($target.attr('id') === 'mob-map-show' || $target.closest('#mob-map-show').length > 0){
 				$('.resuls-map').addClass('active');
 			}
-			if($target.attr('id') === 'mob-filters-show'){			
+			if($target.attr('id') === 'mob-filters-show' || $target.closest('#mob-filters-show').length > 0){			
 				$('.resuls-map').removeClass('active');
 			}
 			// END results-map mobile toggle
 
 			// mobile filters toggle
-			if($target.attr('id') === 'mob-filters-show'){
+			if($target.attr('id') === 'mob-filters-show' || $target.closest('#mob-filters-show').length > 0){
 				$('.results-filter').addClass('active');
-				$('html').addClass('filter-buttons-open');
+				// $('html').addClass('filter-buttons-open');
 			}
 			if($target.hasClass('header-results-filter__close') || $target.closest('.header-results-filter__close').length > 0){
 				$('.results-filter').removeClass('active');
-				$('html').removeClass('filter-buttons-open');
+				// $('html').removeClass('filter-buttons-open');
 			}
 			// END mobile filters toggle
 
 			// filter-tags active class toggle
 			if($target.closest('.filter-tag').length > 0){
 					console.log('filter tag active')
-				$target.closest('.filter-tag').addClass('active');
+				$target.closest('.filter-tag').toggleClass('active');
 			}
-			if($target.hasClass('icon-close') && $target.closest('.filter-tag').length > 0){
-					console.log('filter tag deactive')
-				$target.closest('.filter-tag').removeClass('active');
-			}
+			// if($target.hasClass('icon-close') && $target.closest('.filter-tag').length > 0){
+			// 		console.log('filter tag deactive')
+			// 	$target.closest('.filter-tag').removeClass('active');
+			// }
 			// END filter-tags active class toggle
 
 			// calendar mobile toggle
 			if($target.closest('.item-results-filter__calendar-button').length > 0 || $target.hasClass('item-results-filter__calendar-button')){
 				$('html').addClass('filter-calendar-open');
+				// $('#datepicker-static').click();
 			}
 			if($target.hasClass('filter-cover')){
+				$('html').removeClass('filter-calendar-open');
+			}
+			if($target.attr('id') === 'calendar-select'){
 				$('html').removeClass('filter-calendar-open');
 			}
 			// .item-results-filter__calendar-button

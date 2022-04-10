@@ -35,9 +35,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-@mixin dots-family-multi{
+@mixin dots-family-multi($rows){
 	display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: $rows;
   -webkit-box-orient: vertical;
   overflow: hidden;
   // text-overflow: ellipsis;
