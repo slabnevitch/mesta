@@ -277,6 +277,7 @@ html{
 
 			@include max-screen($md){
 				padding: 0;
+				margin-bottom: 10px;
 			}
 		}
 		.item-results-filter__name{
@@ -288,6 +289,16 @@ html{
 	&--cities{
 		@include max-screen($md){
 			order: 1;
+		}
+		.item-results-filter__name{
+			@include max-screen($md){
+				margin-bottom: 27px;
+			}
+		}  
+	}
+	&--prices{
+		@include max-screen($md){
+			margin-bottom: 10px;
 		}  
 	}
 	&.active{
@@ -422,6 +433,7 @@ html{
 		box-shadow: none;
 		padding: 0;
 		border-radius: 0;
+		// margin-bottom: 40px;
 	}
 
 	.place_service-item {
@@ -567,6 +579,7 @@ html{
 			padding-left: 16px;
 			border: 1px solid rgba(26, 27, 50, 0.2);
 			border-radius: 8px;
+			font-size: 16px;
 		}
 		@include max-screen(360px){
 			width: 102px;
@@ -749,7 +762,7 @@ html{
 	align-items: center;
 	position: fixed;
 	z-index: 10;
-	bottom: 30px;
+	bottom: 16px;
 	left: 0;
 	right: 0;
 	margin: auto;

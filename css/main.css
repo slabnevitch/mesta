@@ -853,6 +853,7 @@ html.filter-calendar-open .filter-cover {
 @media only screen and (max-width: 991px) {
   .results-filter__item--dates .item-results-filter__dd {
     padding: 0;
+    margin-bottom: 10px;
   }
 }
 
@@ -868,6 +869,18 @@ html.filter-calendar-open .filter-cover {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .results-filter__item--cities .item-results-filter__name {
+    margin-bottom: 27px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .results-filter__item--prices {
+    margin-bottom: 10px;
   }
 }
 
@@ -1229,6 +1242,7 @@ html.filter-calendar-open .filter-cover {
     border: 1px solid rgba(26, 27, 50, 0.2);
     -webkit-border-radius: 8px;
     border-radius: 8px;
+    font-size: 16px;
   }
 }
 
@@ -1499,7 +1513,7 @@ html.filter-calendar-open .filter-cover {
   align-items: center;
   position: fixed;
   z-index: 10;
-  bottom: 30px;
+  bottom: 16px;
   left: 0;
   right: 0;
   margin: auto;
@@ -1607,6 +1621,8 @@ html.filter-calendar-open .filter-cover {
   width: -webkit-calc((100% / 2) - 24px);
   width: calc((100% / 2) - 24px);
   margin-bottom: 32px;
+  margin-left: 12px;
+  margin-right: 12px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1621,6 +1637,8 @@ html.filter-calendar-open .filter-cover {
 @media only screen and (max-width: 767.98px) {
   .result-card {
     width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -1711,6 +1729,12 @@ html.filter-calendar-open .filter-cover {
   flex-direction: column;
 }
 
+@media only screen and (max-width: 576px) {
+  .result-card .similar_slide-info {
+    padding: 16px;
+  }
+}
+
 .result-card .similar_slide-top {
   position: relative;
 }
@@ -1737,6 +1761,12 @@ html.filter-calendar-open .filter-cover {
 .result-card .similar_slide-text {
   padding-right: 29px;
   margin-bottom: 16px;
+}
+
+@media only screen and (max-width: 767.98px) {
+  .result-card .similar_slide-text {
+    padding-right: 0;
+  }
 }
 
 .result-card .place_service-items {
@@ -1808,6 +1838,12 @@ html.filter-calendar-open .filter-cover {
   margin-right: 20px;
   font-size: 12px;
   color: #256FFB;
+}
+
+@media only screen and (max-width: 320px) {
+  .result-card .result-card__reservation {
+    margin-right: 0;
+  }
 }
 
 .result-card .result-card__reservation .icon-hotel {

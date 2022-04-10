@@ -17,11 +17,15 @@
 .result-card{
 	width: calc((100% / 2) - 24px);
 	margin-bottom: 32px;
+	margin-left: 12px;
+    margin-right: 12px;
 	display: flex;
 	flex-direction: column;
 
 	@include max-screen($sm){
 		width: 100%;
+		margin-left: 0;
+    	margin-right: 0;
 	}  
 
 	&:not(.result-card--services){
@@ -85,6 +89,10 @@
 		flex: 1 1 auto;
 		display: flex;
 		flex-direction: column;
+
+		@include max-screen($xs){
+			padding: 16px;
+		}
 	}
 	.similar_slide-top{
 		position: relative;
@@ -107,6 +115,10 @@
 	.similar_slide-text{
 		padding-right: 29px;
 		margin-bottom: 16px;
+
+		@include max-screen($sm){
+			padding-right: 0;
+		}
 	}
 	.place_service-items{
 		margin-bottom: 27px;
@@ -147,6 +159,10 @@
 		margin-right: 20px;
 		font-size: 12px;
 		color: #256FFB;
+
+		@include max-screen(320px){
+			margin-right: 0;
+		}
 
 		.icon-hotel{
 			margin-right: 5px;

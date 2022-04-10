@@ -145,10 +145,7 @@
 					console.log('filter tag active')
 				$target.closest('.filter-tag').toggleClass('active');
 			}
-			// if($target.hasClass('icon-close') && $target.closest('.filter-tag').length > 0){
-			// 		console.log('filter tag deactive')
-			// 	$target.closest('.filter-tag').removeClass('active');
-			// }
+
 			// END filter-tags active class toggle
 
 			// calendar mobile toggle
