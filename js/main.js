@@ -146,7 +146,7 @@ $(document).ready(function () {
             element: "#datepicker_solo",
             css: [
                 "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.2/dist/index.css",
-                "../css/calendar.css"
+                "mesta/css/calendar.css"
             ],
             zIndex: 10,
             lang: "ru-RU",
