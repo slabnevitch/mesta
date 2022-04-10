@@ -1758,9 +1758,14 @@ html.filter-calendar-open .filter-cover {
   padding-bottom: 20.2%;
 }
 
+.result-card .similar_slide-adres {
+  color: #222222;
+}
+
 .result-card .similar_slide-text {
   padding-right: 29px;
   margin-bottom: 16px;
+  color: rgba(34, 34, 34, 0.6);
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -1771,6 +1776,10 @@ html.filter-calendar-open .filter-cover {
 
 .result-card .place_service-items {
   margin-bottom: 27px;
+}
+
+.result-card .place_service-item {
+  color: #222222;
 }
 
 .result-card .similar_slide-link {
@@ -1881,7 +1890,10 @@ html.filter-calendar-open .filter-cover {
   -ms-flex-align: center;
   align-items: center;
   margin-top: 15px;
-  width: 100%;
+  width: -webkit-calc(100% - 24px);
+  width: calc(100% - 24px);
+  margin-right: 12px;
+  margin-left: 12px;
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -1890,6 +1902,9 @@ html.filter-calendar-open .filter-cover {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 

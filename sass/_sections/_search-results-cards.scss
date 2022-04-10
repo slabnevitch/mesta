@@ -112,9 +112,14 @@
 	.similar_slide-img{
 		padding-bottom: 20.2%;
 	}
+	.similar_slide-adres {
+		color: #222222;
+	}
+
 	.similar_slide-text{
 		padding-right: 29px;
 		margin-bottom: 16px;
+		color: rgba(#222222, .6);
 
 		@include max-screen($sm){
 			padding-right: 0;
@@ -122,6 +127,9 @@
 	}
 	.place_service-items{
 		margin-bottom: 27px;
+	}
+	.place_service-item{
+		color: #222222;
 	}
 	.similar_slide-link{
 		margin-top: auto;
@@ -188,11 +196,16 @@
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 15px;
-	width: 100%;
+	width: calc(100% - 24px);
+	margin-right: 12px;
+	margin-left: 12px;
 
 	@include max-screen($sm){
 		justify-content: center;
-	}
+			width: 100%;
+		margin-right:0;
+		margin-left: 0;
+		}
 }
 .search-results-cards__offers {
 	display: flex;

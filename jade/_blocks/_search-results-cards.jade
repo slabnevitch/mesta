@@ -4,66 +4,67 @@
 			.similar_slide-imgs.img_slider
 				a.similar_slide-img(href='img/similar_slide.jpg' data-fancybox='similar_slide1' style='background-image: url(img/similar_slide.jpg);')
 					span.icon-place_type
-				a.similar_slide-img(href='img/similar_slide.jpg' data-fancybox='similar_slide1' style='background-image: url(img/similar_slide.jpg);')
+				a.similar_slide-img(href='img/place_img6.png' data-fancybox='similar_slide1' style='background-image: url(img/place_img6.png);')
 					span.icon-place_type
-				a.similar_slide-img(href='img/similar_slide.jpg' data-fancybox='similar_slide1' style='background-image: url(img/similar_slide.jpg);')
+				a.similar_slide-img(href='img/place_page.png' data-fancybox='similar_slide1' style='background-image: url(img/place_page.png);')
 					span.icon-place_type
 
 			.similar_slide-info
 				.similar_slide-top
-					.room_card-title.tooltip(title='')
+					a(href="#").room_card-title.tooltip(title='')
 						| Шале 3-х местный Шале 3-х местный Шале 3-х местный
 						span.tooltip_text Шале 3-х местный Шале 3-х местный Шале 3-х местный
 					
 					.similar_slide-like
 						span.icon-like_card
 				
-				.similar_slide-adres
-					span.icon-place_contacts-item2
-					.similar_slide-adres_title
-						| Московская область, Сергиево-ПосадсПосадсПосадсПосадс
-					.similar_slide-adres_distance
-						| 250км
-				.similar_slide-text
-					if(i%2 == 0)
-						| Её нарекли сердцем России, но под это описание подойдет любой из уютных городков Золотого кольца. Справедливее назвать столицу головой необъятной страны. Москва - шумная, дорогая, гордая, жестокая, но до неприличия красивая и притягательная. Ежегодно город принимает туристов со всего света, заковывая в холодные объятия. 
-					else
-						| На берегу Волги, в окружении загородной природы разместился эко-отель Веточ..
-				
-				if(i%2 !== 0)
-					-var services = [{name: 'Кафе на территории', icon: 'place_service1'}, {name: 'Проживание', icon: 'residence'}, {name: 'Пляж', icon: 'beach'}, {name: 'Дневное посещение', icon: 'daylight'}];
-							.place_service-items
-								each item, ind in services
-									.place_service-item
-										span(class="place_service-item-icon icon-" + item.icon)
-										= item.name
-
-								.place_service-item.place_service-item--adding
-									span(class="place_service-item-icon icon-plus")
-									| 4
-				
-				//- .similar_slide-inner
-
-				.similar_slide-link
-					.similar_slide-sutitle
+				a(href="#").result-card__link
+					.similar_slide-adres
+						span.icon-place_contacts-item2
+						.similar_slide-adres_title
+							| Московская область, Сергиево-ПосадсПосадсПосадсПосадс
+						.similar_slide-adres_distance
+							| 250км
+					.similar_slide-text
 						if(i%2 == 0)
-							a.similar_slide-reviews(href='' tabindex='0') 11 отзывов
+							| Её нарекли сердцем России, но под это описание подойдет любой из уютных городков Золотого кольца. Справедливее назвать столицу головой необъятной страны. Москва - шумная, дорогая, гордая, жестокая, но до неприличия красивая и притягательная. Ежегодно город принимает туристов со всего света, заковывая в холодные объятия. 
 						else
-							.similar_slide-rating
-								| 8.1/10
-								span.icon-rating
-
-							a.similar_slide-reviews(href='' tabindex='0') 11 отзывов
-
+							| На берегу Волги, в окружении загородной природы разместился эко-отель Веточ..
+					
 					if(i%2 !== 0)
-						.result-card__bottom-box
-							.result-card__reservation
-								span.icon-hotel
-								| Бронь от отеля
-							a.similar_slide-btn.btn(href='' tabindex='0') Подробнее
-						
-					else
-						a.similar_slide-btn.btn(href='' tabindex='0') Подробнее
+						-var services = [{name: 'Кафе на территории', icon: 'place_service1'}, {name: 'Проживание', icon: 'residence'}, {name: 'Пляж', icon: 'beach'}, {name: 'Дневное посещение', icon: 'daylight'}];
+								.place_service-items
+									each item, ind in services
+										.place_service-item
+											span(class="place_service-item-icon icon-" + item.icon)
+											= item.name
+
+									.place_service-item.place_service-item--adding
+										span(class="place_service-item-icon icon-plus")
+										| 4
+					
+					//- .similar_slide-inner
+
+					.similar_slide-link
+						.similar_slide-sutitle
+							if(i%2 == 0)
+								.similar_slide-reviews 11 отзывов
+							else
+								.similar_slide-rating
+									| 8.1/10
+									span.icon-rating
+
+								.similar_slide-reviews 11 отзывов
+
+						if(i%2 !== 0)
+							.result-card__bottom-box
+								.result-card__reservation
+									span.icon-hotel
+									| Бронь от отеля
+								.similar_slide-btn.btn Подробнее
+							
+						else
+							.similar_slide-btn.btn Подробнее
 	
 	.search-results-cards__bottom
 		.search-results-cards__offers
