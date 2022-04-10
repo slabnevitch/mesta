@@ -83,11 +83,11 @@ $(document).ready(function () {
             element: "#datepicker-static",
             css: [
                 "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.2/dist/index.css",
-                "../css/calendar-static.css"
+                "css/calendar-static.css"
             ],
             zIndex: 50,
             lang: "ru-RU",
-            format: "DD MM YY",
+            format: "DD/MM/YYYY",
             grid: 3,
             RangePlugin: {
                 elementEnd: "#datepicker-static2",
@@ -146,7 +146,7 @@ $(document).ready(function () {
             element: "#datepicker_solo",
             css: [
                 "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.2/dist/index.css",
-                "mesta/css/calendar.css"
+                "../css/calendar.css"
             ],
             zIndex: 10,
             lang: "ru-RU",
