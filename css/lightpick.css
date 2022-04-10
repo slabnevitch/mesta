@@ -1,298 +1,302 @@
 .lightpick {
-    position: absolute;
-    z-index: 99999;
-    padding: 24px;
-    box-shadow: 0px 4px 24px rgba(34, 34, 34, 0.25);
-    border-radius: 12px;
-    background-color: #fff;
-    margin-top: 71px;
+  position: absolute;
+  z-index: 99999;
+  padding: 24px;
+  box-shadow: 0px 4px 24px rgba(34, 34, 34, 0.25);
+  border-radius: 12px;
+  background-color: #fff;
+  margin-top: 71px;
 }
 
 .lightpick--inlined {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .lightpick,
 .lightpick *,
 .lightpick::after,
 .lightpick::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .lightpick.is-hidden {
-    display: none;
+  display: none;
 }
 
 .lightpick__months {
-    display: grid;
-    background-color: #EEE;
-    grid-template-columns: auto;
-    grid-gap: 1px;
+  display: grid;
+  background-color: #EEE;
+  grid-template-columns: auto;
+  grid-gap: 1px;
 }
 
 .lightpick--2-columns .lightpick__months {
-    grid-template-columns: auto auto;
+  grid-template-columns: auto auto;
 }
 
 .lightpick--3-columns .lightpick__months {
-    grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto;
 }
 
 .lightpick--4-columns .lightpick__months {
-    grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
 }
 
 .lightpick--5-columns .lightpick__months {
-    grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto;
 }
 
 .lightpick__month {
-    padding: 4px;
-    width: 288px;
-    background-color: #FFF;
+  padding: 4px;
+  width: 288px;
+  background-color: #FFF;
 }
 
 .lightpick__month-title-bar {
-    display: flex;
-    margin-bottom: 4px;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+  display: flex;
+  margin-bottom: 4px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
 .lightpick__month-title {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    right: 50%;
-    transform: translateX(50%);
-    text-align: center;
-    font-size: 14px;
-line-height: 150%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  right: 50%;
+  transform: translateX(50%);
+  text-align: center;
+  font-size: 14px;
+  line-height: 150%;
 }
 
 .lightpick__month-title > .lightpick__select {
-    border: none;
-    background-color: transparent;
-    outline: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-
 .lightpick__month-title > .lightpick__select-months {
-    margin-right: .5em;
-    width: auto;
-    text-align: center;
-    text-transform: capitalize;
+  margin-right: .5em;
+  width: auto;
+  text-align: center;
+  text-transform: capitalize;
 }
 
 .lightpick__toolbar {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    z-index: 10;
-    margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 10;
+  margin-bottom: 24px;
 }
 
 .lightpick__previous-action,
 .lightpick__next-action,
 .lightpick__close-action {
-    background: none;
-    cursor: pointer;
-    border: none;
-    width: 7px;
-    font-size: 0;
-    background-size: cover;
-    height: 13px;
-    padding: 0;
+  background: none;
+  cursor: pointer;
+  border: none;
+  width: 7px;
+  font-size: 0;
+  background-size: cover;
+  height: 13px;
+  padding: 0;
 }
-.lightpick__previous-action{
-    background-image: url(../img/calendar_left.svg);
+
+.lightpick__previous-action {
+  background-image: url(../img/calendar_left.svg);
 }
-.lightpick__next-action{
-    background-image: url(../img/calendar_right.svg);
+
+.lightpick__next-action {
+  background-image: url(../img/calendar_right.svg);
 }
 
 .lightpick__previous-action:active,
 .lightpick__next-action:active,
 .lightpick__close-action:active {
-    color: inherit;
+  color: inherit;
 }
 
 .lightpick__days-of-the-week {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 12px 12px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
 }
 
 .lightpick__day-of-the-week {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 150%;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
 }
 
 .lightpick__days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    margin-bottom: -20px;
-    align-items: center;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: -20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .lightpick__day {
-    display: flex;
-    justify-self: center;
-    align-self: center;
-    font-size: 14px;
-    line-height: 150%;
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 30px;
-    width: 30px;
-    margin-bottom: 20px;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  font-size: 14px;
+  line-height: 150%;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-
-
 .lightpick__day:not(.is-disabled):hover {
-    background-size: contain;
-    background-color: #FC6733;
-    border-radius: 50%;
-    color: #fff;
+  background-size: contain;
+  background-color: #FC6733;
+  border-radius: 50%;
+  color: #fff;
 }
 
 .lightpick__day.is-disabled {
-    opacity: 0.6;
-    pointer-events: none;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .lightpick__day.disabled-tooltip {
-    pointer-events: auto;
+  pointer-events: auto;
 }
 
 .lightpick__day.is-disabled.is-forward-selected {
-    opacity: 1;
+  opacity: 1;
 }
+
 .lightpick__day.is-disabled.is-forward-selected:not(.is-start-date) {
-    background-color: rgba(38, 139, 210, 0.1);
-    background-image: none;
+  background-color: rgba(38, 139, 210, 0.1);
+  background-image: none;
 }
 
-.lightpick__day.is-previous-month{
-    opacity: 0.6;
-}   
-
+.lightpick__day.is-previous-month {
+  opacity: 0.6;
+}
 
 .lightpick__day.lightpick__day.is-in-range:not(.is-disabled) {
-    opacity: 1;
+  opacity: 1;
 }
 
 .lightpick__day.is-in-range {
-    position: relative;
-    background-image: none;
-}
-.lightpick__day.is-in-range::before{
-    position: absolute;
-    content: "";
-    background: rgba(252, 103, 51, 0.1);
-    height: 100%;
-    width: 40px;
-    right: 50%;
-    transform: translateX(50%);
-}
-.lightpick__day.is-in-range.is-end-date::before{
-    width: 20px;
-    left: -5px;
-    transform: none;
-}
-.lightpick__day.is-in-range.is-start-date::before{
-    width: 20px;
-    right: -5px;
-    transform: none;
+  position: relative;
+  background-image: none;
 }
 
+.lightpick__day.is-in-range::before {
+  position: absolute;
+  content: "";
+  background: rgba(252, 103, 51, 0.1);
+  height: 100%;
+  width: 40px;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.lightpick__day.is-in-range.is-end-date::before {
+  width: 20px;
+  left: -5px;
+  transform: none;
+}
+
+.lightpick__day.is-in-range.is-start-date::before {
+  width: 20px;
+  right: -5px;
+  transform: none;
+}
 
 .lightpick__day.is-start-date.is-in-range,
 .lightpick__day.is-end-date.is-in-range.is-flipped {
-    border-radius: 50%;
-    background: #FC6733;
-    background-image: none;
+  border-radius: 50%;
+  background: #FC6733;
+  background-image: none;
 }
 
 .lightpick__day.is-end-date.is-in-range,
 .lightpick__day.is-start-date.is-in-range.is-flipped {
-    border-radius: 50%;
-    background: #FC6733;
-    background-image: none;
+  border-radius: 50%;
+  background: #FC6733;
+  background-image: none;
 }
-
 
 .lightpick__day.is-start-date,
 .lightpick__day.is-end-date,
 .lightpick__day.is-start-date:hover,
 .lightpick__day.is-end-date:hover {
-    color: #FFF;
-    background: #FC6733;
-    border-radius: 50%;
+  color: #FFF;
+  background: #FC6733;
+  border-radius: 50%;
 }
 
 .lightpick__tooltip {
-    position: absolute;
-    margin-top: -4px;
-    padding: 4px 8px;
-    border-radius: 4px;
-    background-color: #FFF;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-    white-space: nowrap;
-    font-size: 11px;
-    pointer-events: none;
+  position: absolute;
+  margin-top: -4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #FFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  font-size: 11px;
+  pointer-events: none;
 }
 
 .lightpick__tooltip::before {
-    position: absolute;
-    bottom: -5px;
-    left: calc(50% - 5px);
-    border-top: 5px solid rgba(0, 0, 0, 0.12);
-    border-right: 5px solid transparent;
-    border-left: 5px solid transparent;
-    content: "";
+  position: absolute;
+  bottom: -5px;
+  left: calc(50% - 5px);
+  border-top: 5px solid rgba(0, 0, 0, 0.12);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: "";
 }
 
 .lightpick__tooltip::after {
-    position: absolute;
-    bottom: -4px;
-    left: calc(50% - 4px);
-    border-top: 4px solid #FFF;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
-    content: "";
+  position: absolute;
+  bottom: -4px;
+  left: calc(50% - 4px);
+  border-top: 4px solid #FFF;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  content: "";
 }
+
 .lightpick__footer {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
+
 .lightpick__reset-action,
 .lightpick__apply-action {
-    border-radius: 5px;
-    font-size: 12px;
-    border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  border: none;
 }
+
 .lightpick__reset-action {
-    color: #fff;
-    background-color: #aeacad;
+  color: #fff;
+  background-color: #aeacad;
 }
+
 .lightpick__apply-action {
-    color: #fff;
-    background-color: #2495f3;
+  color: #fff;
+  background-color: #2495f3;
 }
