@@ -131,12 +131,12 @@
 
 			// mobile filters toggle
 			if($target.attr('id') === 'mob-filters-show' || $target.closest('#mob-filters-show').length > 0){
-				$('.results-filter').addClass('active');
-				// $('html').addClass('filter-buttons-open');
+				// $('.results-filter').addClass('active');
+				$('html').addClass('mob-filters-open');
 			}
 			if($target.hasClass('header-results-filter__close') || $target.closest('.header-results-filter__close').length > 0){
-				$('.results-filter').removeClass('active');
-				// $('html').removeClass('filter-buttons-open');
+				// $('.results-filter').removeClass('active');
+				$('html').removeClass('mob-filters-open');
 			}
 			// END mobile filters toggle
 
