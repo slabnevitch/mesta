@@ -1390,6 +1390,7 @@ html.filter-calendar-open .filter-cover {
 
 .result-card .similar_slide-img {
   padding-bottom: 20.2%;
+  height: 0;
 }
 
 .result-card .similar_slide-adres {
