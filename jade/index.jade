@@ -42,11 +42,11 @@ block content
 							.icon-faq_arrow
 							.item-results-filter__dd
 								.item-results-filter__inputs
+									input#datepicker-static.form_inp(type='text' name='' readonly='')
 									span.item-results-filter__divide
+									input#datepicker-static2.form_inp(name='' readonly='')
 									.item-results-filter__calendar-button
 										span.icon-calendar-white
-								input#datepicker-static.form_inp(data-da="item-results-filter__inputs,991,first" type='text' name='' readonly='')
-								input#datepicker-static2.form_inp(data-da="item-results-filter__inputs,991,1" type='text' name='' readonly='')
 								
 								.item-results-filter__buttons
 									a(href="#").btn2.btn-sm#calendar-reset Очистить
@@ -180,7 +180,7 @@ block page-scripts
 
 	//- VANILLA JS===================================
 	//- dynamic-adaptive--------------------------
-	script(src="js/libs/dynamic-adaptive/da.min.js")
+	//- script(src="js/libs/dynamic-adaptive/da.min.js")
 		
 	//- slideout--------------------------
 	//- script(src="js/libs/slideout/slideout.js")

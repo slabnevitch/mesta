@@ -124,6 +124,11 @@
 		@include max-screen($sm){
 			padding-right: 0;
 		}
+		@include max-screen(575.98px){
+			-webkit-line-clamp: none;
+			-webkit-box-orient: horizontal;
+			overflow: visible;
+		} 
 	}
 	.place_service-items{
 		margin-bottom: 27px;

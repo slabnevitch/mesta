@@ -474,6 +474,14 @@ input.range__input {
 }
 
 /*--------------------search-results-page----------------------*/
+html.mob-filters-open .results-filter,
+html.mob-filters-open .results-filter__header,
+html.mob-filters-open .results-filter__buttons {
+  visibility: visible;
+  opacity: 1;
+  left: 0;
+}
+
 html.filter-calendar-open .results-filter__item--dates .item-results-filter__dd {
   width: 100%;
   position: fixed;
@@ -505,6 +513,10 @@ html.filter-calendar-open .item-results-filter__dd .easepick-wrapper {
 html.filter-calendar-open .filter-cover {
   visibility: visible;
   opacity: .34;
+}
+
+html .results-filter__item--dates .item-results-filter__dd {
+  margin-bottom: 0;
 }
 
 .page-search-resuls .title-with-dd {
@@ -717,12 +729,6 @@ html.filter-calendar-open .filter-cover {
   }
 }
 
-.results-filter.active {
-  visibility: visible;
-  opacity: 1;
-  left: 0;
-}
-
 .results-filter__header {
   display: -webkit-box;
   display: -webkit-flex;
@@ -742,8 +748,12 @@ html.filter-calendar-open .filter-cover {
   z-index: 11;
   width: 100%;
   top: 0;
-  left: 0;
+  left: -100%;
+  visibility: hidden;
+  opacity: 0;
   background-color: #fff;
+  -webkit-transition: all .4s;
+  transition: all .4s;
 }
 
 @media only screen and (min-width: 991px) {
@@ -947,12 +957,16 @@ html.filter-calendar-open .filter-cover {
   height: 66px;
   overflow: hidden;
   bottom: 0;
-  left: 0;
+  left: -100%;
+  visibility: hidden;
+  opacity: 0;
   z-index: 10;
   gap: 10px;
   background: #FFFFFF;
   -webkit-box-shadow: 0px -4px 54px rgba(157, 157, 157, 0.2);
   box-shadow: 0px -4px 54px rgba(157, 157, 157, 0.2);
+  -webkit-transition: all .4s;
+  transition: all .4s;
 }
 
 @media only screen and (min-width: 991px) {
@@ -1227,12 +1241,6 @@ html.filter-calendar-open .filter-cover {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-@media only screen and (min-width: 991px) {
-  .item-results-filter__inputs {
-    display: none;
-  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -1771,6 +1779,14 @@ html.filter-calendar-open .filter-cover {
 @media only screen and (max-width: 767.98px) {
   .result-card .similar_slide-text {
     padding-right: 0;
+  }
+}
+
+@media only screen and (max-width: 575.98px) {
+  .result-card .similar_slide-text {
+    -webkit-line-clamp: none;
+    -webkit-box-orient: horizontal;
+    overflow: visible;
   }
 }
 

@@ -1,5 +1,15 @@
 /*--------------------search-results-page----------------------*/
 html{
+	&.mob-filters-open{
+		.results-filter,
+		.results-filter__header,
+		.results-filter__buttons{
+			visibility: visible;
+			opacity: 1;
+			left: 0;
+		}
+	}
+
 	&.filter-calendar-open{
 
 		.results-filter__item--dates{
@@ -30,6 +40,9 @@ html{
 			visibility: visible;
 			opacity: .34;
 		}
+	}
+	.results-filter__item--dates .item-results-filter__dd{
+		margin-bottom: 0;
 	}
 }
 .page-search-resuls {
@@ -189,15 +202,13 @@ html{
 		visibility: hidden;
 		opacity: 0;
 		transition: all .4s;
-		// transform: translateX(-100%);
 	}
 
-	&.active{
-		visibility: visible;
-		opacity: 1;
-		left: 0;
-		// transform: translateX(0);
-	}
+	// &.active{
+	// 	visibility: visible;
+	// 	opacity: 1;
+	// 	left: 0;
+	// }
 }
 .results-filter__header{
 	display: flex;
@@ -209,8 +220,11 @@ html{
   z-index: 11;
   width: 100%;
   top: 0;
-  left: 0;
+  left: -100%;
+	visibility: hidden;
+	opacity: 0;
   background-color: #fff;
+  transition: all .4s;
 
 	@include min-screen($md){
 		display: none;
@@ -347,11 +361,14 @@ html{
 	height: 66px;
 	overflow: hidden;
 	bottom: 0;
-	left: 0;
+	left: -100%;
+	visibility: hidden;
+	opacity: 0;
 	z-index: 10;
 	gap: 10px;
 	background: #FFFFFF;
 	box-shadow: 0px -4px 54px rgba(157, 157, 157, 0.2);
+	transition: all .4s;
 
 	@include min-screen($md){
 		display: none;
@@ -570,9 +587,9 @@ html{
 .item-results-filter__inputs{
 	display: flex;
 	align-items: center;
-	@include min-screen($md){
-		display: none;
-	}
+	// @include min-screen($md){
+	// 	display: none;
+	// }
 	.form_inp{
 		@include max-screen($md){
 			width: 129px;
