@@ -79,6 +79,8 @@
 	document.addEventListener('DOMContentLoaded', function() {
 		console.log('DOMContentLoaded!');
 
+		// console.log(picker);
+
 		$(document).on('click', function(e) {
 			var $target = $(e.target);
 			console.log(e.target)
@@ -133,6 +135,7 @@
 			if($target.attr('id') === 'mob-filters-show' || $target.closest('#mob-filters-show').length > 0){
 				// $('.results-filter').addClass('active');
 				$('html').addClass('mob-filters-open');
+				$('#datepicker-static').click();
 			}
 			if($target.hasClass('header-results-filter__close') || $target.closest('.header-results-filter__close').length > 0){
 				// $('.results-filter').removeClass('active');
@@ -151,7 +154,6 @@
 			// calendar mobile toggle
 			if($target.closest('.item-results-filter__calendar-button').length > 0 || $target.hasClass('item-results-filter__calendar-button')){
 				$('html').addClass('filter-calendar-open');
-				// $('#datepicker-static').click();
 			}
 			if($target.hasClass('filter-cover')){
 				$('html').removeClass('filter-calendar-open');
@@ -159,9 +161,19 @@
 			if($target.attr('id') === 'calendar-select'){
 				$('html').removeClass('filter-calendar-open');
 			}
-			// .item-results-filter__calendar-button
+			if($target.attr('id') === 'calendar-reset'){
+				$('#datepicker-static').val('');
+				$('#datepicker-static2').val('');
+				$('html').removeClass('filter-calendar-open');
+			}
+			if(screen.width <= 991){
+				if($target.attr('id') === 'datepicker-static' || $target.attr('id') === 'datepicker-static2'){
+					$('html').addClass('filter-calendar-open');
+				}
+			}
 			// END calendar mobile toggle
-		});
+		
+		});//document.click
 		
 		// $('.results-filter__map-open').on('click', function() {
 		
