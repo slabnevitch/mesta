@@ -1,4 +1,4 @@
-.filter-tags(onmousedown="grab(this)")
+.filter-tags
 	-var tags = [{name: 'Комплекс для отдыха', icon: 'type'}, {name: 'Интересные локации', icon: 'camera'}, {name: 'Отдых с детьми', icon: 'children'}, {name: 'Активный отдых', icon: 'helmet'}, {name: 'Оздоровительный отдых', icon: 'lotus'}, {name: 'Оздоровительный отдых', icon: 'lotus'}, {name: 'Туры', icon: 'minibus'}, {name: 'Эко-отдых', icon: 'lotus'}, {name: 'Винодельни', icon: 'grape'}, {name: 'Туристические города', icon: 'cities'}];
 	each tag, ind in tags
 		div(class=ind === 2 || ind === 7 ? "filter-tag active" : "filter-tag")

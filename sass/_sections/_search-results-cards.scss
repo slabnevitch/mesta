@@ -34,8 +34,11 @@
 			overflow: visible;
 			white-space: normal;
 
-			@include dots-family-multi(2);
 
+			@include max-screen($sm){
+				@include dots-family-multi(2);
+
+			}
 			// @include max-screen($sm){
 			// 	-webkit-line-clamp: none;
 			// 	-webkit-box-orient: horizontal;
@@ -55,6 +58,10 @@
 		}
 		.similar_slide-btn{
 			height: 52px;
+		}
+		.room_card-title:hover .tooltip_text{
+			visibility: hidden;
+			opacity: 0;
 		}
 	}
 	&--services{
@@ -99,6 +106,11 @@
 		@include max-screen($xs){
 			padding: 16px;
 		}
+	}
+	.result-card__link{
+		height: 100%;
+		display: flex;
+		flex-direction: column;
 	}
 	.similar_slide-top{
 		position: relative;
