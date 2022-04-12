@@ -180,6 +180,19 @@
 				}
 			}
 			// END service items active class toggle
+
+			// pagination dwopdown toggle
+			if($target.closest('.search-results-cards__pagin').length > 0 || $target.hasClass('search-results-cards__pagin')){
+				$target.closest('.search-results-cards__pagin').toggleClass('active');
+			}
+			if($target.hasClass('pagin-dropdown__item')){
+				$target.closest('.search-results-cards__pagin').removeClass('active');
+				$('.search-results-cards__places-val').text($target.text());
+			}
+			if(!$target.closest('.search-results-cards__pagin').length > 0 && !$target.hasClass('search-results-cards__pagin')){
+				$('.search-results-cards__pagin').removeClass('active');
+			}
+			// END pagination dwopdown toggle
 		
 		});//document.click
 

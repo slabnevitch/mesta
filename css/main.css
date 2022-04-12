@@ -1784,10 +1784,6 @@ html .results-filter__item--dates .item-results-filter__dd {
   }
 }
 
-.result-card:not(.result-card--services) .similar_slide-btn {
-  height: 52px;
-}
-
 .result-card:not(.result-card--services) .room_card-title:hover .tooltip_text {
   visibility: hidden;
   opacity: 0;
@@ -1834,7 +1830,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 .result-card .similar_slide-imgs .slick-next,
 .result-card .similar_slide-imgs .slick-prev {
-  display: none;
+  display: none !important;
 }
 
 .result-card .similar_slide-info {
@@ -1904,7 +1900,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 .result-card .similar_slide-text {
   padding-right: 29px;
   margin-bottom: 16px;
-  color: rgba(34, 34, 34, 0.6);
+  color: #222222;
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -1959,6 +1955,10 @@ html .results-filter__item--dates .item-results-filter__dd {
 .result-card .similar_slide-rating {
   padding-left: 35px;
   margin-left: -15px;
+}
+
+.result-card .similar_slide-rating .icon-rating {
+  color: #FC6733;
 }
 
 .result-card .result-card__bottom-box {
@@ -2041,6 +2041,7 @@ html .results-filter__item--dates .item-results-filter__dd {
   width: calc(100% - 24px);
   margin-right: 12px;
   margin-left: 12px;
+  font-size: 14px;
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -2118,6 +2119,12 @@ html .results-filter__item--dates .item-results-filter__dd {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.search-results-cards__pagin.active .pagin-dropdown {
+  display: block;
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -2150,6 +2157,26 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 .search-results-cards__places-count .icon-faq_arrow {
   margin-left: 10px;
+}
+
+.pagin-dropdown {
+  position: absolute;
+  display: none;
+  width: 80px;
+  right: 0;
+  top: 100%;
+  padding: 8px 16px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 24px rgba(34, 34, 34, 0.25);
+  box-shadow: 0px 4px 24px rgba(34, 34, 34, 0.25);
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+}
+
+.pagin-dropdown__item {
+  padding: 8px 0;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 /*--------------------END search-results-cards----------------------*/

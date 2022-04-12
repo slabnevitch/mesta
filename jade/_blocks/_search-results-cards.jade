@@ -47,14 +47,11 @@
 
 					.similar_slide-link
 						.similar_slide-sutitle
-							if(i%2 == 0)
-								.similar_slide-reviews 11 отзывов
-							else
-								.similar_slide-rating
-									| 8.1/10
-									span.icon-rating
+							.similar_slide-rating
+								| 8.1/10
+								span.icon-rating
 
-								.similar_slide-reviews 11 отзывов
+							.similar_slide-reviews 11 отзывов
 
 						if(i%2 !== 0)
 							.result-card__bottom-box
@@ -78,5 +75,10 @@
 		.search-results-cards__pagin
 			.search-results-cards__places Мест на странице
 			.search-results-cards__places-count
-				span 12
+				span.search-results-cards__places-val 12
 				span.icon-faq_arrow
+
+			.pagin-dropdown
+				.pagin-dropdown__item 12
+				.pagin-dropdown__item 24
+
