@@ -144,8 +144,11 @@
 
 			// filter-tags active class toggle
 			if($target.closest('.filter-tag').length > 0){
-					console.log('filter tag active')
 				$target.closest('.filter-tag').toggleClass('active');
+				if($('.filter-tags-wrapper .filter-tag').index($target.closest('.filter-tag')) === $('.filter-tags-wrapper .filter-tag').length - 1){
+					$('.filter-tags').scrollLeft($('.filter-tags-wrapper .filter-tags').width() + $('.filter-tags-wrapper .filter-tags').eq(0).scrollLeft());
+				}
+
 			}
 
 			// END filter-tags active class toggle
@@ -271,11 +274,11 @@
 		// filter-tags scroll check
 			if($('.filter-tags-wrapper').length){
 				$('.filter-tags').on('scroll', function(e) {				
-						if(($(this).width() + e.target.scrollLeft) >= e.target.scrollWidth - $('.filter-tags-wrapper').find('.filter-tag').last().width()){
-							$('.filter-tags-wrapper').addClass('cover-disabled');
-						}else{
-							$('.filter-tags-wrapper').removeClass('cover-disabled');
-						}
+					if(($(this).width() + e.target.scrollLeft) >= e.target.scrollWidth - $('.filter-tags-wrapper').find('.filter-tag').last().width()){
+						$('.filter-tags-wrapper').addClass('cover-disabled');
+					}else{
+						$('.filter-tags-wrapper').removeClass('cover-disabled');
+					}
 				});
 			}
 			// END filter-tags scroll check

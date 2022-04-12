@@ -763,7 +763,6 @@ html .results-filter__item--dates .item-results-filter__dd {
   background: #FFFFFF;
   -webkit-border-radius: 44px;
   border-radius: 44px;
-  cursor: pointer;
 }
 
 .results-filter__item--services .item-results-filter__dd {
@@ -969,7 +968,9 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 .item-results-filter__dd .range .noUi-value {
-  padding-top: 7px;
+  padding-top: 30px;
+  margin-top: -33px;
+  z-index: 1;
   font-weight: 500;
   font-size: 14px;
   line-height: 14px;
@@ -1097,7 +1098,6 @@ html .results-filter__item--dates .item-results-filter__dd {
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-  cursor: pointer;
 }
 
 .item-results-filter__label:not(:last-child) {
@@ -1170,7 +1170,6 @@ html .results-filter__item--dates .item-results-filter__dd {
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.3);
-  visibility: hidden;
   -webkit-transition: all .3s;
   transition: all .3s;
   -webkit-transform: translate3d(100%, 0, 0);
@@ -1197,6 +1196,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 .resuls-map__close .icon-delete {
+  color: #FC6733;
   display: block;
   max-width: 100%;
   max-height: 100%;
@@ -1448,8 +1448,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 .result-card .similar_slide-img {
-  padding-bottom: 20.13%;
-  height: 0px;
+  height: 356px;
 }
 
 .result-card .similar_slide-adres {
@@ -1666,6 +1665,10 @@ html .results-filter__item--dates .item-results-filter__dd {
     display: none;
   }
 
+  .results-filter__item {
+    cursor: pointer;
+  }
+
   .results-filter__buttons {
     display: none;
   }
@@ -1674,8 +1677,16 @@ html .results-filter__item--dates .item-results-filter__dd {
     display: none;
   }
 
+  .item-results-filter__dd .place_service-item {
+    cursor: pointer;
+  }
+
   .item-results-filter__inputs {
     margin-bottom: 10px;
+  }
+
+  .item-results-filter__label {
+    cursor: pointer;
   }
 
   .results-mobile-toggler {
@@ -1692,6 +1703,13 @@ html .results-filter__item--dates .item-results-filter__dd {
   .title-with-dd {
     margin-bottom: -webkit-calc(31px + 14 * ((100vw - 320px) / 910));
     margin-bottom: calc(31px + 14 * ((100vw - 320px) / 910));
+  }
+}
+
+@media only screen and (max-width: 1230px) {
+  .result-card .similar_slide-img {
+    height: 0;
+    padding-bottom: 20.13%;
   }
 }
 
