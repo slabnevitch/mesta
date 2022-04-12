@@ -144,9 +144,10 @@
 
 			// filter-tags active class toggle
 			if($target.closest('.filter-tag').length > 0){
-					console.log($('.filter-tags-wrapper .filter-tag')).length);
-					console.log($target.closest('.filter-tag').index($('.filter-tags-wrapper .filter-tag')));
 				$target.closest('.filter-tag').toggleClass('active');
+				if($('.filter-tags-wrapper .filter-tag').index($target.closest('.filter-tag')) === $('.filter-tags-wrapper .filter-tag').length - 1){
+					$('.filter-tags').scrollLeft($('.filter-tags-wrapper .filter-tags').width() + $('.filter-tags-wrapper .filter-tags').eq(0).scrollLeft());
+				}
 
 			}
 
