@@ -275,7 +275,6 @@ html{
 	padding: 8px 20px;
 	background: #FFFFFF;
 	border-radius: 44px;
-	cursor: pointer;
 
 	@include max-screen($md){
 		height: auto;
@@ -284,6 +283,10 @@ html{
 		padding-left: 19.5px;
 		padding-right: 19.5px;
 		border-radius: 0;
+	}
+
+	@include min-screen($md){
+		cursor: pointer;
 	}
 
 	&--services{
@@ -502,6 +505,9 @@ html{
 			line-height: 1.5;
 			padding: 8px 8px 8px 40px;
 		}
+		@include min-screen($md){
+			cursor: pointer;
+		}
 
 		&:last-child{
 			margin-right: 0;	
@@ -562,7 +568,9 @@ html{
 			}
 		}
 		.noUi-value{
-			padding-top: 7px;
+			padding-top: 30px;
+			margin-top: -33px;
+			z-index: 1;
 			font-weight: 500;
 			font-size: 14px;
 			line-height: 14px;
@@ -681,10 +689,14 @@ html{
 	display: flex;
 	align-items: center;
 	position: relative;
-	cursor: pointer;
 
 	&:not(:last-child){
 		margin-bottom: 17px;
+	}
+
+	@include min-screen($md){
+		cursor: pointer;
+		
 	}
 }
 .item-results-filter__input {
@@ -728,7 +740,7 @@ html{
 	left: 0;
 	top: 0;
 	background-color: rgba(#000, .3);
-	visibility: hidden;
+	// visibility: hidden;
 	transition: all .3s;
 	transform: translate3d(100%, 0, 0);
 
@@ -749,6 +761,7 @@ html{
 	z-index: 2;
 	
 	.icon-delete {
+		color: $accent;
 		@include absolute-center;
 	}
 }

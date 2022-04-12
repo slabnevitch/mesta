@@ -144,8 +144,10 @@
 
 			// filter-tags active class toggle
 			if($target.closest('.filter-tag').length > 0){
-					console.log('filter tag active')
+					console.log($('.filter-tags-wrapper .filter-tag')).length);
+					console.log($target.closest('.filter-tag').index($('.filter-tags-wrapper .filter-tag')));
 				$target.closest('.filter-tag').toggleClass('active');
+
 			}
 
 			// END filter-tags active class toggle
@@ -271,11 +273,11 @@
 		// filter-tags scroll check
 			if($('.filter-tags-wrapper').length){
 				$('.filter-tags').on('scroll', function(e) {				
-						if(($(this).width() + e.target.scrollLeft) >= e.target.scrollWidth - $('.filter-tags-wrapper').find('.filter-tag').last().width()){
-							$('.filter-tags-wrapper').addClass('cover-disabled');
-						}else{
-							$('.filter-tags-wrapper').removeClass('cover-disabled');
-						}
+					if(($(this).width() + e.target.scrollLeft) >= e.target.scrollWidth - $('.filter-tags-wrapper').find('.filter-tag').last().width()){
+						$('.filter-tags-wrapper').addClass('cover-disabled');
+					}else{
+						$('.filter-tags-wrapper').removeClass('cover-disabled');
+					}
 				});
 			}
 			// END filter-tags scroll check

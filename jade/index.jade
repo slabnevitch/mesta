@@ -132,19 +132,6 @@ block page-scripts
 	script(src="js/jquery.fancybox.min.js")
 	script(src="js/slider.js")
 	script(src="js/main.js")
-	script.
-		function grab(g) {
-
-			g.onmousemove = function(e) {
-				console.log('fdfd')
-				g.scrollLeft += -e.movementX;
-				return false;
-			}
-
-			g.onmouseleave = function() { g.onmousemove = null; }
-			g.onmouseup = function() { g.onmousemove = null; }
-		}
-    
 	
 	//- SERVIVE FUNCTIONS==================
 

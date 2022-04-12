@@ -846,7 +846,6 @@ html .results-filter__item--dates .item-results-filter__dd {
   background: #FFFFFF;
   -webkit-border-radius: 44px;
   border-radius: 44px;
-  cursor: pointer;
 }
 
 @media only screen and (max-width: 991px) {
@@ -859,6 +858,12 @@ html .results-filter__item--dates .item-results-filter__dd {
     padding-right: 19.5px;
     -webkit-border-radius: 0;
     border-radius: 0;
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  .results-filter__item {
+    cursor: pointer;
   }
 }
 
@@ -1140,6 +1145,12 @@ html .results-filter__item--dates .item-results-filter__dd {
   }
 }
 
+@media only screen and (min-width: 991px) {
+  .item-results-filter__dd .place_service-item {
+    cursor: pointer;
+  }
+}
+
 .item-results-filter__dd .place_service-item:last-child {
   margin-right: 0;
 }
@@ -1208,7 +1219,9 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 .item-results-filter__dd .range .noUi-value {
-  padding-top: 7px;
+  padding-top: 30px;
+  margin-top: -33px;
+  z-index: 1;
   font-weight: 500;
   font-size: 14px;
   line-height: 14px;
@@ -1367,11 +1380,16 @@ html .results-filter__item--dates .item-results-filter__dd {
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-  cursor: pointer;
 }
 
 .item-results-filter__label:not(:last-child) {
   margin-bottom: 17px;
+}
+
+@media only screen and (min-width: 991px) {
+  .item-results-filter__label {
+    cursor: pointer;
+  }
 }
 
 .item-results-filter__input {
@@ -1440,7 +1458,6 @@ html .results-filter__item--dates .item-results-filter__dd {
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.3);
-  visibility: hidden;
   -webkit-transition: all .3s;
   transition: all .3s;
   -webkit-transform: translate3d(100%, 0, 0);
@@ -1467,6 +1484,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 .resuls-map__close .icon-delete {
+  color: #FC6733;
   display: block;
   max-width: 100%;
   max-height: 100%;
