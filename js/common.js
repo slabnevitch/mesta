@@ -79,6 +79,8 @@
 	document.addEventListener('DOMContentLoaded', function() {
 		console.log('DOMContentLoaded!');
 
+		// console.log(picker);
+
 		$(document).on('click', function(e) {
 			var $target = $(e.target);
 			console.log(e.target)
@@ -159,13 +161,40 @@
 			if($target.attr('id') === 'calendar-select'){
 				$('html').removeClass('filter-calendar-open');
 			}
-			// .item-results-filter__calendar-button
+			if($target.attr('id') === 'calendar-reset'){
+				$('#datepicker-static').val('');
+				$('#datepicker-static2').val('');
+				$('html').removeClass('filter-calendar-open');
+			}
+			if(screen.width <= 991){
+				if($target.attr('id') === 'datepicker-static' || $target.attr('id') === 'datepicker-static2'){
+					$('html').addClass('filter-calendar-open');
+				}
+			}
 			// END calendar mobile toggle
-		});
+
+			// service items active class toggle
+			if($('.place_service-item').closest('.item-results-filter__dd').length > 0){
+				if($target.closest('.place_service-item').length > 0 && !$target.closest('.place_service-item').hasClass('disabled')){
+					$target.closest('.place_service-item').toggleClass('active');
+				}
+			}
+			// END service items active class toggle
+
+			// pagination dwopdown toggle
+			if($target.closest('.search-results-cards__pagin').length > 0 || $target.hasClass('search-results-cards__pagin')){
+				$target.closest('.search-results-cards__pagin').toggleClass('active');
+			}
+			if($target.hasClass('pagin-dropdown__item')){
+				$target.closest('.search-results-cards__pagin').removeClass('active');
+				$('.search-results-cards__places-val').text($target.text());
+			}
+			if(!$target.closest('.search-results-cards__pagin').length > 0 && !$target.hasClass('search-results-cards__pagin')){
+				$('.search-results-cards__pagin').removeClass('active');
+			}
+			// END pagination dwopdown toggle
 		
-		// $('.results-filter__map-open').on('click', function() {
-		
-		// });
+		});//document.click
 
 		// noUiSlider
 		if(document.querySelector('.range-slider') !== null){
@@ -192,7 +221,17 @@
 			});
 
 			slider.noUiSlider.on('update', getValues);
-			// slider.noUiSlider.on('set', getValues);
+
+			var pips = slider.querySelectorAll('.noUi-value');
+			
+			for (var i = 0; i < pips.length; i++) {
+			    pips[i].addEventListener('click', clickOnPip);
+			}
+
+			function clickOnPip() {
+			    var value = Number(this.firstChild.textContent);
+			    slider.noUiSlider.set(value);
+			}
 
 			function getValues() {
 				// console.log(slider.noUiSlider.get())
@@ -228,5 +267,18 @@
 			});
 		}
 		// END result-form check
+
+		// filter-tags scroll check
+			if($('.filter-tags-wrapper').length){
+				$('.filter-tags').on('scroll', function(e) {				
+						if(($(this).width() + e.target.scrollLeft) >= e.target.scrollWidth - $('.filter-tags-wrapper').find('.filter-tag').last().width()){
+							$('.filter-tags-wrapper').addClass('cover-disabled');
+						}else{
+							$('.filter-tags-wrapper').removeClass('cover-disabled');
+						}
+				});
+			}
+			// END filter-tags scroll check
+		
 	});
 })();
