@@ -583,6 +583,10 @@ html .results-filter__item--dates .item-results-filter__dd {
   }
 }
 
+.filter-tags-wrapper.cover-disabled .filter-tags-wrapper__cover {
+  display: none;
+}
+
 .filter-cover {
   visibility: hidden;
   opacity: 0;
@@ -647,7 +651,7 @@ html .results-filter__item--dates .item-results-filter__dd {
   -ms-flex-align: center;
   align-items: center;
   height: 40px;
-  padding: 10px 15.44px;
+  padding: 10px 12.68px;
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -677,6 +681,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 .filter-tag .icon-close {
   display: none;
   color: #fff;
+  font-size: 12px;
 }
 
 .filter-tag__icon {
@@ -1081,6 +1086,16 @@ html .results-filter__item--dates .item-results-filter__dd {
   }
 }
 
+.item-results-filter__dd .place_service-item.active {
+  color: #fff;
+  background-color: #FC6733;
+  border-color: #FC6733;
+}
+
+.item-results-filter__dd .place_service-item.active .place_service-item-icon {
+  color: #fff;
+}
+
 @media only screen and (max-width: 576px) {
   .item-results-filter__dd .place_service-item {
     font-size: 14px;
@@ -1096,6 +1111,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 .item-results-filter__dd .place_service-item.disabled {
   background-color: rgba(34, 34, 34, 0.1);
   color: #fff;
+  border-color: transparent;
 }
 
 .item-results-filter__dd .place_service-item.disabled .place_service-item-icon {
@@ -1578,6 +1594,11 @@ html .results-filter__item--dates .item-results-filter__dd {
   text-align: center;
 }
 
+.search-resuls-plug .icon-search-big {
+  font-size: 45px;
+  color: #FC6733;
+}
+
 .search-resuls-plug p {
   margin: 0 auto;
   max-width: 492px;
@@ -1763,7 +1784,8 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 .result-card .similar_slide-img {
-  padding-bottom: 20.2%;
+  padding-bottom: 20.13%;
+  height: 0px;
 }
 
 .result-card .similar_slide-adres {
@@ -1947,9 +1969,15 @@ html .results-filter__item--dates .item-results-filter__dd {
   color: #222222;
 }
 
+.search-results-cards__offers-all {
+  font-size: 14px;
+}
+
 .search-results-cards__more {
   width: 154px;
   height: 52px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -1992,6 +2020,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 .search-results-cards__places {
   margin-right: 16px;
   color: #222222;
+  font-size: 14px;
 }
 
 .search-results-cards__places-count {

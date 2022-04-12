@@ -172,12 +172,16 @@
 				}
 			}
 			// END calendar mobile toggle
+
+			// service items active class toggle
+			if($('.place_service-item').closest('.item-results-filter__dd').length > 0){
+				if($target.closest('.place_service-item').length > 0 && !$target.closest('.place_service-item').hasClass('disabled')){
+					$target.closest('.place_service-item').toggleClass('active');
+				}
+			}
+			// END service items active class toggle
 		
 		});//document.click
-		
-		// $('.results-filter__map-open').on('click', function() {
-		
-		// });
 
 		// noUiSlider
 		if(document.querySelector('.range-slider') !== null){
@@ -240,5 +244,18 @@
 			});
 		}
 		// END result-form check
+
+		// filter-tags scroll check
+			if($('.filter-tags-wrapper').length){
+				$('.filter-tags').on('scroll', function(e) {				
+						if(($(this).width() + e.target.scrollLeft) >= e.target.scrollWidth - $('.filter-tags-wrapper').find('.filter-tag').last().width()){
+							$('.filter-tags-wrapper').addClass('cover-disabled');
+						}else{
+							$('.filter-tags-wrapper').removeClass('cover-disabled');
+						}
+				});
+			}
+			// END filter-tags scroll check
+		
 	});
 })();

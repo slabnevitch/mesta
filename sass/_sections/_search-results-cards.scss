@@ -110,7 +110,8 @@
 		}  
 	}
 	.similar_slide-img{
-		padding-bottom: 20.2%;
+		padding-bottom: 20.13%;
+		height: 0px;
 	}
 	.similar_slide-adres {
 		color: #222222;
@@ -225,10 +226,14 @@
 	margin-right: 4px;
 	color: #222222;
 }
-.search-results-cards__offers-all {}
+.search-results-cards__offers-all {
+	font-size: 14px;
+}
 .search-results-cards__more {
 		width: 154px;
 		height: 52px;
+		font-size: 14px;
+		font-weight: 500;
 		
 		@include max-screen($sm){
 			width: 100%;
@@ -258,6 +263,7 @@
 .search-results-cards__places {
 	margin-right: 16px;
 	color: #222222;
+	font-size: 14px;
 }
 .search-results-cards__places-count {
 	padding: 0 23px;

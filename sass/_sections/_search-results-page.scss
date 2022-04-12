@@ -89,11 +89,15 @@ html{
 }
 .filter-tags-wrapper{
 	position: relative;
+	
 	@include max-screen($md){
 		margin-right: -15px;
 	}
-	@include max-screen($sm){
-		
+
+	&.cover-disabled{
+		.filter-tags-wrapper__cover{
+			display: none;
+		}
 	}
 }
 .filter-cover{
@@ -126,9 +130,6 @@ html{
 		margin-bottom: 24px;
 		
 	}
-
-
-
 }
 .filter-tags-wrapper__cover{
 	width: 31px;
@@ -143,7 +144,7 @@ html{
 	display: flex;
 	align-items: center;
 	height: 40px;
-	padding: 10px 15.44px;
+	padding: 10px 12.68px;
 	flex: 0 0 auto;
 	background: #FFFFFF;
 	border-radius: 20px;
@@ -165,6 +166,7 @@ html{
 	.icon-close {
 		display: none;
 		color: #fff;
+		font-size: 12px;
 	}
 
 }
@@ -440,7 +442,6 @@ html{
 	visibility: hidden;
 	transition: all .3s;
 	cursor: auto;
-	// overflow: hidden;
 
 	@include max-screen($md){
 		opacity: 1;
@@ -454,6 +455,16 @@ html{
 	}
 
 	.place_service-item {
+		&.active{
+			color: #fff;
+			background-color: $accent;
+			border-color: $accent;
+
+			.place_service-item-icon{
+				color: #fff;
+			}
+		}
+
 		@include max-screen($xs){
 			font-size: 14px;
 			line-height: 1.5;
@@ -467,7 +478,7 @@ html{
 		&.disabled{
 			background-color: rgba(34, 34, 34, 0.1);
 			color: #fff;
-			// border-color: rgba(34, 34, 34, 0.1);
+			border-color: transparent;
 
 			.place_service-item-icon{
 				color: #fff;
@@ -825,6 +836,12 @@ html{
 	padding-top: 74px;
 	min-height: 300px;
 	text-align: center;
+
+	.icon-search-big{
+		font-size: 45px;
+		color: $accent;
+	}
+
 	p{
 		margin: 0 auto;
 		max-width: 492px;
