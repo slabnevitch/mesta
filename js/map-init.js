@@ -71,7 +71,7 @@ ymaps.ready(init);
        var myMap = new ymaps.Map("map", {
             center: [56.353475, 44.009309],
             zoom: 11,
-           	controls: ['zoomControl'], //оставляем только масштабирование
+           	controls: ['zoomControl', 'fullscreenControl'], //оставляем только масштабирование
            	// behaviors: ['drag'] //оставляем только поведение drag
         });
 

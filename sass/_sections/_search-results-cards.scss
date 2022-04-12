@@ -125,8 +125,12 @@
 		}  
 	}
 	.similar_slide-img{
-		padding-bottom: 20.13%;
-		height: 0px;
+		height: 356px;
+
+		@include max-screen(1230px){
+			height: 0;
+			padding-bottom: 20.13%;
+		}
 	}
 	.similar_slide-adres {
 		color: #222222;

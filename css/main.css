@@ -1907,8 +1907,14 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 .result-card .similar_slide-img {
-  padding-bottom: 20.13%;
-  height: 0px;
+  height: 356px;
+}
+
+@media only screen and (max-width: 1230px) {
+  .result-card .similar_slide-img {
+    height: 0;
+    padding-bottom: 20.13%;
+  }
 }
 
 .result-card .similar_slide-adres {
