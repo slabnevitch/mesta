@@ -135,7 +135,6 @@
 			if($target.attr('id') === 'mob-filters-show' || $target.closest('#mob-filters-show').length > 0){
 				// $('.results-filter').addClass('active');
 				$('html').addClass('mob-filters-open');
-				$('#datepicker-static').click();
 			}
 			if($target.hasClass('header-results-filter__close') || $target.closest('.header-results-filter__close').length > 0){
 				// $('.results-filter').removeClass('active');
@@ -154,6 +153,7 @@
 			// calendar mobile toggle
 			if($target.closest('.item-results-filter__calendar-button').length > 0 || $target.hasClass('item-results-filter__calendar-button')){
 				$('html').addClass('filter-calendar-open');
+				// $('#datepicker-static').click();
 			}
 			if($target.hasClass('filter-cover')){
 				$('html').removeClass('filter-calendar-open');
@@ -208,7 +208,17 @@
 			});
 
 			slider.noUiSlider.on('update', getValues);
-			// slider.noUiSlider.on('set', getValues);
+
+			var pips = slider.querySelectorAll('.noUi-value');
+			
+			for (var i = 0; i < pips.length; i++) {
+			    pips[i].addEventListener('click', clickOnPip);
+			}
+
+			function clickOnPip() {
+			    var value = Number(this.firstChild.textContent);
+			    slider.noUiSlider.set(value);
+			}
 
 			function getValues() {
 				// console.log(slider.noUiSlider.get())

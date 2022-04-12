@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Страница выдачи</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://easepick.com/assets/css/demo_hotelcal.css">
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
@@ -39,7 +39,7 @@
           <div class="crumbs"><a href="#" class="crumbs_back"><span class="icon-back"></span></a></div>
           <div class="title-with-dd"><span>Куда поехать из </span><a href="#">Нижний Новгород</a></div>
           <div class="filter-tags-wrapper">
-            <div class="filter-tags">
+            <div onmousedown="grab(this)" class="filter-tags">
               <div class="filter-tag"><span class="filter-tag__icon icon-type"></span><span class="filter-tag__name">Комплекс для отдыха</span><span class="icon-close"></span></div>
               <div class="filter-tag"><span class="filter-tag__icon icon-camera"></span><span class="filter-tag__name">Интересные локации</span><span class="icon-close"></span></div>
               <div class="filter-tag active"><span class="filter-tag__icon icon-children"></span><span class="filter-tag__name">Отдых с детьми</span><span class="icon-close"></span></div>
@@ -147,7 +147,11 @@
           </div>
           <div class="search-results-cards">
             <div class="result-card similar_slide">
-              <div class="similar_slide-imgs img_slider"><a href="img/similar_slide.jpg" data-fancybox="similar_slide1" style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></a><a href="img/place_img6.png" data-fancybox="similar_slide1" style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></a><a href="img/place_page.png" data-fancybox="similar_slide1" style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></a></div>
+              <div class="similar_slide-imgs img_slider">
+                <div style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+              </div>
               <div class="similar_slide-info">
                 <div class="similar_slide-top"><a href="#" title="" class="room_card-title tooltip">Шале 3-х местный Шале 3-х местный Шале 3-х местный<span class="tooltip_text">Шале 3-х местный Шале 3-х местный Шале 3-х местный</span></a>
                   <div class="similar_slide-like"><span class="icon-like_card"></span></div>
@@ -167,7 +171,11 @@
               </div>
             </div>
             <div class="result-card result-card--services similar_slide">
-              <div class="similar_slide-imgs img_slider"><a href="img/similar_slide.jpg" data-fancybox="similar_slide1" style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></a><a href="img/place_img6.png" data-fancybox="similar_slide1" style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></a><a href="img/place_page.png" data-fancybox="similar_slide1" style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></a></div>
+              <div class="similar_slide-imgs img_slider">
+                <div style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+              </div>
               <div class="similar_slide-info">
                 <div class="similar_slide-top"><a href="#" title="" class="room_card-title tooltip">Шале 3-х местный Шале 3-х местный Шале 3-х местный<span class="tooltip_text">Шале 3-х местный Шале 3-х местный Шале 3-х местный</span></a>
                   <div class="similar_slide-like"><span class="icon-like_card"></span></div>
@@ -202,7 +210,11 @@
               </div>
             </div>
             <div class="result-card similar_slide">
-              <div class="similar_slide-imgs img_slider"><a href="img/similar_slide.jpg" data-fancybox="similar_slide1" style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></a><a href="img/place_img6.png" data-fancybox="similar_slide1" style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></a><a href="img/place_page.png" data-fancybox="similar_slide1" style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></a></div>
+              <div class="similar_slide-imgs img_slider">
+                <div style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+              </div>
               <div class="similar_slide-info">
                 <div class="similar_slide-top"><a href="#" title="" class="room_card-title tooltip">Шале 3-х местный Шале 3-х местный Шале 3-х местный<span class="tooltip_text">Шале 3-х местный Шале 3-х местный Шале 3-х местный</span></a>
                   <div class="similar_slide-like"><span class="icon-like_card"></span></div>
@@ -222,7 +234,11 @@
               </div>
             </div>
             <div class="result-card result-card--services similar_slide">
-              <div class="similar_slide-imgs img_slider"><a href="img/similar_slide.jpg" data-fancybox="similar_slide1" style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></a><a href="img/place_img6.png" data-fancybox="similar_slide1" style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></a><a href="img/place_page.png" data-fancybox="similar_slide1" style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></a></div>
+              <div class="similar_slide-imgs img_slider">
+                <div style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+              </div>
               <div class="similar_slide-info">
                 <div class="similar_slide-top"><a href="#" title="" class="room_card-title tooltip">Шале 3-х местный Шале 3-х местный Шале 3-х местный<span class="tooltip_text">Шале 3-х местный Шале 3-х местный Шале 3-х местный</span></a>
                   <div class="similar_slide-like"><span class="icon-like_card"></span></div>
@@ -257,7 +273,11 @@
               </div>
             </div>
             <div class="result-card similar_slide">
-              <div class="similar_slide-imgs img_slider"><a href="img/similar_slide.jpg" data-fancybox="similar_slide1" style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></a><a href="img/place_img6.png" data-fancybox="similar_slide1" style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></a><a href="img/place_page.png" data-fancybox="similar_slide1" style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></a></div>
+              <div class="similar_slide-imgs img_slider">
+                <div style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+              </div>
               <div class="similar_slide-info">
                 <div class="similar_slide-top"><a href="#" title="" class="room_card-title tooltip">Шале 3-х местный Шале 3-х местный Шале 3-х местный<span class="tooltip_text">Шале 3-х местный Шале 3-х местный Шале 3-х местный</span></a>
                   <div class="similar_slide-like"><span class="icon-like_card"></span></div>
@@ -277,7 +297,11 @@
               </div>
             </div>
             <div class="result-card result-card--services similar_slide">
-              <div class="similar_slide-imgs img_slider"><a href="img/similar_slide.jpg" data-fancybox="similar_slide1" style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></a><a href="img/place_img6.png" data-fancybox="similar_slide1" style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></a><a href="img/place_page.png" data-fancybox="similar_slide1" style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></a></div>
+              <div class="similar_slide-imgs img_slider">
+                <div style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+              </div>
               <div class="similar_slide-info">
                 <div class="similar_slide-top"><a href="#" title="" class="room_card-title tooltip">Шале 3-х местный Шале 3-х местный Шале 3-х местный<span class="tooltip_text">Шале 3-х местный Шале 3-х местный Шале 3-х местный</span></a>
                   <div class="similar_slide-like"><span class="icon-like_card"></span></div>
@@ -339,7 +363,7 @@
         <div class="resuls-map__close"><span class="icon-delete"></span></div>
         <div id="map" class="resuls-map__map"></div>
         <div class="resuls-map__bottom">
-          <div class="filter-tags">
+          <div onmousedown="grab(this)" class="filter-tags">
             <div class="filter-tag"><span class="filter-tag__icon icon-type"></span><span class="filter-tag__name">Комплекс для отдыха</span><span class="icon-close"></span></div>
             <div class="filter-tag"><span class="filter-tag__icon icon-camera"></span><span class="filter-tag__name">Интересные локации</span><span class="icon-close"></span></div>
             <div class="filter-tag active"><span class="filter-tag__icon icon-children"></span><span class="filter-tag__name">Отдых с детьми</span><span class="icon-close"></span></div>
@@ -382,6 +406,21 @@
     <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      function grab(g) {
+      
+      	g.onmousemove = function(e) {
+      		console.log('fdfd')
+      		g.scrollLeft += -e.movementX;
+      		return false;
+      	}
+      
+      	g.onmouseleave = function() { g.onmousemove = null; }
+      	g.onmouseup = function() { g.onmousemove = null; }
+      }
+        
+      
+    </script>
     
     
     <script src="js/libs/noUiSlider/nouislider.min.js"></script>

@@ -92,12 +92,23 @@ html{
 	
 	@include max-screen($md){
 		margin-right: -15px;
+		height: 51px;
+		margin-top: -10px;
+		overflow: hidden;
 	}
+
+	@include max-screen($xs){
+		height: 36px;
+	}  
 
 	&.cover-disabled{
 		.filter-tags-wrapper__cover{
 			display: none;
 		}
+	}
+	.filter-tags{
+		margin-top: 10px;
+		padding-bottom: 15px;
 	}
 }
 .filter-cover{
@@ -122,7 +133,7 @@ html{
 
 	@include max-screen($md){
 		flex-wrap: nowrap;
-		overflow: auto;
+		overflow-x: auto;
 		padding-bottom: 5px;
 	}
 
@@ -311,11 +322,28 @@ html{
 				margin-bottom: 27px;
 			}
 		}  
+		.item-results-filter__dd{
+			.btn{
+				@include max-screen($md){
+					display: none;
+				}  
+			}
+		} 
 	}
 	&--prices{
 		@include max-screen($md){
 			margin-bottom: 10px;
-		}  
+		} 
+		.item-results-filter__dd{
+			.item-results-filter__form{
+				margin-bottom: 0;
+			}
+			.btn{
+				@include max-screen($md){
+					display: none;
+				}  
+			}
+		} 
 	}
 	&.active{
 		.item-results-filter__dd {
@@ -417,6 +445,10 @@ html{
 }
 .item-results-filter__sort-key{
 	margin-left: 10px;
+
+	@include max-screen($md){
+		display: none;
+	}  
 }
 .item-results-filter__caption{
 	margin-bottom: 25px;
@@ -513,7 +545,7 @@ html{
 
 		.noUi-target{
 			background-color: #E5E5E5;
-			// border: none;
+			border: none;
 			border-color:  #E5E5E5;
 		}
 		.noUi-horizontal{
@@ -537,6 +569,7 @@ html{
 			color: rgba(34, 34, 34, 0.4);
 		}
 		.noUi-connect{
+			height: 3px;
 			top: 0;
 			background-color: $accent;
 			margin-left: -15px;
@@ -598,19 +631,22 @@ html{
 .item-results-filter__inputs{
 	display: flex;
 	align-items: center;
-	// @include min-screen($md){
-	// 	display: none;
-	// }
+
+	@include min-screen($md){
+		margin-bottom: 10px;
+	}
+
 	.form_inp{
 		@include max-screen($md){
-			width: 129px;
+			flex: 1 1 129px;
+			width: 0;
 			padding-left: 16px;
 			border: 1px solid rgba(26, 27, 50, 0.2);
 			border-radius: 8px;
 			font-size: 16px;
 		}
 		@include max-screen(360px){
-			width: 102px;
+			padding-left: 5px;
 		}
 	}
 	.item-results-filter__divide{
@@ -686,7 +722,7 @@ html{
 }
 .resuls-map {
 	position: fixed;
-	z-index: 11;
+	z-index: 21;
 	width: 100%;
 	height: 100%;
 	left: 0;
@@ -729,9 +765,30 @@ html{
 	right: 0;
 	left: 0;
 	margin: auto;
+
+	@include max-screen($md){
+		padding-top: 8px;
+		padding-bottom: 8px;
+		background: rgba(249, 249, 250, 0.3);
+		backdrop-filter: blur(4px);
+		
+		@supports (backdrop-filter: blur(4px)) or (--webkit-backdrop-filter: blur(4px)){// определение поддержки блюра без джаваскрипт
+			background-color: rgba(255, 255, 255, .3);
+			backdrop-filter: blur(4px);
+		}
+		
+	}  
 	
 	.filter-tags {
 		justify-content: center;
+
+		&::-webkit-scrollbar {
+		    visibility: hidden;
+				height: 0;
+				width: 0;
+			@include max-screen($md){
+			}  
+		}
 
 		@include max-screen($md){
 			flex-wrap: wrap;
@@ -761,8 +818,16 @@ html{
 		}  
 
 		&.active{
+			@include max-screen($md){
+				
+				background-color: #fff;
+			}  
 			.filter-tag__icon{
 				color: #fff;
+				@include max-screen($md){
+					color: $accent;
+
+				}
 			}
 		}
 

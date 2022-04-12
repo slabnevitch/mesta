@@ -36,11 +36,11 @@
 
 			@include dots-family-multi(2);
 
-			@include max-screen($sm){
-				-webkit-line-clamp: none;
-				-webkit-box-orient: horizontal;
-				overflow: visible;
-			}  
+			// @include max-screen($sm){
+			// 	-webkit-line-clamp: none;
+			// 	-webkit-box-orient: horizontal;
+			// 	overflow: visible;
+			// }  
 		}
 		.similar_slide-link{
 			@include max-screen($xss){
@@ -66,6 +66,7 @@
 			@include max-screen($sm){
 				overflow: visible;
 				white-space: normal;
+				@include dots-family-multi(2);
 			}  
 		}
 		 .similar_slide-text{
@@ -83,7 +84,12 @@
 			}  
 		}
 	}
-
+	.similar_slide-imgs{
+		.slick-next,
+		.slick-prev{
+			display: none;
+		}
+	} 
 	.similar_slide-info{
 		padding: 24px;
 		flex: 1 1 auto;
