@@ -954,7 +954,6 @@ html .results-filter__item--dates .item-results-filter__dd {
   height: 48px;
   top: -48px;
   left: 0;
-  opacity: 0;
 }
 
 @media only screen and (max-width: 991px) {
@@ -1356,6 +1355,12 @@ html .results-filter__item--dates .item-results-filter__dd {
   height: 2px;
   margin: 0 8px;
   background-color: rgba(26, 27, 50, 0.2);
+}
+
+@media only screen and (min-width: 991px) {
+  .item-results-filter__inputs .item-results-filter__divide {
+    display: none;
+  }
 }
 
 .results-filter__map-open {

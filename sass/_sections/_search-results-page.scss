@@ -367,7 +367,7 @@ html{
 		height: 48px;
 		top: -48px;
 		left: 0;
-		opacity: 0;
+		// opacity: 0;
 
 		@include max-screen($md){
 			opacity: 1;
@@ -677,6 +677,10 @@ html{
 		height: 2px;
 		margin: 0 8px;
 		background-color: rgba(26, 27, 50, 0.2);
+
+		@include min-screen($md){
+			display: none;
+		}
 	}
 }
 .results-filter__map-open{
