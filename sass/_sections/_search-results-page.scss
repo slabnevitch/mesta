@@ -1,6 +1,9 @@
 /*--------------------search-results-page----------------------*/
 html{
 	&.mob-filters-open{
+		body{
+			overflow: hidden;
+		}
 		.results-filter,
 		.results-filter__header,
 		.results-filter__buttons{
@@ -27,7 +30,7 @@ html{
 					display: none;
 				}
 				.item-results-filter__buttons{
-					padding: 2px 24px 24px 24px;
+					padding: 16px 24px 24px 24px;
 					display: flex;
 				}
 			}
@@ -380,11 +383,11 @@ html{
 .item-results-filter__buttons{
 	padding-top: 5px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	gap: 16px;
 	// padding: 0 24px;
 	.btn-sm{
-		flex: 1 1 50%;
+		flex: 0 1 157px;
 	}
 	@include max-screen($md){
 		display: none;
@@ -544,7 +547,7 @@ html{
 			position: absolute !important;
 			visibility: hidden;
 			opacity: 0;
-			bottom: 60px;
+			bottom: 72px;
 			width: 100%;
 		}
 	}
