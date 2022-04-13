@@ -165,19 +165,22 @@
 				$('html').removeClass('filter-calendar-open');
 			}
 			if($target.attr('id') === 'calendar-reset'){
-				$('#datepicker-static').val('');
-				$('#datepicker-static2').val('');
+				// $('#datepicker-static').val('');
+				// $('#datepicker-static2').val('');
 
-				console.log(document.querySelector('.easepick-wrapper').shadowRoot.querySelectorAll('.day'));
+				// console.log(document.querySelector('.easepick-wrapper').shadowRoot.querySelectorAll('.day'));
 
 				var calendarDays = document.querySelector('.easepick-wrapper').shadowRoot.querySelectorAll('.days-grid .day:not(.not-available)');
 				for (var i=0; i < calendarDays.length; i++){
 					calendarDays[i].classList.remove("in-range", "start", "end");
-					console.log(calendarDays[i])
 				}
+				console.log($('#filter-datepikers').eq(0))
+				$('#filter-datepikers')[0].reset();
+
 				if(screen.width <= 991){
 					$('html').removeClass('filter-calendar-open');
-
+				}else{
+					$target.closest('.results-filter__item').removeClass('active');
 				}
 				return false;
 			}
@@ -318,9 +321,5 @@
 			});
 		}
 		// END filter-tags scroll check
-		setTimeout(() => console.log(document.querySelector('.easepick-wrapper').shadowRoot.querySelectorAll('.day')), 1000)
-				
-
-		
 	});
 })();
