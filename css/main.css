@@ -1697,6 +1697,10 @@ html .results-filter__item--dates .item-results-filter__dd {
     margin-bottom: 10px;
   }
 
+  .item-results-filter__inputs .item-results-filter__divide {
+    display: none;
+  }
+
   .item-results-filter__label {
     cursor: pointer;
   }
