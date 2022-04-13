@@ -98,15 +98,19 @@
 
 .calendar>.header .next-button {
   background-image: url(../img/calendar_right.svg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
 }
 
 .calendar>.header .previous-button {
   background-image: url(../img/calendar_left.svg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
 }
 
 .calendar>.header button {
-  width: 8px;
-  height: 13px;
+  width: 9px;
+  height: 16px;
   padding: 0;
   background-size: cover;
 }
@@ -239,6 +243,20 @@
 @media (max-width:992px) {
   .calendar {
     grid-column-end: 3;
+    display: block;
+    position: relative;
+    /*border-bottom: 1px solid rgba(#222222, .05);*/
+  }
+
+  .calendar:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 24px;
+    right: 24px;
+    height: 1px;
+    background-color: #222222;
+    opacity: .05;
   }
 }
 
@@ -265,7 +283,7 @@
 
 @media (max-width:480px) {
   .container:not(.inline).show {
-    bottom: 65px!important;
+    bottom: 79px!important;
   }
 
   .container:not(.inline) {

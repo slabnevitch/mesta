@@ -103,7 +103,7 @@
 						$('.results-filter__item').removeClass('active');
 				}
 				if(screen.width >= 991){
-						if($target.attr('id') === 'calendar-select'){
+					if($target.attr('id') === 'calendar-select'){
 						$target.closest('.results-filter__item').removeClass('active');
 						return false;
 					}
@@ -167,7 +167,19 @@
 			if($target.attr('id') === 'calendar-reset'){
 				$('#datepicker-static').val('');
 				$('#datepicker-static2').val('');
-				$('html').removeClass('filter-calendar-open');
+
+				console.log(document.querySelector('.easepick-wrapper').shadowRoot.querySelectorAll('.day'));
+
+				var calendarDays = document.querySelector('.easepick-wrapper').shadowRoot.querySelectorAll('.days-grid .day:not(.not-available)');
+				for (var i=0; i < calendarDays.length; i++){
+					calendarDays[i].classList.remove("in-range", "start", "end");
+					console.log(calendarDays[i])
+				}
+				if(screen.width <= 991){
+					$('html').removeClass('filter-calendar-open');
+
+				}
+				return false;
 			}
 			if(screen.width <= 991){
 				if($target.attr('id') === 'datepicker-static' || $target.attr('id') === 'datepicker-static2'){
@@ -296,16 +308,19 @@
 		// END result-form check
 
 		// filter-tags scroll check
-			if($('.filter-tags-wrapper').length){
-				$('.filter-tags').on('scroll', function(e) {				
-					if(($(this).width() + e.target.scrollLeft) >= e.target.scrollWidth - $('.filter-tags-wrapper').find('.filter-tag').last().width()){
-						$('.filter-tags-wrapper').addClass('cover-disabled');
-					}else{
-						$('.filter-tags-wrapper').removeClass('cover-disabled');
-					}
-				});
-			}
-			// END filter-tags scroll check
+		if($('.filter-tags-wrapper').length){
+			$('.filter-tags').on('scroll', function(e) {				
+				if(($(this).width() + e.target.scrollLeft) >= e.target.scrollWidth - $('.filter-tags-wrapper').find('.filter-tag').last().width()){
+					$('.filter-tags-wrapper').addClass('cover-disabled');
+				}else{
+					$('.filter-tags-wrapper').removeClass('cover-disabled');
+				}
+			});
+		}
+		// END filter-tags scroll check
+		setTimeout(() => console.log(document.querySelector('.easepick-wrapper').shadowRoot.querySelectorAll('.day')), 1000)
+				
+
 		
 	});
 })();

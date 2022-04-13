@@ -496,6 +496,10 @@ input.range__input {
 
 /*--------------------search-results-page----------------------*/
 
+html.mob-filters-open body {
+  overflow: hidden;
+}
+
 html.mob-filters-open .results-filter,
 html.mob-filters-open .results-filter__header,
 html.mob-filters-open .results-filter__buttons {
@@ -520,7 +524,7 @@ html.filter-calendar-open .results-filter__item--dates .item-results-filter__dd 
 }
 
 html.filter-calendar-open .results-filter__item--dates .item-results-filter__dd .item-results-filter__buttons {
-  padding: 2px 24px 24px 24px;
+  padding: 16px 24px 24px 24px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -797,18 +801,18 @@ html .results-filter__item--dates .item-results-filter__dd {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   gap: 16px;
 }
 
 .item-results-filter__buttons .btn-sm {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 50%;
-  -ms-flex: 1 1 50%;
-  flex: 1 1 50%;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 157px;
+  -ms-flex: 0 1 157px;
+  flex: 0 1 157px;
 }
 
 .results-filter__buttons {
@@ -1884,7 +1888,7 @@ html .results-filter__item--dates .item-results-filter__dd {
     position: absolute !important;
     visibility: hidden;
     opacity: 0;
-    bottom: 60px;
+    bottom: 72px;
     width: 100%;
   }
 
