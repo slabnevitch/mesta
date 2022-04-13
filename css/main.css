@@ -498,7 +498,7 @@ html.filter-calendar-open .results-filter__item--dates .item-results-filter__dd 
 }
 
 html.filter-calendar-open .results-filter__item--dates .item-results-filter__dd .item-results-filter__buttons {
-  padding: 0 24px 24px 24px;
+  padding: 2px 24px 24px 24px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -673,13 +673,18 @@ html .results-filter__item--dates .item-results-filter__dd {
   background: #FFFFFF;
   -webkit-border-radius: 20px;
   border-radius: 20px;
-  cursor: pointer;
 }
 
 @media only screen and (max-width: 576px) {
   .filter-tag {
     height: 26px;
     padding: 5px 8px;
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  .filter-tag {
+    cursor: pointer;
   }
 }
 
@@ -962,6 +967,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 .item-results-filter__buttons {
+  padding-top: 5px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

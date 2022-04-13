@@ -2,10 +2,10 @@
     position: static !important;
     height: auto;
     transform: none;
+    border-radius: 12px 12px 0 0;
 }
 .container.show{
     box-shadow: none;
-    border-radius: 12px;
     background: #FFFFFF;
     font-family: 'Stolzl';
 }
@@ -231,6 +231,10 @@
     }
 }
 @media(max-width:480px){
+    .container:not(.inline).show {
+        bottom: 65px!important;
+        
+    }
     .container:not(.inline) {
       transform: scaleY(1) !important;
       transform-origin: bottom center !important;

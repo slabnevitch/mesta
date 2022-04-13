@@ -202,13 +202,13 @@
 		// noUiSlider
 		if(document.querySelector('.range-slider') !== null){
 			var slider = document.querySelector('.range-slider'),
-				inputMin = document.getElementById('minval'),
+				inputMin = document.getElementById('minval').value,
 				inputMax = document.getElementById('maxval');
 					
 			var noUi = noUiSlider.create(slider, {
 				connect: [true, false],
 				// behaviour: 'tap',
-				start: [200],
+				start: inputMin,
 				// padding: 50,
 				range: {
 					'min': [0],
@@ -252,13 +252,14 @@
 
 			function getValues() {
 				console.log(slider)
+				console.log(Number(slider.noUiSlider.get().slice(0, -3)))
 				inputMin.value = slider.noUiSlider.get();
 
-				for (var i = 0; i < pips.length; i++) {
-						if(slider.noUiSlider.get() === Number(pips[i].firstChild.textContent)){
-							 markers[i].classList.add('downed');
-						    for (var n = 0; n < markers.length; n++) {
-						    	if(markers[n] !== this) markers[n].classList.remove('downed');
+				for (var i = 0; i < slider.querySelectorAll('.noUi-value').length; i++) {
+						if(Number(slider.noUiSlider.get().slice(0, -3)) === Number(slider.querySelectorAll('.noUi-value')[i].firstChild.textContent)){
+							 slider.querySelectorAll('.noUi-marker')[i].classList.add('downed');
+						    for (var n = 0; n < slider.querySelectorAll('.noUi-marker').length; n++) {
+						    	if(slider.querySelectorAll('.noUi-marker')[n] !== slider.querySelectorAll('.noUi-marker')[i]) slider.querySelectorAll('.noUi-marker')[n].classList.remove('downed');
 						    }
 						}
 				}
