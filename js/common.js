@@ -226,19 +226,42 @@
 			slider.noUiSlider.on('update', getValues);
 
 			var pips = slider.querySelectorAll('.noUi-value');
+			var markers = slider.querySelectorAll('.noUi-marker');
 			
 			for (var i = 0; i < pips.length; i++) {
 			    pips[i].addEventListener('click', clickOnPip);
+			}
+			for (var i = 0; i < markers.length; i++) {
+			    markers[i].addEventListener('click', clickOnMarker);
 			}
 
 			function clickOnPip() {
 			    var value = Number(this.firstChild.textContent);
 			    slider.noUiSlider.set(value);
 			}
+			function clickOnMarker() {
+					var currentPipIndex = Array.prototype.slice.call(markers).indexOf(this),
+							value = Number(pips[currentPipIndex].firstChild.textContent);
+			    
+			    this.classList.add('downed');
+			    for (var i = 0; i < markers.length; i++) {
+			    	if(markers[i] !== this) markers[i].classList.remove('downed');
+			    }
+			    slider.noUiSlider.set(value);
+			}
 
 			function getValues() {
-				// console.log(slider.noUiSlider.get())
+				console.log(slider)
 				inputMin.value = slider.noUiSlider.get();
+
+				for (var i = 0; i < pips.length; i++) {
+						if(slider.noUiSlider.get() === Number(pips[i].firstChild.textContent)){
+							 markers[i].classList.add('downed');
+						    for (var n = 0; n < markers.length; n++) {
+						    	if(markers[n] !== this) markers[n].classList.remove('downed');
+						    }
+						}
+				}
 
 				$('.item-results-filter__dd .noUi-pips .noUi-value-horizontal').each(function(i, item) {
 					if(Number(slider.noUiSlider.get().slice(0, -3)) >= Number(item.firstChild.textContent)){

@@ -549,6 +549,9 @@ html{
 	.range{
 		height: 50px;
 
+		.noUi-base{
+			// z-index: 2;
+		}
 		.noUi-target{
 			background-color: #E5E5E5;
 			border: none;
@@ -561,15 +564,19 @@ html{
 			height: 10px;
 			width: 3px;
 			background-color: #E5E5E5;
+			z-index: 3;
 
 			&.active{
 
 				background-color: $accent;
 			}
+			&.downed{
+				z-index: 0;
+			}
 		}
 		.noUi-value{
-			padding-top: 30px;
-			margin-top: -33px;
+			padding-top: 7px;
+			// margin-top: -33px;
 			z-index: 1;
 			font-weight: 500;
 			font-size: 14px;
