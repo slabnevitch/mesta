@@ -112,7 +112,7 @@
                   <div class="item-results-filter__caption">Расстояние от города</div>
                   <div class="range">
                     <div class="range-top">
-                      <input autocomplete="off" type="text" name="" value="" id="minval" class="range__input">
+                      <input autocomplete="off" type="text" name="" value="200" id="minval" class="range__input">
                       <input autocomplete="off" type="text" name="" value="" id="maxval" class="range__input">
                     </div>
                     <div class="range-slider"></div>
@@ -413,21 +413,6 @@
     <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/main.js"></script>
-    <script>
-      function grab(g) {
-      
-      	g.onmousemove = function(e) {
-      		console.log('fdfd')
-      		g.scrollLeft += -e.movementX;
-      		return false;
-      	}
-      
-      	g.onmouseleave = function() { g.onmousemove = null; }
-      	g.onmouseup = function() { g.onmousemove = null; }
-      }
-        
-      
-    </script>
     
     
     <script src="js/libs/noUiSlider/nouislider.min.js"></script>

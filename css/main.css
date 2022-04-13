@@ -520,7 +520,7 @@ html.filter-calendar-open .results-filter__item--dates .item-results-filter__dd 
 }
 
 html.filter-calendar-open .results-filter__item--dates .item-results-filter__dd .item-results-filter__buttons {
-  padding: 0 24px 24px 24px;
+  padding: 2px 24px 24px 24px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -644,7 +644,6 @@ html .results-filter__item--dates .item-results-filter__dd {
   background: #FFFFFF;
   -webkit-border-radius: 20px;
   border-radius: 20px;
-  cursor: pointer;
 }
 
 .filter-tag.active {
@@ -793,6 +792,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 .item-results-filter__buttons {
+  padding-top: 5px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -961,15 +961,19 @@ html .results-filter__item--dates .item-results-filter__dd {
   height: 10px;
   width: 3px;
   background-color: #E5E5E5;
+  z-index: 3;
 }
 
 .item-results-filter__dd .range .noUi-marker-horizontal.noUi-marker-large.active {
   background-color: #FC6733;
 }
 
+.item-results-filter__dd .range .noUi-marker-horizontal.noUi-marker-large.downed {
+  z-index: 0;
+}
+
 .item-results-filter__dd .range .noUi-value {
-  padding-top: 30px;
-  margin-top: -33px;
+  padding-top: 7px;
   z-index: 1;
   font-weight: 500;
   font-size: 14px;
@@ -1661,6 +1665,10 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 @media only screen and (min-width: 991px) {
+  .filter-tag {
+    cursor: pointer;
+  }
+
   .results-filter__header {
     display: none;
   }

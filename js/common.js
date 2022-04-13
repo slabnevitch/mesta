@@ -202,13 +202,13 @@
 		// noUiSlider
 		if(document.querySelector('.range-slider') !== null){
 			var slider = document.querySelector('.range-slider'),
-				inputMin = document.getElementById('minval'),
+				inputMin = document.getElementById('minval').value,
 				inputMax = document.getElementById('maxval');
 					
 			var noUi = noUiSlider.create(slider, {
 				connect: [true, false],
 				// behaviour: 'tap',
-				start: [200],
+				start: inputMin,
 				// padding: 50,
 				range: {
 					'min': [0],
@@ -226,19 +226,43 @@
 			slider.noUiSlider.on('update', getValues);
 
 			var pips = slider.querySelectorAll('.noUi-value');
+			var markers = slider.querySelectorAll('.noUi-marker');
 			
 			for (var i = 0; i < pips.length; i++) {
 			    pips[i].addEventListener('click', clickOnPip);
+			}
+			for (var i = 0; i < markers.length; i++) {
+			    markers[i].addEventListener('click', clickOnMarker);
 			}
 
 			function clickOnPip() {
 			    var value = Number(this.firstChild.textContent);
 			    slider.noUiSlider.set(value);
 			}
+			function clickOnMarker() {
+					var currentPipIndex = Array.prototype.slice.call(markers).indexOf(this),
+							value = Number(pips[currentPipIndex].firstChild.textContent);
+			    
+			    this.classList.add('downed');
+			    for (var i = 0; i < markers.length; i++) {
+			    	if(markers[i] !== this) markers[i].classList.remove('downed');
+			    }
+			    slider.noUiSlider.set(value);
+			}
 
 			function getValues() {
-				// console.log(slider.noUiSlider.get())
+				console.log(slider)
+				console.log(Number(slider.noUiSlider.get().slice(0, -3)))
 				inputMin.value = slider.noUiSlider.get();
+
+				for (var i = 0; i < slider.querySelectorAll('.noUi-value').length; i++) {
+						if(Number(slider.noUiSlider.get().slice(0, -3)) === Number(slider.querySelectorAll('.noUi-value')[i].firstChild.textContent)){
+							 slider.querySelectorAll('.noUi-marker')[i].classList.add('downed');
+						    for (var n = 0; n < slider.querySelectorAll('.noUi-marker').length; n++) {
+						    	if(slider.querySelectorAll('.noUi-marker')[n] !== slider.querySelectorAll('.noUi-marker')[i]) slider.querySelectorAll('.noUi-marker')[n].classList.remove('downed');
+						    }
+						}
+				}
 
 				$('.item-results-filter__dd .noUi-pips .noUi-value-horizontal').each(function(i, item) {
 					if(Number(slider.noUiSlider.get().slice(0, -3)) >= Number(item.firstChild.textContent)){
