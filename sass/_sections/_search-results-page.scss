@@ -346,7 +346,9 @@ html{
 		} 
 		.item-results-filter__dd{
 			.item-results-filter__form{
-				margin-bottom: 0;
+				@include max-screen($md){
+					margin-bottom: 0;
+				}
 			}
 			.btn{
 				@include max-screen($md){
@@ -367,7 +369,7 @@ html{
 		height: 48px;
 		top: -48px;
 		left: 0;
-		// opacity: 0;
+		opacity: 0;
 
 		@include max-screen($md){
 			opacity: 1;

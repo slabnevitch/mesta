@@ -1,0 +1,79 @@
+/*--------------------map-tooltip----------------------*/
+.resuls-map__tooltip{
+	max-width: 343px;
+	position: relative;
+	.result-card{
+		width: 100%;
+		margin: 0;
+
+		&:not(.result-card--services){
+			.room_card-title{
+				@include dots-family-multi(2);
+			}
+
+			.similar_slide-link{
+  
+				.similar_slide-btn{
+					@include max-screen($xss){
+						margin-top: 0;
+					}  
+				}
+			}
+		}
+
+		.similar_slide-imgs{
+			margin-bottom: 8px;
+		}
+
+		.similar_slide-img {
+		    height: 207px;
+
+		    @include max-screen(1230px){
+				height: 207px;
+				padding-bottom: 0;
+			}
+		}
+
+		.similar_slide-info{
+			padding: 16px;
+		}
+
+		.room_card-title{
+				font-size: 22px;
+	    	line-height: 26px;
+
+			@include max-screen($md){
+				font-size: 22px;
+	    	line-height: 26px;
+			}  
+		}
+
+		.similar_slide-text{
+			@include dots-family-multi(2);
+			padding-right: 0;
+		}
+
+		.similar_slide-link{
+			display: block;
+
+			.result-card__bottom-box{
+				justify-content: space-between;
+			}
+
+			.similar_slide-btn{			
+				@include max-screen($xss){
+					width: 134px;
+				}  
+			}
+		}
+
+		.result-card__bottom-box{
+			margin-top: 14px;
+		}
+
+		.result-card__reservation{
+			margin-left: 10px;
+		}
+	}
+}
+/*--------------------END map-tooltip----------------------*/ 

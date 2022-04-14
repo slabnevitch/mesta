@@ -7,13 +7,17 @@
 @import "_misc/_functions";
 // @import "_misc/smart-grid";
 
+
 @import "_misc/_vars";
 @import "_misc/_adjustment";
-@import "_misc/_ui";
+// @import "_misc/_ui";
 
 @import "_sections/_header";
+/*=====================Search Results Page=========================*/
 @import "_sections/_search-results-page";
 @import "_sections/_search-results-cards";
+@import "_sections/_map-tooltip";
+/*===================== END Search Results Page======================*/ 
 @import "_sections/_footer";
 
 // @import "_media";
