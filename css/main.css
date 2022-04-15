@@ -639,13 +639,18 @@ html .results-filter__item--dates .item-results-filter__dd {
   align-items: center;
   height: 40px;
   padding: 10px 12.68px;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   background: #FFFFFF;
   -webkit-border-radius: 20px;
   border-radius: 20px;
+}
+
+@media only screen and (max-width: 991px) {
+  .filter-tag {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
 }
 
 @media only screen and (max-width: 576px) {
@@ -672,6 +677,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 .filter-tag .icon-close {
   display: none;
+  margin-left: 9.73px;
   color: #fff;
   font-size: 12px;
 }
@@ -686,7 +692,6 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 .filter-tag__name {
   margin-left: 8.6px;
-  margin-right: 9.73px;
   font-size: 14px;
 }
 

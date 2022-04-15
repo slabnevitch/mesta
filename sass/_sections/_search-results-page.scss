@@ -159,10 +159,13 @@ html{
 	align-items: center;
 	height: 40px;
 	padding: 10px 12.68px;
-	flex: 0 0 auto;
 	background: #FFFFFF;
 	border-radius: 20px;
 
+	@include max-screen($md){
+		flex: 0 0 auto;
+
+	}
 	@include max-screen($xs){
 		height: 26px;
 		padding: 5px 8px;
@@ -183,6 +186,7 @@ html{
 	}
 	.icon-close {
 		display: none;
+		margin-left: 9.73px;
 		color: #fff;
 		font-size: 12px;
 	}
@@ -197,7 +201,6 @@ html{
 }
 .filter-tag__name {
 	margin-left: 8.6px;
-	margin-right: 9.73px;
 	font-size: 14px;
 
 	@include max-screen($xs){
