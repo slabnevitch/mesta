@@ -309,7 +309,7 @@ html{
 	}
 	&--dates{
 		.item-results-filter__dd{
-			padding: 24px;
+			padding: 0 13px 24px 13px;
 			width: auto;
 
 			@include max-screen($md){
@@ -389,10 +389,11 @@ html{
 	gap: 16px;
 	// padding: 0 24px;
 	.btn-sm{
-		flex: 0 1 157px;
+		flex: 0 1 163.5px;
 	}
 	@include max-screen($md){
 		display: none;
+		flex: 0 1 157.5px;
 	}
 }
 .results-filter__buttons{
@@ -710,6 +711,7 @@ html{
 	display: flex;
 	align-items: center;
 	position: relative;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 	&:not(:last-child){
 		margin-bottom: 17px;

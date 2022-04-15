@@ -84,6 +84,7 @@
     color: #222222;
     line-height: 150%;
     padding: 0;
+    text-transform: uppercase;
 }
 .calendar>.daynames-row{
     padding-bottom: 12px;

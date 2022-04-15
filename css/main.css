@@ -858,7 +858,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 .results-filter__item--dates .item-results-filter__dd {
-  padding: 24px;
+  padding: 0 13px 24px 13px;
   width: auto;
 }
 
@@ -956,14 +956,18 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 .item-results-filter__buttons .btn-sm {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 1 157px;
-  -ms-flex: 0 1 157px;
-  flex: 0 1 157px;
+  -webkit-flex: 0 1 163.5px;
+  -ms-flex: 0 1 163.5px;
+  flex: 0 1 163.5px;
 }
 
 @media only screen and (max-width: 991px) {
   .item-results-filter__buttons {
     display: none;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 157.5px;
+    -ms-flex: 0 1 157.5px;
+    flex: 0 1 157.5px;
   }
 }
 
@@ -1371,6 +1375,7 @@ html .results-filter__item--dates .item-results-filter__dd {
   -ms-flex-align: center;
   align-items: center;
   position: relative;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .item-results-filter__label:not(:last-child) {
