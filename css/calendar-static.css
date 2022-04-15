@@ -183,6 +183,9 @@
     padding-right: 10px;
     width: 40px;
 }
+.container.range-plugin .calendar>.days-grid>.day.start.not-available{
+    background-color: #fff;
+}
 .calendar>.days-grid>.day.in-range:hover{
     color: #222222;
 }
