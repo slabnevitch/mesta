@@ -91,9 +91,20 @@ ymaps.ready(init);
        var myMap = new ymaps.Map("map", {
             center: [56.353475, 44.009309],
             zoom: 11,
-           	controls: ['zoomControl', 'fullscreenControl'], //оставляем только масштабирование
+           	controls: [], //оставляем только масштабирование
            	// behaviors: ['drag'] //оставляем только поведение drag
         });
+
+     	var zoomControl = new ymaps.control.ZoomControl({
+				options: {
+					size: "small",
+					float: "none",
+					position: {
+						top: 80,
+						right: 32
+					}
+				}
+			});
 
        // Создание множественных маркеров в цикле
        placemarks.forEach(function(item, i, arr) {
@@ -110,5 +121,7 @@ ymaps.ready(init);
 
        		myMap.geoObjects.add(placemark);
        });
+   		
+   		myMap.controls.add(zoomControl);
 
     }
