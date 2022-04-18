@@ -184,7 +184,14 @@
     width: 40px;
 }
 .container.range-plugin .calendar>.days-grid>.day.start.not-available{
-    background-color: #fff;
+    background-color: transparent;
+    z-index: 2;
+}
+.container.range-plugin .calendar>.days-grid>.day.start.not-available + .day.end::after{
+    width: 200%;
+}
+.container.range-plugin .calendar>.days-grid>.day.start.not-available + .day.in-range::before{
+    width: 300%;
 }
 .calendar>.days-grid>.day.in-range:hover{
     color: #222222;
@@ -202,6 +209,14 @@
 }
 .container.range-plugin .calendar>.days-grid>.day.start.flipped::before{
     left: 10px;
+}
+.container.range-plugin .calendar>.days-grid>.day.end.flipped:after {
+    right: -100%;
+    width: 120%;
+}
+.container.range-plugin .calendar>.days-grid>.day.end.flipped ~ .day.in-range::before{
+    width: 300%;
+    right: 0;
 }
 .container.lock-plugin .calendar>.days-grid>.day.locked:not(.start):not(.end){
     background:none;
