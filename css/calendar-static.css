@@ -282,6 +282,14 @@
       transform-origin: bottom center !important;
     }
     .calendars {
+      grid-template-columns: repeat(3,1fr);
+    }
+    .calendar>.days-grid>.day{
+        margin-bottom: 15px;
+    }
+}
+@media(max-width:375px){
+    .calendars {
       display: block;
     }
     .calendar>.days-grid>.day{
