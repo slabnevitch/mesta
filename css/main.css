@@ -460,6 +460,14 @@ input.range__input {
 
 /*--------------------search-results-page----------------------*/
 
+html.map-open {
+  overflow: hidden;
+}
+
+html.mob-filters-open {
+  overflow: hidden;
+}
+
 html.mob-filters-open body {
   overflow: hidden;
 }

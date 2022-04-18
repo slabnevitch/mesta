@@ -116,15 +116,18 @@
 			// results-map toggle
 			if($target.closest('.results-filter__map-open').length > 0 || $target.hasClass('results-filter__map-open')){
 				$('.resuls-map').addClass('active');
+				$('html').addClass('map-open');
 			}
 			if($target.hasClass('resuls-map__close') || $target.closest('.resuls-map__close').length > 0){			
 				$('.resuls-map').removeClass('active');
+				$('html').removeClass('map-open');
 			}
 			// END results-map toggle
 
 			// results-map mobile toggle
 			if($target.attr('id') === 'mob-map-show' || $target.closest('#mob-map-show').length > 0){
 				$('.resuls-map').addClass('active');
+				$('html').addClass('map-open');
 			}
 			if($target.attr('id') === 'mob-filters-show' || $target.closest('#mob-filters-show').length > 0){			
 				$('.resuls-map').removeClass('active');
