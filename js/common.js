@@ -276,17 +276,22 @@
 				for (var i = 0; i < slider.querySelectorAll('.noUi-value').length; i++) {
 						if(Number(slider.noUiSlider.get().slice(0, -3)) === Number(slider.querySelectorAll('.noUi-value')[i].firstChild.textContent)){
 							 slider.querySelectorAll('.noUi-marker')[i].classList.add('downed');
+							 slider.querySelectorAll('.noUi-value')[i].classList.add('active');
 						    for (var n = 0; n < slider.querySelectorAll('.noUi-marker').length; n++) {
 						    	if(slider.querySelectorAll('.noUi-marker')[n] !== slider.querySelectorAll('.noUi-marker')[i]) slider.querySelectorAll('.noUi-marker')[n].classList.remove('downed');
 						    }
+						}else{
+							slider.querySelectorAll('.noUi-value')[i].classList.remove('active');
 						}
 				}
 
 				$('.item-results-filter__dd .noUi-pips .noUi-value-horizontal').each(function(i, item) {
 					if(Number(slider.noUiSlider.get().slice(0, -3)) >= Number(item.firstChild.textContent)){
 						$(item).prev().addClass('active');
+						// $(item).addClass('active');
 					}else{
 						$(item).prev().removeClass('active');
+						// $(item).removeClass('active');
 					}
 				});
 			}
