@@ -101,7 +101,7 @@ ymaps.ready(init);
 					float: "none",
 					position: {
 						top: 80,
-						right: 32
+						right: 36
 					}
 				}
 			});
@@ -122,6 +122,6 @@ ymaps.ready(init);
        		myMap.geoObjects.add(placemark);
        });
    		
-   		myMap.controls.add(zoomControl);
+ 			myMap.controls.add(zoomControl);
 
     }
