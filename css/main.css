@@ -466,6 +466,8 @@ html.map-open {
 
 html.map-open body {
   overflow: hidden;
+  touch-action: none;
+  -ms-touch-action: none;
 }
 
 html.mob-filters-open {
@@ -474,6 +476,8 @@ html.mob-filters-open {
 
 html.mob-filters-open body {
   overflow: hidden;
+  touch-action: none;
+  -ms-touch-action: none;
 }
 
 html.mob-filters-open .results-filter,
