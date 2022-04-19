@@ -1188,6 +1188,14 @@ html .results-filter__item--dates .item-results-filter__dd {
   left: 0;
 }
 
+.resuls-map__map > ymaps {
+  width: 100% !important;
+}
+
+.resuls-map__map > ymaps > ymaps {
+  width: 100% !important;
+}
+
 .resuls-map__bottom {
   max-width: 902px;
   position: absolute;
@@ -1695,6 +1703,10 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 @media only screen and (min-width: 991px) {
+  .filter-tags-wrapper__cover {
+    display: none;
+  }
+
   .filter-tag {
     cursor: pointer;
   }
@@ -1957,6 +1969,11 @@ html .results-filter__item--dates .item-results-filter__dd {
 
   .results-filter__map-open {
     display: none;
+  }
+
+  .resuls-map__close {
+    top: 16px;
+    right: 17px;
   }
 
   .resuls-map__bottom {
