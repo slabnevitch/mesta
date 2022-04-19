@@ -636,6 +636,12 @@ html .results-filter__item--dates .item-results-filter__dd {
   background: linear-gradient(270deg, #F9F9FA 29.03%, rgba(249, 249, 250, 0) 100%);
 }
 
+@media only screen and (min-width: 991px) {
+  .filter-tags-wrapper__cover {
+    display: none;
+  }
+}
+
 .filter-tag {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1505,12 +1511,27 @@ html .results-filter__item--dates .item-results-filter__dd {
   transform: translate(-50%, -50%);
 }
 
+@media only screen and (max-width: 991px) {
+  .resuls-map__close {
+    top: 16px;
+    right: 17px;
+  }
+}
+
 .resuls-map__map {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+}
+
+.resuls-map__map > ymaps {
+  width: 100% !important;
+}
+
+.resuls-map__map > ymaps > ymaps {
+  width: 100% !important;
 }
 
 .resuls-map__bottom {

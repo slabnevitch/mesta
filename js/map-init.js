@@ -100,8 +100,8 @@ ymaps.ready(init);
 					size: "small",
 					float: "none",
 					position: {
-						top: 80,
-						right: 36
+						top: screen.width > 991 ? 80 : 65,
+						right: screen.width > 991 ? 36 : 19
 					}
 				}
 			});

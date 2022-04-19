@@ -157,6 +157,10 @@ html{
 	right: 0;
 	top: 0;
 	background: linear-gradient(270deg, #F9F9FA 29.03%, rgba(249, 249, 250, 0) 100%);
+
+	@include min-screen($md){
+		display: none;
+	}
 }
 .filter-tag {
 	display: flex;
@@ -798,6 +802,11 @@ html{
 		color: $accent;
 		@include absolute-center;
 	}
+
+	@include max-screen($md){
+		top: 16px;
+		right: 17px;
+	}
 }
 .resuls-map__map {
 	position: absolute;
@@ -805,6 +814,15 @@ html{
 	height: 100%;
 	top: 0;
 	left: 0;
+
+	& > ymaps{
+		width: 100% !important;
+
+		& > ymaps{
+			width: 100% !important;
+
+		}
+	}
 }
 .resuls-map__bottom {
 	max-width: 902px;
