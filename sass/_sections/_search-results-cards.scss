@@ -91,7 +91,10 @@
 	.similar_slide-imgs{
 		.slick-next,
 		.slick-prev{
-			display: none !important;
+			@include max-screen($md){
+				display: none !important;
+				
+			}  
 		}
 	} 
 	.similar_slide-info{
@@ -261,8 +264,6 @@
 		
 		@include max-screen($sm){
 			width: 100%;
-			background-color: $accent;
-			color: #fff;
 		}
 
 		.desk{

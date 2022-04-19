@@ -443,6 +443,14 @@ input.range__input {
 
 /*=====================Search Results Page=========================*/
 /*--------------------search-results-page----------------------*/
+html.map-open {
+  overflow: hidden;
+}
+
+html.mob-filters-open {
+  overflow: hidden;
+}
+
 html.mob-filters-open body {
   overflow: hidden;
 }
@@ -1222,6 +1230,10 @@ html .results-filter__item--dates .item-results-filter__dd {
   color: rgba(34, 34, 34, 0.4);
 }
 
+.item-results-filter__dd .range .noUi-value.active {
+  color: #000;
+}
+
 .item-results-filter__dd .range .noUi-connect {
   height: 3px;
   top: 0;
@@ -1287,10 +1299,6 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 .item-results-filter__dd .noUi-pips div:nth-child(2), .item-results-filter__dd .noUi-pips div:nth-child(13) {
   display: none;
-}
-
-.item-results-filter__dd .noUi-pips div:nth-child(4), .item-results-filter__dd .noUi-pips div:nth-child(12) {
-  color: #000;
 }
 
 .item-results-filter__inputs {
@@ -1847,9 +1855,11 @@ html .results-filter__item--dates .item-results-filter__dd {
   }
 }
 
-.result-card .similar_slide-imgs .slick-next,
-.result-card .similar_slide-imgs .slick-prev {
-  display: none !important;
+@media only screen and (max-width: 991px) {
+  .result-card .similar_slide-imgs .slick-next,
+  .result-card .similar_slide-imgs .slick-prev {
+    display: none !important;
+  }
 }
 
 .result-card .similar_slide-info {
@@ -2118,8 +2128,6 @@ html .results-filter__item--dates .item-results-filter__dd {
 @media only screen and (max-width: 767.98px) {
   .search-results-cards__more {
     width: 100%;
-    background-color: #FC6733;
-    color: #fff;
   }
 }
 

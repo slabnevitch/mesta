@@ -1,6 +1,10 @@
 /*--------------------search-results-page----------------------*/
 html{
+	&.map-open{
+			overflow: hidden;	
+	}
 	&.mob-filters-open{
+			overflow: hidden;
 		body{
 			overflow: hidden;
 		}
@@ -596,6 +600,10 @@ html{
 			font-size: 14px;
 			line-height: 14px;
 			color: rgba(34, 34, 34, 0.4);
+
+			&.active{
+				color: #000;
+			}
 		}
 		.noUi-connect{
 			height: 3px;
@@ -649,9 +657,9 @@ html{
 			&:nth-child(2), &:nth-child(13){
 				display: none;
 			}
-			&:nth-child(4), &:nth-child(12){
-				color: #000;
-			}
+			// &:nth-child(4), &:nth-child(12){
+			// 	color: #000;
+			// }
 			&:not(:last-child){
 			}
 		}
