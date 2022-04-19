@@ -2,6 +2,9 @@
 html{
 	&.map-open{
 			overflow: hidden;	
+			body{
+			overflow: hidden;
+		}
 	}
 	&.mob-filters-open{
 			overflow: hidden;

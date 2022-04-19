@@ -447,6 +447,10 @@ html.map-open {
   overflow: hidden;
 }
 
+html.map-open body {
+  overflow: hidden;
+}
+
 html.mob-filters-open {
   overflow: hidden;
 }
