@@ -460,18 +460,22 @@ input.range__input {
 
 html.map-open {
   overflow: hidden;
+  height: 100%;
 }
 
 html.map-open body {
   overflow: hidden;
+  height: 100%;
 }
 
 html.mob-filters-open {
   overflow: hidden;
+  height: 100%;
 }
 
 html.mob-filters-open body {
   overflow: hidden;
+  height: 100%;
 }
 
 html.mob-filters-open .results-filter,
