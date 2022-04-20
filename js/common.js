@@ -65,17 +65,28 @@
 
 (function() {
 	// ibg class
-	// if('objectFit' in document.documentElement.style === false){
-	//   Array.prototype.forEach.call(document.querySelectorAll('._fit'), function(el){
+	if('objectFit' in document.documentElement.style === false){
+	  Array.prototype.forEach.call(document.querySelectorAll('._fit'), function(el){
 
-	//     var image = el.querySelector('img');
-	//     el.style.backgroundImage = 'url("'+image.src+'")';
-	//     el.classList.add('ibg');
-	//     el.classList.remove('_fit');
-	// 	 });
-	// }
+	    var image = el.querySelector('img');
+	    el.style.backgroundImage = 'url("'+image.src+'")';
+	    el.classList.add('ibg');
+	    el.classList.remove('_fit');
+		 });
+	}
 	// End ibg class
 
+
+	// correct height of map and filters
+		if(screen.width <= 991 && isMobile.iOS()){
+			console.log('ios detected');
+			window.addEventListener('resize', () => {
+			  document.querySelector('.resuls-map').style.setProperty('--height', `${window.innerHeight}px`);
+			});
+
+		}
+	// END correct height of map and filters
+	
 	document.addEventListener('DOMContentLoaded', function() {
 		console.log('DOMContentLoaded!');
 
