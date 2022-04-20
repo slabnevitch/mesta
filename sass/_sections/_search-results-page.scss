@@ -1,15 +1,19 @@
 /*--------------------search-results-page----------------------*/
 html{
 	&.map-open{
-			overflow: hidden;	
+			overflow: hidden;
+			height: 100%;
 			body{
 			overflow: hidden;
+			height: 100%;
 		}
 	}
 	&.mob-filters-open{
 			overflow: hidden;
+			height: 100%;	
 		body{
 			overflow: hidden;
+			height: 100%;
 		}
 		.results-filter,
 		.results-filter__header,
@@ -574,6 +578,23 @@ html{
 	.range-top{
 		display: none;
 	}
+	.range-slider-wrapper{
+		display: flex;
+	}
+	.range-slider-wrapper__sector{
+		flex: 0 0 10%;
+		height: 3px;
+		background-color: $accent;
+
+		&:last-of-type{
+			background-color: #E5E5E5;
+		}
+
+	}
+	.range-slider{
+		flex: 0 0 80%;
+
+	}
 	.range{
 		height: 50px;
 
@@ -624,6 +645,8 @@ html{
 		.noUi-horizontal .noUi-handle{
 			width: 19px;
 			height: 19px;
+			left: 50%;
+    	transform: translateX(-50%);
 			margin-top: -9px;
 			background-color: #fff;
 			border-color: $accent;
@@ -656,17 +679,19 @@ html{
 		// position: relative;
 		top: -14px;
 		div{
-			&:first-of-type{
-				display: none;
-			}
+			// &:first-of-type{
+			// 	display: none;
+			// }
 
-			&:last-of-type{
+			// &:last-of-type{
 				
-				display: none;
-			}
-			&:nth-child(2), &:nth-child(13){
-				display: none;
-			}
+			// 	display: none;
+			// }
+
+			// &:nth-child(2), &:nth-child(13){
+			// 	display: none;
+			// }
+
 			// &:nth-child(4), &:nth-child(12){
 			// 	color: #000;
 			// }

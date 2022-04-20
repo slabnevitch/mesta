@@ -240,13 +240,13 @@
 				start: inputMin,
 				// padding: 50,
 				range: {
-					'min': [0],
-					'10%': [   100,  100 ],
-					'30%': [   200,  200 ],
+					'min': [100, 100],
+					// '10%': [   100,  100 ],
+					'25%': [   200,  200 ],
 					'50%': [  300, 300 ],
-					'70%': [  400, 400 ],
-					'90%': [  500, 500 ],
-					'max': [ 550]
+					'75%': [  400, 400 ],
+					// '90%': [  500, 500 ],
+					'max': [ 500, 500 ]
 				},
 				pips: {mode: 'range', density: 100}
 
@@ -280,9 +280,8 @@
 			}
 
 			function getValues() {
-				console.log(slider)
 				console.log(Number(slider.noUiSlider.get().slice(0, -3)))
-				inputMin.value = slider.noUiSlider.get();
+				document.getElementById('minval').value = slider.noUiSlider.get();
 
 				for (var i = 0; i < slider.querySelectorAll('.noUi-value').length; i++) {
 						if(Number(slider.noUiSlider.get().slice(0, -3)) === Number(slider.querySelectorAll('.noUi-value')[i].firstChild.textContent)){
@@ -309,7 +308,7 @@
 
 			if($('.item-results-filter__dd .noUi-pips').length > 0){
 				$('.item-results-filter__dd .noUi-pips .noUi-value-horizontal').each(function(i, item) {
-					if(i == 1 || i == 5){
+					if(i == 0 || i == 4){
 						var $km = $('<span class="pips-km"> км</span>')
 						$(item).append($km)
 					}
