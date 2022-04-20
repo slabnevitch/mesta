@@ -236,7 +236,7 @@
 					
 			var noUi = noUiSlider.create(slider, {
 				connect: [true, false],
-				// behaviour: 'tap',
+				behaviour: 'tap',
 				start: inputMin,
 				// padding: 50,
 				range: {
