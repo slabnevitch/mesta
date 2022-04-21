@@ -885,6 +885,7 @@ html{
 	
 	.filter-tags {
 		justify-content: center;
+		border-bottom: none;
 
 		&::-webkit-scrollbar {
 		    visibility: hidden;
@@ -990,8 +991,9 @@ html{
 			position: absolute;
 			width: 1px;
 			right: -0.5px;
-			top: 0;
-			height: 100%;
+			top: 50%;
+			margin-top: -7px;
+			height: 14px;
 			background-color: #CCCCCC;
 		}
 	}

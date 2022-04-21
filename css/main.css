@@ -1599,6 +1599,7 @@ html .results-filter__item--dates .item-results-filter__dd {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  border-bottom: none;
 }
 
 .resuls-map__bottom .filter-tags::-webkit-scrollbar {
@@ -1744,8 +1745,9 @@ html .results-filter__item--dates .item-results-filter__dd {
   position: absolute;
   width: 1px;
   right: -0.5px;
-  top: 0;
-  height: 100%;
+  top: 50%;
+  margin-top: -7px;
+  height: 14px;
   background-color: #CCCCCC;
 }
 
