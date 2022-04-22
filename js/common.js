@@ -340,4 +340,27 @@
 		}
 		// END filter-tags scroll check
 	});
+	
+	// tags fixed on mobile
+		if($('.filter-tags-wrapper').length > 0){
+			var tagsTop = $('.filter-tags-wrapper').offset().top;
+
+			$(document).on('scroll', function() {
+				if($('.header').hasClass('fixed')){
+					console.log($('.header.fixed').offset().top + $('.header.fixed').height());
+
+				}
+				if($(this).scrollTop() > tagsTop && screen.width <= 991){
+					 $('.filter-tags-wrapper').addClass('fixed');
+					 if(!$('.header').hasClass('fixed')){
+					 	 $('.filter-tags-wrapper').css('top', $('.header').height() + 'px');
+					 }
+				}else{
+					 $('.filter-tags-wrapper').removeClass('fixed');
+					 $('.filter-tags-wrapper').css('top', 0);
+				}
+			});
+		}
+
+	// END tags fixed on mobile
 })();

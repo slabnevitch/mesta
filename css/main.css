@@ -553,10 +553,31 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 .filter-tags-wrapper {
   position: relative;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .filter-tags-wrapper.cover-disabled .filter-tags-wrapper__cover {
   display: none;
+}
+
+.filter-tags-wrapper.fixed {
+  position: fixed;
+  top: 10px;
+  height: 72px;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 14px;
+  background-color: #F9F9FA;
+  z-index: 5;
+}
+
+.filter-tags-wrapper.fixed .filter-tags {
+  padding-bottom: 21px;
+}
+
+.filter-tags-wrapper.fixed .filter-tags:not(:last-child) {
+  margin-bottom: 0;
 }
 
 .filter-tags-wrapper .filter-tags {
@@ -1237,6 +1258,7 @@ html .results-filter__item--dates .item-results-filter__dd {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  border-bottom: none;
 }
 
 .resuls-map__bottom .filter-tags::-webkit-scrollbar {
@@ -1308,8 +1330,9 @@ html .results-filter__item--dates .item-results-filter__dd {
   position: absolute;
   width: 1px;
   right: -0.5px;
-  top: 0;
-  height: 100%;
+  top: 50%;
+  margin-top: -7px;
+  height: 14px;
   background-color: #CCCCCC;
 }
 
