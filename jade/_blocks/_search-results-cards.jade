@@ -1,4 +1,48 @@
 .search-results-cards
+	.result-card.similar_slide.result-card--xz
+		.similar_slide-imgs.img_slider
+			.similar_slide-img(style='background-image: url(img/similar_slide.jpg);')
+				span.icon-place_type
+			.similar_slide-img(style='background-image: url(img/place_img6.png);')
+				span.icon-place_type
+			.similar_slide-img(style='background-image: url(img/place_page.png);')
+				span.icon-place_type
+
+		.similar_slide-info
+			.similar_slide-top
+				a(href="#").room_card-title.tooltip
+					| Шале 3-х местный Шале 3-х местный Шале 3-х местный
+				
+				.similar_slide-like
+					span.icon-like_card
+			
+			a(href="#").result-card__link
+				.similar_slide-adres
+					span.icon-place_contacts-item2
+					.similar_slide-adres_title
+						| Московская область, Сергиево-ПосадсПосадсПосадсПосадс
+					.similar_slide-adres_distance
+						| 250км
+				.similar_slide-text
+						| Её нарекли сердцем России, но под это описание подойдет любой из уютных городков Золотого кольца. Справедливее назвать столицу головой необъятной страны. Москва - шумная, дорогая, гордая, жестокая, но до неприличия красивая и притягательная. Ежегодно город принимает туристов со всего света, заковывая в холодные объятия. 
+
+				.similar_slide-link
+					.similar_slide-sutitle
+						.similar_slide-rating
+							| 8.1/10
+							span.icon-rating
+
+						.similar_slide-reviews 11 отзывов
+
+					//- if(i%2 !== 0)
+					//- 	.result-card__bottom-box
+					//- 		.result-card__reservation
+					//- 			span.icon-hotel
+					//- 			| Бронь от отеля
+					//- 		.similar_slide-btn.btn Подробнее
+
+					.similar_slide-btn.btn Подробнее
+	
 	- for (var i=0; i < 6; i++)
 		div(class=i%2 == 0 ? "result-card similar_slide" : "result-card result-card--services similar_slide")
 			.similar_slide-imgs.img_slider
@@ -11,7 +55,7 @@
 
 			.similar_slide-info
 				.similar_slide-top
-					a(href="#")(title='' class=i%2 == 0 ? "room_card-title" : "room_card-title tooltip")
+					a(href="#" title=" " class=i%2 == 0 ? "room_card-title" : "room_card-title tooltip")
 						| Шале 3-х местный Шале 3-х местный Шале 3-х местный
 					
 					.similar_slide-like

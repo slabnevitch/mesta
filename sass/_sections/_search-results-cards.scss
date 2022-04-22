@@ -28,23 +28,40 @@
     	margin-right: 0;
 	}  
 
-	&:not(.result-card--services){
+	&.result-card--xz{
+		.room_card-title{
+			@include max-screen(1200px){
+				overflow: hidden;
+				white-space: nowrap;
+			}  
+		}
+		.similar_slide-text{
+			@include dots-family-multi(6);
+		}
+	}
+
+	&:not(.result-card--services):not(.result-card--xz){
 		.room_card-title{
 			text-overflow: clip;
 			overflow: visible;
 			white-space: normal;
 
-
-			@include max-screen($sm){
 				@include dots-family-multi(2);
 
-			}
+		// 	@include max-screen($sm){
+
+		// 	}
+
 			// @include max-screen($sm){
 			// 	-webkit-line-clamp: none;
 			// 	-webkit-box-orient: horizontal;
 			// 	overflow: visible;
-			// }  
+			// } 
+
 		}
+		.similar_slide-text{
+			@include dots-family-multi(4);
+		} 
 		.similar_slide-link{
 			@include max-screen($xss){
 				display: block;
@@ -76,11 +93,11 @@
 		 .similar_slide-text{
 			@include dots-family-multi(2);
 
-			@include max-screen($sm){
-				-webkit-line-clamp: none;
-				-webkit-box-orient: horizontal;
-				overflow: visible;
-			}  
+			// @include max-screen($sm){
+			// 	-webkit-line-clamp: none;
+			// 	-webkit-box-orient: horizontal;
+			// 	overflow: visible;
+			// }  
 		}
 		.similar_slide-link{
 			@include max-screen(1100px){
@@ -147,11 +164,11 @@
 		@include max-screen($sm){
 			padding-right: 0;
 		}
-		@include max-screen(575.98px){
-			-webkit-line-clamp: none;
-			-webkit-box-orient: horizontal;
-			overflow: visible;
-		} 
+		// @include max-screen(575.98px){
+		// 	-webkit-line-clamp: none;
+		// 	-webkit-box-orient: horizontal;
+		// 	overflow: visible;
+		// } 
 	}
 	.place_service-items{
 		margin-bottom: 27px;

@@ -103,6 +103,7 @@ html{
 }
 .filter-tags-wrapper{
 	position: relative;
+	transition: all .3s;
 	
 	@include max-screen($md){
 		margin-right: -15px;
@@ -118,6 +119,23 @@ html{
 	&.cover-disabled{
 		.filter-tags-wrapper__cover{
 			display: none;
+		}
+	}
+	&.fixed{
+		position: fixed;
+		top: 10px;
+		height: 72px;
+		width: 100%;
+		padding-top: 8px;
+		padding-bottom: 14px;
+		background-color: #F9F9FA;
+		z-index: 5;
+		
+		.filter-tags{
+			padding-bottom: 21px;
+			&:not(:last-child) {
+			    margin-bottom: 0;
+			}
 		}
 	}
 	.filter-tags{

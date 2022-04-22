@@ -340,4 +340,24 @@
 		}
 		// END filter-tags scroll check
 	});
+	
+	// tags fixed on mobile
+		if($('.filter-tags-wrapper').length > 0){
+			var $tagsWrapper = $('.filter-tags-wrapper'),
+					tagsTop = $tagsWrapper.offset().top;
+
+			$(document).on('scroll', function() {
+				if($(this).scrollTop() > tagsTop && screen.width <= 991){
+					 $tagsWrapper.addClass('fixed');
+					 if(!$('.header').hasClass('fixed')){
+					 	 $tagsWrapper.css('top', $('.header').height() + 'px');
+					 }
+				}else{
+					 $tagsWrapper.removeClass('fixed');
+					 $tagsWrapper.css('top', 0);
+				}
+			});
+		}
+
+	// END tags fixed on mobile
 })();
