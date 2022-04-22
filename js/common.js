@@ -351,6 +351,9 @@
 					 $tagsWrapper.addClass('fixed');
 					 if(!$('.header').hasClass('fixed')){
 					 	 $tagsWrapper.css('top', $('.header').height() + 'px');
+					 }else{
+					 	$tagsWrapper.css('top', 0);
+
 					 }
 				}else{
 					 $tagsWrapper.removeClass('fixed');

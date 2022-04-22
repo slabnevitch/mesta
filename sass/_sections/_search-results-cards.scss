@@ -101,8 +101,27 @@
 		}
 		.similar_slide-link{
 			@include max-screen(1100px){
-				display: block;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-items: center;
 			}  
+		}
+		div.similar_slide-sutitle{
+			@include max-screen(1100px){
+				flex: 1 0 auto;
+			} 
+
+			@include max-screen(320px){
+				flex-direction: column;
+				align-items: flex-start;
+			}  
+		}
+		.result-card__bottom-box{
+			@include max-screen($xs){
+				flex: 1 1 auto;
+			}
+
+
 		}
 	}
 	.similar_slide-imgs{
@@ -171,7 +190,7 @@
 		// } 
 	}
 	.place_service-items{
-		margin-bottom: 27px;
+		margin-bottom: 10px;
 	}
 	.place_service-item{
 		color: #222222;
@@ -191,6 +210,8 @@
 		display: flex;
 		align-items: center;
 		padding-left: 0;
+		margin-top: 17px;
+		margin-bottom: 17px;
 		color: #222222;
 	}
 	.similar_slide-rating{
@@ -206,9 +227,24 @@
 		align-items: center;
 
 		@include max-screen(1100px){
-			margin-top: 17px;
-			justify-content: space-between;
+			// margin-top: 17px;
+			flex: 1 1 auto;
+			justify-content: flex-end;
 		}  
+		@include max-screen($md){
+			// justify-content: space-between;
+		}  
+		.similar_slide-btn{
+			@include max-screen($md){
+				margin-left: auto;
+			} 
+			@include max-screen($sm){
+				margin-left: 0;
+			} 
+			@include max-screen($xs){
+				margin-left: auto;
+			}  
+		}
 	}
 	.result-card__reservation{
 		display: flex;
