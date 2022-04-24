@@ -6,19 +6,34 @@
 	// height: 0;
 	// margin-top: -100px;
 	padding-bottom: prc(670, 1538);
+
+	@include max-screen($sm){
+		padding-bottom: 0;
+		// padding-bottom: prc(777, 1120);
+		height: 777px;
+	}  
 }
 .page-about__top-inner{
 	position: absolute;
 	left: -87px;
 	top: 0;
-	width: calc(100% + 98px);
+	width: calc(100% + 87px);
 	height: 100%;
 	background-position: right top;
 	background-repeat: no-repeat;
 	background-size: cover;
+
+	@include max-screen(375px){
+		width: 300%;
+    left: -72%;
+    top: 33px;
+    height: 100%;
+    background-position: 38% top;
+	}  
 }
 .page-about__bottom {
-	margin-top: -300px;
+	@include adaptive-value('margin-top', -300, -100, 1);
+	// margin-top: -300px;
 	position: relative;
 	background-color: #F9F9FA;
 	@include vertical-grad(transparent, #F9F9FA);
@@ -29,11 +44,15 @@
 		top: -50px;
 		left: 50%;
 		transform: translateX(-50%);
-		width: 110%;
+		width: 130%;
 		height: 100%;
 		background-color: #F9F9FA;
 		filter: blur(34px);
 	}
+
+	@include max-screen($xs){
+		margin-top: -150px;
+	}  
 }
 .container {}
 .page-about__title{
@@ -44,6 +63,23 @@
 	line-height: calc(50 / 42);
 	font-weight: 500;
 	color: #fff;
+
+	@include max-screen($sm){
+		font-size: 42px;
+	}
+	@include max-screen(600px){
+		padding-top: 142px;  	
+  }
+  @include max-screen(320px){
+  	font-size: 37px;    	
+  }      
+
+	br{
+		@include max-screen($sm){
+			display: none;
+		}  
+
+	}
 }
 .page-about__content {
 	@include adaptive-value('padding-top', 92, 72, 1);
@@ -61,15 +97,36 @@
 	padding-right: 10px;
 	line-height: calc(50 / 42);
 	font-weight: 500;
+
+	@include max-screen($md){
+		flex-basis: 100%;
+	}  
+	@include max-screen($md){
+		font-size: 32px;
+	}  
 }
 .page-about__features {
 	flex: 0 0 calc(50% - 10px);
 	@include adaptive-value('padding-left', 89, 0, 1);
+
+	@include max-screen($md){
+		flex-basis: 100%;
+		padding-left: 0;
+	}
 }
 .page-about__feature {
 
 	&:not(:last-child){
 		margin-bottom: 69px;
+
+		@include max-screen($md){
+			margin-bottom: 40px;
+		}  
+	}
+	br{
+		@include max-screen($md){
+			display: none;
+		}  
 	}
 }
 .feature-page-about {}
@@ -89,12 +146,18 @@
 	flex-wrap: wrap;
 	row-gap: 40px;
 	column-gap: 20px;
+
+	  
 }
 .page-about__option {
 	flex: 0 0 calc(50% - 10px); 
 	padding: 24px;
 	background: #FFFFFF;
 	border-radius: 12px;
+
+	@include max-screen($md){
+		flex-basis: 100%;
+	}  
 }
 .option-page-about {}
 .option-page-about__title {
@@ -102,9 +165,18 @@
 	font-weight: 500;
 	font-size: 24px;
 	line-height: 29px;
+
+	@include max-screen($xs){
+		font-size: 22px;
+	}  
 }
 .option-page-about__content {
 	display: flex;
+
+	@include max-screen($xs){
+
+		flex-direction: column;
+	}
 }
 .option-page-about__text {
 	flex: 1 1 auto;
@@ -114,10 +186,19 @@
 	font-size: 14px;
 	line-height: 17px;
 	color: rgba(#222222, .6);
+
+	@include max-screen($xs){
+		margin-bottom: 24px;
+		padding-right: 15px;
+	} 
 }
 .btn2 {
 	height: 50px;
 	flex: 0 0 214px;
+
+	@include max-screen($xs){
+		flex-basis: auto;
+	}  
 }
 .option-page-about__b-icon{
 	margin-left: 4px;
