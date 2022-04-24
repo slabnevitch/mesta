@@ -77,6 +77,7 @@
 	// End ibg class
 
 	// correct height of map and filters
+	if($('.resuls-map').length < 0){
 		if(screen.width <= 991 && isMobile.iOS()){
 			console.log('ios detected');
 			window.addEventListener('resize', () => {
@@ -84,6 +85,8 @@
 			});
 
 		}
+		
+	}
 	// END correct height of map and filters
 	
 	document.addEventListener('DOMContentLoaded', function() {
