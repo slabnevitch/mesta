@@ -76,7 +76,6 @@
 	}
 	// End ibg class
 
-
 	// correct height of map and filters
 		if(screen.width <= 991 && isMobile.iOS()){
 			console.log('ios detected');
@@ -339,6 +338,14 @@
 			});
 		}
 		// END filter-tags scroll check
+
+		// input phone mask
+		if($('#phone-mask').length > 0){
+			var phoneMask = IMask(document.getElementById('phone-mask'), {
+		    mask: '+{7} (000) 000-00-00'
+		  });
+		}
+		// END input phone mask
 	});
 	
 	// tags fixed on mobile
