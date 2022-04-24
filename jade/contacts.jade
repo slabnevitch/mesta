@@ -1,52 +1,61 @@
 extends _misc/main
 
 block title
-	| О нас
+	| Контакты
 
 block content
-	.page-about
-		section.place
-				.page-about__top
-					.page-about__top-inner(style="background-image: url(img/about-page/visual.jpg)")
-					
-					.page-about__cover
-						.container
-							.page-about__title ЗнайМеста.ru -  
-								br
-								| это сервис для поиска загородного отдыха.	
-						
-				.page-about__bottom
-					.container
-						.page-about__content
-							.page-about__slogan Открывайте для себя интересные места, бронируйте комплексы для отдыха и туры выходного дня, узнавайте куда поехать  с детьми и где активно провести выходные.
-							
-							.page-about__features
-								.page-about__feature.feature-page-about
-									.feature-page-about__icon
-									.feature-page-about__text Наша миссия - побудить людей 
-										br 
-										| чаще проводить выходные за 
-										br
-										| пределами своего города.
+	.page-contacts
+		.container
+			.contacts-content
+				.contacts-header
+					.contacts-header__title Контакты
+					.contacts-header__caption Вы можете отправить нам сообщение и мы обязательно свяжемся с вами
+				
+				.contacts-info
+					form.contacts-info__form
+						.form_inp-wrapper
+							.form_inp-title
+								| Имя
+								span
+							input.form_inp(type='text' name='' id='' placeholder='Ваше имя' required='')
+						.form_inp-wrapper
+							.form_inp-title
+								| Номер телефона
+								span
+							input.form_inp(type='text' name='' id='' placeholder='+7 (000) 000‒00‒00' required='')
+						.form_inp-wrapper
+							.form_inp-title
+								| Сообщение 
+								span
+							input.form_inp(type='text' name='' id='' placeholder='Введите сообщение' required='')
 
-								.page-about__feature.feature-page-about
-									.feature-page-about__icon
-									.feature-page-about__text Мы отбираем только лучшие места и комплексы, чтобы вы были уверены в качестве предстоящего отдыха.
+						.contacts-info__form-bottom
+							| Продолжая, Вы соглашаетесь с нашими 
+							a(href="#") Условиями использования  
+							br
+							| и подтверждаете, что прочли нашу #[a(href="#") Политику конфиденциальности.]
 
-						.page-about__options
-							.page-about__option.option-page-about
-								.option-page-about__title Помогаем комплексам для загородного отдыха найти новых гостей
-								.option-page-about__content
-									.option-page-about__text Разместите свой отель, глемпинг  или другой загородный комплекс  на ЗнайМеста.ru
-									a(href="#").btn2 Разместить объект
-										span.option-page-about__b-icon
+						button.btn Отправить
 
-							.page-about__option.option-page-about
-								.option-page-about__title Делаем управление отельным бизесом простым и удобным
-								.option-page-about__content
-									.option-page-about__text Подключите облачную систему управления бронированиями и автоматизируйте работу отеля.
-									a(href="#").btn2 Узнать о системе
-										span.option-page-about__b-icon
+					.contacts-address.address-contacts
+						.address-contacts__row
+							.address-contacts__key Фактический адрес:
+							.address-contacts__value 350000, Краснодар, ул. Карасунская 89
+
+						.address-contacts__row
+							.address-contacts__key Электронная почта:
+							a(href="mailto:info@znaimesta.ru").address-contacts__value info@znaimesta.ru
+
+						.address-contacts__row
+							.address-contacts__key Телефоны:
+							a(href="tel:+74951508835").address-contacts__value +7 (495) 150-88-35.
+
+				.contacts-requisites
+					.contacts-requisites__title Реквизиты
+					.contacts-requisites__row ИП Арнаут Дмитрий Константинович.
+					.contacts-requisites__row ИНН 668605051497 / ОГРНИП 317505300077627.
+					.contacts-requisites__row Юридический адрес: 143907, Московская область, город Балашиха, проспект Ленина 32А, кв. 287
+					.contacts-requisites__row Тел.: +7 (495) 150-88-35.
 				
 				
 //- img(src=img + "demo.jpg")

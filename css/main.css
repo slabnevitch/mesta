@@ -2842,5 +2842,125 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 /*===================== end about-page======================*/
+/*--------------------contacts-page----------------------*/
+.page-contacts {
+  padding-top: 136px;
+}
+
+.contacts-content {
+  padding: 32px 24px;
+  background: #FFFFFF;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+}
+
+.contacts-header {
+  margin-bottom: 32px;
+}
+
+.contacts-header__title {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: -webkit-calc(50/42);
+  line-height: calc(50/42);
+}
+
+.contacts-header__caption {
+  max-width: 457px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  opacity: 0.5;
+}
+
+.contacts-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
+  margin-bottom: 64px;
+}
+
+.contacts-info__form {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 457px;
+  -ms-flex: 0 1 457px;
+  flex: 0 1 457px;
+}
+
+.contacts-info__form .btn {
+  height: 52px;
+  width: 128px;
+}
+
+.contacts-info__form-bottom {
+  margin-bottom: 16px;
+  margin-top: 24px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #A7A7A7;
+}
+
+.contacts-info__form-bottom a {
+  color: #FC6733;
+}
+
+.contacts-address {
+  padding: 24px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 537px;
+  -ms-flex: 0 1 537px;
+  flex: 0 1 537px;
+  border: 1px solid #F4F4F4;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+}
+
+.address-contacts__row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  row-gap: 8px;
+  -webkit-column-gap: 32px;
+  -moz-column-gap: 32px;
+  column-gap: 32px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.address-contacts__row:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.address-contacts__key {
+  opacity: 0.6;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 156px;
+  -ms-flex: 0 0 156px;
+  flex: 0 0 156px;
+}
+
+.address-contacts__value {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  color: #222222;
+}
+
+/*--------------------END contacts-page----------------------*/
 
 /*# sourceMappingURL=maps/main.css.map */
