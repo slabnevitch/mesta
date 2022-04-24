@@ -5,57 +5,58 @@ block title
 
 block content
 	.page-contacts
-		.container
-			.contacts-content
-				.contacts-header
-					.contacts-header__title Контакты
-					.contacts-header__caption Вы можете отправить нам сообщение и мы обязательно свяжемся с вами
-				
-				.contacts-info
-					form.contacts-info__form
-						.form_inp-wrapper
-							.form_inp-title
-								| Имя
-								span
-							input.form_inp(type='text' name='' id='' placeholder='Ваше имя' required='')
-						.form_inp-wrapper
-							.form_inp-title
-								| Номер телефона
-								span
-							input.form_inp(type='text' name='' id='' placeholder='+7 (000) 000‒00‒00' required='')
-						.form_inp-wrapper
-							.form_inp-title
-								| Сообщение 
-								span
-							input.form_inp(type='text' name='' id='' placeholder='Введите сообщение' required='')
+		section.place
+			.container
+				.contacts-content
+					.contacts-header
+						.contacts-header__title Контакты
+						.contacts-header__caption Вы можете отправить нам сообщение и мы обязательно свяжемся с вами
+					
+					.contacts-info
+						form.contacts-info__form
+							.form_inp-wrapper
+								.form_inp-title
+									| Имя
+									span
+								input.form_inp(type='text' name='' id='' placeholder='Ваше имя' required='')
+							.form_inp-wrapper
+								.form_inp-title
+									| Номер телефона
+									span
+								input.form_inp(type='text' name='' id="phone-mask" required='')
+							.form_inp-wrapper
+								.form_inp-title
+									| Сообщение 
+									span
+								input.form_inp(type='text' name='' id='' placeholder='Введите сообщение' required='')
 
-						.contacts-info__form-bottom
-							| Продолжая, Вы соглашаетесь с нашими 
-							a(href="#") Условиями использования  
-							br
-							| и подтверждаете, что прочли нашу #[a(href="#") Политику конфиденциальности.]
+							.contacts-info__form-bottom
+								| Продолжая, Вы соглашаетесь с нашими 
+								a(href="#") Условиями использования  
+								br
+								| и подтверждаете, что прочли нашу #[a(href="#") Политику конфиденциальности.]
 
-						button.btn Отправить
+							button.btn Отправить
 
-					.contacts-address.address-contacts
-						.address-contacts__row
-							.address-contacts__key Фактический адрес:
-							.address-contacts__value 350000, Краснодар, ул. Карасунская 89
+						.contacts-address.address-contacts
+							.address-contacts__row
+								.address-contacts__key Фактический адрес:
+								.address-contacts__value 350000, Краснодар, ул. Карасунская 89
 
-						.address-contacts__row
-							.address-contacts__key Электронная почта:
-							a(href="mailto:info@znaimesta.ru").address-contacts__value info@znaimesta.ru
+							.address-contacts__row
+								.address-contacts__key Электронная почта:
+								a(href="mailto:info@znaimesta.ru").address-contacts__value info@znaimesta.ru
 
-						.address-contacts__row
-							.address-contacts__key Телефоны:
-							a(href="tel:+74951508835").address-contacts__value +7 (495) 150-88-35.
+							.address-contacts__row
+								.address-contacts__key Телефоны:
+								a(href="tel:+74951508835").address-contacts__value +7 (495) 150-88-35.
 
-				.contacts-requisites
-					.contacts-requisites__title Реквизиты
-					.contacts-requisites__row ИП Арнаут Дмитрий Константинович.
-					.contacts-requisites__row ИНН 668605051497 / ОГРНИП 317505300077627.
-					.contacts-requisites__row Юридический адрес: 143907, Московская область, город Балашиха, проспект Ленина 32А, кв. 287
-					.contacts-requisites__row Тел.: +7 (495) 150-88-35.
+					.contacts-requisites
+						.contacts-requisites__title Реквизиты
+						.contacts-requisites__row ИП Арнаут Дмитрий Константинович.
+						.contacts-requisites__row ИНН 668605051497 / ОГРНИП 317505300077627.
+						.contacts-requisites__row Юридический адрес: 143907, Московская область, город Балашиха, проспект Ленина 32А, кв. 287
+						.contacts-requisites__row Тел.: +7 (495) 150-88-35.
 				
 				
 //- img(src=img + "demo.jpg")
@@ -144,7 +145,7 @@ block page-scripts
 	//- script(src="js/libs/noUiSlider/nouislider.min.js")
 
 	//- iMask--------------------------
-	//- script(src="js/libs/imask/imask.js")
+	script(src="js/libs/imask/imask.js")
 
 	//- FormHandler--------------------------
 	//- script(src="js/libs/formhandler.js-1.1.2/dist/js/FormHandler.min.js")

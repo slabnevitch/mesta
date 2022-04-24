@@ -76,6 +76,13 @@
 	}
 	// End ibg class
 
+	var phoneMask = IMask(
+  document.getElementById('phone-mask'), {
+    mask: '+{7} (000)000-00-00'
+    // lazy: false
+    // value: '+7(999)999 99 99'
+  });
+ phoneMask.value = "+7(999)999-99-99";
 
 	// correct height of map and filters
 		if(screen.width <= 991 && isMobile.iOS()){

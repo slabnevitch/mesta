@@ -34,51 +34,53 @@
       </div>
     </header>
     <div class="page-contacts">
-      <div class="container">
-        <div class="contacts-content">
-          <div class="contacts-header">
-            <div class="contacts-header__title">Контакты</div>
-            <div class="contacts-header__caption">Вы можете отправить нам сообщение и мы обязательно свяжемся с вами</div>
-          </div>
-          <div class="contacts-info">
-            <form class="contacts-info__form">
-              <div class="form_inp-wrapper">
-                <div class="form_inp-title">Имя<span></span></div>
-                <input type="text" name="" id="" placeholder="Ваше имя" required="" class="form_inp">
-              </div>
-              <div class="form_inp-wrapper">
-                <div class="form_inp-title">Номер телефона<span></span></div>
-                <input type="text" name="" id="" placeholder="+7 (000) 000‒00‒00" required="" class="form_inp">
-              </div>
-              <div class="form_inp-wrapper">
-                <div class="form_inp-title">Сообщение <span></span></div>
-                <input type="text" name="" id="" placeholder="Введите сообщение" required="" class="form_inp">
-              </div>
-              <div class="contacts-info__form-bottom">Продолжая, Вы соглашаетесь с нашими <a href="#">Условиями использования  </a><br>и подтверждаете, что прочли нашу <a href="#">Политику конфиденциальности.</a></div>
-              <button class="btn">Отправить</button>
-            </form>
-            <div class="contacts-address address-contacts">
-              <div class="address-contacts__row">
-                <div class="address-contacts__key">Фактический адрес:</div>
-                <div class="address-contacts__value">350000, Краснодар, ул. Карасунская 89</div>
-              </div>
-              <div class="address-contacts__row">
-                <div class="address-contacts__key">Электронная почта:</div><a href="mailto:info@znaimesta.ru" class="address-contacts__value">info@znaimesta.ru</a>
-              </div>
-              <div class="address-contacts__row">
-                <div class="address-contacts__key">Телефоны:</div><a href="tel:+74951508835" class="address-contacts__value">+7 (495) 150-88-35.</a>
+      <section class="place">
+        <div class="container">
+          <div class="contacts-content">
+            <div class="contacts-header">
+              <div class="contacts-header__title">Контакты</div>
+              <div class="contacts-header__caption">Вы можете отправить нам сообщение и мы обязательно свяжемся с вами</div>
+            </div>
+            <div class="contacts-info">
+              <form class="contacts-info__form">
+                <div class="form_inp-wrapper">
+                  <div class="form_inp-title">Имя<span></span></div>
+                  <input type="text" name="" id="" placeholder="Ваше имя" required="" class="form_inp">
+                </div>
+                <div class="form_inp-wrapper">
+                  <div class="form_inp-title">Номер телефона<span></span></div>
+                  <input type="text" name="" id="phone-mask" required="" class="form_inp">
+                </div>
+                <div class="form_inp-wrapper">
+                  <div class="form_inp-title">Сообщение <span></span></div>
+                  <input type="text" name="" id="" placeholder="Введите сообщение" required="" class="form_inp">
+                </div>
+                <div class="contacts-info__form-bottom">Продолжая, Вы соглашаетесь с нашими <a href="#">Условиями использования  </a><br>и подтверждаете, что прочли нашу <a href="#">Политику конфиденциальности.</a></div>
+                <button class="btn">Отправить</button>
+              </form>
+              <div class="contacts-address address-contacts">
+                <div class="address-contacts__row">
+                  <div class="address-contacts__key">Фактический адрес:</div>
+                  <div class="address-contacts__value">350000, Краснодар, ул. Карасунская 89</div>
+                </div>
+                <div class="address-contacts__row">
+                  <div class="address-contacts__key">Электронная почта:</div><a href="mailto:info@znaimesta.ru" class="address-contacts__value">info@znaimesta.ru</a>
+                </div>
+                <div class="address-contacts__row">
+                  <div class="address-contacts__key">Телефоны:</div><a href="tel:+74951508835" class="address-contacts__value">+7 (495) 150-88-35.</a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="contacts-requisites">
-            <div class="contacts-requisites__title">Реквизиты</div>
-            <div class="contacts-requisites__row">ИП Арнаут Дмитрий Константинович.</div>
-            <div class="contacts-requisites__row">ИНН 668605051497 / ОГРНИП 317505300077627.</div>
-            <div class="contacts-requisites__row">Юридический адрес: 143907, Московская область, город Балашиха, проспект Ленина 32А, кв. 287</div>
-            <div class="contacts-requisites__row">Тел.: +7 (495) 150-88-35.</div>
+            <div class="contacts-requisites">
+              <div class="contacts-requisites__title">Реквизиты</div>
+              <div class="contacts-requisites__row">ИП Арнаут Дмитрий Константинович.</div>
+              <div class="contacts-requisites__row">ИНН 668605051497 / ОГРНИП 317505300077627.</div>
+              <div class="contacts-requisites__row">Юридический адрес: 143907, Московская область, город Балашиха, проспект Ленина 32А, кв. 287</div>
+              <div class="contacts-requisites__row">Тел.: +7 (495) 150-88-35.</div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
     <footer class="footer">
       <div class="container">
@@ -105,6 +107,7 @@
     <script src="js/jquery.fancybox.min.js"></script>
     
     
+    <script src="js/libs/imask/imask.js"></script>
     <script src="js/common.js"></script>
   </body>
 </html>
