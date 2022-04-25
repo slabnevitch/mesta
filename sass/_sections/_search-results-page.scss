@@ -123,9 +123,10 @@ html{
 	}
 	&.fixed{
 		position: fixed;
+		width: calc(100% - 15px);
+		left: 15px;
 		top: 10px;
 		height: 72px;
-		width: 100%;
 		padding-top: 8px;
 		padding-bottom: 14px;
 		background-color: #F9F9FA;

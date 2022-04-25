@@ -587,9 +587,11 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 .filter-tags-wrapper.fixed {
   position: fixed;
+  width: -webkit-calc(100% - 15px);
+  width: calc(100% - 15px);
+  left: 15px;
   top: 10px;
   height: 72px;
-  width: 100%;
   padding-top: 8px;
   padding-bottom: 14px;
   background-color: #F9F9FA;
@@ -2199,6 +2201,10 @@ html .results-filter__item--dates .item-results-filter__dd {
   font-size: 16px;
 }
 
+.result-card .similar_slide-adres .icon-place_contacts-item2 {
+  color: #FC6733;
+}
+
 .place_service-item--adding {
   padding-right: 12px;
 }
@@ -2500,14 +2506,15 @@ html .results-filter__item--dates .item-results-filter__dd {
   width: -webkit-calc(100% + 87px);
   width: calc(100% + 87px);
   height: 100%;
+  background-image: url("../img/about-page/visual.jpg");
   background-position: right top;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 576px) {
   .page-about__top-inner {
-    width: 300%;
+    width: 1120px;
     left: -72%;
     top: 33px;
     height: 100%;
@@ -2609,7 +2616,7 @@ html .results-filter__item--dates .item-results-filter__dd {
   }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 350px) {
   .page-about__title {
     font-size: 37px;
   }
@@ -2801,6 +2808,22 @@ html .results-filter__item--dates .item-results-filter__dd {
   }
 }
 
+.option-page-about__content .btn2 {
+  height: 50px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 214px;
+  -ms-flex: 0 0 214px;
+  flex: 0 0 214px;
+}
+
+@media only screen and (max-width: 576px) {
+  .option-page-about__content .btn2 {
+    -webkit-flex-basis: auto;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+  }
+}
+
 .option-page-about__text {
   -webkit-box-flex: 1;
   -webkit-flex: 1 1 auto;
@@ -2818,22 +2841,6 @@ html .results-filter__item--dates .item-results-filter__dd {
   .option-page-about__text {
     margin-bottom: 24px;
     padding-right: 15px;
-  }
-}
-
-.btn2 {
-  height: 50px;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 214px;
-  -ms-flex: 0 0 214px;
-  flex: 0 0 214px;
-}
-
-@media only screen and (max-width: 576px) {
-  .btn2 {
-    -webkit-flex-basis: auto;
-    -ms-flex-preferred-size: auto;
-    flex-basis: auto;
   }
 }
 
