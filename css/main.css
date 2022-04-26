@@ -673,7 +673,7 @@ html .results-filter__item--dates .item-results-filter__dd {
   height: 100%;
   position: absolute;
   z-index: 2;
-  right: 0;
+  right: -1px;
   top: 0;
   background: -webkit-gradient(linear, right top, left top, color-stop(29.03%, #F9F9FA), to(rgba(249, 249, 250, 0)));
   background: -webkit-linear-gradient(right, #F9F9FA 29.03%, rgba(249, 249, 250, 0) 100%);
@@ -729,11 +729,11 @@ html .results-filter__item--dates .item-results-filter__dd {
   color: #fff;
 }
 
-.filter-tag.active .icon-close {
+.filter-tag.active .icon-delete {
   display: block;
 }
 
-.filter-tag .icon-close {
+.filter-tag .icon-delete {
   display: none;
   margin-left: 9.73px;
   color: #fff;
@@ -1726,7 +1726,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 @media only screen and (max-width: 767.98px) {
   .resuls-map__bottom .filter-tag .filter-tag__name,
-  .resuls-map__bottom .filter-tag .icon-close {
+  .resuls-map__bottom .filter-tag .icon-delete {
     display: none;
   }
 }
@@ -2473,7 +2473,7 @@ html .results-filter__item--dates .item-results-filter__dd {
   padding-bottom: 43.56307%;
 }
 
-@media only screen and (max-width: 767.98px) {
+@media only screen and (max-width: 576px) {
   .page-about__top {
     padding-bottom: 0;
     height: 777px;
@@ -2501,10 +2501,10 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 .page-about__top-inner {
   position: absolute;
-  left: -47px;
+  left: -57px;
   top: -20px;
-  width: -webkit-calc(100% + 87px);
-  width: calc(100% + 87px);
+  width: -webkit-calc(100% + 55px);
+  width: calc(100% + 55px);
   height: 100%;
   background-image: url("../img/about-page/visual.jpg");
   background-position: right top;
@@ -2562,8 +2562,8 @@ html .results-filter__item--dates .item-results-filter__dd {
   width: 130%;
   height: 100%;
   background-color: #F9F9FA;
-  -webkit-filter: blur(34px);
-  filter: blur(34px);
+  -webkit-filter: blur(20px);
+  filter: blur(20px);
 }
 
 @media only screen and (max-width: 576px) {
@@ -2616,7 +2616,7 @@ html .results-filter__item--dates .item-results-filter__dd {
   }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 360px) {
   .page-about__title {
     font-size: 37px;
   }
@@ -2629,7 +2629,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 .page-about__content {
-  padding-top: 92px;
+  padding-top: 62px;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2647,15 +2647,14 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 @media (max-width: 1230px) {
   .page-about__content {
-    padding-top: -webkit-calc(72px + 20 * ((100vw - 320px) / 910));
-    padding-top: calc(72px + 20 * ((100vw - 320px) / 910));
+    margin-bottom: -webkit-calc(79px + 47 * ((100vw - 320px) / 910));
+    margin-bottom: calc(79px + 47 * ((100vw - 320px) / 910));
   }
 }
 
-@media (max-width: 1230px) {
+@media only screen and (max-width: 767.98px) {
   .page-about__content {
-    margin-bottom: -webkit-calc(79px + 47 * ((100vw - 320px) / 910));
-    margin-bottom: calc(79px + 47 * ((100vw - 320px) / 910));
+    padding-top: 32px;
   }
 }
 
@@ -2736,6 +2735,7 @@ html .results-filter__item--dates .item-results-filter__dd {
   margin-bottom: 24px;
   font-size: 32px;
   height: 32px;
+  color: #FC6733;
 }
 
 .feature-page-about__text {
@@ -2809,11 +2809,12 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 .option-page-about__content .btn2 {
-  height: 50px;
+  height: 52px;
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 214px;
   -ms-flex: 0 0 214px;
   flex: 0 0 214px;
+  font-size: 14px;
 }
 
 @media only screen and (max-width: 576px) {
@@ -2845,7 +2846,9 @@ html .results-filter__item--dates .item-results-filter__dd {
 }
 
 .option-page-about__b-icon {
+  font-size: 10px;
   margin-left: 4px;
+  color: #FC6733;
 }
 
 /*===================== end about-page======================*/
@@ -3048,6 +3051,15 @@ html .results-filter__item--dates .item-results-filter__dd {
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   color: #222222;
+}
+
+@media only screen and (max-width: 360px) {
+  .address-contacts__value {
+    -webkit-flex-shrink: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    white-space: pre-line;
+  }
 }
 
 .contacts-requisites__title {

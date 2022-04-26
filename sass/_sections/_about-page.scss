@@ -7,7 +7,7 @@
 	// margin-top: -100px;
 	padding-bottom: prc(670, 1538);
 
-	@include max-screen($sm){
+	@include max-screen($xs){
 		padding-bottom: 0;
 		// padding-bottom: prc(777, 1120);
 		height: 777px;
@@ -49,9 +49,9 @@
 }
 .page-about__top-inner{
 	position: absolute;
-	left: -47px;
+	left: -57px;
 	top: -20px;
-	width: calc(100% + 87px);
+	width: calc(100% + 55px);
 	height: 100%;
 	background-image: url($img + 'about-page/visual.jpg');
 	background-position: right top;
@@ -90,7 +90,7 @@
 		width: 130%;
 		height: 100%;
 		background-color: #F9F9FA;
-		filter: blur(34px);
+		filter: blur(20px);
 	}
 
 	@include max-screen($xs){
@@ -117,7 +117,7 @@
 	@include max-screen(600px){
 		padding-top: 142px;  	
   }
-  @include max-screen(350px){
+  @include max-screen(360px){
   	font-size: 37px;    	
   }      
 
@@ -129,7 +129,8 @@
 	}
 }
 .page-about__content {
-	@include adaptive-value('padding-top', 92, 72, 1);
+	// @include adaptive-value('padding-top', 62, 72, 1);
+	padding-top: 62px;
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
@@ -137,6 +138,10 @@
 	column-gap: 20px;
 	// margin-bottom: 126px;
 	@include adaptive-value('margin-bottom', 126, 79, 1);
+
+	@include max-screen($sm){
+		padding-top: 32px;
+	}  
 }
 .page-about__slogan {
 	flex: 0 0 calc(50% - 10px);
@@ -181,6 +186,7 @@
 	margin-bottom: 24px;
 	font-size: 32px;
 	height: 32px;
+	color: $accent;
 }
 .feature-page-about__text {
 	font-weight: 500;
@@ -226,8 +232,9 @@
 	}
 
 	.btn2 {
-		height: 50px;
+		height: 52px;
 		flex: 0 0 214px;
+		font-size: 14px;
 
 		@include max-screen($xs){
 			flex-basis: auto;
@@ -250,5 +257,7 @@
 
 }
 .option-page-about__b-icon{
+	font-size: 10px;
 	margin-left: 4px;
+	color: $accent;
 }

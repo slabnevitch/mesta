@@ -123,9 +123,10 @@ line-height: calc(50/42);
 	flex: 1 0 auto;
 	color: $text;
 
-	// @include max-screen(1100px){
-	// 	flex: 1 1 auto;
-	// }  
+	@include max-screen(360px){
+		flex-shrink: 1;
+		white-space: pre-line;
+	}  
 }
 .contacts-requisites {}
 .contacts-requisites__title {

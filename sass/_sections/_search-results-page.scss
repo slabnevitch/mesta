@@ -190,7 +190,7 @@ html{
 	height: 100%;
 	position: absolute;
 	z-index: 2;
-	right: 0;
+	right: -1px;
 	top: 0;
 	background: linear-gradient(270deg, #F9F9FA 29.03%, rgba(249, 249, 250, 0) 100%);
 
@@ -223,12 +223,12 @@ html{
 	&.active{
 		background-color: $accent;
 		color: #fff;
-		.icon-close {
+		.icon-delete {
 			display: block;
 		}
 
 	}
-	.icon-close {
+	.icon-delete {
 		display: none;
 		margin-left: 9.73px;
 		color: #fff;
@@ -977,7 +977,7 @@ html{
 			}
 		}
 		.filter-tag__name,
-		.icon-close{
+		.icon-delete{
 			@include max-screen($sm){
 				display: none;
 			}  
