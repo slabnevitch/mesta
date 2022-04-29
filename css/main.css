@@ -2734,14 +2734,23 @@ html .results-filter__item--dates .item-results-filter__dd {
 .feature-page-about__icon {
   margin-bottom: 24px;
   font-size: 32px;
-  height: 32px;
   color: #FC6733;
+}
+
+.feature-page-about__icon.icon-about-like {
+  font-size: 38px;
 }
 
 .feature-page-about__text {
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
+}
+
+@media only screen and (max-width: 576px) {
+  .feature-page-about__text {
+    font-size: 22px;
+  }
 }
 
 .page-about__options {
@@ -2815,6 +2824,7 @@ html .results-filter__item--dates .item-results-filter__dd {
   -ms-flex: 0 0 214px;
   flex: 0 0 214px;
   font-size: 14px;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 576px) {
@@ -2908,6 +2918,12 @@ html .results-filter__item--dates .item-results-filter__dd {
   opacity: 0.5;
 }
 
+@media only screen and (max-width: 576px) {
+  .contacts-header__caption {
+    font-size: 14px;
+  }
+}
+
 .contacts-info {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2936,6 +2952,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 .contacts-info__form .btn {
   height: 52px;
   width: 128px;
+  font-size: 14px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -2972,6 +2989,12 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 .contacts-info__form-bottom a {
   color: #FC6733;
+}
+
+@media only screen and (max-width: 991px) {
+  .contacts-info__form-bottom a {
+    text-decoration: underline;
+  }
 }
 
 .contacts-address {

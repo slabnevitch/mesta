@@ -38,6 +38,10 @@ line-height: calc(50/42);
 	font-size: 16px;
 	line-height: 22px;
 	opacity: 0.5;
+
+	@include max-screen($xs){
+		font-size: 14px;
+	}  
 }
 .contacts-info {
 	display: flex;
@@ -53,6 +57,7 @@ line-height: calc(50/42);
 	.btn {
 		height: 52px;
 		width: 128px;
+		font-size: 14px;
 
 		@include max-screen($xss){
 			width: 100%;
@@ -77,6 +82,10 @@ line-height: calc(50/42);
 
 	a{
 		color: $accent;
+
+		@include max-screen($md){
+			text-decoration: underline;
+		}  
 	}
 }
 .contacts-address {
