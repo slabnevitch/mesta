@@ -49,7 +49,7 @@
 }
 .page-about__top-inner{
 	position: absolute;
-	left: -57px;
+	left: -55px;
 	top: -20px;
 	width: calc(100% + 55px);
 	height: 100%;
@@ -245,9 +245,16 @@
 		font-size: 14px;
 		font-weight: 500;
 
+
 		@include max-screen($xs){
 			flex-basis: auto;
 		}  
+		&:hover{
+			.option-page-about__b-icon{
+				color: #fff;
+			}
+		}
+		
 	}
 }
 .option-page-about__text {
@@ -269,4 +276,5 @@
 	font-size: 10px;
 	margin-left: 4px;
 	color: $accent;
+	transition: color .4s;
 }

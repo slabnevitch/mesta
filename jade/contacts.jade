@@ -18,17 +18,17 @@ block content
 								.form_inp-title
 									| Имя
 									span
-								input.form_inp(type='text' name='' id='' placeholder='Ваше имя' required='')
+								input.form_inp(type='text' name='' id='' placeholder='Ваше имя' )
 							.form_inp-wrapper
 								.form_inp-title
 									| Номер телефона
 									span
-								input.form_inp(type='text' name='' id="phone-mask" required='' placeholder="+7 (999) 999 99 99")
+								input.form_inp(type='text' name='' id="phone-mask"  placeholder="+7 (999) 999 99 99")
 							.form_inp-wrapper
 								.form_inp-title
 									| Сообщение 
 									span
-								input.form_inp(type='text' name='' id='' placeholder='Введите сообщение' required='')
+								textarea.form_inp(type='text' name='' id='' placeholder='Введите сообщение' )
 
 							.contacts-info__form-bottom
 								| Продолжая, Вы соглашаетесь с нашими 
@@ -65,7 +65,7 @@ block content
 block page-scripts
 	script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
 	script(src="js/jquery.fancybox.min.js")
-	//- script(src="js/main.js")
+
 	
 	//- SERVIVE FUNCTIONS==================
 
@@ -145,7 +145,8 @@ block page-scripts
 	//- script(src="js/libs/noUiSlider/nouislider.min.js")
 
 	//- iMask--------------------------
-	script(src="js/libs/imask/imask.js")
+	script(src="js/libs/jquery.maskedinput.min.js")
+	//- script(src="js/libs/imask/imask.js")
 
 	//- FormHandler--------------------------
 	//- script(src="js/libs/formhandler.js-1.1.2/dist/js/FormHandler.min.js")

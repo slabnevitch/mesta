@@ -2501,7 +2501,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 .page-about__top-inner {
   position: absolute;
-  left: -57px;
+  left: -55px;
   top: -20px;
   width: -webkit-calc(100% + 55px);
   width: calc(100% + 55px);
@@ -2835,6 +2835,10 @@ html .results-filter__item--dates .item-results-filter__dd {
   }
 }
 
+.option-page-about__content .btn2:hover .option-page-about__b-icon {
+  color: #fff;
+}
+
 .option-page-about__text {
   -webkit-box-flex: 1;
   -webkit-flex: 1 1 auto;
@@ -2859,6 +2863,8 @@ html .results-filter__item--dates .item-results-filter__dd {
   font-size: 10px;
   margin-left: 4px;
   color: #FC6733;
+  -webkit-transition: color .4s;
+  transition: color .4s;
 }
 
 /*===================== end about-page======================*/
@@ -3108,6 +3114,11 @@ html .results-filter__item--dates .item-results-filter__dd {
     font-size: 12px;
     line-height: 18px;
   }
+}
+
+textarea.form_inp {
+  padding-top: 16px;
+  resize: none;
 }
 
 /*--------------------END contacts-page----------------------*/
