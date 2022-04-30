@@ -344,11 +344,29 @@
 
 		// input phone mask
 		if($('#phone-mask').length > 0){
-			var phoneMask = IMask(document.getElementById('phone-mask'), {
-		    mask: '+{7} (000) 000-00-00'
-		  });
+			$('#phone-mask').mask('+7 (999) 999-99-99');
 		}
 		// END input phone mask
+
+		// elstic textarea
+		if($('textarea.form_inp').length > 0){
+			function elasticArea() {
+			    $('textarea.form_inp').each(function(index, element) {
+			       var elasticElement = element,
+			          $elasticElement = $(element),
+			          initialHeight = initialHeight || $elasticElement.height(),
+			          delta = parseInt( $elasticElement.css('paddingBottom') ) + parseInt( $elasticElement.css('paddingTop') ) || 0,
+			          resize = function() {
+			            $elasticElement.height(initialHeight);
+			            $elasticElement.height( elasticElement.scrollHeight - delta );
+			        };
+			      $elasticElement.on('input change keyup', resize);
+			      resize();
+			    });
+			  };
+			elasticArea();
+		}
+		// END elstic textarea
 	});
 	
 	// tags fixed on mobile

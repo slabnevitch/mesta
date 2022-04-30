@@ -5,6 +5,7 @@
     <title>Контакты</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
     <link rel="stylesheet" href="https://easepick.com/assets/css/demo_hotelcal.css">
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
@@ -45,15 +46,15 @@
               <form class="contacts-info__form">
                 <div class="form_inp-wrapper">
                   <div class="form_inp-title">Имя<span></span></div>
-                  <input type="text" name="" id="" placeholder="Ваше имя" required="" class="form_inp">
+                  <input type="text" name="" id="" placeholder="Ваше имя" class="form_inp">
                 </div>
                 <div class="form_inp-wrapper">
                   <div class="form_inp-title">Номер телефона<span></span></div>
-                  <input type="text" name="" id="phone-mask" required="" placeholder="+7 (999) 999 99 99" class="form_inp">
+                  <input type="text" name="" id="phone-mask" placeholder="+7 (999) 999 99 99" class="form_inp">
                 </div>
                 <div class="form_inp-wrapper">
                   <div class="form_inp-title">Сообщение <span></span></div>
-                  <input type="text" name="" id="" placeholder="Введите сообщение" required="" class="form_inp">
+                  <textarea type="text" name="" id="" placeholder="Введите сообщение" class="form_inp"></textarea>
                 </div>
                 <div class="contacts-info__form-bottom">Продолжая, Вы соглашаетесь с нашими <a href="#">Условиями использования </a><br>и подтверждаете, что прочли нашу <a href="#">Политику конфиденциальности.</a></div>
                 <button class="btn">Отправить</button>
@@ -107,7 +108,7 @@
     <script src="js/jquery.fancybox.min.js"></script>
     
     
-    <script src="js/libs/imask/imask.js"></script>
+    <script src="js/libs/jquery.maskedinput.min.js"></script>
     <script src="js/common.js"></script>
   </body>
 </html>
