@@ -84,7 +84,7 @@ line-height: calc(50/42);
 		color: $accent;
 
 		@include max-screen($md){
-			text-decoration: underline;
+			border-bottom: 1px solid;
 		}  
 	}
 }
