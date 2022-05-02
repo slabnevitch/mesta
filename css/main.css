@@ -2140,6 +2140,69 @@ textarea.form_inp {
 
 /*--------------------END contacts-page----------------------*/
 
+/*=====================Error Page=========================*/
+
+.page-error {
+  padding-top: 133px;
+}
+
+.page-error--server {
+  padding-top: 125px;
+}
+
+.page-error--server .page-error__img {
+  max-width: 325px;
+  margin-bottom: 5px;
+}
+
+.page-error--server .page-error__text {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 541px;
+}
+
+.page-error__content {
+  text-align: center;
+}
+
+.page-error__img {
+  max-width: 428px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-error__img img {
+  display: block;
+  width: 100%;
+}
+
+.page-error__title {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 72px;
+}
+
+.page-error__text {
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 22px;
+  color: #222222;
+  opacity: 0.6;
+}
+
+.page-error__btn {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 108px;
+  height: 54px;
+  font-size: 14px;
+}
+
+/*===================== end Error Page======================*/
+
 /*# sourceMappingURL=maps/main.css.map */
 
 @media only screen and (min-width: 767.98px) {
@@ -2585,7 +2648,20 @@ textarea.form_inp {
   }
 
   .contacts-info__form-bottom a {
-    text-decoration: underline;
+    border-bottom: 1px solid;
+  }
+
+  .page-error {
+    padding-top: 106px;
+  }
+
+  .page-error--server {
+    padding-top: 104px;
+  }
+
+  .page-error__title {
+    font-size: 42px;
+    line-height: 50px;
   }
 }
 
@@ -2715,6 +2791,21 @@ textarea.form_inp {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
+  }
+
+  .page-error--server .page-error__img {
+    max-width: 252px;
+    margin-bottom: 32px;
+  }
+
+  .page-error__img {
+    max-width: 288px;
+    margin-bottom: 32px;
+  }
+
+  .page-error__text {
+    font-size: 14px;
+    margin-bottom: 24px;
   }
 }
 
