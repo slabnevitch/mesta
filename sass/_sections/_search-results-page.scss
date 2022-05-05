@@ -133,7 +133,8 @@ html{
 		z-index: 5;
 
 		@include max-screen($xs){
-			height: 66px;
+			// height: 66px;
+			height: 59px;
 			padding-top: 0;
 			margin-top: 0;
 		}  
