@@ -1842,8 +1842,8 @@ html .results-filter__item--dates .item-results-filter__dd {
   width: 130%;
   height: 100%;
   background-color: #F9F9FA;
-  -webkit-filter: blur(20px);
-  filter: blur(20px);
+  -webkit-filter: blur(15px);
+  filter: blur(15px);
 }
 
 .page-about__title {
@@ -2135,6 +2135,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 textarea.form_inp {
   padding-top: 16px;
+  padding-right: 20px;
   resize: none;
 }
 
@@ -2821,7 +2822,7 @@ textarea.form_inp {
   }
 
   .filter-tags-wrapper.fixed {
-    height: 66px;
+    height: 59px;
     padding-top: 0;
     margin-top: 0;
   }
