@@ -2561,11 +2561,9 @@ html .results-filter__item--dates .item-results-filter__dd {
   transform: translateX(-50%);
   width: 130%;
   height: 100%;
-  background-color: #fff;
-  background-image: url(../img/about-page/about-blur.svg);
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #F9F9FA;
+  -webkit-filter: blur(15px);
+  filter: blur(15px);
 }
 
 @media only screen and (max-width: 576px) {
@@ -3120,6 +3118,7 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 textarea.form_inp {
   padding-top: 16px;
+  padding-right: 20px;
   resize: none;
 }
 
