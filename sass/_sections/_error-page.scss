@@ -81,4 +81,8 @@
 	width: 108px;
 	height: 54px;
 	font-size: 14px;
+
+	@include max-screen($md){
+		height: 52px;
+	}
 }

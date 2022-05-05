@@ -1,68 +1,3 @@
-// jQuery(function() {
-
-// 	// ibg class
-// 		if('objectFit' in document.documentElement.style === false){
-// 		  Array.prototype.forEach.call(document.querySelectorAll('._fit'), function(el){
-
-// 		    var image = el.querySelector('img');
-// 		    el.style.backgroundImage = 'url("'+image.src+'")';
-// 		    el.classList.add('ibg');
-// 		    el.classList.remove('_fit');
-//  		 });
-// 		}
-// 	// End ibg class
-
-
-	// jQuery(document).ready(function() {
-	// 	console.log('jQuery document ready');
-	// });
-
-// 	//SVG Fallback
-// 	// if(!Modernizr.svg) {
-// 	// 	$("img[src*='svg']").attr("src", function() {
-// 	// 		return $(this).attr("src").replace(".svg", ".png");
-// 	// 	});
-// 	// };
-
-// 	//E-mail Ajax Send
-// 	//Documentation & Example: https://github.com/agragregra/uniMail
-// 	$("form").submit(function() { //Change
-// 		var th = $(this);
-// 		$.ajax({
-// 			type: "POST",
-// 			url: "mail.php", //Change
-// 			data: th.serialize()
-// 		}).done(function() {
-// 			alert("Thank you!");
-// 			setTimeout(function() {
-// 				// Done Functions
-// 				th.trigger("reset");
-// 			}, 1000);
-// 		});
-// 		return false;
-// 	});
-
-// 	//Chrome Smooth Scroll
-// 	try {
-// 		$.browserSelector();
-// 		if($("html").hasClass("chrome")) {
-// 			$.smoothScroll();
-// 		}
-// 	} catch(err) {
-
-// 	};
-
-// 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
-	
-// });
-
-// $(window).on('load', function() {
-
-// 	$(".loader_inner").fadeOut();
-// 	$(".loader").delay(400).fadeOut("slow");
-
-// });
-
 (function() {
 	// ibg class
 	if('objectFit' in document.documentElement.style === false){
@@ -79,7 +14,6 @@
 	// correct height of map and filters
 	if($('.resuls-map').length < 0){
 		if(screen.width <= 991 && isMobile.iOS()){
-			console.log('ios detected');
 			window.addEventListener('resize', () => {
 			  document.querySelector('.resuls-map').style.setProperty('--height', `${window.innerHeight}px`);
 			});
@@ -90,13 +24,9 @@
 	// END correct height of map and filters
 	
 	document.addEventListener('DOMContentLoaded', function() {
-		console.log('DOMContentLoaded!');
-
-		// console.log(picker);
 
 		$(document).on('click', function(e) {
 			var $target = $(e.target);
-			console.log(e.target)
 			
 			// item-results-filter__dd toggle
 			if($('.item-results-filter__dd').length > 0){
@@ -181,16 +111,12 @@
 				$('html').removeClass('filter-calendar-open');
 			}
 			if($target.attr('id') === 'calendar-reset'){
-				// $('#datepicker-static').val('');
-				// $('#datepicker-static2').val('');
-
-				// console.log(document.querySelector('.easepick-wrapper').shadowRoot.querySelectorAll('.day'));
-
+				
 				var calendarDays = document.querySelector('.easepick-wrapper').shadowRoot.querySelectorAll('.days-grid .day:not(.not-available)');
 				for (var i=0; i < calendarDays.length; i++){
 					calendarDays[i].classList.remove("in-range", "start", "end");
 				}
-				console.log($('#filter-datepikers').eq(0))
+
 				$('#filter-datepikers')[0].reset();
 
 				if(screen.width <= 991){
@@ -282,7 +208,6 @@
 			}
 
 			function getValues() {
-				console.log(Number(slider.noUiSlider.get().slice(0, -3)))
 				document.getElementById('minval').value = slider.noUiSlider.get();
 
 				for (var i = 0; i < slider.querySelectorAll('.noUi-value').length; i++) {
@@ -323,7 +248,6 @@
 		// result-form check
 		if($('.item-results-filter__form').length > 0){
 			$('.item-results-filter__form .item-results-filter__input').on('change', function() {
-				console.log('change', $(this))
 				$(this).closest('.results-filter__item').find('.item-results-filter__sort-key')
 					.text($(this).val().toLowerCase());
 			});

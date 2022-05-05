@@ -3223,6 +3223,12 @@ textarea.form_inp {
   font-size: 14px;
 }
 
+@media only screen and (max-width: 991px) {
+  .page-error__btn {
+    height: 52px;
+  }
+}
+
 /*===================== end Error Page======================*/
 
 /*# sourceMappingURL=maps/main.css.map */
