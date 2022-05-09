@@ -11,6 +11,7 @@ html(lang='ru')
 		//- meta(name="viewport" content="width=device-width")
 
 		link(rel="stylesheet" href="https://easepick.com/assets/css/demo_hotelcal.css")
+		link(rel="stylesheet" href="js/libs/dropzone/dropzone.min.css")
 		link(rel="stylesheet" href="css/slider.css")
 		link(rel="stylesheet" href="css/jquery.fancybox.min.css")
 		link(rel="stylesheet" href="css/style.css")
@@ -34,9 +35,11 @@ html(lang='ru')
 		include ../_sections/footer
 		
 
-		//- include _scripts
+		include _scripts
 
 		block page-scripts
 		
+		script(src="js/jquery.fancybox.min.js")
+		script(src='js/libs/dropzone/dropzone.min.js')
 		script(src='js/common.js')
 		//- script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_NAmCu9dm16a9i0oeX0T6rBQFgObeiZA&amp;callback=initMap" async defer>)
