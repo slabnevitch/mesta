@@ -30,8 +30,8 @@
 		  // url: "/target-url", // Set the url
 		  previewsContainer: '.popup-place-objec__previews',
 		  parallelUploads: 2,
-		  thumbnailHeight: 120,
-		  thumbnailWidth: 120,
+		  thumbnailHeight: 86,
+		  thumbnailWidth: 86,
 		  maxFilesize: 20,
 		  filesizeBase: 1000,
 		  // autoQueue: false,
@@ -40,10 +40,15 @@
 			    <img class="dz-image" data-dz-thumbnail />
 			  </div>
 			  <div class="dz-progress">
-			  	<span class="dz-text">Загрузка</span>
-			  	<span class="dz-upload" data-dz-uploadprogress></span>
-		  		</div>
-			  	<img src="recycle-bin-icon.png" alt="Click me to remove the file." data-dz-remove />
+			  	<span class="dz-text">Загрузка...</span>
+			  	<div class="dz-upload-wrap">
+			  		<span class="dz-upload" data-dz-uploadprogress></span>
+			  	</div>
+	  		   </div>
+			  	<div class="dz-progress__del" data-dz-remove>
+			  		<div class="icon-delet_b"></div>
+			  	<div>
+			</div>
 			</div>`
 			// thumbnail: function(file, dataUrl) {
 			//     if (file.previewElement) {
