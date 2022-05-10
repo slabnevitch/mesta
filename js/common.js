@@ -372,8 +372,8 @@
 		// END filter-tags scroll check
 
 		// input phone mask
-		if($('#phone-mask').length > 0){
-			$('#phone-mask').mask('+7 (999) 999-99-99');
+		if($('[type="tel"]').length > 0){
+			$('[type="tel"]').mask('+7 (999) 999-99-99');
 		}
 		// END input phone mask
 

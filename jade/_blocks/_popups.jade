@@ -29,7 +29,7 @@
 		.popup__text В ближайшее время с вами свяжется наш специалист
 	button.btn#successfully-close Отлично
 
-.popup.popup-place-object#place-object-popup
+.popup.popup-place-object#place-object-popup(style="display: none;")
 	.popup__title Разместить свой объект
 	.popup__text Отправьте заявку на добавление места. Если он соответствует нашим требования, мы свяжемся с вами и добавим его на сайт
 
@@ -79,7 +79,7 @@
 				.form_inp-title
 					| Телефон
 					span
-				input.form_inp(type='text' name='' id="phone-mask"  placeholder="Введите ваш телефон")
+				input.form_inp(type='tel' name=''  placeholder="Введите ваш телефон")
 		
 		.popup-place-object__column
 			.popup-place-objec__previews

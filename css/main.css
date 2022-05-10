@@ -3482,6 +3482,40 @@ textarea.form_inp {
   padding: 22px 34px 24px 22px;
 }
 
+@media only screen and (max-width: 600px) {
+  .popup-place-object {
+    padding: 24px 16px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .popup-place-object {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+  }
+}
+
+.popup-place-object .popup__title {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 576px) {
+  .popup-place-object .popup__title {
+    margin-bottom: 16px;
+    max-width: 217px;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .popup-place-object .popup__text {
+    margin-bottom: 47px;
+    text-align: left;
+  }
+}
+
 .popup-place-object__columns {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3499,6 +3533,12 @@ textarea.form_inp {
   border: none;
 }
 
+@media only screen and (max-width: 576px) {
+  .popup-place-object__columns {
+    row-gap: 0;
+  }
+}
+
 .popup-place-object__column {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 -webkit-calc(100% - 374px - 32px);
@@ -3506,8 +3546,54 @@ textarea.form_inp {
   flex: 0 0 calc(100% - 374px - 32px);
 }
 
+@media only screen and (max-width: 767.98px) {
+  .popup-place-object__column {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 -webkit-calc(50% - 32px);
+    -ms-flex: 1 1 calc(50% - 32px);
+    flex: 1 1 calc(50% - 32px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .popup-place-object__column {
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .popup-place-object__column:first-child {
+    margin-bottom: 32px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .popup-place-object__column:nth-child(2), .popup-place-object__column:last-child {
+    padding-right: 15px;
+  }
+}
+
 .popup-place-object__column:nth-child(3) {
   padding-top: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .popup-place-object__column:nth-child(3) {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .popup-place-object__column:nth-child(3) {
+    padding-top: 0;
+    margin-top: 16px;
+    margin-bottom: 26px;
+  }
 }
 
 .popup-place-object__column:nth-child(odd) {
@@ -3515,6 +3601,23 @@ textarea.form_inp {
   -webkit-flex: 0 0 374px;
   -ms-flex: 0 0 374px;
   flex: 0 0 374px;
+}
+
+@media only screen and (max-width: 767.98px) {
+  .popup-place-object__column:nth-child(odd) {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 -webkit-calc(50% - 32px);
+    -ms-flex: 1 1 calc(50% - 32px);
+    flex: 1 1 calc(50% - 32px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .popup-place-object__column:nth-child(odd) {
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
 }
 
 .popup-place-object__column .dz-message {
@@ -3537,6 +3640,12 @@ textarea.form_inp {
   border: 1px dashed rgba(252, 103, 51, 0.6);
   -webkit-border-radius: 12px;
   border-radius: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+  .popup-place-object__column .dz-message {
+    height: 90px;
+  }
 }
 
 .popup-place-object__column .dz-message div {
@@ -3589,8 +3698,22 @@ textarea.form_inp {
   row-gap: 16px;
 }
 
+@media only screen and (max-width: 576px) {
+  .popup-place-objec__previews {
+    padding-top: 16px;
+    row-gap: 0;
+  }
+}
+
 .popup-place-object__bottom {
+  margin-top: 9px;
   text-align: right;
+}
+
+@media only screen and (max-width: 576px) {
+  .popup-place-object__bottom {
+    margin-top: 0;
+  }
 }
 
 .popup-place-object__bottom .btn {
@@ -3602,6 +3725,12 @@ textarea.form_inp {
   width: 128px;
   font-weight: 500;
   font-size: 14px;
+}
+
+@media only screen and (max-width: 576px) {
+  .popup-place-object__bottom .btn {
+    width: 100%;
+  }
 }
 
 .dropzone {
@@ -3645,6 +3774,12 @@ textarea.form_inp {
   }
   .dropzone .dz-preview:hover [data-dz-remove] {
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .dropzone .popup-place-objec__previews .dz-preview {
+    margin-bottom: 16px;
   }
 }
 

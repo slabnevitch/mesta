@@ -83,7 +83,7 @@
             <li><a href="">Способы оплаты</a></li>
             <li><a href="">О нас</a></li>
             <li><a href="">Условия возврата</a></li>
-            <li><a href="">Разместить свой объект</a></li>
+            <li><a href="#place-object-popup" class="popup_btn">Разместить свой объект</a></li>
             <li><a href="#advertising-popup" class="popup_btn">Рекламные возможности</a></li>
           </ul>
           <div class="footer_right"><a href="" class="footer_link">Пользовательское соглашение</a><a href="" class="footer_link">Оферта на использование модуля</a>
@@ -120,7 +120,7 @@
       </div>
       <button id="successfully-close" class="btn">Отлично</button>
     </div>
-    <div id="place-object-popup" class="popup popup-place-object">
+    <div id="place-object-popup" style="display: none;" class="popup popup-place-object">
       <div class="popup__title">Разместить свой объект</div>
       <div class="popup__text">Отправьте заявку на добавление места. Если он соответствует нашим требования, мы свяжемся с вами и добавим его на сайт</div>
       <form action="/upload" id="my-awesome-dropzone" class="dropzone popup-place-object__columns">
@@ -158,7 +158,7 @@
           </div>
           <div class="form_inp-wrapper">
             <div class="form_inp-title">Телефон<span></span></div>
-            <input type="text" name="" id="phone-mask" placeholder="Введите ваш телефон" class="form_inp">
+            <input type="tel" name="" placeholder="Введите ваш телефон" class="form_inp">
           </div>
         </div>
         <div class="popup-place-object__column">
