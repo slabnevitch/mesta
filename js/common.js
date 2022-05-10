@@ -1,68 +1,3 @@
-// jQuery(function() {
-
-// 	// ibg class
-// 		if('objectFit' in document.documentElement.style === false){
-// 		  Array.prototype.forEach.call(document.querySelectorAll('._fit'), function(el){
-
-// 		    var image = el.querySelector('img');
-// 		    el.style.backgroundImage = 'url("'+image.src+'")';
-// 		    el.classList.add('ibg');
-// 		    el.classList.remove('_fit');
-//  		 });
-// 		}
-// 	// End ibg class
-
-
-	// jQuery(document).ready(function() {
-	// 	console.log('jQuery document ready');
-	// });
-
-// 	//SVG Fallback
-// 	// if(!Modernizr.svg) {
-// 	// 	$("img[src*='svg']").attr("src", function() {
-// 	// 		return $(this).attr("src").replace(".svg", ".png");
-// 	// 	});
-// 	// };
-
-// 	//E-mail Ajax Send
-// 	//Documentation & Example: https://github.com/agragregra/uniMail
-// 	$("form").submit(function() { //Change
-// 		var th = $(this);
-// 		$.ajax({
-// 			type: "POST",
-// 			url: "mail.php", //Change
-// 			data: th.serialize()
-// 		}).done(function() {
-// 			alert("Thank you!");
-// 			setTimeout(function() {
-// 				// Done Functions
-// 				th.trigger("reset");
-// 			}, 1000);
-// 		});
-// 		return false;
-// 	});
-
-// 	//Chrome Smooth Scroll
-// 	try {
-// 		$.browserSelector();
-// 		if($("html").hasClass("chrome")) {
-// 			$.smoothScroll();
-// 		}
-// 	} catch(err) {
-
-// 	};
-
-// 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
-	
-// });
-
-// $(window).on('load', function() {
-
-// 	$(".loader_inner").fadeOut();
-// 	$(".loader").delay(400).fadeOut("slow");
-
-// });
-
 (function() {
 	// ibg class
 	if('objectFit' in document.documentElement.style === false){
@@ -79,7 +14,6 @@
 	// correct height of map and filters
 	if($('.resuls-map').length < 0){
 		if(screen.width <= 991 && isMobile.iOS()){
-			console.log('ios detected');
 			window.addEventListener('resize', () => {
 			  document.querySelector('.resuls-map').style.setProperty('--height', `${window.innerHeight}px`);
 			});
@@ -89,14 +23,93 @@
 	}
 	// END correct height of map and filters
 	
-	document.addEventListener('DOMContentLoaded', function() {
-		console.log('DOMContentLoaded!');
+		// dropzone
+		Dropzone.autoDiscover = false; // remove error from console
 
-		// console.log(picker);
+		var dropzone = new Dropzone("#my-awesome-dropzone", { // Make the whole body a dropzone
+		  // url: "/target-url", // Set the url
+		  previewsContainer: '.popup-place-objec__previews',
+		  parallelUploads: 2,
+		  thumbnailHeight: 86,
+		  thumbnailWidth: 86,
+		  maxFilesize: 20,
+		  filesizeBase: 1000,
+		  // autoQueue: false,
+		  previewTemplate: `<div class="dz-preview dz-file-preview">
+			  <div class="dz-details">
+			    <img class="dz-image" data-dz-thumbnail />
+			  </div>
+			  <div class="dz-progress">
+			  	<span class="dz-text">Загрузка...</span>
+			  	<div class="dz-upload-wrap">
+			  		<span class="dz-upload" data-dz-uploadprogress></span>
+			  	</div>
+	  		   </div>
+			  	<div class="dz-progress__del" data-dz-remove>
+			  		<div class="icon-delet_b"></div>
+			  	<div>
+			</div>
+			</div>`
+			// thumbnail: function(file, dataUrl) {
+			//     if (file.previewElement) {
+			//       file.previewElement.classList.remove("dz-file-preview");
+			//       var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+			//       for (var i = 0; i < images.length; i++) {
+			//         var thumbnailElement = images[i];
+			//         thumbnailElement.alt = file.name;
+			//         thumbnailElement.src = dataUrl;
+			//       }
+			//       setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+			//     }
+			//   }
+		});
+
+		var minSteps = 6,
+		    maxSteps = 60,
+		    timeBetweenSteps = 100,
+		    bytesPerStep = 100000;
+
+		dropzone.uploadFiles = function(files) {
+		  var self = this;
+
+		  for (var i = 0; i < files.length; i++) {
+
+		    var file = files[i];
+		    totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
+
+		    for (var step = 0; step < totalSteps; step++) {
+		      var duration = timeBetweenSteps * (step + 1);
+		      setTimeout(function(file, totalSteps, step) {
+		        return function() {
+		          file.upload = {
+		            progress: 100 * (step + 1) / totalSteps,
+		            total: file.size,
+		            bytesSent: (step + 1) * file.size / totalSteps
+		          };
+
+		          self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
+		          console.log(file.upload.progress)
+		          if (file.upload.progress == 100) {
+		            file.status = Dropzone.SUCCESS;
+		            self.emit("success", file, 'success', null);
+		            self.emit("complete", file);
+		            self.processQueue();
+		            //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
+		          }
+		        };
+		      }(file, totalSteps, step), duration);
+		    }
+		  }
+		}
+
+		// $('.dz-preview').append($('.popup-place-object__column').eq(1));
+		
+		// END dropzone
+	document.addEventListener('DOMContentLoaded', function() {
+
 
 		$(document).on('click', function(e) {
 			var $target = $(e.target);
-			console.log(e.target)
 			
 			// item-results-filter__dd toggle
 			if($('.item-results-filter__dd').length > 0){
@@ -181,16 +194,12 @@
 				$('html').removeClass('filter-calendar-open');
 			}
 			if($target.attr('id') === 'calendar-reset'){
-				// $('#datepicker-static').val('');
-				// $('#datepicker-static2').val('');
-
-				// console.log(document.querySelector('.easepick-wrapper').shadowRoot.querySelectorAll('.day'));
-
+				
 				var calendarDays = document.querySelector('.easepick-wrapper').shadowRoot.querySelectorAll('.days-grid .day:not(.not-available)');
 				for (var i=0; i < calendarDays.length; i++){
 					calendarDays[i].classList.remove("in-range", "start", "end");
 				}
-				console.log($('#filter-datepikers').eq(0))
+
 				$('#filter-datepikers')[0].reset();
 
 				if(screen.width <= 991){
@@ -227,6 +236,28 @@
 				$('.search-results-cards__pagin').removeClass('active');
 			}
 			// END pagination dwopdown toggle
+
+			// popups
+				if($('#successfully-popup').length > 0 && $target.attr('id') === 'successfully-open'){
+					 $.fancybox.close();
+					 $.fancybox.open({
+			            src: '#successfully-popup',
+			            type: 'inline',
+			            touch: false,
+			            autoFocus: false,
+			            afterLoad: function (instance, current) {
+			                $('body,html').addClass('active')
+			              },
+			              beforeClose: function(){
+			                $('body,html').removeClass('active')
+			             }
+			        });
+				}
+
+				if($target.attr('id') === 'successfully-close'){
+					$.fancybox.close();
+				}
+			// END popups
 		
 		});//document.click
 
@@ -282,7 +313,6 @@
 			}
 
 			function getValues() {
-				console.log(Number(slider.noUiSlider.get().slice(0, -3)))
 				document.getElementById('minval').value = slider.noUiSlider.get();
 
 				for (var i = 0; i < slider.querySelectorAll('.noUi-value').length; i++) {
@@ -323,7 +353,6 @@
 		// result-form check
 		if($('.item-results-filter__form').length > 0){
 			$('.item-results-filter__form .item-results-filter__input').on('change', function() {
-				console.log('change', $(this))
 				$(this).closest('.results-filter__item').find('.item-results-filter__sort-key')
 					.text($(this).val().toLowerCase());
 			});
@@ -343,8 +372,8 @@
 		// END filter-tags scroll check
 
 		// input phone mask
-		if($('#phone-mask').length > 0){
-			$('#phone-mask').mask('+7 (999) 999-99-99');
+		if($('[type="tel"]').length > 0){
+			$('[type="tel"]').mask('+7 (999) 999-99-99');
 		}
 		// END input phone mask
 
