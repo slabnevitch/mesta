@@ -1,0 +1,118 @@
+/*--------------------popups----------------------*/
+.popup {
+	background: #FFFFFF;
+	border-radius: 12px;
+		max-width: 602px;
+		
+	&.fancybox-content{
+		@include max-screen(575.98px){
+			margin-top: 0;
+			
+		}
+	}
+
+	&.popup-advertising {
+
+
+		@include max-screen($xs){
+			height: 100%;
+			border-radius: 0;
+		}
+
+		&.fancybox-content{
+			padding: 0;
+		}
+
+		.popup__form{
+			padding: 60px 80px;
+
+			@include max-screen($xs){
+				height: 100%;
+				padding: 104px 16px 32px 16px;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.btn{
+				margin-top: 24px;
+				@include max-screen($xs){
+					margin-top: auto;
+				}
+			}
+		}
+	}
+
+	.btn {
+		height: 52px;
+		font-size: 14px;
+		font-weight: 500;
+	}
+}
+.popup__title {
+	margin-bottom: 16px;
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 38px;
+	text-align: center;
+
+	@include max-screen($md){
+		margin-bottom: 8px;
+		font-size: 28px;
+		line-height: 40px;
+	}
+}
+.popup__text {
+	font-size: 14px;
+	line-height: 17px;
+	text-align: center;
+	color: rgba(#222222, .6);
+}
+.popup__form {
+	
+	.btn {
+		margin-top: 24px;
+		width: 100%;
+	}
+}
+.popup__form-content{
+	margin-bottom: 48px;
+
+	@include max-screen($md){
+		margin-bottom: 40px;
+	}
+}
+.footer_menu li:last-of-type a{
+	@include max-screen($xss){
+		white-space: normal;
+		
+	}
+}
+
+.popup-successfully{
+	padding: 60px 80px;
+	display: inline-flex !important;
+	flex-direction: column;
+	justify-content: center;
+
+	@include max-screen($xs){
+		height: 100%;
+		border-radius: 0;
+		padding: 32px 16px;
+	}
+
+	.btn{
+		margin-top: 32px;	
+		width: 100%;
+	}
+}
+.popup-successfully__content{
+	flex: 1 0 auto;
+
+	@include max-screen($xs){
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-top: -160px;
+	}
+}
+/*--------------------END popups----------------------*/ 

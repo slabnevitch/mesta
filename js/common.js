@@ -153,6 +153,28 @@
 				$('.search-results-cards__pagin').removeClass('active');
 			}
 			// END pagination dwopdown toggle
+
+			// popups
+				if($('#successfully-popup').length > 0 && $target.attr('id') === 'successfully-open'){
+					 $.fancybox.close();
+					 $.fancybox.open({
+			            src: '#successfully-popup',
+			            type: 'inline',
+			            touch: false,
+			            autoFocus: false,
+			            afterLoad: function (instance, current) {
+			                $('body,html').addClass('active')
+			              },
+			              beforeClose: function(){
+			                $('body,html').removeClass('active')
+			             }
+			        });
+				}
+
+				if($target.attr('id') === 'successfully-close'){
+					$.fancybox.close();
+				}
+			// END popups
 		
 		});//document.click
 

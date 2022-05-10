@@ -34,12 +34,17 @@ html(lang='ru')
 		block content
 		include ../_sections/footer
 		
+		include ../_blocks/_popups
 
 		include _scripts
 
 		block page-scripts
 		
 		script(src="js/jquery.fancybox.min.js")
+		script(src="js/libs/jquery.maskedinput.min.js")
 		script(src='js/libs/dropzone/dropzone.min.js')
+		script(src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.3/dist/index.umd.min.js")
+		script(src="js/slider.js")
+		script(src="js/main.js")
 		script(src='js/common.js')
 		//- script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_NAmCu9dm16a9i0oeX0T6rBQFgObeiZA&amp;callback=initMap" async defer>)

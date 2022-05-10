@@ -1,0 +1,30 @@
+.popup.popup-advertising#advertising-popup(style="display: none;")
+
+	form.popup__form
+		.popup__form-content
+			.popup__title Рекламные возможности
+			.popup__text Заполните форму ниже и мы рассмотрим варианты сотрудничества с вами.
+		.form_inp-wrapper
+			.form_inp-title
+				| Контактное лицо
+				span
+			input.form_inp(type='text' name='' id='' placeholder='Введите имя' )
+		.form_inp-wrapper
+			.form_inp-title
+				| Номер телефона
+				span
+			input.form_inp(type='text' name='' id="phone-mask"  placeholder="+7 (999) 999 99 99")
+
+		.form_inp-wrapper
+			.form_inp-title
+				| Сайт
+				span
+			input.form_inp(type='text' name='' id='' placeholder='Введите ссылку на сайт' )
+
+		button.btn#successfully-open Оставить заявку
+
+.popup.popup-successfully#successfully-popup
+	.popup-successfully__content
+		.popup__title Ваша заявка успешно отправлена
+		.popup__text В ближайшее время с вами свяжется наш специалист
+	button.btn#successfully-close Отлично
