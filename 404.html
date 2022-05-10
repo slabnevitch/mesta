@@ -89,12 +89,59 @@
         <button id="successfully-open" class="btn">Оставить заявку</button>
       </form>
     </div>
-    <div id="successfully-popup" class="popup popup-successfully">
+    <div id="successfully-popup" style="display: none;" class="popup popup-successfully">
       <div class="popup-successfully__content">
         <div class="popup__title">Ваша заявка успешно отправлена</div>
         <div class="popup__text">В ближайшее время с вами свяжется наш специалист</div>
       </div>
       <button id="successfully-close" class="btn">Отлично</button>
+    </div>
+    <div id="place-object-popup" class="popup popup-place-object">
+      <div class="popup__title">Разместить свой объект</div>
+      <div class="popup__text">Отправьте заявку на добавление места. Если он соответствует нашим требования, мы свяжемся с вами и добавим его на сайт</div>
+      <form action="/upload" id="my-awesome-dropzone" class="dropzone popup-place-object__columns">
+        <div class="popup-place-object__column">
+          <div class="form_inp-wrapper">
+            <div class="form_inp-title">Наименование<span></span></div>
+            <input type="text" name="" id="" placeholder="Введите название обьекта" class="form_inp">
+          </div>
+          <div class="form_inp-wrapper">
+            <div class="form_inp-title">Адрес<span></span></div>
+            <input type="text" name="" id="" placeholder="Введите адрес" class="form_inp">
+          </div>
+          <div class="form_inp-wrapper">
+            <div class="form_inp-title">Ссылка<span></span></div>
+            <input type="text" name="" id="" placeholder="Введите ссылку на сайт/соц. сети" class="form_inp">
+          </div>
+        </div>
+        <div class="popup-place-object__column">
+          <div class="popup-place-object__title">Добавить фото</div>
+          <div class="dz-message needsclick">
+            <div>Кликните для загрузки файлов</div><span>(до 5 фотографий JPG или PNG от 1920×1080 пикселей, до 10 МБ каждая)</span>
+          </div>
+        </div>
+        <div class="popup-place-object__column">
+          <div class="popup-place-object__title">Чтобы мы могли с вами связаться</div>
+          <div class="form_inp-wrapper">
+            <div class="form_inp-title">Имя<span></span></div>
+            <input type="text" name="" id="" placeholder="Введите ваше имя" class="form_inp">
+          </div>
+          <div class="form_inp-wrapper">
+            <div class="form_inp-title">Email<span></span></div>
+            <input type="text" name="" id="" placeholder="Введите вашу почту" class="form_inp">
+          </div>
+          <div class="form_inp-wrapper">
+            <div class="form_inp-title">Телефон<span></span></div>
+            <input type="text" name="" id="phone-mask" placeholder="Введите ваш телефон" class="form_inp">
+          </div>
+        </div>
+        <div class="popup-place-object__column">
+          <div class="popup-place-objec__previews"></div>
+        </div>
+      </form>
+      <div class="popup-place-object__bottom">
+        <button class="btn">Отправить</button>
+      </div>
     </div>
     
     <script src="js/libs/jquery/jquery-3.1.1.min.js"></script>

@@ -23,8 +23,65 @@
 
 		button.btn#successfully-open Оставить заявку
 
-.popup.popup-successfully#successfully-popup
+.popup.popup-successfully#successfully-popup(style="display: none;")
 	.popup-successfully__content
 		.popup__title Ваша заявка успешно отправлена
 		.popup__text В ближайшее время с вами свяжется наш специалист
 	button.btn#successfully-close Отлично
+
+.popup.popup-place-object#place-object-popup
+	.popup__title Разместить свой объект
+	.popup__text Отправьте заявку на добавление места. Если он соответствует нашим требования, мы свяжемся с вами и добавим его на сайт
+
+	form(action="/upload")#my-awesome-dropzone.dropzone.popup-place-object__columns
+		.popup-place-object__column
+			//- .popup-place-object__block
+			.form_inp-wrapper
+				.form_inp-title
+					| Наименование
+					span
+				input.form_inp(type='text' name='' id='' placeholder='Введите название обьекта' )
+
+			.form_inp-wrapper
+				.form_inp-title
+					| Адрес
+					span
+				input.form_inp(type='text' name='' id='' placeholder='Введите адрес' )
+
+			.form_inp-wrapper
+				.form_inp-title
+					| Ссылка
+					span
+				input.form_inp(type='text' name='' id='' placeholder='Введите ссылку на сайт/соц. сети' )
+
+		.popup-place-object__column
+			.popup-place-object__title Добавить фото
+			.dz-message.needsclick
+				div Кликните для загрузки файлов
+				span (до 5 фотографий JPG или PNG от 1920×1080 пикселей, до 10 МБ каждая)
+			
+			//- .popup-place-object__block
+		.popup-place-object__column
+			.popup-place-object__title Чтобы мы могли с вами связаться
+			.form_inp-wrapper
+				.form_inp-title
+					| Имя
+					span
+				input.form_inp(type='text' name='' id='' placeholder='Введите ваше имя' )
+			.form_inp-wrapper
+				.form_inp-title
+					| Email
+					span
+				input.form_inp(type='text' name='' id='' placeholder='Введите вашу почту' )
+			.form_inp-wrapper
+				.form_inp-title
+					| Телефон
+					span
+				input.form_inp(type='text' name='' id="phone-mask"  placeholder="Введите ваш телефон")
+		
+		.popup-place-object__column
+			.popup-place-objec__previews
+
+	
+	.popup-place-object__bottom
+		button.btn Отправить

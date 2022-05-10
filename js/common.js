@@ -23,7 +23,85 @@
 	}
 	// END correct height of map and filters
 	
+		// dropzone
+		Dropzone.autoDiscover = false; // remove error from console
+
+		var dropzone = new Dropzone("#my-awesome-dropzone", { // Make the whole body a dropzone
+		  // url: "/target-url", // Set the url
+		  previewsContainer: '.popup-place-objec__previews',
+		  parallelUploads: 2,
+		  thumbnailHeight: 120,
+		  thumbnailWidth: 120,
+		  maxFilesize: 20,
+		  filesizeBase: 1000,
+		  // autoQueue: false,
+		  previewTemplate: `<div class="dz-preview dz-file-preview">
+			  <div class="dz-details">
+			    <img class="dz-image" data-dz-thumbnail />
+			  </div>
+			  <div class="dz-progress">
+			  	<span class="dz-text">Загрузка</span>
+			  	<span class="dz-upload" data-dz-uploadprogress></span>
+		  		</div>
+			  	<img src="recycle-bin-icon.png" alt="Click me to remove the file." data-dz-remove />
+			</div>`
+			// thumbnail: function(file, dataUrl) {
+			//     if (file.previewElement) {
+			//       file.previewElement.classList.remove("dz-file-preview");
+			//       var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+			//       for (var i = 0; i < images.length; i++) {
+			//         var thumbnailElement = images[i];
+			//         thumbnailElement.alt = file.name;
+			//         thumbnailElement.src = dataUrl;
+			//       }
+			//       setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+			//     }
+			//   }
+		});
+
+		var minSteps = 6,
+		    maxSteps = 60,
+		    timeBetweenSteps = 100,
+		    bytesPerStep = 100000;
+
+		dropzone.uploadFiles = function(files) {
+		  var self = this;
+
+		  for (var i = 0; i < files.length; i++) {
+
+		    var file = files[i];
+		    totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
+
+		    for (var step = 0; step < totalSteps; step++) {
+		      var duration = timeBetweenSteps * (step + 1);
+		      setTimeout(function(file, totalSteps, step) {
+		        return function() {
+		          file.upload = {
+		            progress: 100 * (step + 1) / totalSteps,
+		            total: file.size,
+		            bytesSent: (step + 1) * file.size / totalSteps
+		          };
+
+		          self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
+		          console.log(file.upload.progress)
+		          if (file.upload.progress == 100) {
+		            file.status = Dropzone.SUCCESS;
+		            self.emit("success", file, 'success', null);
+		            self.emit("complete", file);
+		            self.processQueue();
+		            //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
+		          }
+		        };
+		      }(file, totalSteps, step), duration);
+		    }
+		  }
+		}
+
+		// $('.dz-preview').append($('.popup-place-object__column').eq(1));
+		
+		// END dropzone
 	document.addEventListener('DOMContentLoaded', function() {
+
 
 		$(document).on('click', function(e) {
 			var $target = $(e.target);
