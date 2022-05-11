@@ -37,6 +37,7 @@
 				margin-top: 24px;
 				@include max-screen($xs){
 					margin-top: auto;
+					flex-shrink: 0;
 				}
 			}
 		}
@@ -81,7 +82,8 @@
 		margin-bottom: 40px;
 	}
 }
-.footer_menu li:last-of-type a{
+.footer_menu li:last-of-type a,
+.footer_menu li:nth-last-of-type(2) a{
 	@include max-screen($xss){
 		white-space: normal;
 		

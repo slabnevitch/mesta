@@ -3362,6 +3362,9 @@ textarea.form_inp {
 @media only screen and (max-width: 576px) {
   .popup.popup-advertising .popup__form .btn {
     margin-top: auto;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
   }
 }
 
@@ -3410,7 +3413,8 @@ textarea.form_inp {
 }
 
 @media only screen and (max-width: 480px) {
-  .footer_menu li:last-of-type a {
+  .footer_menu li:last-of-type a,
+  .footer_menu li:nth-last-of-type(2) a {
     white-space: normal;
   }
 }
