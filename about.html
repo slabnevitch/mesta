@@ -118,7 +118,7 @@
           <div class="form_inp-title">Сайт<span></span></div>
           <input type="text" name="" id="" placeholder="Введите ссылку на сайт" class="form_inp">
         </div>
-        <button id="successfully-open" class="btn">Оставить заявку</button>
+        <button id="successfully-open" data-open="successfully" class="btn">Оставить заявку</button>
       </form>
     </div>
     <div id="successfully-popup" style="display: none;" class="popup popup-successfully">
@@ -174,7 +174,14 @@
         </div>
       </form>
       <div class="popup-place-object__bottom">
-        <button class="btn">Отправить</button>
+        <button id="gratitude-open" data-open="gratitude" class="btn">Отправить</button>
+      </div>
+    </div>
+    <div id="gratitude-popup" style="display: none;" class="popup popup-gratitude">
+      <div class="popup-gratitude__content">
+        <div class="popup__title">Спасибо</div>
+        <div class="popup__text">Обьект отправлен на модерацию. Если он соответствует нашим требования, мы добавим его на сайт</div>
+        <button id="gratitude-close" class="btn">Готово</button>
       </div>
     </div>
     

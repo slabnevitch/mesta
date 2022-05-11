@@ -462,4 +462,34 @@ line-height: 19px;
 	overflow: visible;
 }
 
+.popup-gratitude{
+	padding: 60px 80px 80px 80px;
+	max-width: 602px;
+
+	@include max-screen($xs){
+		padding: 16px;
+		height: 100%;
+		border-radius: 0;
+	}  
+}
+.popup-gratitude__content{
+	display: flex;
+	flex-direction: column;
+
+	@include max-screen($xs){
+		height: 100%;
+		justify-content: center;
+	}  
+	
+	.popup__title{
+		margin-bottom: 16px;
+	}
+	.popup__text{
+		margin-bottom: 32px;
+	}
+
+	.btn{
+		width: 100%;
+	}
+}
 /*--------------------END popups----------------------*/ 

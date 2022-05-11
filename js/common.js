@@ -238,11 +238,13 @@
 			// END pagination dwopdown toggle
 
 			// popups
-				if($('#successfully-popup').length > 0 && $target.attr('id') === 'successfully-open'){
+				if($target.attr('id') === 'successfully-open' || $target.attr('id') === 'gratitude-open'){
 					 $.fancybox.close();
 
+					 // var fancyboxTarget = $target.attr('id').split('-').[0].spli
+
 					 $.fancybox.open({
-	            src: '#successfully-popup',
+	            src: '#' + $target.attr('data-open') + '-popup',
 	            type: 'inline',
 	            touch: false,
 	            autoFocus: false,
@@ -257,7 +259,7 @@
 					 return false;
 				}
 
-				if($target.attr('id') === 'successfully-close'){
+				if($target.attr('id') === 'successfully-close' || $target.attr('id') === 'gratitude-close'){
 					$.fancybox.close();
 				}
 			// END popups

@@ -21,7 +21,7 @@
 				span
 			input.form_inp(type='text' name='' id='' placeholder='Введите ссылку на сайт' )
 
-		button.btn#successfully-open Оставить заявку
+		button.btn#successfully-open(data-open="successfully") Оставить заявку
 
 .popup.popup-successfully#successfully-popup(style="display: none;")
 	.popup-successfully__content
@@ -86,4 +86,11 @@
 
 	
 	.popup-place-object__bottom
-		button.btn Отправить
+		button.btn#gratitude-open(data-open="gratitude") Отправить
+
+
+.popup.popup-gratitude#gratitude-popup(style="display: none;")
+	.popup-gratitude__content
+		.popup__title Спасибо
+		.popup__text Обьект отправлен на модерацию. Если он соответствует нашим требования, мы добавим его на сайт
+		button.btn#gratitude-close Готово

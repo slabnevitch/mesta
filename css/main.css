@@ -3935,6 +3935,54 @@ textarea.form_inp {
   overflow: visible;
 }
 
+.popup-gratitude {
+  padding: 60px 80px 80px 80px;
+  max-width: 602px;
+}
+
+@media only screen and (max-width: 576px) {
+  .popup-gratitude {
+    padding: 16px;
+    height: 100%;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+  }
+}
+
+.popup-gratitude__content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 576px) {
+  .popup-gratitude__content {
+    height: 100%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+.popup-gratitude__content .popup__title {
+  margin-bottom: 16px;
+}
+
+.popup-gratitude__content .popup__text {
+  margin-bottom: 32px;
+}
+
+.popup-gratitude__content .btn {
+  width: 100%;
+}
+
 /*--------------------END popups----------------------*/
 
 /*# sourceMappingURL=maps/main.css.map */
