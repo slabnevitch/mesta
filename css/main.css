@@ -3298,14 +3298,34 @@ textarea.form_inp {
   color: rgba(34, 34, 34, 0.6);
 }
 
-.page-p-method__content .page-p-method__list li {
+.page-p-method__content .page-p-method__list .page-p-method__item {
   line-height: 200%;
 }
 
-.page-p-method__content .page-p-method__list li img {
+.page-p-method__content .page-p-method__list .page-p-method__item img {
   margin-left: 8px;
   margin-top: -2px;
   vertical-align: middle;
+}
+
+.page-p-method__content .page-p-method__list .page-p-method__item--mir img {
+  width: 42px;
+}
+
+.page-p-method__content .page-p-method__list .page-p-method__item--visa img {
+  width: 37px;
+}
+
+.page-p-method__content .page-p-method__list .page-p-method__item--mastercard img {
+  width: 24px;
+}
+
+.page-p-method__content .page-p-method__list .page-p-method__item--jcb img {
+  width: 22px;
+}
+
+.page-p-method__content .page-p-method__list .page-p-method__item--paykeeper img {
+  width: 180px;
 }
 
 /*===================== end _payments-method-page======================*/

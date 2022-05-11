@@ -55,7 +55,7 @@
 		}
 	}
 	.page-p-method__list{
-		li{
+		.page-p-method__item{
 				line-height: 200%;
 					// vertical-align: middle;
 
@@ -66,6 +66,31 @@
 					vertical-align: middle;
 				}
 
+				&--mir{
+					img{
+						width: 42px;
+					}
+				}
+				&--visa{
+					img{
+						width: 37px;
+					}
+				}
+				&--mastercard{
+					img{
+						width: 24px;
+					}
+				}
+				&--jcb{
+					img{
+						width: 22px;
+					}
+				}
+				&--paykeeper{
+					img{
+						width: 180px;
+					}
+				}
 		}
 	}
 }

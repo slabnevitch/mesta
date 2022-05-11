@@ -13,11 +13,11 @@ block content
 					p Для выбора оплаты с помощью банковской карты на соответствующей странице необходимо нажать кнопку Оплата банковской картой. Оплата происходит через ПАО СБЕРБАНК с использованием банковских карт следующих платёжных систем:
 
 					ul.page-p-method__list
-						- var items = [{name: 'МИР', icon: 'mirpay'}, {name: 'VISA International', icon: 'visapay'}, {name: 'Mastercard Worldwide', icon: 'masterpay'}, {name: 'JCB', icon: 'jcbpay'}, {name: 'PayKeeper', icon: 'paykepeer'}];
+						- var items = [{name: 'МИР', icon: 'mir', class: 'mir'}, {name: 'VISA International', icon: 'visa', class: 'visa'}, {name: 'Mastercard Worldwide', icon: 'mastercard-2', class: 'mastercard'}, {name: 'JCB', icon: 'JCB_logo', class: 'jcb'}, {name: 'PayKeeper', icon: 'paykeeper', class: 'paykeeper'}];
 
 							each item in items
-								li= item.name
-									img(src="img/payment-method-page/" + item.icon + ".png" alt="alt")
+								li(class="page-p-method__item page-p-method__item--" + item.class)= item.name
+									img(src="img/payment-method-page/" + item.icon + ".svg" alt="alt")
 
 					h3 Правила оплаты и безопасность платежей, конфиденциальность информации
 
