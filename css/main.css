@@ -3474,6 +3474,9 @@ textarea.form_inp {
 
   .popup.popup-advertising .popup__form .btn {
     margin-top: auto;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
   }
 
   .popup-successfully {
@@ -3604,7 +3607,8 @@ textarea.form_inp {
     line-height: 18px;
   }
 
-  .footer_menu li:last-of-type a {
+  .footer_menu li:last-of-type a,
+  .footer_menu li:nth-last-of-type(2) a {
     white-space: normal;
   }
 }

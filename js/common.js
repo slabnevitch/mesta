@@ -240,18 +240,21 @@
 			// popups
 				if($('#successfully-popup').length > 0 && $target.attr('id') === 'successfully-open'){
 					 $.fancybox.close();
+
 					 $.fancybox.open({
-			            src: '#successfully-popup',
-			            type: 'inline',
-			            touch: false,
-			            autoFocus: false,
-			            afterLoad: function (instance, current) {
-			                $('body,html').addClass('active')
-			              },
-			              beforeClose: function(){
-			                $('body,html').removeClass('active')
-			             }
-			        });
+	            src: '#successfully-popup',
+	            type: 'inline',
+	            touch: false,
+	            autoFocus: false,
+	            afterLoad: function (instance, current) {
+	                $('body,html').addClass('active')
+	              },
+	              beforeClose: function(){
+	                $('body,html').removeClass('active')
+	             }
+	        });
+
+					 return false;
 				}
 
 				if($target.attr('id') === 'successfully-close'){
