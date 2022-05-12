@@ -2522,6 +2522,8 @@ textarea.form_inp {
 .dropzone .dz-preview .dz-image {
   width: 86px;
   height: 86px;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .dropzone .dz-preview {
@@ -3192,6 +3194,38 @@ textarea.form_inp {
   .popup__form-content {
     margin-bottom: 40px;
   }
+
+  [data-dz-remove] {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    top: 9px;
+    right: 9px;
+    left: auto;
+    width: 30px;
+    height: 30px;
+  }
+
+  [data-dz-remove] .icon-delet_b {
+    top: 6px;
+    right: 6px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    left: auto;
+  }
+
+  .dropzone .dz-preview .dz-details:before {
+    opacity: 1;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(14.53%, rgba(0, 0, 0, 0.5)), color-stop(50%, rgba(0, 0, 0, 0)));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 14.53%, rgba(0, 0, 0, 0) 50%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 14.53%, rgba(0, 0, 0, 0) 50%);
+  }
+
+  .dropzone .dz-preview:not(.dz-complete) .dz-details:before {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -3354,6 +3388,10 @@ textarea.form_inp {
     -ms-flex: 1 1 calc(50% - 32px);
     flex: 1 1 calc(50% - 32px);
   }
+
+  .popup-place-object__column .dz-message.previewed {
+    height: 90px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -3363,17 +3401,13 @@ textarea.form_inp {
 
   .popup-place-object {
     padding: 24px 16px;
+    height: 100%;
   }
 
   .popup-place-object__column {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
-  }
-
-  .popup-place-object__column:nth-child(2),
-  .popup-place-object__column:last-child {
-    padding-right: 15px;
   }
 
   .popup-place-object__column:nth-child(3) {
@@ -3387,10 +3421,6 @@ textarea.form_inp {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
-  }
-
-  .popup-place-object__column .dz-message {
-    height: 90px;
   }
 }
 
@@ -3632,6 +3662,10 @@ textarea.form_inp {
 @media only screen and (max-width: 575.98px) {
   .popup.fancybox-content {
     margin-top: 0;
+  }
+
+  .fancybox-bg::after {
+    height: auto;
   }
 }
 

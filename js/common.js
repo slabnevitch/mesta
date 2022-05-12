@@ -30,8 +30,9 @@
 		  // url: "/target-url", // Set the url
 		  previewsContainer: '.popup-place-objec__previews',
 		  parallelUploads: 2,
-		  thumbnailHeight: 86,
-		  thumbnailWidth: 86,
+		  // thumbnailHeight: 86,
+		  // thumbnailWidth: 86,
+		  thumbnailMethod: 'contain',
 		  maxFilesize: 20,
 		  filesizeBase: 1000,
 		  // autoQueue: false,
@@ -50,7 +51,9 @@
 			  	<div>
 			</div>
 			</div>`
-			// thumbnail: function(file, dataUrl) {
+			// thumbnail: function() {
+			// 	// console.log(file);
+
 			//     if (file.previewElement) {
 			//       file.previewElement.classList.remove("dz-file-preview");
 			//       var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
@@ -62,6 +65,10 @@
 			//       setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
 			//     }
 			//   }
+
+			// addedfile: function(file) {
+			// 	console.log(file)
+			// }
 		});
 
 		var minSteps = 6,
@@ -102,7 +109,19 @@
 		  }
 		}
 
-		// $('.dz-preview').append($('.popup-place-object__column').eq(1));
+		dropzone.on("thumbnail", file => {
+		  console.log("A file has been added");
+		  console.log(file.previewElement);
+		  $('#my-awesome-dropzone .dz-message').addClass('previewed');
+		});
+
+		dropzone.on("removedfile", file => {
+		  console.log("A file has been removed");
+		  console.log($('#my-awesome-dropzone .popup-place-objec__previews').children().length);
+		  if(!$('#my-awesome-dropzone .popup-place-objec__previews').children().length > 0){
+		  	$('#my-awesome-dropzone .dz-message').removeClass('previewed');
+		  }
+		});
 		
 		// END dropzone
 	document.addEventListener('DOMContentLoaded', function() {
