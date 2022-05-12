@@ -30,8 +30,9 @@
 		  // url: "/target-url", // Set the url
 		  previewsContainer: '.popup-place-objec__previews',
 		  parallelUploads: 2,
-		  thumbnailHeight: 86,
-		  thumbnailWidth: 86,
+		  // thumbnailHeight: 86,
+		  // thumbnailWidth: 86,
+		  thumbnailMethod: 'contain',
 		  maxFilesize: 20,
 		  filesizeBase: 1000,
 		  // autoQueue: false,

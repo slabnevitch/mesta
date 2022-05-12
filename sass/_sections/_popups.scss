@@ -135,6 +135,7 @@
 
 	@include max-screen(600px){
 		padding: 24px 16px;
+		height: 100%;
 	}
 	@include max-screen($xs){
 		border-radius: 0;
@@ -186,13 +187,6 @@
 			margin-bottom: 32px;
 		}
 	}
-	&:nth-child(2),
-	&:last-child{
-		@include max-screen(600px){
-			padding-right: 15px;
-		}
-	}
-
 
 	&:nth-child(3){
 		padding-top: 16px;
@@ -227,8 +221,11 @@
 		border: 1px dashed rgba(252, 103, 51, 0.6);
 		border-radius: 12px;
 
-		@include max-screen(600px){
-			height: 90px;
+		&.previewed{
+			@include max-screen($sm){
+				height: 90px;
+			}
+
 		}
 		div{
 			margin-bottom: 6px;
@@ -326,6 +323,7 @@ line-height: 19px;
 .dropzone .dz-preview .dz-image{
 	width: 86px;
 	height: 86px;
+	object-fit: cover;
 }
 .dropzone .dz-preview{
 	min-width: 100px;
@@ -367,6 +365,16 @@ line-height: 19px;
 	opacity: 0;
 	transition: opacity .3s;
 
+	@include max-screen($md){
+		opacity: 1;
+		transform: none;
+		top: 9px;
+		right: 9px;
+		left: auto;
+		width: 30px;
+		height: 30px;
+	}
+
 	@include min-screen($md){
 		cursor: pointer !important;
 	}
@@ -376,6 +384,12 @@ line-height: 19px;
 		font-size: 14.3px;
 		@include absolute-center;
 
+		@include max-screen($md){
+			top: 6px;
+			right: 6px;
+			transform: none;
+			left: auto;
+		}
 		@include min-screen($md){
 			cursor: pointer !important;
 		}
@@ -409,8 +423,17 @@ line-height: 19px;
 	z-index: 11;
 	opacity: 0;
 	transition: opacity .3s;
+
+	@include max-screen($md){
+		opacity: 1;
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 14.53%, rgba(0, 0, 0, 0) 50%);
+	}
 }
-.dropzone .dz-preview .dz-details:hover:before{
+.dropzone .dz-preview:not(.dz-complete) .dz-details:before{
+	@include max-screen($md){
+		// opacity: 0;
+		display: none;
+	}
 
 }
 
@@ -495,6 +518,11 @@ line-height: 19px;
 
 	.btn{
 		width: 100%;
+	}
+}
+.fancybox-bg::after{
+	@include max-screen(575.98px){
+		height: auto;	
 	}
 }
 /*--------------------END popups----------------------*/ 

@@ -3514,6 +3514,7 @@ textarea.form_inp {
 @media only screen and (max-width: 600px) {
   .popup-place-object {
     padding: 24px 16px;
+    height: 100%;
   }
 }
 
@@ -3598,12 +3599,6 @@ textarea.form_inp {
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .popup-place-object__column:nth-child(2), .popup-place-object__column:last-child {
-    padding-right: 15px;
-  }
-}
-
 .popup-place-object__column:nth-child(3) {
   padding-top: 16px;
 }
@@ -3671,8 +3666,8 @@ textarea.form_inp {
   border-radius: 12px;
 }
 
-@media only screen and (max-width: 600px) {
-  .popup-place-object__column .dz-message {
+@media only screen and (max-width: 767.98px) {
+  .popup-place-object__column .dz-message.previewed {
     height: 90px;
   }
 }
@@ -3784,6 +3779,8 @@ textarea.form_inp {
 .dropzone .dz-preview .dz-image {
   width: 86px;
   height: 86px;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .dropzone .dz-preview {
@@ -3827,6 +3824,20 @@ textarea.form_inp {
   transition: opacity .3s;
 }
 
+@media only screen and (max-width: 991px) {
+  [data-dz-remove] {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    top: 9px;
+    right: 9px;
+    left: auto;
+    width: 30px;
+    height: 30px;
+  }
+}
+
 @media only screen and (min-width: 991px) {
   [data-dz-remove] {
     cursor: pointer !important;
@@ -3845,6 +3856,17 @@ textarea.form_inp {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 991px) {
+  [data-dz-remove] .icon-delet_b {
+    top: 6px;
+    right: 6px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    left: auto;
+  }
 }
 
 @media only screen and (min-width: 991px) {
@@ -3887,6 +3909,21 @@ textarea.form_inp {
   opacity: 0;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
+}
+
+@media only screen and (max-width: 991px) {
+  .dropzone .dz-preview .dz-details:before {
+    opacity: 1;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(14.53%, rgba(0, 0, 0, 0.5)), color-stop(50%, rgba(0, 0, 0, 0)));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 14.53%, rgba(0, 0, 0, 0) 50%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 14.53%, rgba(0, 0, 0, 0) 50%);
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .dropzone .dz-preview:not(.dz-complete) .dz-details:before {
+    display: none;
+  }
 }
 
 .dropzone .dz-preview .dz-details img {
@@ -4006,6 +4043,12 @@ textarea.form_inp {
 
 .popup-gratitude__content .btn {
   width: 100%;
+}
+
+@media only screen and (max-width: 575.98px) {
+  .fancybox-bg::after {
+    height: auto;
+  }
 }
 
 /*--------------------END popups----------------------*/
