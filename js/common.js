@@ -30,11 +30,12 @@
 		  // url: "/target-url", // Set the url
 		  previewsContainer: '.popup-place-objec__previews',
 		  parallelUploads: 2,
-		  // thumbnailHeight: 86,
-		  // thumbnailWidth: 86,
+		  thumbnailHeight: null,
+		  thumbnailWidth: null,
 		  thumbnailMethod: 'contain',
 		  maxFilesize: 20,
 		  filesizeBase: 1000,
+		  acceptedFiles: ".jpeg,.jpg,.png,.gif,.jfif",
 		  // autoQueue: false,
 		  previewTemplate: `<div class="dz-preview dz-file-preview">
 			  <div class="dz-details">
