@@ -24,17 +24,20 @@
 	// END correct height of map and filters
 	
 		// dropzone
+		if($('.dropzone').length > 0){
+
 		Dropzone.autoDiscover = false; // remove error from console
 
 		var dropzone = new Dropzone("#my-awesome-dropzone", { // Make the whole body a dropzone
 		  // url: "/target-url", // Set the url
 		  previewsContainer: '.popup-place-objec__previews',
 		  parallelUploads: 2,
-		  // thumbnailHeight: 86,
-		  // thumbnailWidth: 86,
+		  thumbnailHeight: null,
+		  thumbnailWidth: null,
 		  thumbnailMethod: 'contain',
 		  maxFilesize: 20,
 		  filesizeBase: 1000,
+		  acceptedFiles: ".jpeg,.jpg,.png,.gif,.jfif",
 		  // autoQueue: false,
 		  previewTemplate: `<div class="dz-preview dz-file-preview">
 			  <div class="dz-details">
@@ -51,24 +54,6 @@
 			  	<div>
 			</div>
 			</div>`
-			// thumbnail: function() {
-			// 	// console.log(file);
-
-			//     if (file.previewElement) {
-			//       file.previewElement.classList.remove("dz-file-preview");
-			//       var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-			//       for (var i = 0; i < images.length; i++) {
-			//         var thumbnailElement = images[i];
-			//         thumbnailElement.alt = file.name;
-			//         thumbnailElement.src = dataUrl;
-			//       }
-			//       setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-			//     }
-			//   }
-
-			// addedfile: function(file) {
-			// 	console.log(file)
-			// }
 		});
 
 		var minSteps = 6,
@@ -109,19 +94,20 @@
 		  }
 		}
 
-		dropzone.on("thumbnail", file => {
-		  console.log("A file has been added");
-		  console.log(file.previewElement);
-		  $('#my-awesome-dropzone .dz-message').addClass('previewed');
-		});
+			dropzone.on("thumbnail", file => {
+			  console.log("A file has been added");
+			  console.log(file.previewElement);
+			  $('#my-awesome-dropzone .dz-message').addClass('previewed');
+			});
 
-		dropzone.on("removedfile", file => {
-		  console.log("A file has been removed");
-		  console.log($('#my-awesome-dropzone .popup-place-objec__previews').children().length);
-		  if(!$('#my-awesome-dropzone .popup-place-objec__previews').children().length > 0){
-		  	$('#my-awesome-dropzone .dz-message').removeClass('previewed');
-		  }
-		});
+			dropzone.on("removedfile", file => {
+			  console.log("A file has been removed");
+			  console.log($('#my-awesome-dropzone .popup-place-objec__previews').children().length);
+			  if(!$('#my-awesome-dropzone .popup-place-objec__previews').children().length > 0){
+			  	$('#my-awesome-dropzone .dz-message').removeClass('previewed');
+			  }
+			});
+		}
 		
 		// END dropzone
 	document.addEventListener('DOMContentLoaded', function() {
