@@ -31,13 +31,17 @@
 		var dropzone = new Dropzone("#my-awesome-dropzone", { // Make the whole body a dropzone
 		  // url: "/target-url", // Set the url
 		  previewsContainer: '.popup-place-objec__previews',
-		  parallelUploads: 2,
+		  parallelUploads: 1,
+		  maxFiles: 2,
 		  thumbnailHeight: null,
 		  thumbnailWidth: null,
 		  thumbnailMethod: 'contain',
-		  maxFilesize: 20,
-		  filesizeBase: 1000,
-		  acceptedFiles: ".jpeg,.jpg,.png,.gif,.jfif",
+		  autoQueue: false,
+		  autoProcessQueue: false,
+		  // maxFilesize: 1,
+		  // filesizeBase: 1000,
+		  acceptedFiles: "image/*,video/*",
+		  // acceptedFiles: "image/*,video/*.jpeg,.jpg,.png,.gif,.jfif",
 		  // autoQueue: false,
 		  previewTemplate: `<div class="dz-preview dz-file-preview">
 			  <div class="dz-details">
@@ -52,6 +56,7 @@
 			  	<div class="dz-progress__del" data-dz-remove>
 			  		<div class="icon-delet_b"></div>
 			  	<div>
+			  	<div class="dz-error-message"><span data-dz-errormessage></span></div>
 			</div>
 			</div>`
 		});
@@ -94,15 +99,77 @@
 		  }
 		}
 
+		dropzone.accept = function(file, done) {
+            // file.acceptDimensions = done;
+			  console.log(file.type.split('/')[0]);
+			  // console.log(file.width + " / " + file.height);
+
+			  file.acceptDimensions = done;
+            
+			  file.rejectDimensions = function() { 
+			  	console.log(this)
+			  	$.fancybox.open({
+			  		src: '#gratitude-popup',
+			  		type: 'inline',
+			  		touch: false,
+			  		autoFocus: false,
+			  		afterLoad: function (instance, current) {
+			  			$('body,html').addClass('active')
+			  		},
+			  		beforeClose: function(){
+			  			$('body,html').removeClass('active')
+			  		}
+			  	});
+			  	if(this.width < 1920 || this.height < 1080){
+			  		done("Image width or height too small."); 
+			  	}
+			  	if(this.size < 1024*1024*10/*2MB*/){
+
+			  		done("So big weight"); 
+			  	}
+			  	// if(this.type.split('')[0] === 'video'){
+			  	// 	done('dont upload porno video!')
+			  	// }
+			  	dropzone.removeFile(file);
+			  }
+
+       		}
+
 			dropzone.on("thumbnail", file => {
 			  console.log("A file has been added");
-			  console.log(file.previewElement);
-			  $('#my-awesome-dropzone .dz-message').addClass('previewed');
+			  console.log(file.type);
+			  console.log(file);
+			  if(file.width < 1920 || file.height < 1080){
+			  	 file.rejectDimensions();
+			  }else if(file.size > 1024*1024*10/*10MB*/){
+		        file.rejectDimensions();
+		      }else{
+			  	file.acceptDimensions();
+		  		$('#my-awesome-dropzone .dz-message').addClass('previewed');
+			  }
+			});
+
+
+			dropzone.on("maxfilesexceeded", () => {
+			  console.log(arguments);
+			  console.log("maxfilesexceeded!");
+
+			});
+			dropzone.on("addedfile", function(){
+			  console.log("addedfile");
+			  if (this.files[4]!=null){
+		        this.removeFile(this.files[0]);
+		      }
+			  // console.log(file.type.split('/')[0]);
+			  // console.log(file);
+			  // if (file.type.split('/')[0] === 'video'){
+		   //      file.rejectDimensions();
+		   //    }
+
 			});
 
 			dropzone.on("removedfile", file => {
 			  console.log("A file has been removed");
-			  console.log($('#my-awesome-dropzone .popup-place-objec__previews').children().length);
 			  if(!$('#my-awesome-dropzone .popup-place-objec__previews').children().length > 0){
 			  	$('#my-awesome-dropzone .dz-message').removeClass('previewed');
 			  }
