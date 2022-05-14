@@ -25,120 +25,135 @@
 	
 		// dropzone
 		if($('.dropzone').length > 0){
+			
+			var modalShowCount = 0;
+			
+			Dropzone.autoDiscover = false; // remove error from console
 
-		Dropzone.autoDiscover = false; // remove error from console
+			var dropzone = new Dropzone("#my-awesome-dropzone", { // Make the whole body a dropzone
+			  // url: "/target-url", // Set the url
+			  previewsContainer: '.popup-place-objec__previews',
+			  parallelUploads: 1,
+			  maxFiles: 5,
+			  thumbnailHeight: null,
+			  thumbnailWidth: null,
+			  thumbnailMethod: 'contain',
+			  // autoQueue: false,
+			  // autoProcessQueue: false,
+			  // maxFilesize: 1,
+			  // filesizeBase: 1000,
+			  acceptedFiles: "image/*,video/*",
+			  // acceptedFiles: "image/*,video/*.jpeg,.jpg,.png,.gif,.jfif",
+			  init: function() {
+			  	this.on("addedfile", function(file) {
+			  		console.log("addedfile");
+					  // console.log(file.type);
+					  console.log(this.files);
+					  if(file.type.split('/')[0] === "video"){
+					  	console.log("if!");
+					  	 // dropzone.enqueueFile(file);
+				        if(modalShowCount == 0){
+				        	showFilesErroModal();
+						  	modalShowCount++;
+				        }
+				        this.removeFile(file);
+				  		// modalShowCount = 0;
+					  }
+					  if (this.files[4]!=null){
+				        this.removeFile(this.files[0]);
+				      }
+			  	});
+			  },
+			  previewTemplate: `<div class="dz-preview dz-file-preview">
+				  <div class="dz-details">
+				    <img class="dz-image" data-dz-thumbnail />
+				  </div>
+				  <div class="dz-progress">
+				  	<span class="dz-text">Загрузка...</span>
+				  	<div class="dz-upload-wrap">
+				  		<span class="dz-upload" data-dz-uploadprogress></span>
+				  	</div>
+		  		   </div>
+				  	<div class="dz-progress__del" data-dz-remove>
+				  		<div class="icon-delet_b"></div>
+				  	<div>
+				  	<div class="dz-error-message"><span data-dz-errormessage></span></div>
+				</div>
+				</div>`
+			});
 
-		var dropzone = new Dropzone("#my-awesome-dropzone", { // Make the whole body a dropzone
-		  // url: "/target-url", // Set the url
-		  previewsContainer: '.popup-place-objec__previews',
-		  parallelUploads: 1,
-		  maxFiles: 2,
-		  thumbnailHeight: null,
-		  thumbnailWidth: null,
-		  thumbnailMethod: 'contain',
-		  autoQueue: false,
-		  autoProcessQueue: false,
-		  // maxFilesize: 1,
-		  // filesizeBase: 1000,
-		  acceptedFiles: "image/*,video/*",
-		  // acceptedFiles: "image/*,video/*.jpeg,.jpg,.png,.gif,.jfif",
-		  // autoQueue: false,
-		  previewTemplate: `<div class="dz-preview dz-file-preview">
-			  <div class="dz-details">
-			    <img class="dz-image" data-dz-thumbnail />
-			  </div>
-			  <div class="dz-progress">
-			  	<span class="dz-text">Загрузка...</span>
-			  	<div class="dz-upload-wrap">
-			  		<span class="dz-upload" data-dz-uploadprogress></span>
-			  	</div>
-	  		   </div>
-			  	<div class="dz-progress__del" data-dz-remove>
-			  		<div class="icon-delet_b"></div>
-			  	<div>
-			  	<div class="dz-error-message"><span data-dz-errormessage></span></div>
-			</div>
-			</div>`
-		});
+			var minSteps = 6,
+			    maxSteps = 60,
+			    timeBetweenSteps = 100,
+			    bytesPerStep = 100000;
 
-		var minSteps = 6,
-		    maxSteps = 60,
-		    timeBetweenSteps = 100,
-		    bytesPerStep = 100000;
+			dropzone.uploadFiles = function(files) {
+			  var self = this;
 
-		dropzone.uploadFiles = function(files) {
-		  var self = this;
+			  for (var i = 0; i < files.length; i++) {
 
-		  for (var i = 0; i < files.length; i++) {
+			    var file = files[i];
+			    totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
 
-		    var file = files[i];
-		    totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
+			    for (var step = 0; step < totalSteps; step++) {
+			      var duration = timeBetweenSteps * (step + 1);
+			      setTimeout(function(file, totalSteps, step) {
+			        return function() {
+			          file.upload = {
+			            progress: 100 * (step + 1) / totalSteps,
+			            total: file.size,
+			            bytesSent: (step + 1) * file.size / totalSteps
+			          };
 
-		    for (var step = 0; step < totalSteps; step++) {
-		      var duration = timeBetweenSteps * (step + 1);
-		      setTimeout(function(file, totalSteps, step) {
-		        return function() {
-		          file.upload = {
-		            progress: 100 * (step + 1) / totalSteps,
-		            total: file.size,
-		            bytesSent: (step + 1) * file.size / totalSteps
-		          };
-
-		          self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
-		          console.log(file.upload.progress)
-		          if (file.upload.progress == 100) {
-		            file.status = Dropzone.SUCCESS;
-		            self.emit("success", file, 'success', null);
-		            self.emit("complete", file);
-		            self.processQueue();
-		            //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
-		          }
-		        };
-		      }(file, totalSteps, step), duration);
-		    }
-		  }
-		}
+			          self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
+			          console.log(file.upload.progress)
+			          if (file.upload.progress == 100) {
+			            file.status = Dropzone.SUCCESS;
+			            self.emit("success", file, 'success', null);
+			            self.emit("complete", file);
+			            self.processQueue();
+			            //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
+			          }
+			        };
+			      }(file, totalSteps, step), duration);
+			    }
+			  }
+			}
 
 		dropzone.accept = function(file, done) {
-            // file.acceptDimensions = done;
-			  console.log(file.type.split('/')[0]);
+			  console.log('accept: ' + modalShowCount);
+            file.acceptDimensions = done;
 			  // console.log(file.width + " / " + file.height);
 
-			  file.acceptDimensions = done;
+			  // file.acceptDimensions = done;
             
 			  file.rejectDimensions = function() { 
 			  	console.log(this)
-			  	$.fancybox.open({
-			  		src: '#gratitude-popup',
-			  		type: 'inline',
-			  		touch: false,
-			  		autoFocus: false,
-			  		afterLoad: function (instance, current) {
-			  			$('body,html').addClass('active')
-			  		},
-			  		beforeClose: function(){
-			  			$('body,html').removeClass('active')
-			  		}
-			  	});
+			  	if(modalShowCount === 0) {
+				  	// showFilesErroModal();
+
+			  	}
 			  	if(this.width < 1920 || this.height < 1080){
-			  		done("Image width or height too small."); 
+			  		done("Image width or height too small.");
+			  		showFilesErroModal() 
+				  	modalShowCount++;
 			  	}
 			  	if(this.size < 1024*1024*10/*2MB*/){
-
+			  		showFilesErroModal()
+				  	modalShowCount++;
 			  		done("So big weight"); 
 			  	}
-			  	// if(this.type.split('')[0] === 'video'){
-			  	// 	done('dont upload porno video!')
-			  	// }
+
 			  	dropzone.removeFile(file);
+		  		modalShowCount = 0;
 			  }
 
        		}
 
 			dropzone.on("thumbnail", file => {
-			  console.log("A file has been added");
+			 
 			  console.log(file.type);
-			  console.log(file);
+			  // console.log(file);
 			  if(file.width < 1920 || file.height < 1080){
 			  	 file.rejectDimensions();
 			  }else if(file.size > 1024*1024*10/*10MB*/){
@@ -150,32 +165,29 @@
 			});
 
 
-			dropzone.on("maxfilesexceeded", () => {
-			  console.log(arguments);
-			  console.log("maxfilesexceeded!");
-
-			});
-			dropzone.on("addedfile", function(){
-			  console.log("addedfile");
-			  if (this.files[4]!=null){
-		        this.removeFile(this.files[0]);
-		      }
-			  // console.log(file.type.split('/')[0]);
-			  // console.log(file);
-			  // if (file.type.split('/')[0] === 'video'){
-		   //      file.rejectDimensions();
-		   //    }
-
-			});
-
 			dropzone.on("removedfile", file => {
 			  console.log("A file has been removed");
 			  if(!$('#my-awesome-dropzone .popup-place-objec__previews').children().length > 0){
 			  	$('#my-awesome-dropzone .dz-message').removeClass('previewed');
 			  }
+			  modalShowCount = 0;
 			});
 		}
 		
+		function showFilesErroModal(){
+			$.fancybox.open({
+				  		src: '#gratitude-popup',
+				  		type: 'inline',
+				  		touch: false,
+				  		autoFocus: false,
+				  		afterLoad: function (instance, current) {
+				  			$('body,html').addClass('active')
+				  		},
+				  		beforeClose: function(){
+				  			$('body,html').removeClass('active')
+				  		}
+				  	});
+		}
 		// END dropzone
 	document.addEventListener('DOMContentLoaded', function() {
 
@@ -316,22 +328,24 @@
 					 // var fancyboxTarget = $target.attr('id').split('-').[0].spli
 
 					 $.fancybox.open({
-	            src: '#' + $target.attr('data-open') + '-popup',
-	            type: 'inline',
-	            touch: false,
-	            autoFocus: false,
-	            afterLoad: function (instance, current) {
-                $('body,html').addClass('active')
-              },
-              beforeClose: function(){
-                $('body,html').removeClass('active')
-             }
-	        });
+					 	src: '#' + $target.attr('data-open') + '-popup',
+					 	type: 'inline',
+					 	touch: false,
+					 	autoFocus: false,
+					 	afterLoad: function (instance, current) {
+					 		$('body,html').addClass('active')
+					 	},
+					 	beforeClose: function(){
+					 		$('body,html').removeClass('active')
+					 	}
+					 });
 
 					 return false;
 				}
 
 				if($target.attr('id') === 'successfully-close' || $target.attr('id') === 'gratitude-close'){
+					// modalShowCount = 0;
+					console.log('gratitude-close');
 					$.fancybox.close();
 				}
 			// END popups
