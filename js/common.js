@@ -48,20 +48,21 @@
 			  	this.on("addedfile", function(file) {
 			  		console.log("addedfile");
 					  // console.log(file.type);
-					  console.log(this.files);
-					  if(file.type.split('/')[0] === "video"){
-					  	console.log("if!");
-					  	 // dropzone.enqueueFile(file);
-				        if(modalShowCount == 0){
-				        	showFilesErroModal();
-						  	modalShowCount++;
-				        }
-				        this.removeFile(file);
-				  		// modalShowCount = 0;
-					  }
+					  // console.log(this.files);
+
+					  // if(file.type.split('/')[0] === "video"){
+					  // 	console.log("if!");
+					  // 	 // dropzone.enqueueFile(file);
+				   //      if(modalShowCount == 0){
+				   //      	showFilesErroModal();
+						 //  		modalShowCount++;
+				   //      }
+				   //      this.removeFile(file);
+				  	// 	modalShowCount = 0;
+					  // }
 					  if (this.files[4]!=null){
-				        this.removeFile(this.files[0]);
-				      }
+				       this.removeFile(this.files[0]);
+				     }
 			  	});
 			  },
 			  previewTemplate: `<div class="dz-preview dz-file-preview">
@@ -88,6 +89,8 @@
 			    bytesPerStep = 100000;
 
 			dropzone.uploadFiles = function(files) {
+				console.log('uploadFiles');
+				console.log(files);
 			  var self = this;
 
 			  for (var i = 0; i < files.length; i++) {
@@ -122,46 +125,63 @@
 
 		dropzone.accept = function(file, done) {
 			  console.log('accept: ' + modalShowCount);
+			  	var fileType = file.type.split('/')[0];
+			  	var _self = this;
             file.acceptDimensions = done;
-			  // console.log(file.width + " / " + file.height);
 
 			  // file.acceptDimensions = done;
             
 			  file.rejectDimensions = function() { 
-			  	console.log(this)
-			  	if(modalShowCount === 0) {
-				  	// showFilesErroModal();
+			  		console.log('filetype in reject !' + fileType)
+			  	
 
-			  	}
-			  	if(this.width < 1920 || this.height < 1080){
+			  	if(this.width < 1920 || this.height < 1080 ){
 			  		done("Image width or height too small.");
-			  		showFilesErroModal() 
-				  	modalShowCount++;
+			  		// _self.removeAllFiles(true);
 			  	}
 			  	if(this.size < 1024*1024*10/*2MB*/){
-			  		showFilesErroModal()
-				  	modalShowCount++;
 			  		done("So big weight"); 
+			  		// _self.removeAllFiles(true);
+			  	}
+			  	if(fileType === "video"){
+			  		console.log('Video tupe!')
 			  	}
 
-			  	dropzone.removeFile(file);
-		  		modalShowCount = 0;
 			  }
 
-       		}
+			  if(file.type.split('/')[0] === "video"){
+			  		done('video');
+			  		// this.removeAllFiles(true)
+			  	// dropzone.removeFile(file);
+			  	// if(modalShowCount === 0) {
+				  // 	showFilesErroModal()
+					 //  modalShowCount++;
+			  	// }
+			  	// dropzone.removeFile(file);
+		  		// modalShowCount = 0;
+			  }
 
-			dropzone.on("thumbnail", file => {
+   		}
+
+			dropzone.on("thumbnail", function(file){
 			 
 			  console.log(file.type);
-			  // console.log(file);
-			  if(file.width < 1920 || file.height < 1080){
+			  console.log(this);
+			  console.log("thumbnail: " + modalShowCount);
+			  if(file.type.split('/')[0] === "video" || file.width < 1920 || file.height < 1080 || file.size > 1024*1024*10/*10MB*/){
 			  	 file.rejectDimensions();
-			  }else if(file.size > 1024*1024*10/*10MB*/){
-		        file.rejectDimensions();
-		      }else{
+			  	 this.removeFile(file);
+			  	 // this.removeAllFiles(true);
+			  	 
+			  	 if(modalShowCount === 0) {
+				  	showFilesErroModal()
+					  modalShowCount++;
+			  	}
+			  }else{
 			  	file.acceptDimensions();
 		  		$('#my-awesome-dropzone .dz-message').addClass('previewed');
 			  }
+			  // modalShowCount = 0;
 			});
 
 
@@ -169,8 +189,8 @@
 			  console.log("A file has been removed");
 			  if(!$('#my-awesome-dropzone .popup-place-objec__previews').children().length > 0){
 			  	$('#my-awesome-dropzone .dz-message').removeClass('previewed');
+			  	// modalShowCount = 0;
 			  }
-			  modalShowCount = 0;
 			});
 		}
 		
@@ -344,7 +364,7 @@
 				}
 
 				if($target.attr('id') === 'successfully-close' || $target.attr('id') === 'gratitude-close'){
-					// modalShowCount = 0;
+					modalShowCount = 0;
 					console.log('gratitude-close');
 					$.fancybox.close();
 				}
