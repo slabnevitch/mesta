@@ -320,6 +320,9 @@ line-height: 19px;
 .dz-image-preview{
 	position: relative;
 }
+.dropzone .dz-preview.dz-file-preview .dz-image{
+	border-radius: 0;
+}
 .dropzone .dz-preview .dz-image{
 	width: 86px;
 	height: 86px;
@@ -395,11 +398,14 @@ line-height: 19px;
 		}
 	}
 }
-.dz-preview:not(.dz-image-preview) [data-dz-remove]{
-	display: none;
-}
+// .dz-preview:not(.dz-image-preview) [data-dz-remove]{
+// 	display: none;
+// }
 .dz-preview.dz-complete:not(.dz-image-preview) .dz-progress{
 	opacity: 1;
+}
+.dz-preview.dz-file-preview:not(.dz-image-preview) .dz-progress{
+	opacity: 0;
 }
 .dz-preview:not(.dz-complete) .dz-image{
 	display: none;
@@ -411,6 +417,9 @@ line-height: 19px;
 	padding: 9px;
 	position: relative;
 	opacity: 1;
+}
+ .dropzone .dz-error{
+ 	border-color: red;
 }
 .dropzone .dz-preview .dz-details:before{
 	content: '';
@@ -489,7 +498,11 @@ line-height: 19px;
 .dropzone .dz-preview .dz-progress{
 	overflow: visible;
 }
-
+.dropzone .dz-preview .dz-error-message{
+    top: 93px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 .popup-gratitude{
 	padding: 60px 80px 80px 80px;
 	max-width: 602px;

@@ -62,6 +62,10 @@
 					  // }
 					  if (this.files[4]!=null){
 				       this.removeFile(this.files[0]);
+			      //       if(modalShowCount == 0){
+				     //    	showFilesErroModal();
+					  		// modalShowCount++;
+				     //    }
 				     }
 			  	});
 			  },
@@ -100,6 +104,8 @@
 
 			    for (var step = 0; step < totalSteps; step++) {
 			      var duration = timeBetweenSteps * (step + 1);
+			       
+
 			      setTimeout(function(file, totalSteps, step) {
 			        return function() {
 			          file.upload = {
@@ -139,7 +145,7 @@
 			  		done("Image width or height too small.");
 			  		// _self.removeAllFiles(true);
 			  	}
-			  	if(this.size < 1024*1024*10/*2MB*/){
+			  	if(this.size > 1024*1024*10/*2MB*/){
 			  		done("So big weight"); 
 			  		// _self.removeAllFiles(true);
 			  	}
@@ -170,13 +176,13 @@
 			  console.log("thumbnail: " + modalShowCount);
 			  if(file.type.split('/')[0] === "video" || file.width < 1920 || file.height < 1080 || file.size > 1024*1024*10/*10MB*/){
 			  	 file.rejectDimensions();
-			  	 this.removeFile(file);
+			  	 // this.removeFile(file);
 			  	 // this.removeAllFiles(true);
 			  	 
-			  	 if(modalShowCount === 0) {
-				  	showFilesErroModal()
-					  modalShowCount++;
-			  	}
+			  	//  if(modalShowCount === 0) {
+				  // 	showFilesErroModal()
+					 //  modalShowCount++;
+			  	// }
 			  }else{
 			  	file.acceptDimensions();
 		  		$('#my-awesome-dropzone .dz-message').addClass('previewed');
@@ -196,7 +202,7 @@
 		
 		function showFilesErroModal(){
 			$.fancybox.open({
-				  		src: '#gratitude-popup',
+				  		src: '#file-error-popup',
 				  		type: 'inline',
 				  		touch: false,
 				  		autoFocus: false,
