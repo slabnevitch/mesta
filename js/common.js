@@ -24,106 +24,196 @@
 	// END correct height of map and filters
 	
 		// dropzone
-		Dropzone.autoDiscover = false; // remove error from console
+		if($('.dropzone').length > 0){
+			
+			var modalShowCount = 0;
+			
+			Dropzone.autoDiscover = false; // remove error from console
 
-		var dropzone = new Dropzone("#my-awesome-dropzone", { // Make the whole body a dropzone
-		  // url: "/target-url", // Set the url
-		  previewsContainer: '.popup-place-objec__previews',
-		  parallelUploads: 2,
-		  thumbnailHeight: null,
-		  thumbnailWidth: null,
-		  thumbnailMethod: 'contain',
-		  maxFilesize: 20,
-		  filesizeBase: 1000,
-		  acceptedFiles: ".jpeg,.jpg,.png,.gif,.jfif",
-		  // autoQueue: false,
-		  previewTemplate: `<div class="dz-preview dz-file-preview">
-			  <div class="dz-details">
-			    <img class="dz-image" data-dz-thumbnail />
-			  </div>
-			  <div class="dz-progress">
-			  	<span class="dz-text">Загрузка...</span>
-			  	<div class="dz-upload-wrap">
-			  		<span class="dz-upload" data-dz-uploadprogress></span>
-			  	</div>
-	  		   </div>
-			  	<div class="dz-progress__del" data-dz-remove>
-			  		<div class="icon-delet_b"></div>
-			  	<div>
-			</div>
-			</div>`
-			// thumbnail: function() {
-			// 	// console.log(file);
+			var dropzone = new Dropzone("#my-awesome-dropzone", { // Make the whole body a dropzone
+			  // url: "/target-url", // Set the url
+			  previewsContainer: '.popup-place-objec__previews',
+			  parallelUploads: 1,
+			  maxFiles: 5,
+			  thumbnailHeight: null,
+			  thumbnailWidth: null,
+			  thumbnailMethod: 'contain',
+			  // autoQueue: false,
+			  // autoProcessQueue: false,
+			  // maxFilesize: 1,
+			  // filesizeBase: 1000,
+			  acceptedFiles: "image/*,video/*",
+			  // acceptedFiles: "image/*,video/*.jpeg,.jpg,.png,.gif,.jfif",
+			  init: function() {
+			  	this.on("addedfile", function(file) {
+			  		console.log("addedfile");
+					  // console.log(file.type);
+					  // console.log(this.files);
 
-			//     if (file.previewElement) {
-			//       file.previewElement.classList.remove("dz-file-preview");
-			//       var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-			//       for (var i = 0; i < images.length; i++) {
-			//         var thumbnailElement = images[i];
-			//         thumbnailElement.alt = file.name;
-			//         thumbnailElement.src = dataUrl;
-			//       }
-			//       setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-			//     }
-			//   }
+					  // if(file.type.split('/')[0] === "video"){
+					  // 	console.log("if!");
+					  // 	 // dropzone.enqueueFile(file);
+				   //      if(modalShowCount == 0){
+				   //      	showFilesErroModal();
+						 //  		modalShowCount++;
+				   //      }
+				   //      this.removeFile(file);
+				  	// 	modalShowCount = 0;
+					  // }
+					  if (this.files[5]!=null){
+				       this.removeFile(this.files[0]);
+			      //       if(modalShowCount == 0){
+				     //    	showFilesErroModal();
+					  		// modalShowCount++;
+				     //    }
+				     }
+			  	});
+			  },
+			  previewTemplate: `<div class="dz-preview dz-file-preview">
+				  <div class="dz-details">
+				    <img class="dz-image" data-dz-thumbnail />
+				  </div>
+				  <div class="dz-progress">
+				  	<span class="dz-text">Загрузка...</span>
+				  	<div class="dz-upload-wrap">
+				  		<span class="dz-upload" data-dz-uploadprogress></span>
+				  	</div>
+		  		   </div>
+				  	<div class="dz-progress__del" data-dz-remove>
+				  		<div class="icon-delet_b"></div>
+				  	<div>
+				  	<div class="dz-error-message"><span data-dz-errormessage></span></div>
+				</div>
+				</div>`
+			});
 
-			// addedfile: function(file) {
-			// 	console.log(file)
-			// }
-		});
+			var minSteps = 6,
+			    maxSteps = 60,
+			    timeBetweenSteps = 100,
+			    bytesPerStep = 100000;
 
-		var minSteps = 6,
-		    maxSteps = 60,
-		    timeBetweenSteps = 100,
-		    bytesPerStep = 100000;
+			dropzone.uploadFiles = function(files) {
+				console.log('uploadFiles');
+				console.log(files);
+			  var self = this;
 
-		dropzone.uploadFiles = function(files) {
-		  var self = this;
+			  for (var i = 0; i < files.length; i++) {
 
-		  for (var i = 0; i < files.length; i++) {
+			    var file = files[i];
+			    totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
 
-		    var file = files[i];
-		    totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
+			    for (var step = 0; step < totalSteps; step++) {
+			      var duration = timeBetweenSteps * (step + 1);
+			       
 
-		    for (var step = 0; step < totalSteps; step++) {
-		      var duration = timeBetweenSteps * (step + 1);
-		      setTimeout(function(file, totalSteps, step) {
-		        return function() {
-		          file.upload = {
-		            progress: 100 * (step + 1) / totalSteps,
-		            total: file.size,
-		            bytesSent: (step + 1) * file.size / totalSteps
-		          };
+			      setTimeout(function(file, totalSteps, step) {
+			        return function() {
+			          file.upload = {
+			            progress: 100 * (step + 1) / totalSteps,
+			            total: file.size,
+			            bytesSent: (step + 1) * file.size / totalSteps
+			          };
 
-		          self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
-		          console.log(file.upload.progress)
-		          if (file.upload.progress == 100) {
-		            file.status = Dropzone.SUCCESS;
-		            self.emit("success", file, 'success', null);
-		            self.emit("complete", file);
-		            self.processQueue();
-		            //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
-		          }
-		        };
-		      }(file, totalSteps, step), duration);
-		    }
-		  }
+			          self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
+			          console.log(file.upload.progress)
+			          if (file.upload.progress == 100) {
+			            file.status = Dropzone.SUCCESS;
+			            self.emit("success", file, 'success', null);
+			            self.emit("complete", file);
+			            self.processQueue();
+			            //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
+			          }
+			        };
+			      }(file, totalSteps, step), duration);
+			    }
+			  }
+			}
+
+		dropzone.accept = function(file, done) {
+			  console.log('accept: ' + modalShowCount);
+			  	var fileType = file.type.split('/')[0];
+			  	var _self = this;
+            file.acceptDimensions = done;
+
+			  // file.acceptDimensions = done;
+            
+			  file.rejectDimensions = function() { 
+			  		console.log('filetype in reject !' + fileType)
+			  	
+
+			  	if(this.width < 1920 || this.height < 1080 ){
+			  		done("Image width or height too small.");
+			  		// _self.removeAllFiles(true);
+			  	}
+			  	if(this.size > 1024*1024*10/*2MB*/){
+			  		done("So big weight"); 
+			  		// _self.removeAllFiles(true);
+			  	}
+			  	if(fileType === "video"){
+			  		console.log('Video tupe!')
+			  	}
+
+			  }
+
+			  if(file.type.split('/')[0] === "video"){
+			  		done('video');
+			  		// this.removeAllFiles(true)
+			  	// dropzone.removeFile(file);
+			  	// if(modalShowCount === 0) {
+				  // 	showFilesErroModal()
+					 //  modalShowCount++;
+			  	// }
+			  	// dropzone.removeFile(file);
+		  		// modalShowCount = 0;
+			  }
+
+   		}
+
+			dropzone.on("thumbnail", function(file){
+			 
+			  console.log(file.type);
+			  console.log(this);
+			  console.log("thumbnail: " + modalShowCount);
+			  if(file.type.split('/')[0] === "video" || file.width < 1920 || file.height < 1080 || file.size > 1024*1024*10/*10MB*/){
+			  	 file.rejectDimensions();
+			  	 // this.removeFile(file);
+			  	 // this.removeAllFiles(true);
+			  	 
+			  	//  if(modalShowCount === 0) {
+				  // 	showFilesErroModal()
+					 //  modalShowCount++;
+			  	// }
+			  }else{
+			  	file.acceptDimensions();
+		  		$('#my-awesome-dropzone .dz-message').addClass('previewed');
+			  }
+			  // modalShowCount = 0;
+			});
+
+
+			dropzone.on("removedfile", file => {
+			  console.log("A file has been removed");
+			  if(!$('#my-awesome-dropzone .popup-place-objec__previews').children().length > 0){
+			  	$('#my-awesome-dropzone .dz-message').removeClass('previewed');
+			  	// modalShowCount = 0;
+			  }
+			});
 		}
-
-		dropzone.on("thumbnail", file => {
-		  console.log("A file has been added");
-		  console.log(file.previewElement);
-		  $('#my-awesome-dropzone .dz-message').addClass('previewed');
-		});
-
-		dropzone.on("removedfile", file => {
-		  console.log("A file has been removed");
-		  console.log($('#my-awesome-dropzone .popup-place-objec__previews').children().length);
-		  if(!$('#my-awesome-dropzone .popup-place-objec__previews').children().length > 0){
-		  	$('#my-awesome-dropzone .dz-message').removeClass('previewed');
-		  }
-		});
 		
+		function showFilesErroModal(){
+			$.fancybox.open({
+				  		src: '#file-error-popup',
+				  		type: 'inline',
+				  		touch: false,
+				  		autoFocus: false,
+				  		afterLoad: function (instance, current) {
+				  			$('body,html').addClass('active')
+				  		},
+				  		beforeClose: function(){
+				  			$('body,html').removeClass('active')
+				  		}
+				  	});
+		}
 		// END dropzone
 	document.addEventListener('DOMContentLoaded', function() {
 
@@ -264,22 +354,24 @@
 					 // var fancyboxTarget = $target.attr('id').split('-').[0].spli
 
 					 $.fancybox.open({
-	            src: '#' + $target.attr('data-open') + '-popup',
-	            type: 'inline',
-	            touch: false,
-	            autoFocus: false,
-	            afterLoad: function (instance, current) {
-                $('body,html').addClass('active')
-              },
-              beforeClose: function(){
-                $('body,html').removeClass('active')
-             }
-	        });
+					 	src: '#' + $target.attr('data-open') + '-popup',
+					 	type: 'inline',
+					 	touch: false,
+					 	autoFocus: false,
+					 	afterLoad: function (instance, current) {
+					 		$('body,html').addClass('active')
+					 	},
+					 	beforeClose: function(){
+					 		$('body,html').removeClass('active')
+					 	}
+					 });
 
 					 return false;
 				}
 
 				if($target.attr('id') === 'successfully-close' || $target.attr('id') === 'gratitude-close'){
+					modalShowCount = 0;
+					console.log('gratitude-close');
 					$.fancybox.close();
 				}
 			// END popups
