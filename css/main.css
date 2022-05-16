@@ -2558,6 +2558,7 @@ textarea.form_inp {
 }
 
 [data-dz-remove] .icon-delet_b {
+  opacity: 0;
   color: #fff;
   font-size: 14.3px;
   display: block;
@@ -2688,6 +2689,11 @@ textarea.form_inp {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+  opacity: 1;
+}
+
+[data-dz-remove] {
+  opacity: 1;
 }
 
 .popup-gratitude {
@@ -3773,7 +3779,7 @@ textarea.form_inp {
     opacity: 1;
   }
 
-  .dropzone .dz-preview:hover [data-dz-remove] {
+  .dropzone .dz-preview:hover [data-dz-remove] .icon-delet_b {
     opacity: 1;
   }
 }
