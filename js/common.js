@@ -38,16 +38,27 @@
 			  thumbnailHeight: null,
 			  thumbnailWidth: null,
 			  thumbnailMethod: 'contain',
+			  maxThumbnailFilesize: 25,
+			  // timeout: 9000,
 			  // autoQueue: false,
 			  // autoProcessQueue: false,
-			  // maxFilesize: 1,
+			  maxFilesize: 1024*1024*100,
 			  // filesizeBase: 1000,
 			  acceptedFiles: "image/*,video/*",
 			  // acceptedFiles: "image/*,video/*.jpeg,.jpg,.png,.gif,.jfif",
 			  init: function() {
+			  	this.on("uploadprogress", function(file, progress) {
+		        console.log("File progress", progress);
+		      });
 			  	this.on("addedfile", function(file) {
 			  		console.log("addedfile");
-					  // console.log(file.type);
+					  console.log(file);
+					  console.log(file.previewElement);
+					  // if(file.size > 1024*1024*10){
+					  // 	file.previewElement.classList.add('dz-error')
+					  // 	console.log(file.previewElement.querySelector('[data-dz-errormessage]'));
+					  // 	file.previewElement.querySelector('[data-dz-errormessage]').innerText = 'pizda'
+					  // }
 					  // console.log(this.files);
 
 					  // if(file.type.split('/')[0] === "video"){
@@ -60,8 +71,8 @@
 				   //      this.removeFile(file);
 				  	// 	modalShowCount = 0;
 					  // }
-					  if (this.files[4]!=null){
-				       this.removeFile(this.files[0]);
+					  if (this.files[5]!=null){
+				       this.removeFile(this.files[this.files.length - 1]);
 			      //       if(modalShowCount == 0){
 				     //    	showFilesErroModal();
 					  		// modalShowCount++;
@@ -82,8 +93,8 @@
 				  	<div class="dz-progress__del" data-dz-remove>
 				  		<div class="icon-delet_b"></div>
 				  	<div>
-				  	<div class="dz-error-message"><span data-dz-errormessage></span></div>
 				</div>
+				  	<div class="dz-error-message"><span data-dz-errormessage></span></div>
 				</div>`
 			});
 
@@ -131,7 +142,10 @@
 
 		dropzone.accept = function(file, done) {
 			  console.log('accept: ' + modalShowCount);
-			  	var fileType = file.type.split('/')[0];
+			  console.log(file.size);
+			  	var fileType = file.type.split('/')[0],
+			  		fileSize = file.size;
+			  
 			  	var _self = this;
             file.acceptDimensions = done;
 
@@ -140,23 +154,28 @@
 			  file.rejectDimensions = function() { 
 			  		console.log('filetype in reject !' + fileType)
 			  	
+			  		console.log(this.size);
 
 			  	if(this.width < 1920 || this.height < 1080 ){
-			  		done("Image width or height too small.");
+			  		done("Изображение слишком маленькое");
 			  		// _self.removeAllFiles(true);
 			  	}
-			  	if(this.size > 1024*1024*10/*2MB*/){
-			  		done("So big weight"); 
-			  		// _self.removeAllFiles(true);
-			  	}
+			  	// if(fileSize > 1024*1024*10/*2MB*/){
+			  	// 	done("So big weight"); 
+			  	// 	// _self.removeAllFiles(true);
+			  	// }
 			  	if(fileType === "video"){
 			  		console.log('Video tupe!')
 			  	}
 
 			  }
+			  if(fileSize > 1024*1024*10/*2MB*/){
+			  		done("Слишком большой вес"); 
+			  		// _self.removeAllFiles(true);
+			  	}
 
 			  if(file.type.split('/')[0] === "video"){
-			  		done('video');
+			  		done('Неправильный формат файла');
 			  		// this.removeAllFiles(true)
 			  	// dropzone.removeFile(file);
 			  	// if(modalShowCount === 0) {

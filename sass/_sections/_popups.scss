@@ -345,7 +345,7 @@ line-height: 19px;
 						opacity: 1;
 					}
 				}
-				[data-dz-remove]{
+				[data-dz-remove] .icon-delet_b{
 					opacity: 1;
 				}
 
@@ -383,6 +383,7 @@ line-height: 19px;
 	}
 
 	.icon-delet_b{
+		opacity: 0;
 		color: #fff;
 		font-size: 14.3px;
 		@include absolute-center;
@@ -502,6 +503,10 @@ line-height: 19px;
     top: 93px;
     left: 50%;
     transform: translateX(-50%);
+    opacity: 1;
+}
+[data-dz-remove]{
+	opacity: 1;
 }
 .popup-gratitude{
 	padding: 60px 80px 80px 80px;
