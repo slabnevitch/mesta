@@ -3820,6 +3820,37 @@ textarea.form_inp {
 }
 
 /*===================== end ARTICLE-PAGE======================*/
+/*=====================SELECTIONS-PAGE=========================*/
+.selections-filter {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 10px;
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+  margin-bottom: 24px;
+}
+
+.selections-filter__item {
+  padding: 16px 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #fff;
+  -webkit-border-radius: 44px;
+  border-radius: 44px;
+}
+
+/*===================== end SELECTIONS-PAGE======================*/
 /*--------------------popups----------------------*/
 .popup {
   background: #FFFFFF;

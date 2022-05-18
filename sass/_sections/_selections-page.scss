@@ -1,0 +1,15 @@
+/*=====================SELECTIONS-PAGE=========================*/
+.selections-filter{
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 10px;
+	margin-bottom: 24px;
+}
+.selections-filter__item{
+	padding: 16px 20px;
+	display: flex;
+	justify-content: center;
+	background-color: #fff;
+	border-radius: 44px
+}
+/*===================== end SELECTIONS-PAGE======================*/ 

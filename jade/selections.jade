@@ -1,0 +1,267 @@
+extends _misc/main
+
+block title
+	| Подборки
+
+block content
+	.page-search-resuls
+		section.place
+			.container
+				.crumbs
+					a.crumbs_back(href='#')
+						span.icon-back
+				
+				.interesting_title
+					| Подборки идей: 
+					.interesting_title-city
+						span.interesting_title-span  Нижний Новгород
+						.city_choice
+							.city_choice-title
+								span.icon-adres
+								|                             Выберете город и мы покажем места рядом с вами
+							.city_choice-btn.btn Выбрать город
+							.city_choice-close.icon-delete
+						.city_search
+							.city_search-inner
+								span.icon-search
+								input.city_search-inp(type='text' name='' id='' placeholder='Поиск по городам ')
+								.city_search-delete
+									span.icon-delete
+							.city_search-wrapper
+								.city_search-title
+									| Выберите город (
+									span 322
+									| )
+								.city_search-items
+									a.city_search-item(href='')
+										.city_search-item_title
+											| Москва
+										.city_search-item_text
+											| 13 место
+									a.city_search-item(href='')
+										.city_search-item_title
+											| Санкт-Петербург
+										.city_search-item_text
+											| 13 место
+									a.city_search-item(href='')
+										.city_search-item_title
+											| Краснодар
+										.city_search-item_text
+											| 13 место
+									a.city_search-item(href='')
+										.city_search-item_title
+											| Москва
+										.city_search-item_text
+											| 13 место
+									a.city_search-item(href='')
+										.city_search-item_title
+											| Санкт-Петербург
+										.city_search-item_text
+											| 13 место
+									a.city_search-item(href='')
+										.city_search-item_title
+											| Краснодар
+										.city_search-item_text
+											| 13 место
+
+				//- .title-with-dd
+				//- 	span Куда поехать из 
+				//- 	a(href="#") Нижний Новгород
+
+				form.selections-filter
+					.selections-filter__item
+						label.check_label
+							input.check_inp(type='radio' name='selections-check' id='' checked='')
+							span.check_span
+							span.check_title Не важно
+
+					.selections-filter__item
+						label.check_label
+							input.check_inp(type='radio' name='selections-check' id='')
+							span.check_span
+							span.check_title На выходные
+
+					.selections-filter__item
+						label.check_label
+							input.check_inp(type='radio' name='selections-check' id='')
+							span.check_span
+							span.check_title В отпуск
+				
+				.selections.ideas_wrapper
+					- for (var i=0; i < 4; i++)
+
+						a.ideas_item(href='#')
+							.ideas_item-img
+								img(src='img/selections-page/1.jpg' alt='')
+							.ideas_item-info
+								.ideas_item-title Глемпинги: лес и горы 
+								.ideas_item-inner
+									.ideas_item-dots
+										.ideas_item-dot
+											img(src='img/ideas_dot1.jpg' alt='')
+										.ideas_item-dot
+											img(src='img/ideas_dot2.jpg' alt='')
+										.ideas_item-dot
+											img(src='img/ideas_dot3.jpg' alt='')
+										.ideas_item-dot
+											img(src='img/ideas_dot4.jpg' alt='')
+									.ideas_item-subtitle
+										| 10 идей
+
+						a.ideas_item(href='#')
+							.ideas_item-img
+								img(src='img/selections-page/2.jpg' alt='')
+							.ideas_item-info
+								.ideas_item-title Крымский маст-визит: отпуск на полуострове
+								.ideas_item-inner
+									.ideas_item-dots
+										.ideas_item-dot
+											img(src='img/ideas_dot1.jpg' alt='')
+										.ideas_item-dot
+											img(src='img/ideas_dot2.jpg' alt='')
+										.ideas_item-dot
+											img(src='img/ideas_dot3.jpg' alt='')
+										.ideas_item-dot
+											img(src='img/ideas_dot4.jpg' alt='')
+									.ideas_item-subtitle
+										| 10 идей
+
+						a.ideas_item(href='#')
+							.ideas_item-img
+								img(src='img/selections-page/3.jpg' alt='')
+							.ideas_item-info
+								.ideas_item-title Ближе к природе
+								.ideas_item-inner
+									.ideas_item-dots
+										.ideas_item-dot
+											img(src='img/ideas_dot1.jpg' alt='')
+										.ideas_item-dot
+											img(src='img/ideas_dot2.jpg' alt='')
+										.ideas_item-dot
+											img(src='img/ideas_dot3.jpg' alt='')
+										.ideas_item-dot
+											img(src='img/ideas_dot4.jpg' alt='')
+									.ideas_item-subtitle
+										| 10 идей
+
+				.loading_items
+					span.icon-loading
+					| Загрузка
+
+//- img(src=img + "demo.jpg")
+//- img(src=ico + "amex.svg")
+
+block page-scripts
+	// script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+	//- script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+	//- script(src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.3/dist/index.umd.min.js")
+	//- script(src="js/jquery.fancybox.min.js")
+	//- script(src="js/slider.js")
+	// script(src="js/map-init.js")
+	//- script(src="js/main.js")
+	
+	//- SERVIVE FUNCTIONS==================
+
+	//- remove-class--------------------------
+	//- script(src="js/libs/service-functions/remove-class.js")
+
+	//- siblings--------------------------
+	//- script(src="js/libs/service-functions/siblings.js")
+
+	//- webp-detection--------------------------
+	//- script(src="js/libs/service-functions/webp-detection.js")
+
+	//- dropdown-toggle on touch devices--------------------------
+	//- script(src="js/libs/service-functions/dropdown-toggle.js")
+
+	//- isMobile--------------------------
+	script(src="js/libs/service-functions/mobileDetect.js")
+
+	//- All in one file--------------------------
+	//- script(src="js/libs/service-functions/all-functions.js")
+
+
+	//- WITH JQUERY===================================
+	//- jquery--------------------------
+	//- script(src="js/libs/jquery/jquery-3.1.1.min.js")
+
+	//- jquery-UI--------------------------
+	//- script(src="js/libs/jquery-ui/jquery-ui.min.js")
+		
+	//- magnific-popup--------------------------
+	//- script(src="js/libs/magnific-popup/dist/jquery.magnific-popup.min.js")
+		
+	//- slick--------------------------
+	//- script(src="js/libs/slick/slick.min.js")
+		
+	//- slick-master (без лишних контейнеров)--------------------------
+	//- script(src="js/libs/slick-master/slick.js")
+
+	//- script(src='https://api-maps.yandex.ru/2.1/?apikey=1be0e242-a0f9-4c70-8d5c-f2f3df5c3e40&load=&lang=ru_RU' type='text/javascript')
+
+	//- superfish--------------------------
+	//- script(src="js/libs/superfish/dist/js/hoverIntent.js")
+	//- script(src="js/libs/superfish/dist/js/superfish.min.js")
+
+	//- end WITH JQUERY===================================
+
+
+	//- VANILLA JS===================================
+	//- dynamic-adaptive--------------------------
+	//- script(src="js/libs/dynamic-adaptive/da.min.js")
+		
+	//- slideout--------------------------
+	//- script(src="js/libs/slideout/slideout.js")
+
+	//- multilevel-panel--------------------------
+	//- script(src="js/libs/multilevel-panel/multilevel-panel.js")
+
+	//- multilevel-dropdown-menu--------------------------
+	//- script(src="js/libs/multilevel-dropdown/multidropdown.js")
+			
+	//- lazysizes--------------------------
+	//- script(src="js/libs/lazysizes/lazysizes.min.js")	
+		
+	//- accordion--------------------------
+	//- script(src="js/libs/accordion/vanilla-accordion.js")
+		
+	//- tabs--------------------------
+	//- script(src="js/libs/tabs/tabs-pure.js")
+		
+	//- micromodal--------------------------
+	//- script(src="js/libs/micromodal/micromodal.js")	
+		
+	//- swiper--------------------------
+	//- script(src="js/libs/swiper/swiper.min.js")
+
+	//- noUiSlider--------------------------
+	script(src="js/libs/noUiSlider/nouislider.min.js")
+
+	//- iMask--------------------------
+	//- script(src="js/libs/imask/imask.js")
+
+	//- FormHandler--------------------------
+	//- script(src="js/libs/formhandler.js-1.1.2/dist/js/FormHandler.min.js")
+
+	//- ratings--------------------------
+	//- script(src="js/libs/rating/ratings.js")
+
+	//- sticky-sidebar--------------------------
+	//- https://abouolia.github.io/sticky-sidebar/#usage
+	//- script(src="js/libs/sticky-sidebar/dist/resizeSensor.js")
+	//- script(src="js/libs/sticky-sidebar/dist/sticky-sidebar.min.js")
+
+	//- simplebar--------------------------
+	//- USE:	new SimpleBar(document.querySelector('mySelector'), { autoHide: false });
+	//- script(src="js/libs/simplebar/simplebar.min.js")
+		
+	//- fstdropdown (кастомный селект), исп-е.: <select data-searchdisable="true" class="fstdropdown-select">
+	//- script(src="js/libs/fstdropdown/fstdropdown.min.js")
+
+	//- baguetteBox-------------------------- use: https://github.com/feimosi/baguetteBox.js#usage
+	//- script(src="js/libs/baguetteBox/dist/baguetteBox.min.js")
+
+	//- svg4everybody--------------------------
+	//- script(type="text/javascript" src="js/libs/svg4everybody/svg4everybody.min.js" async onload="svg4everybody();")
+		
+	//- end VANILLA JS===================================

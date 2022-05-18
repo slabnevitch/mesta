@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Страница выдачи</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" href="https://easepick.com/assets/css/demo_hotelcal.css">
+    <link rel="stylesheet" href="js/libs/dropzone/dropzone.min.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <header class="header page">
+      <div class="container">
+        <div class="header_wrapper">
+          <div class="header_left"><a href="" class="header_logo"><img src="img/logo2.svg" alt></a>
+            <ul class="menu">
+              <li><a href="">Подборки</a></li>
+              <li><a href="">Статьи</a></li>
+            </ul>
+          </div>
+          <div class="header_right"><a href="" class="header_link-mobile"><span class="icon-search"></span></a>
+            <form action="#" class="header_search">
+              <div class="header_search-icon icon-search"></div>
+              <div>
+                <input type="text" name="" id="" placeholder="Поиск по названию " class="header_inp">
+              </div>
+              <div class="header_search-delete"><span class="icon-delete"></span></div>
+            </form><a href="" class="header_link icon-like"></a><a href="" class="header_link icon-login2"></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="page-search-resuls">
+      <section class="place">
+        <div class="container">
+          <div class="crumbs"><a href="#" class="crumbs_back"><span class="icon-back"></span></a></div>
+          <div class="title-with-dd"><span>Куда поехать из </span><a href="#">Нижний Новгород</a></div>
+          <div class="filter-tags-wrapper">
+            <div class="filter-tags">
+              <div class="filter-tag"><span class="filter-tag__icon icon-type"></span><span class="filter-tag__name">Комплекс для отдыха</span><span class="icon-delete"></span></div>
+              <div class="filter-tag"><span class="filter-tag__icon icon-camera"></span><span class="filter-tag__name">Интересные локации</span><span class="icon-delete"></span></div>
+              <div class="filter-tag active"><span class="filter-tag__icon icon-children"></span><span class="filter-tag__name">Отдых с детьми</span><span class="icon-delete"></span></div>
+              <div class="filter-tag"><span class="filter-tag__icon icon-helmet"></span><span class="filter-tag__name">Активный отдых</span><span class="icon-delete"></span></div>
+              <div class="filter-tag"><span class="filter-tag__icon icon-lotus"></span><span class="filter-tag__name">Оздоровительный отдых</span><span class="icon-delete"></span></div>
+              <div class="filter-tag"><span class="filter-tag__icon icon-minibus"></span><span class="filter-tag__name">Туры</span><span class="icon-delete"></span></div>
+              <div class="filter-tag"><span class="filter-tag__icon icon-eco"></span><span class="filter-tag__name">Эко-отдых</span><span class="icon-delete"></span></div>
+              <div class="filter-tag active"><span class="filter-tag__icon icon-grape"></span><span class="filter-tag__name">Винодельни</span><span class="icon-delete"></span></div>
+              <div class="filter-tag"><span class="filter-tag__icon icon-cities"></span><span class="filter-tag__name">Туристические города</span><span class="icon-delete"></span></div>
+            </div>
+            <div class="filter-tags-wrapper__cover"></div>
+          </div>
+          <div class="results-filter">
+            <div class="results-filter__header header-results-filter">
+              <div class="header-results-filter__title">Фильтры</div>
+              <div class="header-results-filter__close"><span class="icon-delete"></span></div>
+            </div>
+            <div class="results-filter__items">
+              <div class="results-filter__item item-results-filter results-filter__item--services">
+                <div class="item-results-filter__name">Услуги</div>
+                <div class="icon-faq_arrow"></div>
+                <div class="item-results-filter__dd">
+                  <div class="place_service-items">
+                    <div class="place_service-item"><span class="place_service-item-icon icon-place_service1"></span>Кафе на территории
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-residence"></span>Проживание
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-place_service2"></span>Беседки / Мангальная зона 
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-daylight"></span>Дневное посещение
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-bath"></span>Баня
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-spa"></span>Spa программы
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-spa"></span>Бассейн
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-beach"></span>Пляж
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-zoo"></span>Зоодвор
+                    </div>
+                    <div class="place_service-item disabled"><span class="place_service-item-icon icon-fishing"></span>Рыбалка
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-carousel"></span>Развлечения для детей
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-horse"></span>Конные прогулки
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-place_service3"></span>Можно с питомцами
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="results-filter__item item-results-filter results-filter__item--dates">
+                <div class="item-results-filter__name">Свободные даты</div>
+                <div class="icon-faq_arrow"></div>
+                <div class="item-results-filter__dd">
+                  <form action="#" id="filter-datepikers" class="item-results-filter__inputs">
+                    <input id="datepicker-static" type="text" name="" readonly="" class="form_inp"><span class="item-results-filter__divide"></span>
+                    <input id="datepicker-static2" name="" readonly="" class="form_inp">
+                    <div class="item-results-filter__calendar-button"><span class="icon-calendar-white"></span></div>
+                  </form>
+                  <div class="item-results-filter__buttons"><a href="#" id="calendar-reset" class="btn2 btn-sm">Очистить</a><a href="#" id="calendar-select" class="btn btn-sm">Выбрать</a></div>
+                </div>
+              </div>
+              <div class="results-filter__item item-results-filter results-filter__item--cities">
+                <div class="item-results-filter__name">Расстояние от города</div>
+                <div class="icon-faq_arrow"></div>
+                <div class="item-results-filter__dd">
+                  <div class="item-results-filter__caption">Расстояние от города</div>
+                  <div class="range">
+                    <div class="range-top">
+                      <input autocomplete="off" type="text" name="" value="200" id="minval" class="range__input">
+                      <input autocomplete="off" type="text" name="" value="" id="maxval" class="range__input">
+                    </div>
+                    <div class="range-slider-wrapper">
+                      <div class="range-slider-wrapper__sector"></div>
+                      <div class="range-slider"></div>
+                      <div class="range-slider-wrapper__sector"></div>
+                    </div>
+                  </div><a href="#" class="btn btn-sm">Применить</a>
+                </div>
+              </div>
+              <div class="results-filter__item item-results-filter results-filter__item--prices">
+                <div class="item-results-filter__name">Сортировать по:<span class="item-results-filter__sort-key">возрастанию цены</span></div>
+                <div class="icon-faq_arrow"></div>
+                <div class="item-results-filter__dd">
+                  <div class="item-results-filter__caption">Сортировать по:</div>
+                  <form class="item-results-filter__form">
+                    <label class="item-results-filter__label">
+                      <input type="radio" name="sort-value" value="Рекомендуемые" class="item-results-filter__input"><span class="item-results-filter__radio"></span><span class="item-results-filter__radio-value">Рекомендуемые</span>
+                    </label>
+                    <label class="item-results-filter__label">
+                      <input type="radio" name="sort-value" value="По возрастанию цены" checked class="item-results-filter__input"><span class="item-results-filter__radio"></span><span class="item-results-filter__radio-value">По возрастанию цены</span>
+                    </label>
+                    <label class="item-results-filter__label">
+                      <input type="radio" name="sort-value" value="По убыванию цены" class="item-results-filter__input"><span class="item-results-filter__radio"></span><span class="item-results-filter__radio-value">По убыванию цены</span>
+                    </label>
+                    <label class="item-results-filter__label">
+                      <input type="radio" name="sort-value" value="По расстоянию" class="item-results-filter__input"><span class="item-results-filter__radio"></span><span class="item-results-filter__radio-value">По расстоянию</span>
+                    </label>
+                  </form><a href="#" class="btn btn-sm">Применить</a>
+                </div>
+              </div>
+            </div>
+            <div class="results-filter__buttons"><a href="#" class="btn2 btn-sm">Очистить</a><a href="#" class="btn btn-sm">63 места</a></div>
+            <div class="filter-cover"></div>
+            <div class="results-filter__map-open results-filter__item"> <span class="icon-place_contacts-item2"></span>Показать на карте</div>
+          </div>
+          <div class="search-results-cards">
+            <div class="result-card similar_slide result-card--xz">
+              <div class="similar_slide-imgs img_slider">
+                <div style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+              </div>
+              <div class="similar_slide-info">
+                <div class="similar_slide-top"><a href="#" class="room_card-title tooltip">Шале 3-х местный Шале 3-х местный Шале 3-х местный</a>
+                  <div class="similar_slide-like"><span class="icon-like_card"></span></div>
+                </div><a href="#" class="result-card__link">
+                  <div class="similar_slide-adres"><span class="icon-adres"></span>
+                    <div class="similar_slide-adres_title">Московская область, Сергиево-ПосадсПосадсПосадсПосадс</div>
+                    <div class="similar_slide-adres_distance">250км</div>
+                  </div>
+                  <div class="similar_slide-text">Её нарекли сердцем России, но под это описание подойдет любой из уютных городков Золотого кольца. Справедливее назвать столицу головой необъятной страны. Москва - шумная, дорогая, гордая, жестокая, но до неприличия красивая и притягательная. Ежегодно город принимает туристов со всего света, заковывая в холодные объятия. </div>
+                  <div class="similar_slide-link">
+                    <div class="similar_slide-sutitle">
+                      <div class="similar_slide-rating">8.1/10<span class="icon-rating"></span></div>
+                      <div class="similar_slide-reviews">11 отзывов</div>
+                    </div>
+                    <div class="similar_slide-btn btn">Подробнее</div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="result-card similar_slide">
+              <div class="similar_slide-imgs img_slider">
+                <div style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+              </div>
+              <div class="similar_slide-info">
+                <div class="similar_slide-top"><a href="#" title=" " class="room_card-title">Шале 3-х местный Шале 3-х местный Шале 3-х местный</a>
+                  <div class="similar_slide-like"><span class="icon-like_card"></span></div>
+                </div><a href="#" class="result-card__link">
+                  <div class="similar_slide-adres"><span class="icon-adres"></span>
+                    <div class="similar_slide-adres_title">Московская область, Сергиево-ПосадсПосадсПосадсПосадс</div>
+                    <div class="similar_slide-adres_distance">250км</div>
+                  </div>
+                  <div class="similar_slide-text">Её нарекли сердцем России, но под это описание подойдет любой из уютных городков Золотого кольца. Справедливее назвать столицу головой необъятной страны. Москва - шумная, дорогая, гордая, жестокая, но до неприличия красивая и притягательная. Ежегодно город принимает туристов со всего света, заковывая в холодные объятия. 
+                  </div>
+                  <div class="similar_slide-link">
+                    <div class="similar_slide-sutitle">
+                      <div class="similar_slide-rating">8.1/10<span class="icon-rating"></span></div>
+                      <div class="similar_slide-reviews">11 отзывов</div>
+                    </div>
+                    <div class="similar_slide-btn btn">Подробнее</div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="result-card result-card--services similar_slide">
+              <div class="similar_slide-imgs img_slider">
+                <div style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+              </div>
+              <div class="similar_slide-info">
+                <div class="similar_slide-top"><a href="#" title=" " class="room_card-title tooltip">Шале 3-х местный Шале 3-х местный Шале 3-х местный</a>
+                  <div class="similar_slide-like"><span class="icon-like_card"></span></div>
+                </div><a href="#" class="result-card__link">
+                  <div class="similar_slide-adres"><span class="icon-adres"></span>
+                    <div class="similar_slide-adres_title">Московская область, Сергиево-ПосадсПосадсПосадсПосадс</div>
+                    <div class="similar_slide-adres_distance">250км</div>
+                  </div>
+                  <div class="similar_slide-text">На берегу Волги, в окружении загородной природы разместился эко-отель Веточ..
+                  </div>
+                  <div class="place_service-items">
+                    <div class="place_service-item"><span class="place_service-item-icon icon-place_service1"></span>Кафе на территории
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-residence"></span>Проживание
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-beach"></span>Пляж
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-daylight"></span>Дневное посещение
+                    </div>
+                    <div class="place_service-item place_service-item--adding"><span class="place_service-item-icon icon-plus"></span>4</div>
+                  </div>
+                  <div class="similar_slide-link">
+                    <div class="similar_slide-sutitle">
+                      <div class="similar_slide-rating">8.1/10<span class="icon-rating"></span></div>
+                      <div class="similar_slide-reviews">11 отзывов</div>
+                    </div>
+                    <div class="result-card__bottom-box">
+                      <div class="result-card__reservation"><span class="icon-hotel"></span>Бронь от отеля</div>
+                      <div class="similar_slide-btn btn">Подробнее</div>
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="result-card similar_slide">
+              <div class="similar_slide-imgs img_slider">
+                <div style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+              </div>
+              <div class="similar_slide-info">
+                <div class="similar_slide-top"><a href="#" title=" " class="room_card-title">Шале 3-х местный Шале 3-х местный Шале 3-х местный</a>
+                  <div class="similar_slide-like"><span class="icon-like_card"></span></div>
+                </div><a href="#" class="result-card__link">
+                  <div class="similar_slide-adres"><span class="icon-adres"></span>
+                    <div class="similar_slide-adres_title">Московская область, Сергиево-ПосадсПосадсПосадсПосадс</div>
+                    <div class="similar_slide-adres_distance">250км</div>
+                  </div>
+                  <div class="similar_slide-text">Её нарекли сердцем России, но под это описание подойдет любой из уютных городков Золотого кольца. Справедливее назвать столицу головой необъятной страны. Москва - шумная, дорогая, гордая, жестокая, но до неприличия красивая и притягательная. Ежегодно город принимает туристов со всего света, заковывая в холодные объятия. 
+                  </div>
+                  <div class="similar_slide-link">
+                    <div class="similar_slide-sutitle">
+                      <div class="similar_slide-rating">8.1/10<span class="icon-rating"></span></div>
+                      <div class="similar_slide-reviews">11 отзывов</div>
+                    </div>
+                    <div class="similar_slide-btn btn">Подробнее</div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="result-card result-card--services similar_slide">
+              <div class="similar_slide-imgs img_slider">
+                <div style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+              </div>
+              <div class="similar_slide-info">
+                <div class="similar_slide-top"><a href="#" title=" " class="room_card-title tooltip">Шале 3-х местный Шале 3-х местный Шале 3-х местный</a>
+                  <div class="similar_slide-like"><span class="icon-like_card"></span></div>
+                </div><a href="#" class="result-card__link">
+                  <div class="similar_slide-adres"><span class="icon-adres"></span>
+                    <div class="similar_slide-adres_title">Московская область, Сергиево-ПосадсПосадсПосадсПосадс</div>
+                    <div class="similar_slide-adres_distance">250км</div>
+                  </div>
+                  <div class="similar_slide-text">На берегу Волги, в окружении загородной природы разместился эко-отель Веточ..
+                  </div>
+                  <div class="place_service-items">
+                    <div class="place_service-item"><span class="place_service-item-icon icon-place_service1"></span>Кафе на территории
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-residence"></span>Проживание
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-beach"></span>Пляж
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-daylight"></span>Дневное посещение
+                    </div>
+                    <div class="place_service-item place_service-item--adding"><span class="place_service-item-icon icon-plus"></span>4</div>
+                  </div>
+                  <div class="similar_slide-link">
+                    <div class="similar_slide-sutitle">
+                      <div class="similar_slide-rating">8.1/10<span class="icon-rating"></span></div>
+                      <div class="similar_slide-reviews">11 отзывов</div>
+                    </div>
+                    <div class="result-card__bottom-box">
+                      <div class="result-card__reservation"><span class="icon-hotel"></span>Бронь от отеля</div>
+                      <div class="similar_slide-btn btn">Подробнее</div>
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="result-card similar_slide">
+              <div class="similar_slide-imgs img_slider">
+                <div style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+              </div>
+              <div class="similar_slide-info">
+                <div class="similar_slide-top"><a href="#" title=" " class="room_card-title">Шале 3-х местный Шале 3-х местный Шале 3-х местный</a>
+                  <div class="similar_slide-like"><span class="icon-like_card"></span></div>
+                </div><a href="#" class="result-card__link">
+                  <div class="similar_slide-adres"><span class="icon-adres"></span>
+                    <div class="similar_slide-adres_title">Московская область, Сергиево-ПосадсПосадсПосадсПосадс</div>
+                    <div class="similar_slide-adres_distance">250км</div>
+                  </div>
+                  <div class="similar_slide-text">Её нарекли сердцем России, но под это описание подойдет любой из уютных городков Золотого кольца. Справедливее назвать столицу головой необъятной страны. Москва - шумная, дорогая, гордая, жестокая, но до неприличия красивая и притягательная. Ежегодно город принимает туристов со всего света, заковывая в холодные объятия. 
+                  </div>
+                  <div class="similar_slide-link">
+                    <div class="similar_slide-sutitle">
+                      <div class="similar_slide-rating">8.1/10<span class="icon-rating"></span></div>
+                      <div class="similar_slide-reviews">11 отзывов</div>
+                    </div>
+                    <div class="similar_slide-btn btn">Подробнее</div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="result-card result-card--services similar_slide">
+              <div class="similar_slide-imgs img_slider">
+                <div style="background-image: url(img/similar_slide.jpg);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_img6.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+                <div style="background-image: url(img/place_page.png);" class="similar_slide-img"><span class="icon-place_type"></span></div>
+              </div>
+              <div class="similar_slide-info">
+                <div class="similar_slide-top"><a href="#" title=" " class="room_card-title tooltip">Шале 3-х местный Шале 3-х местный Шале 3-х местный</a>
+                  <div class="similar_slide-like"><span class="icon-like_card"></span></div>
+                </div><a href="#" class="result-card__link">
+                  <div class="similar_slide-adres"><span class="icon-adres"></span>
+                    <div class="similar_slide-adres_title">Московская область, Сергиево-ПосадсПосадсПосадсПосадс</div>
+                    <div class="similar_slide-adres_distance">250км</div>
+                  </div>
+                  <div class="similar_slide-text">На берегу Волги, в окружении загородной природы разместился эко-отель Веточ..
+                  </div>
+                  <div class="place_service-items">
+                    <div class="place_service-item"><span class="place_service-item-icon icon-place_service1"></span>Кафе на территории
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-residence"></span>Проживание
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-beach"></span>Пляж
+                    </div>
+                    <div class="place_service-item"><span class="place_service-item-icon icon-daylight"></span>Дневное посещение
+                    </div>
+                    <div class="place_service-item place_service-item--adding"><span class="place_service-item-icon icon-plus"></span>4</div>
+                  </div>
+                  <div class="similar_slide-link">
+                    <div class="similar_slide-sutitle">
+                      <div class="similar_slide-rating">8.1/10<span class="icon-rating"></span></div>
+                      <div class="similar_slide-reviews">11 отзывов</div>
+                    </div>
+                    <div class="result-card__bottom-box">
+                      <div class="result-card__reservation"><span class="icon-hotel"></span>Бронь от отеля</div>
+                      <div class="similar_slide-btn btn">Подробнее</div>
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="search-results-cards__bottom">
+              <div class="search-results-cards__offers">
+                <div class="search-results-cards__offers-count">12</div>
+                <div class="search-results-cards__offers-all">из 99 предложений </div>
+              </div><a href="#" class="search-results-cards__more btn2"><span class="desk">Показать еще</span><span class="mob">Показать все идеи</span></a>
+              <div class="search-results-cards__pagin">
+                <div class="search-results-cards__places">Мест на странице</div>
+                <div class="search-results-cards__places-count"><span class="search-results-cards__places-val">12</span><span class="icon-faq_arrow"></span></div>
+                <div class="pagin-dropdown">
+                  <div class="pagin-dropdown__item">12</div>
+                  <div class="pagin-dropdown__item">24</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="search-resuls-plug">
+            <div class="search-resuls-plug__icon">
+              <div class="icon-search-big"></div>
+            </div>
+            <div class="search-resuls-plug__title">Результаты не найдены</div>
+            <p>К сожалению, мы не можем сопоставить результаты с вашим запросом. Попробуйте изменить некоторые фильтры, чтобы получить больше результатов.</p>
+          </div>
+        </div>
+      </section>
+      <div class="results-mobile-toggler">
+        <div id="mob-map-show" class="results-mobile-toggler__item"><span class="results-mobile-toggler__icon icon-adres"></span>На карте</div>
+        <div id="mob-filters-show" class="results-mobile-toggler__item"><span class="results-mobile-toggler__icon icon-filter"></span>Фильтры</div>
+      </div>
+      <div class="resuls-map">
+        <div class="resuls-map__close"><span class="icon-delete"></span></div>
+        <div id="map" class="resuls-map__map"></div>
+        <div class="resuls-map__bottom">
+          <div class="filter-tags">
+            <div class="filter-tag"><span class="filter-tag__icon icon-type"></span><span class="filter-tag__name">Комплекс для отдыха</span><span class="icon-delete"></span></div>
+            <div class="filter-tag"><span class="filter-tag__icon icon-camera"></span><span class="filter-tag__name">Интересные локации</span><span class="icon-delete"></span></div>
+            <div class="filter-tag active"><span class="filter-tag__icon icon-children"></span><span class="filter-tag__name">Отдых с детьми</span><span class="icon-delete"></span></div>
+            <div class="filter-tag"><span class="filter-tag__icon icon-helmet"></span><span class="filter-tag__name">Активный отдых</span><span class="icon-delete"></span></div>
+            <div class="filter-tag"><span class="filter-tag__icon icon-lotus"></span><span class="filter-tag__name">Оздоровительный отдых</span><span class="icon-delete"></span></div>
+            <div class="filter-tag"><span class="filter-tag__icon icon-minibus"></span><span class="filter-tag__name">Туры</span><span class="icon-delete"></span></div>
+            <div class="filter-tag"><span class="filter-tag__icon icon-eco"></span><span class="filter-tag__name">Эко-отдых</span><span class="icon-delete"></span></div>
+            <div class="filter-tag active"><span class="filter-tag__icon icon-grape"></span><span class="filter-tag__name">Винодельни</span><span class="icon-delete"></span></div>
+            <div class="filter-tag"><span class="filter-tag__icon icon-cities"></span><span class="filter-tag__name">Туристические города</span><span class="icon-delete"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer_wrapper">
+          <div class="footer_left"><a href="" class="footer_logo"><img src="img/footer_logo.png" alt=""></a>
+            <div class="footer_messages"><a href="" class="footer_message"><span class="icon-footer_message1"></span></a><a href="" class="footer_message"><span class="icon-footer_message2"></span></a></div>
+          </div>
+          <ul class="footer_menu">
+            <li><a href="">Подборки</a></li>
+            <li><a href="">Контакты</a></li>
+            <li><a href="">Статьи</a></li>
+            <li><a href="">Способы оплаты</a></li>
+            <li><a href="">О нас</a></li>
+            <li><a href="">Условия возврата</a></li>
+            <li><a href="#place-object-popup" class="popup_btn">Разместить свой объект</a></li>
+            <li><a href="#advertising-popup" class="popup_btn">Рекламные возможности</a></li>
+          </ul>
+          <div class="footer_right"><a href="" class="footer_link">Пользовательское соглашение</a><a href="" class="footer_link">Оферта на использование модуля</a>
+            <div class="footer_subtitle">2021 Вся информация защищена</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="advertising-popup" style="display: none;" class="popup popup-advertising">
+      <form class="popup__form">
+        <div class="popup__form-content">
+          <div class="popup__title">Рекламные возможности</div>
+          <div class="popup__text">Заполните форму ниже и мы рассмотрим варианты сотрудничества с вами.</div>
+        </div>
+        <div class="form_inp-wrapper">
+          <div class="form_inp-title">Контактное лицо<span></span></div>
+          <input type="text" name="" id="" placeholder="Введите имя" class="form_inp">
+        </div>
+        <div class="form_inp-wrapper">
+          <div class="form_inp-title">Номер телефона<span></span></div>
+          <input type="tel" name="" placeholder="+7 (999) 999 99 99" class="form_inp">
+        </div>
+        <div class="form_inp-wrapper">
+          <div class="form_inp-title">Сайт<span></span></div>
+          <input type="text" name="" id="" placeholder="Введите ссылку на сайт" class="form_inp">
+        </div>
+        <button id="successfully-open" data-open="successfully" class="btn">Оставить заявку</button>
+      </form>
+    </div>
+    <div id="successfully-popup" style="display: none;" class="popup popup-successfully">
+      <div class="popup-successfully__content">
+        <div class="popup__title">Ваша заявка успешно отправлена</div>
+        <div class="popup__text">В ближайшее время с вами свяжется наш специалист</div>
+      </div>
+      <button id="successfully-close" class="btn">Отлично</button>
+    </div>
+    <div id="place-object-popup" style="display: none;" class="popup popup-place-object">
+      <div class="popup__title">Разместить свой объект</div>
+      <div class="popup__text">Отправьте заявку на добавление места. Если он соответствует нашим требования, мы свяжемся с вами и добавим его на сайт</div>
+      <form action="/upload" id="my-awesome-dropzone" class="dropzone popup-place-object__columns">
+        <div class="popup-place-object__column">
+          <div class="form_inp-wrapper">
+            <div class="form_inp-title">Наименование<span></span></div>
+            <input type="text" name="" id="" placeholder="Введите название обьекта" class="form_inp">
+          </div>
+          <div class="form_inp-wrapper">
+            <div class="form_inp-title">Адрес<span></span></div>
+            <input type="text" name="" id="" placeholder="Введите адрес" class="form_inp">
+          </div>
+          <div class="form_inp-wrapper">
+            <div class="form_inp-title">Ссылка<span></span></div>
+            <input type="text" name="" id="" placeholder="Введите ссылку на сайт/соц. сети" class="form_inp">
+          </div>
+        </div>
+        <div class="popup-place-object__column">
+          <div class="popup-place-object__title">Добавить фото</div>
+          <div class="dz-message needsclick">
+            <div>
+              <div class="icon-file"></div>Кликните для загрузки файлов
+            </div><span>(до 5 фотографий JPG или PNG от 1920×1080 пикселей, до 10 МБ каждая)</span>
+          </div>
+        </div>
+        <div class="popup-place-object__column">
+          <div class="popup-place-object__title">Чтобы мы могли с вами связаться</div>
+          <div class="form_inp-wrapper">
+            <div class="form_inp-title">Имя<span></span></div>
+            <input type="text" name="" id="" placeholder="Введите ваше имя" class="form_inp">
+          </div>
+          <div class="form_inp-wrapper">
+            <div class="form_inp-title">Email<span></span></div>
+            <input type="text" name="" id="" placeholder="Введите вашу почту" class="form_inp">
+          </div>
+          <div class="form_inp-wrapper">
+            <div class="form_inp-title">Телефон<span></span></div>
+            <input type="tel" name="" placeholder="Введите ваш телефон" class="form_inp">
+          </div>
+        </div>
+        <div class="popup-place-object__column">
+          <div class="popup-place-objec__previews"></div>
+        </div>
+      </form>
+      <div class="popup-place-object__bottom">
+        <button id="gratitude-open" data-open="gratitude" class="btn">Отправить</button>
+      </div>
+    </div>
+    <div id="gratitude-popup" style="display: none;" class="popup popup-gratitude">
+      <div class="popup-gratitude__content">
+        <div class="popup__title">Спасибо</div>
+        <div class="popup__text">Обьект отправлен на модерацию. Если он соответствует нашим требования, мы добавим его на сайт</div>
+        <button id="gratitude-close" class="btn">Готово</button>
+      </div>
+    </div>
+    <div id="file-error-popup" style="display: none;" class="popup popup-file-error">
+      <div class="popup-gratitude__content">
+        <div class="popup__title">Ошибка</div>
+        <div class="popup__text">Можно загрузить не более 5 изображений</div>
+        <button id="gratitude-close" class="btn">Готово</button>
+      </div>
+    </div>
+    
+    <script src="js/libs/jquery/jquery-3.1.1.min.js"></script>
+    
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+    <script src="js/map-init.js"></script>
+    <script src="js/libs/service-functions/mobileDetect.js"></script>
+    
+    
+    <script src="js/libs/noUiSlider/nouislider.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/libs/jquery.maskedinput.min.js"></script>
+    <script src="js/libs/dropzone/dropzone.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.3/dist/index.umd.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
+  </body>
+</html>
