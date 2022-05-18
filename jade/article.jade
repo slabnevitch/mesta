@@ -1,0 +1,155 @@
+extends _misc/main
+
+block title
+	| Статья
+
+block content
+	.page-article
+		section.place
+			.container
+				.crumbs
+					a.crumbs_back(href='#')
+						span.icon-back
+				ul.breadcrumbs
+					li
+						a(href="#") Главная
+					li
+						a(href="#") Статьи
+					li
+						span Лучшие пляжи Крыма
+
+
+				article.article
+					.article__header
+						h1 Лучшие пляжи Крыма
+						.article__download(data-da="crumbs,991.98,last")
+							span.icon-donwload
+
+					p Крымский полуостров привлекателен круглый год. Зимой сюда приезжают, посмотреть природные достопримечательности, а летом провести отпуск. Планируя поездку, важно составить план-маршрут. И, конечно, путешествие не обойдется без пляжного отдыха. В этой статье мы собрали самые живописные и чистые пляжи Крыма.
+					
+					- var objects = ['Новый Свет: Царский пляж', 'Фиолент: Яшмовый пляж'];
+					- for (var i=0; i < 2; i++)
+						each item, i in objects
+							.article__object.object-article
+								h2= item
+								.object-article__img._fit
+									img._fit-img(src="img/article-page/" + (i+1) + ".jpg" alt="alt")
+								p Царский пляж Николая II встречает отдыхающих на берегу Голубой бухты в Новом Свете. Небезызвестный уголок полуострова, обрамленный скалами, усыпан мелкой галькой. Местные жители поговаривают, что именно здесь проводил время последний российский император. В эти края правитель приехал по приглашению князя Голицына, по фамилии которого названа популярная туристическая тропа. Сегодня купаться в водах бухты запрещено. Виной тому высокая вероятность оползня. Несмотря на запреты, пляж манит гостей региона. Здесь встречают рассветы и провожают закаты, принимают солнечные ванны и наслаждаются морским пейзажем. 
+								
+								.object-article__coords Координаты: 44.820863, 34.905251 
+
+								a(href="#").btn2.button-forward Что посмотреть в Крыму
+									span.icon-button-forward
+
+					.article__date 28 Декабря 2021
+//- img(src=img + "demo.jpg")
+//- img(src=ico + "amex.svg")
+
+block page-scripts
+	//- script(src="js/main.js")
+	
+	//- SERVIVE FUNCTIONS==================
+
+	//- remove-class--------------------------
+	//- script(src="js/libs/service-functions/remove-class.js")
+
+	//- siblings--------------------------
+	//- script(src="js/libs/service-functions/siblings.js")
+
+	//- webp-detection--------------------------
+	//- script(src="js/libs/service-functions/webp-detection.js")
+
+	//- dropdown-toggle on touch devices--------------------------
+	//- script(src="js/libs/service-functions/dropdown-toggle.js")
+
+	//- isMobile--------------------------
+	//- script(src="js/libs/service-functions/mobileDetect.js")
+
+	//- All in one file--------------------------
+	//- script(src="js/libs/service-functions/all-functions.js")
+
+
+	//- WITH JQUERY===================================
+	//- jquery--------------------------
+	//- script(src="js/libs/jquery/jquery-3.1.1.min.js")
+
+	//- jquery-UI--------------------------
+	//- script(src="js/libs/jquery-ui/jquery-ui.min.js")
+		
+	//- magnific-popup--------------------------
+	//- script(src="js/libs/magnific-popup/dist/jquery.magnific-popup.min.js")
+		
+	//- slick--------------------------
+	//- script(src="js/libs/slick/slick.min.js")
+		
+	//- slick-master (без лишних контейнеров)--------------------------
+	//- script(src="js/libs/slick-master/slick.js")
+
+	//- script(src='https://api-maps.yandex.ru/2.1/?apikey=1be0e242-a0f9-4c70-8d5c-f2f3df5c3e40&load=&lang=ru_RU' type='text/javascript')
+
+	//- superfish--------------------------
+	//- script(src="js/libs/superfish/dist/js/hoverIntent.js")
+	//- script(src="js/libs/superfish/dist/js/superfish.min.js")
+
+	//- end WITH JQUERY===================================
+
+
+	//- VANILLA JS===================================
+	//- dynamic-adaptive--------------------------
+	script(src="js/libs/dynamic-adaptive/da.min.js")
+		
+	//- slideout--------------------------
+	//- script(src="js/libs/slideout/slideout.js")
+
+	//- multilevel-panel--------------------------
+	//- script(src="js/libs/multilevel-panel/multilevel-panel.js")
+
+	//- multilevel-dropdown-menu--------------------------
+	//- script(src="js/libs/multilevel-dropdown/multidropdown.js")
+			
+	//- lazysizes--------------------------
+	//- script(src="js/libs/lazysizes/lazysizes.min.js")	
+		
+	//- accordion--------------------------
+	//- script(src="js/libs/accordion/vanilla-accordion.js")
+		
+	//- tabs--------------------------
+	//- script(src="js/libs/tabs/tabs-pure.js")
+		
+	//- micromodal--------------------------
+	//- script(src="js/libs/micromodal/micromodal.js")	
+		
+	//- swiper--------------------------
+	//- script(src="js/libs/swiper/swiper.min.js")
+
+	//- noUiSlider--------------------------
+	//- script(src="js/libs/noUiSlider/nouislider.min.js")
+
+	//- iMask--------------------------
+	//- script(src="js/libs/imask/imask.js")
+
+	//- FormHandler--------------------------
+	//- script(src="js/libs/formhandler.js-1.1.2/dist/js/FormHandler.min.js")
+
+	//- ratings--------------------------
+	//- script(src="js/libs/rating/ratings.js")
+
+	//- sticky-sidebar--------------------------
+	//- https://abouolia.github.io/sticky-sidebar/#usage
+	//- script(src="js/libs/sticky-sidebar/dist/resizeSensor.js")
+	//- script(src="js/libs/sticky-sidebar/dist/sticky-sidebar.min.js")
+
+	//- simplebar--------------------------
+	//- USE:	new SimpleBar(document.querySelector('mySelector'), { autoHide: false });
+	//- script(src="js/libs/simplebar/simplebar.min.js")
+		
+	//- fstdropdown (кастомный селект), исп-е.: <select data-searchdisable="true" class="fstdropdown-select">
+	//- script(src="js/libs/fstdropdown/fstdropdown.min.js")
+
+	//- baguetteBox-------------------------- use: https://github.com/feimosi/baguetteBox.js#usage
+	//- script(src="js/libs/baguetteBox/dist/baguetteBox.min.js")
+
+	//- svg4everybody--------------------------
+	//- script(type="text/javascript" src="js/libs/svg4everybody/svg4everybody.min.js" async onload="svg4everybody();")
+		
+	//- end VANILLA JS===================================

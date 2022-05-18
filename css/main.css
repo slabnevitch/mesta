@@ -2859,7 +2859,7 @@ html .results-filter__item--dates .item-results-filter__dd {
   }
 }
 
-.option-page-about__b-icon {
+.icon-button-forward {
   font-size: 10px;
   margin-left: 4px;
   color: #FC6733;
@@ -3601,6 +3601,225 @@ textarea.form_inp {
 }
 
 /*===================== end ARTICLES-PAGE======================*/
+/*=====================ARTICLE-PAGE=========================*/
+.page-article .breadcrumbs {
+  margin-bottom: 32px;
+}
+
+@media only screen and (max-width: 991.98px) {
+  .page-article .breadcrumbs {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 991.98px) {
+  .page-article .crumbs {
+    position: relative;
+  }
+}
+
+.breadcrumbs {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs li {
+  position: relative;
+}
+
+.breadcrumbs li:not(:last-child):after {
+  content: '/';
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+  margin-right: 8px;
+  color: rgba(34, 34, 34, 0.45);
+}
+
+.breadcrumbs li a {
+  text-decoration: none;
+  color: rgba(34, 34, 34, 0.45);
+}
+
+.breadcrumbs li span {
+  color: rgba(34, 34, 34, 0.85);
+}
+
+.article {
+  margin: 0 auto;
+  max-width: 794px;
+}
+
+.article h1 {
+  margin-bottom: 33px;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 50px;
+}
+
+@media only screen and (max-width: 991px) {
+  .article h1 {
+    margin-bottom: 16px;
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+.article h2 {
+  margin-top: 40px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+}
+
+@media only screen and (max-width: 991px) {
+  .article h2 {
+    margin-top: 32px;
+    font-size: 22px;
+    line-height: 26px;
+  }
+}
+
+.article p {
+  margin-bottom: 16px;
+  opacity: 0.6;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.article__header {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.article__download {
+  position: relative;
+  top: -10px;
+  width: 52px;
+  height: 52px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-left: 30px;
+  background: #FFFFFF;
+  -webkit-border-radius: 44px;
+  border-radius: 44px;
+}
+
+@media only screen and (max-width: 991px) {
+  .article__download {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    top: 50%;
+    margin-top: -21px;
+    right: 0;
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  .article__download {
+    cursor: pointer;
+  }
+}
+
+.article__download .icon-donwload {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #7A7A7A;
+}
+
+.object-article__img {
+  padding-bottom: 0;
+  margin-bottom: 16px;
+  height: 416px;
+  overflow: hidden;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+}
+
+@media only screen and (max-width: 1230px) {
+  .object-article__img {
+    height: 0;
+    padding-bottom: 59.94236%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .object-article__img {
+    height: 180px;
+    padding-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .object-article__img {
+    height: 0;
+    padding-bottom: 59.94236%;
+  }
+}
+
+.object-article__coords {
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.button-forward {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 52px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.button-forward:hover .icon-button-forward {
+  color: #fff;
+}
+
+.article__date {
+  margin-top: 50px;
+  font-size: 12px;
+  line-height: 18px;
+  opacity: 0.4;
+}
+
+@media only screen and (max-width: 991px) {
+  .article__date {
+    margin-top: 42px;
+  }
+}
+
+/*===================== end ARTICLE-PAGE======================*/
 /*--------------------popups----------------------*/
 .popup {
   background: #FFFFFF;
