@@ -1,55 +1,43 @@
 extends _misc/main
 
 block title
-	| О нас
+	| Статьи
 
 block content
-	.page-about
-		//- img(src="img/about-page/about-blur.svg" alt="alt")
+	.page-articles
 		section.place
-				.page-about__top
-					//- .page-about__top-inner(style="background-image: url(img/about-page/visual.jpg)")
-					.page-about__top-inner
-					
-					.page-about__cover
-						.container
-							.page-about__title ЗнайМеста.ru - 
-								br
-								| это сервис для поиска загородного отдыха.	
+			.container
+				h1 Статьи
+				.page-articles__top
+					a(href="#").article-card.articles-card--horizontal
+						.article-card__img._fit
+								img._fit-img(src="img/articles-page/big.jpg" alt="alt")
 						
-				.page-about__bottom
-					.container
-						.page-about__content
-							.page-about__slogan Открывайте для себя интересные места, бронируйте комплексы для отдыха и туры выходного дня, узнавайте куда поехать  с детьми и где активно провести выходные.
-							
-							.page-about__features
-								.page-about__feature.feature-page-about
-									.feature-page-about__icon.icon-meditation
-									.feature-page-about__text Наша миссия - побудить людей 
-										br 
-										| чаще проводить выходные за 
-										br
-										| пределами своего города.
+						.article-card__text
+							.article-card__title Лучшие пляжи Крыма
+							.article-card__descr
+								.article-card__paragraph Крымский полуостров привлекателен круглый год. Зимой сюда приезжают, посмотреть природные достопримечательности, а летом провести отпуск. Планируя ...
+								.article-preview-date 28 Декабря 2021
+									.article-preview-time 3 мин
 
-								.page-about__feature.feature-page-about
-									.feature-page-about__icon.icon-about-like
-									.feature-page-about__text Мы отбираем только лучшие места  и комплексы, чтобы вы были уверены в качестве предстоящего отдыха.
+				.articles-cards
+					- for (var n=0; n< 3; n++)
+						- for (var i=0; i < 3; i++)
+							a(href="#").article-card
+								.article-card__img._fit
+									img._fit-img(src="img/articles-page/cards/" + (i+1) + ".jpg" alt="alt")
 
-						.page-about__options
-							.page-about__option.option-page-about
-								.option-page-about__title Помогаем комплексам для загородного отдыха найти новых гостей
-								.option-page-about__content
-									.option-page-about__text Разместите свой отель, глемпинг  или другой загородный комплекс  на ЗнайМеста.ru
-									a(href="#").btn2 Разместить объект
-										span.option-page-about__b-icon.icon-button-forward
-
-							.page-about__option.option-page-about
-								.option-page-about__title Делаем управление отельным бизесом простым и удобным
-								.option-page-about__content
-									.option-page-about__text Подключите облачную систему управления бронированиями и автоматизируйте работу отеля.
-									a(href="#").btn2 Узнать о системе
-										span.option-page-about__b-icon.icon-button-forward
-				
+								.article-card__text
+									if i%2 == 0 
+										.article-card__title Обзор бесплатных достопримечательностей Москвы. Топ 10
+										.article-card__descr
+											.article-card__paragraph Крымский полуостров привлекателен круглый год. Зимой сюда приезжаю
+									else
+										.article-card__title Топ пляжей Краснодарского края
+										.article-card__descr
+											.article-card__paragraph Крымский полуостров привлекателен круглый год. Зимой сюда приезжаю круглый год. Зимой сюда приезжаю ...
+									.article-preview-date 28 Декабря 2021
+										.article-preview-time 3 мин
 				
 //- img(src=img + "demo.jpg")
 //- img(src=ico + "amex.svg")

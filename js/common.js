@@ -44,7 +44,7 @@
 			  // autoProcessQueue: false,
 			  maxFilesize: 1024*1024*100,
 			  // filesizeBase: 1000,
-			  acceptedFiles: "image/*,video/*",
+			  acceptedFiles: "image/*",
 			  // acceptedFiles: "image/*,video/*.jpeg,.jpg,.png,.gif,.jfif",
 			  init: function() {
 			  	this.on("uploadprogress", function(file, progress) {
@@ -60,17 +60,7 @@
 					  // 	file.previewElement.querySelector('[data-dz-errormessage]').innerText = 'pizda'
 					  // }
 					  // console.log(this.files);
-
-					  // if(file.type.split('/')[0] === "video"){
-					  // 	console.log("if!");
-					  // 	 // dropzone.enqueueFile(file);
-				   //      if(modalShowCount == 0){
-				   //      	showFilesErroModal();
-						 //  		modalShowCount++;
-				   //      }
-				   //      this.removeFile(file);
-				  	// 	modalShowCount = 0;
-					  // }
+					  
 					  if (this.files[5]!=null){
 				       this.removeFile(this.files[this.files.length - 1]);
 			      //       if(modalShowCount == 0){
@@ -164,7 +154,7 @@
 			  	// 	done("So big weight"); 
 			  	// 	// _self.removeAllFiles(true);
 			  	// }
-			  	if(fileType === "video"){
+			  	if(fileType !== "image"){
 			  		console.log('Video tupe!')
 			  	}
 
@@ -174,7 +164,7 @@
 			  		// _self.removeAllFiles(true);
 			  	}
 
-			  if(file.type.split('/')[0] === "video"){
+			  if(file.type.split('/')[0] !== "image"){
 			  		done('Неправильный формат файла');
 			  		// this.removeAllFiles(true)
 			  	// dropzone.removeFile(file);
