@@ -21,9 +21,24 @@ block content
 									.article-preview-time 3 мин
 
 				.articles-cards
-					- for (var n=0; n< 3; n++)
+					a(href="#" class="article-card article-card--very-long-descr")
+						.article-card__img._fit
+							img._fit-img(src="img/articles-page/cards/3.jpg" alt="alt")
+
+						.article-card__text
+							if i%2 == 0 
+								.article-card__title Обзор бесплатных достопримечательностей Москвы. Топ 10
+								.article-card__descr
+									.article-card__paragraph Крымский полуостров привлекателен круглый год. Зимой сюда приезжаю
+							else
+								.article-card__title Топ пляжей Краснодарского края
+								.article-card__descr
+									.article-card__paragraph Крымский полуостров привлекателен круглый год. Зимой сюда приезжаю круглый год. Зимой сюда приезжаю Крымский полуостров привлекателен круглый год. Зимой сюда приезжаю круглый год. Зимой сюда приезжаю
+							.article-preview-date 28 Декабря 2021
+								.article-preview-time 3 мин
+					- for (var n=0; n < 3; n++)
 						- for (var i=0; i < 3; i++)
-							a(href="#").article-card
+							a(href="#" class=i%2 == 0 ? 'article-card article-card--long-title' : 'article-card article-card--long-descr')
 								.article-card__img._fit
 									img._fit-img(src="img/articles-page/cards/" + (i+1) + ".jpg" alt="alt")
 
@@ -38,6 +53,7 @@ block content
 											.article-card__paragraph Крымский полуостров привлекателен круглый год. Зимой сюда приезжаю круглый год. Зимой сюда приезжаю ...
 									.article-preview-date 28 Декабря 2021
 										.article-preview-time 3 мин
+
 				
 //- img(src=img + "demo.jpg")
 //- img(src=ico + "amex.svg")
