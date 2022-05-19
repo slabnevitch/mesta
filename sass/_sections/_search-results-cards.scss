@@ -150,6 +150,11 @@
 	}
 	.similar_slide-top{
 		position: relative;
+		min-height: auto;
+
+		.similar_slide-like{
+			position: static;
+		}
 	}
 	.room_card-title{
 		margin-bottom: 8px;

@@ -1,15 +1,52 @@
 /*=====================SELECTIONS-PAGE=========================*/
+.page-selections{
+	.results-filter,
+	.results-filter__header{
+		@include max-screen($md){
+			background-color: #F9F9FA;
+		}  
+	}
+	.results-filter__items{
+		height: 100%;
+	}
+}
 .selections-filter{
 	display: flex;
 	flex-wrap: wrap;
 	column-gap: 10px;
 	margin-bottom: 24px;
+
+	@include max-screen($md){
+		flex-direction: column;
+		row-gap: 10px;
+		padding: 0 20px;
+		margin-bottom: 56px;
+		margin-top: auto;
+	}  
 }
 .selections-filter__item{
-	padding: 16px 20px;
-	display: flex;
-	justify-content: center;
-	background-color: #fff;
-	border-radius: 44px
+
+	.check_label{
+		padding: 13px 22.55px 13px 22px;
+		display: flex;
+		justify-content: center;
+		background-color: #fff;
+		border-radius: 44px;
+		width: 100%;
+		justify-content: center;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+		@include max-screen($md){
+			padding-top: 14px;
+			padding-bottom: 14px;
+		}  
+
+	}
+	.check_title{
+		@include max-screen(575.98px){
+			font-size: 14px;
+		}  
+
+	}
 }
 /*===================== end SELECTIONS-PAGE======================*/ 

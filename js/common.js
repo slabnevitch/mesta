@@ -224,8 +224,87 @@
 				  	});
 		}
 		// END dropzone
-	document.addEventListener('DOMContentLoaded', function() {
 
+	document.addEventListener('DOMContentLoaded', function() {
+		 const DateTime = easepick.DateTime;
+    const bookedDates = [
+        '2022-04-28',
+        '2022-04-29',
+    ].map(d => {
+        if (d instanceof Array) {
+          const start = new DateTime(d[0], 'YYYY-MM-DD');
+          const end = new DateTime(d[1], 'YYYY-MM-DD');
+
+          return [start, end];
+        }
+
+        return new DateTime(d, 'YYYY-MM-DD');
+    });
+    
+			if($('#datepicker-static').length > 0){
+        const picker = new easepick.create({
+            element: "#datepicker-static",
+            css: [
+                "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.2/dist/index.css",
+                "css/calendar-static.css"
+            ],
+            zIndex: 50,
+            lang: "ru-RU",
+            format: "DD/MM/YYYY",
+            grid: 3,
+            RangePlugin: {
+                elementEnd: "#datepicker-static2",
+                tooltip: false
+            },
+            LockPlugin: {
+                presets: false
+            },
+            plugins: [
+                "RangePlugin",
+                "LockPlugin"
+            ],
+            LockPlugin: {
+                minDate: new Date(),
+                minDays: 2,
+                inseparable: true,
+                filter(date, picked) {
+                    if (picked.length === 1) {
+                      const incl = date.isBefore(picked[0]) ? '[)' : '(]';
+                      return !picked[0].isSame(date, 'day') && date.inArray(bookedDates, incl);
+                    }
+        
+                    return date.inArray(bookedDates, '[)');
+                  },
+            },
+            setup(picker) {
+    
+    
+                  const prices = [];
+    
+                  $('.calendar_item').each(function (index, value) {
+                    let title = $(this).text()
+                    let priceTotal = $(this).attr('data-time')
+                    prices[priceTotal] = title
+                  })
+    
+    
+                // add price to day element
+                picker.on('view', (evt) => {
+                  const { view, date, target } = evt.detail;
+                  const d = date ? date.format('YYYY-MM-DD') : null;
+      
+                  if (view === 'CalendarDay' && prices[d]) {
+                    const span = target.querySelector('.day-price') || document.createElement('span');
+                    span.className = 'day-price';
+                    span.innerHTML = `${prices[d]}`;
+                    target.append(span);
+                  }
+                });
+            }
+        })
+    }
+
+	
 
 		$(document).on('click', function(e) {
 			var $target = $(e.target);

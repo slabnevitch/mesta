@@ -35,7 +35,7 @@
         </div>
       </div>
     </header>
-    <div class="page-search-resuls">
+    <div class="page-search-resuls page-selections">
       <section class="place">
         <div class="container">
           <div class="crumbs"><a href="#" class="crumbs_back"><span class="icon-back"></span></a></div>
@@ -70,23 +70,33 @@
               </div>
             </div>
           </div>
-          <form class="selections-filter">
-            <div class="selections-filter__item">
-              <label class="check_label">
-                <input type="radio" name="selections-check" id="" checked="" class="check_inp"><span class="check_span"></span><span class="check_title">Не важно</span>
-              </label>
+          <div class="results-filter">
+            <div class="results-filter__header header-results-filter">
+              <div class="header-results-filter__title">Фильтры</div>
+              <div class="header-results-filter__close"><span class="icon-delete"></span></div>
             </div>
-            <div class="selections-filter__item">
-              <label class="check_label">
-                <input type="radio" name="selections-check" id="" class="check_inp"><span class="check_span"></span><span class="check_title">На выходные</span>
-              </label>
+            <div class="results-filter__items">
+              <form class="selections-filter">
+                <div class="selections-filter__item">
+                  <label class="check_label">
+                    <input type="radio" name="selections-check" id="" checked="" class="check_inp"><span class="check_span"></span><span class="check_title">Не важно</span>
+                  </label>
+                </div>
+                <div class="selections-filter__item">
+                  <label class="check_label">
+                    <input type="radio" name="selections-check" id="" class="check_inp"><span class="check_span"></span><span class="check_title">На выходные</span>
+                  </label>
+                </div>
+                <div class="selections-filter__item">
+                  <label class="check_label">
+                    <input type="radio" name="selections-check" id="" class="check_inp"><span class="check_span"></span><span class="check_title">В отпуск</span>
+                  </label>
+                </div>
+              </form>
             </div>
-            <div class="selections-filter__item">
-              <label class="check_label">
-                <input type="radio" name="selections-check" id="" class="check_inp"><span class="check_span"></span><span class="check_title">В отпуск</span>
-              </label>
-            </div>
-          </form>
+            <div class="results-filter__buttons"><a href="#" class="btn2 btn-sm">Очистить</a><a href="#" class="btn btn-sm">63 места</a></div>
+            <div class="filter-cover"></div>
+          </div>
           <div class="selections ideas_wrapper"><a href="#" class="ideas_item">
               <div class="ideas_item-img"><img src="img/selections-page/1.jpg" alt=""></div>
               <div class="ideas_item-info">
@@ -248,6 +258,9 @@
           <div class="loading_items"><span class="icon-loading"></span>Загрузка</div>
         </div>
       </section>
+      <div class="results-mobile-toggler">
+        <div id="mob-filters-show" class="results-mobile-toggler__item"><span class="results-mobile-toggler__icon icon-filter"></span>Фильтры</div>
+      </div>
     </div>
     <footer class="footer">
       <div class="container">

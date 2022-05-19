@@ -988,6 +988,7 @@ html{
 .results-mobile-toggler {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	position: fixed;
 	z-index: 10;
 	bottom: 16px;
@@ -1014,7 +1015,7 @@ html{
 	align-items: center;
 	font-size: 14px;
 
-	&:first-child{
+	&:not(:last-child){
 
 		&:after{
 			content: '';

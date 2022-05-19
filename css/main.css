@@ -1740,6 +1740,10 @@ html .results-filter__item--dates .item-results-filter__dd {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: fixed;
   z-index: 10;
   bottom: 16px;
@@ -1778,7 +1782,7 @@ html .results-filter__item--dates .item-results-filter__dd {
   font-size: 14px;
 }
 
-.results-mobile-toggler__item:first-child:after {
+.results-mobile-toggler__item:not(:last-child):after {
   content: '';
   position: absolute;
   width: 1px;
@@ -2044,6 +2048,11 @@ html .results-filter__item--dates .item-results-filter__dd {
 
 .result-card .similar_slide-top {
   position: relative;
+  min-height: auto;
+}
+
+.result-card .similar_slide-top .similar_slide-like {
+  position: static;
 }
 
 .result-card .room_card-title {
@@ -3821,6 +3830,17 @@ textarea.form_inp {
 
 /*===================== end ARTICLE-PAGE======================*/
 /*=====================SELECTIONS-PAGE=========================*/
+@media only screen and (max-width: 991px) {
+  .page-selections .results-filter,
+  .page-selections .results-filter__header {
+    background-color: #F9F9FA;
+  }
+}
+
+.page-selections .results-filter__items {
+  height: 100%;
+}
+
 .selections-filter {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3835,8 +3855,22 @@ textarea.form_inp {
   margin-bottom: 24px;
 }
 
-.selections-filter__item {
-  padding: 16px 20px;
+@media only screen and (max-width: 991px) {
+  .selections-filter {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 0 20px;
+    margin-bottom: 56px;
+    margin-top: auto;
+  }
+}
+
+.selections-filter__item .check_label {
+  padding: 13px 22.55px 13px 22px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3848,6 +3882,22 @@ textarea.form_inp {
   background-color: #fff;
   -webkit-border-radius: 44px;
   border-radius: 44px;
+  width: 100%;
+  justify-content: center;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@media only screen and (max-width: 991px) {
+  .selections-filter__item .check_label {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+}
+
+@media only screen and (max-width: 575.98px) {
+  .selections-filter__item .check_title {
+    font-size: 14px;
+  }
 }
 
 /*===================== end SELECTIONS-PAGE======================*/

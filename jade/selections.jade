@@ -4,7 +4,7 @@ block title
 	| Подборки
 
 block content
-	.page-search-resuls
+	.page-search-resuls.page-selections
 		section.place
 			.container
 				.crumbs
@@ -68,24 +68,38 @@ block content
 				//- 	span Куда поехать из 
 				//- 	a(href="#") Нижний Новгород
 
-				form.selections-filter
-					.selections-filter__item
-						label.check_label
-							input.check_inp(type='radio' name='selections-check' id='' checked='')
-							span.check_span
-							span.check_title Не важно
+				
+				.results-filter
+					.results-filter__header.header-results-filter
+						.header-results-filter__title Фильтры
+						.header-results-filter__close
+							span.icon-delete
+					.results-filter__items
+						form.selections-filter
+							.selections-filter__item
+								label.check_label
+									input.check_inp(type='radio' name='selections-check' id='' checked='')
+									span.check_span
+									span.check_title Не важно
 
-					.selections-filter__item
-						label.check_label
-							input.check_inp(type='radio' name='selections-check' id='')
-							span.check_span
-							span.check_title На выходные
+							.selections-filter__item
+								label.check_label
+									input.check_inp(type='radio' name='selections-check' id='')
+									span.check_span
+									span.check_title На выходные
 
-					.selections-filter__item
-						label.check_label
-							input.check_inp(type='radio' name='selections-check' id='')
-							span.check_span
-							span.check_title В отпуск
+							.selections-filter__item
+								label.check_label
+									input.check_inp(type='radio' name='selections-check' id='')
+									span.check_span
+									span.check_title В отпуск
+
+					
+					.results-filter__buttons
+						a(href="#").btn2.btn-sm Очистить
+						a(href="#").btn.btn-sm 63 места
+
+					.filter-cover
 				
 				.selections.ideas_wrapper
 					- for (var i=0; i < 4; i++)
@@ -148,6 +162,10 @@ block content
 					span.icon-loading
 					| Загрузка
 
+		.results-mobile-toggler
+			.results-mobile-toggler__item#mob-filters-show
+				span.results-mobile-toggler__icon.icon-filter
+				| Фильтры
 //- img(src=img + "demo.jpg")
 //- img(src=ico + "amex.svg")
 
