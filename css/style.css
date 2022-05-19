@@ -55,6 +55,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  .icon-button-forward:before {
+  content: "\e919";
+}
   .icon-cookie:before {
     content: "\e919";
   }
