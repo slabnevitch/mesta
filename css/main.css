@@ -2327,6 +2327,47 @@ textarea.form_inp {
   color: #222222;
 }
 
+.article-card--long-title .article-card__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article-card--long-title .article-card__paragraph {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article-card--long-descr .article-card__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article-card--long-descr .article-card__paragraph {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article-card--very-long-descr .article-card__title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.article-card--very-long-descr .article-card__paragraph {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .articles-card--horizontal {
   -webkit-column-gap: 24px;
   -moz-column-gap: 24px;
@@ -2359,19 +2400,11 @@ textarea.form_inp {
 }
 
 .articles-card--horizontal .article-card__title {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
   font-size: 32px;
   line-height: 40px;
 }
 
 .articles-card--horizontal .article-card__paragraph {
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
   margin-bottom: 16px;
 }
 
