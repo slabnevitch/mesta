@@ -1,0 +1,185 @@
+extends _misc/main
+
+block title
+	| Подборкa
+
+block content
+	.page-selection
+		section.place
+			.container
+				.crumbs
+					a.crumbs_back(href='#')
+						span.icon-back
+
+				.page-selection__top
+					h1 Топ-5 популярных направлений мая
+					
+					.page-selection__slogan Когда отпуск не за горами, пора задуматься о том, где провести долгожданные каникулы. Рекомендуем отправиться в путешествие по широким просторам России. Для тех, кто предпочитает незабываемый отдых за пределами уютной спальни, мы собрали подборку популярных направлений мая.
+
+					.page-selection__date 28 Декабря 2021
+						span.page-selection__download
+							span.icon-donwload
+				
+				.page-selection__content
+					.page-selection__block
+						- var blocks = [{name: 'Казань', descr: 'Город с многовековой историей, столица Татарстана – колоритная Казань. Здесь мирно соседствуют последователи разных религий и носители отличных культур, монументальные мусульманские мечети и православные храмы, памятники эпохи Казанского ханства и футуристические постройки современников. Республика манит туристов в зимой и летом, в жару и стужу. Привлекательны площади, улочки и проспекты в сезон фонтанов, что переливаются в теплых лучах солнца с начала мая до середины осени. Богатсва Казани'}, {name: 'Москва', descr: 'Москва – сердце бескрайней России. Мегаполис собрал главные достопримечательности страны. Здесь и узнаваемый Московский Кремль, и Красная площадь, мелькающая на открытках, и часы-куранты на Спасской башне, и золотые купола Успенского собора. В начале мая зеленеют сады и парки, город выходит из спячки, а на лицах москвичей появляются улыбки. Поездка в Третий Рим – возможность прикоснуться к истории государства, исследовать объекты культурно наследия, провести майские праздники или организовать долгожданный отпуск с размахом.'}, {name: 'Москва', descr: 'Москва – сердце бескрайней России. Мегаполис собрал главные достопримечательности страны. Здесь и узнаваемый Московский Кремль, и Красная площадь, мелькающая на открытках, и часы-куранты на Спасской башне, и золотые купола Успенского собора. В начале мая зеленеют сады и парки, город выходит из спячки, а на лицах москвичей появляются улыбки. Поездка в Третий Рим – возможность прикоснуться к истории государства, исследовать объекты культурно наследия, провести майские праздники или организовать долгожданный отпуск с размахом.'}];
+
+						each item in blocks
+							.selection-block
+								.selection-block__tile= item.name
+								p.selection-block__descr= item.descr
+
+								.search-results-cards
+									- var cards = ['Храм всех религий', 'Мечеть Кул Шариф'];
+									each card in cards
+										.result-card.similar_slide
+											.similar_slide-imgs.img_slider
+												.similar_slide-img(style='background-image: url("img/similar_slide.jpg");')
+													span.icon-place_type
+												.similar_slide-img(style='background-image: url("img/place_img6.png");')
+													span.icon-place_type
+												.similar_slide-img.slick-slide(style='background-image: url("img/place_page.png");')
+													span.icon-place_type
+
+											.similar_slide-info
+												.similar_slide-top
+													a.room_card-title(href='#' title=' ')= card
+													.similar_slide-like
+														span.icon-like_card
+												a.result-card__link(href='#')
+													.similar_slide-adres
+														span.icon-adres
+														.similar_slide-adres_title Московская область, Сергиево-ПосадсПосадсПосадсПосадс
+														.similar_slide-adres_distance 250км
+													.similar_slide-text
+														| Свято-Введенский Толгский женский монастырь — обитель, расположенная в окрестностях Ярославля, на левом берегу Волги. Место входит в число обязательных пунктов экскурсионной программы для туристов, путешествующих по городам Золотого кольца России.
+													.similar_slide-link
+														.similar_slide-sutitle
+															.similar_slide-rating
+																| 8.1/10
+																span.icon-rating
+															.similar_slide-reviews 11 отзывов
+														.similar_slide-btn.btn Подробнее
+
+
+
+
+
+
+//- img(src=img + "demo.jpg")
+//- img(src=ico + "amex.svg")
+
+block page-scripts
+	// script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+	//- script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+	//- script(src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.3/dist/index.umd.min.js")
+	//- script(src="js/jquery.fancybox.min.js")
+	//- script(src="js/slider.js")
+	// script(src="js/map-init.js")
+	//- script(src="js/main.js")
+	
+	//- SERVIVE FUNCTIONS==================
+
+	//- remove-class--------------------------
+	//- script(src="js/libs/service-functions/remove-class.js")
+
+	//- siblings--------------------------
+	//- script(src="js/libs/service-functions/siblings.js")
+
+	//- webp-detection--------------------------
+	//- script(src="js/libs/service-functions/webp-detection.js")
+
+	//- dropdown-toggle on touch devices--------------------------
+	//- script(src="js/libs/service-functions/dropdown-toggle.js")
+
+	//- isMobile--------------------------
+	script(src="js/libs/service-functions/mobileDetect.js")
+
+	//- All in one file--------------------------
+	//- script(src="js/libs/service-functions/all-functions.js")
+
+
+	//- WITH JQUERY===================================
+	//- jquery--------------------------
+	//- script(src="js/libs/jquery/jquery-3.1.1.min.js")
+
+	//- jquery-UI--------------------------
+	//- script(src="js/libs/jquery-ui/jquery-ui.min.js")
+		
+	//- magnific-popup--------------------------
+	//- script(src="js/libs/magnific-popup/dist/jquery.magnific-popup.min.js")
+		
+	//- slick--------------------------
+	//- script(src="js/libs/slick/slick.min.js")
+		
+	//- slick-master (без лишних контейнеров)--------------------------
+	//- script(src="js/libs/slick-master/slick.js")
+
+	//- script(src='https://api-maps.yandex.ru/2.1/?apikey=1be0e242-a0f9-4c70-8d5c-f2f3df5c3e40&load=&lang=ru_RU' type='text/javascript')
+
+	//- superfish--------------------------
+	//- script(src="js/libs/superfish/dist/js/hoverIntent.js")
+	//- script(src="js/libs/superfish/dist/js/superfish.min.js")
+
+	//- end WITH JQUERY===================================
+
+
+	//- VANILLA JS===================================
+	//- dynamic-adaptive--------------------------
+	//- script(src="js/libs/dynamic-adaptive/da.min.js")
+		
+	//- slideout--------------------------
+	//- script(src="js/libs/slideout/slideout.js")
+
+	//- multilevel-panel--------------------------
+	//- script(src="js/libs/multilevel-panel/multilevel-panel.js")
+
+	//- multilevel-dropdown-menu--------------------------
+	//- script(src="js/libs/multilevel-dropdown/multidropdown.js")
+			
+	//- lazysizes--------------------------
+	//- script(src="js/libs/lazysizes/lazysizes.min.js")	
+		
+	//- accordion--------------------------
+	//- script(src="js/libs/accordion/vanilla-accordion.js")
+		
+	//- tabs--------------------------
+	//- script(src="js/libs/tabs/tabs-pure.js")
+		
+	//- micromodal--------------------------
+	//- script(src="js/libs/micromodal/micromodal.js")	
+		
+	//- swiper--------------------------
+	//- script(src="js/libs/swiper/swiper.min.js")
+
+	//- noUiSlider--------------------------
+	script(src="js/libs/noUiSlider/nouislider.min.js")
+
+	//- iMask--------------------------
+	//- script(src="js/libs/imask/imask.js")
+
+	//- FormHandler--------------------------
+	//- script(src="js/libs/formhandler.js-1.1.2/dist/js/FormHandler.min.js")
+
+	//- ratings--------------------------
+	//- script(src="js/libs/rating/ratings.js")
+
+	//- sticky-sidebar--------------------------
+	//- https://abouolia.github.io/sticky-sidebar/#usage
+	//- script(src="js/libs/sticky-sidebar/dist/resizeSensor.js")
+	//- script(src="js/libs/sticky-sidebar/dist/sticky-sidebar.min.js")
+
+	//- simplebar--------------------------
+	//- USE:	new SimpleBar(document.querySelector('mySelector'), { autoHide: false });
+	//- script(src="js/libs/simplebar/simplebar.min.js")
+		
+	//- fstdropdown (кастомный селект), исп-е.: <select data-searchdisable="true" class="fstdropdown-select">
+	//- script(src="js/libs/fstdropdown/fstdropdown.min.js")
+
+	//- baguetteBox-------------------------- use: https://github.com/feimosi/baguetteBox.js#usage
+	//- script(src="js/libs/baguetteBox/dist/baguetteBox.min.js")
+
+	//- svg4everybody--------------------------
+	//- script(type="text/javascript" src="js/libs/svg4everybody/svg4everybody.min.js" async onload="svg4everybody();")
+		
+	//- end VANILLA JS===================================
