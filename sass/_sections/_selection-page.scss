@@ -119,22 +119,67 @@
 
 }
 .selection-block {
+	&:not(:last-child){
+		margin-bottom: 40px;
+
+		@include max-screen($md){
+			margin-bottom: 32px;
+		}  
+	}
 
 	.result-card .similar_slide-text{
-		margin-bottom: 50px;
+		margin-bottom: 46px;
+		line-height: 17px;
+
+		@include max-screen($xs){
+			margin-bottom: 24px;
+		}  
 	}
 	.similar_slide-text{
 		@include max-screen($xs){
 			line-height: 17px;
 		}  
 	}
+	.search-results-cards{
+		row-gap: 8px; 
+		@include max-screen(375px){
+			margin-left: 1px;
+			margin-right: 1px;
+		}  
+	}
+	.result-card{
+		margin-bottom: 0;
 
+		&:not(.result-card--services):not(.result-card--xz) .room_card-title{
+			@include max-screen($xs){
+				@include dots-family-null();
+				@include dots-family();
+			}  
+		}
+
+
+		.similar_slide-img{
+			@include max-screen(375px){
+				height: 207px;
+				padding-bottom: 0;
+			}  
+		}
+	}
 	.result-card:not(.result-card--services):not(.result-card--xz) .room_card-title:hover .tooltip_text {
     visibility:visible;
     opacity: 1;
 	}
 	.result-card:not(.result-card--services):not(.result-card--xz) .similar_slide-text {
 		@include dots-family-multi(6);
+	}
+	.result-card .room_card-title{
+		font-size: 28px;
+		line-height: 34px;
+
+		@include max-screen($sm){
+			font-size: 22px;
+			line-height: 26px;
+		}  
 	}
 }
 .selection-block__header{

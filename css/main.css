@@ -3363,6 +3363,10 @@ textarea.form_inp {
   }
 }
 
+.page-articles .loading_items {
+  margin-top: 40px;
+}
+
 .page-articles__top {
   margin-bottom: 74px;
 }
@@ -3387,11 +3391,24 @@ textarea.form_inp {
   color: #222222;
 }
 
+@media only screen and (max-width: 375px) {
+  .article-card {
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+}
+
 .article-card--long-title .article-card__title {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+@media only screen and (max-width: 576px) {
+  .article-card--long-title .article-card__title {
+    overflow: visible;
+  }
 }
 
 .article-card--long-title .article-card__paragraph {
@@ -3406,6 +3423,12 @@ textarea.form_inp {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+@media only screen and (max-width: 576px) {
+  .article-card--long-descr .article-card__title {
+    overflow: visible;
+  }
 }
 
 .article-card--long-descr .article-card__paragraph {
@@ -3479,8 +3502,13 @@ textarea.form_inp {
 }
 
 .articles-card--horizontal .article-card__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   font-size: 32px;
   line-height: 40px;
+  overflow: visible;
 }
 
 @media only screen and (max-width: 576px) {
@@ -3491,11 +3519,24 @@ textarea.form_inp {
 }
 
 .articles-card--horizontal .article-card__paragraph {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   margin-bottom: 16px;
 }
 
+@media only screen and (max-width: 480px) {
+  .articles-card--horizontal .article-card__paragraph {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
 .article-card__img {
-  height: 228px;
+  height: 233px;
   padding-bottom: 0;
   -webkit-border-radius: 12px;
   border-radius: 12px;
@@ -3543,8 +3584,14 @@ textarea.form_inp {
   }
 }
 
+@media only screen and (max-width: 480px) {
+  .article-card__text {
+    height: 208px;
+  }
+}
+
 .article-card__title {
-  margin-bottom: 16px;
+  margin-bottom: 17px;
   font-weight: 500;
   font-size: 22px;
   line-height: 26px;
@@ -3570,11 +3617,7 @@ textarea.form_inp {
 }
 
 .article-card__paragraph {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 17px;
 }
 
 .article-preview-date {
@@ -4105,13 +4148,64 @@ textarea.form_inp {
   }
 }
 
+.selection-block:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 991px) {
+  .selection-block:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
 .selection-block .result-card .similar_slide-text {
-  margin-bottom: 50px;
+  margin-bottom: 46px;
+  line-height: 17px;
+}
+
+@media only screen and (max-width: 576px) {
+  .selection-block .result-card .similar_slide-text {
+    margin-bottom: 24px;
+  }
 }
 
 @media only screen and (max-width: 576px) {
   .selection-block .similar_slide-text {
     line-height: 17px;
+  }
+}
+
+.selection-block .search-results-cards {
+  row-gap: 8px;
+}
+
+@media only screen and (max-width: 375px) {
+  .selection-block .search-results-cards {
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+}
+
+.selection-block .result-card {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 576px) {
+  .selection-block .result-card:not(.result-card--services):not(.result-card--xz) .room_card-title {
+    -webkit-line-clamp: none;
+    -webkit-box-orient: inline-axis;
+    overflow: visible;
+    display: initial;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .selection-block .result-card .similar_slide-img {
+    height: 207px;
+    padding-bottom: 0;
   }
 }
 
@@ -4125,6 +4219,18 @@ textarea.form_inp {
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.selection-block .result-card .room_card-title {
+  font-size: 28px;
+  line-height: 34px;
+}
+
+@media only screen and (max-width: 767.98px) {
+  .selection-block .result-card .room_card-title {
+    font-size: 22px;
+    line-height: 26px;
+  }
 }
 
 .selection-block__header {
