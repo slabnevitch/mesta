@@ -2309,6 +2309,10 @@ textarea.form_inp {
   line-height: 72px;
 }
 
+.page-articles .loading_items {
+  margin-top: 40px;
+}
+
 .page-articles__top {
   margin-bottom: 74px;
 }
@@ -2400,16 +2404,25 @@ textarea.form_inp {
 }
 
 .articles-card--horizontal .article-card__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   font-size: 32px;
   line-height: 40px;
+  overflow: visible;
 }
 
 .articles-card--horizontal .article-card__paragraph {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   margin-bottom: 16px;
 }
 
 .article-card__img {
-  height: 228px;
+  height: 233px;
   padding-bottom: 0;
   -webkit-border-radius: 12px;
   border-radius: 12px;
@@ -2438,7 +2451,7 @@ textarea.form_inp {
 }
 
 .article-card__title {
-  margin-bottom: 16px;
+  margin-bottom: 17px;
   font-weight: 500;
   font-size: 22px;
   line-height: 26px;
@@ -2451,11 +2464,7 @@ textarea.form_inp {
 }
 
 .article-card__paragraph {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 17px;
 }
 
 .article-preview-date {
@@ -2793,8 +2802,21 @@ textarea.form_inp {
   margin-bottom: 40px;
 }
 
+.selection-block:not(:last-child) {
+  margin-bottom: 40px;
+}
+
 .selection-block .result-card .similar_slide-text {
-  margin-bottom: 50px;
+  margin-bottom: 46px;
+  line-height: 17px;
+}
+
+.selection-block .search-results-cards {
+  row-gap: 8px;
+}
+
+.selection-block .result-card {
+  margin-bottom: 0;
 }
 
 .selection-block .result-card:not(.result-card--services):not(.result-card--xz) .room_card-title:hover .tooltip_text {
@@ -2807,6 +2829,11 @@ textarea.form_inp {
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.selection-block .result-card .room_card-title {
+  font-size: 28px;
+  line-height: 34px;
 }
 
 .selection-block__header {
@@ -3870,6 +3897,10 @@ textarea.form_inp {
     margin-bottom: 32px;
   }
 
+  .selection-block:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
   .selection-block__title {
     font-size: 22px;
     line-height: 26px;
@@ -4117,6 +4148,11 @@ textarea.form_inp {
     line-height: 40px;
   }
 
+  .selection-block .result-card .room_card-title {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
   .interests__title {
     margin-bottom: 44px;
     font-size: 32px;
@@ -4284,6 +4320,14 @@ textarea.form_inp {
     font-size: 14px;
   }
 
+  .article-card--long-title .article-card__title {
+    overflow: visible;
+  }
+
+  .article-card--long-descr .article-card__title {
+    overflow: visible;
+  }
+
   .articles-card--horizontal .article-card__title {
     font-size: 22px;
     line-height: 26px;
@@ -4293,8 +4337,22 @@ textarea.form_inp {
     padding: 27px 16px;
   }
 
+  .selection-block .result-card .similar_slide-text {
+    margin-bottom: 24px;
+  }
+
   .selection-block .similar_slide-text {
     line-height: 17px;
+  }
+
+  .selection-block .result-card:not(.result-card--services):not(.result-card--xz) .room_card-title {
+    -webkit-line-clamp: none;
+    -webkit-box-orient: inline-axis;
+    overflow: visible;
+    display: initial;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .popup.popup-advertising {
@@ -4421,6 +4479,21 @@ textarea.form_inp {
 }
 
 @media only screen and (max-width: 575.98px) {
+  .page-articles .loading_items {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .page-selections .loading_items {
+    margin-top: 26px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
   .selections-filter__item .check_title {
     font-size: 14px;
   }
@@ -4475,6 +4548,17 @@ textarea.form_inp {
     line-height: 18px;
   }
 
+  .articles-card--horizontal .article-card__paragraph {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .article-card__text {
+    height: 208px;
+  }
+
   .footer_menu li:last-of-type a,
   .footer_menu li:nth-last-of-type(2) a {
     white-space: normal;
@@ -4482,6 +4566,11 @@ textarea.form_inp {
 }
 
 @media only screen and (max-width: 375px) {
+  .article-card {
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+
   .articles-card--horizontal .article-card__img {
     padding-bottom: 0;
     height: 207px;
@@ -4494,6 +4583,16 @@ textarea.form_inp {
 
   .object-article__img {
     height: 180px;
+    padding-bottom: 0;
+  }
+
+  .selection-block .search-results-cards {
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+
+  .selection-block .result-card .similar_slide-img {
+    height: 207px;
     padding-bottom: 0;
   }
 }
