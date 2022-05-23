@@ -363,10 +363,11 @@
 				// $('.results-filter').addClass('active');
 				$('html').addClass('mob-filters-open');
 			}
-			if($target.hasClass('header-results-filter__close') || $target.closest('.header-results-filter__close').length > 0){
+			if($target.hasClass('header-results-filter__close') || $target.closest('.header-results-filter__close').length > 0 || $target.attr('id') === 'close-selections-filter' ){
 				// $('.results-filter').removeClass('active');
 				$('html').removeClass('mob-filters-open');
 			}
+
 			// END mobile filters toggle
 
 			// filter-tags active class toggle
