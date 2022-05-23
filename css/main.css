@@ -3367,6 +3367,15 @@ textarea.form_inp {
   margin-top: 40px;
 }
 
+@media only screen and (max-width: 575.98px) {
+  .page-articles .loading_items {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .page-articles__top {
   margin-bottom: 74px;
 }
@@ -3915,6 +3924,16 @@ textarea.form_inp {
 
 .page-selections .results-filter__items {
   height: 100%;
+}
+
+@media only screen and (max-width: 575.98px) {
+  .page-selections .loading_items {
+    margin-top: 26px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .selections-filter {

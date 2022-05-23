@@ -21,6 +21,9 @@
 
 	.loading_items{
 		margin-top: 40px;
+		@include max-screen(575.98px){
+			display: flex;
+		}
 	}
 }
 .place {}

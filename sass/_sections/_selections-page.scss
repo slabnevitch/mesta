@@ -9,6 +9,12 @@
 	.results-filter__items{
 		height: 100%;
 	}
+	.loading_items{
+		@include max-screen(575.98px){
+			margin-top: 26px;
+			display: flex;
+		}
+	}
 }
 .selections-filter{
 	display: flex;
