@@ -2299,7 +2299,7 @@ textarea.form_inp {
 /*=====================ARTICLES-PAGE=========================*/
 
 .page-articles {
-  padding-top: 152px;
+  padding-top: 105px;
 }
 
 .page-articles h1 {
@@ -2551,6 +2551,7 @@ textarea.form_inp {
 }
 
 .breadcrumbs li a {
+  font-size: 14px;
   text-decoration: none;
   color: rgba(34, 34, 34, 0.45);
 }
@@ -2562,6 +2563,8 @@ textarea.form_inp {
 .article {
   margin: 0 auto;
   max-width: 794px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #F0F0F0;
 }
 
 .article h1 {
@@ -2795,7 +2798,7 @@ textarea.form_inp {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   color: #886E6E;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .page-selection__block:not(:last-child) {
@@ -2851,6 +2854,33 @@ textarea.form_inp {
   font-size: 14px;
   line-height: 17px;
   color: rgba(34, 34, 34, 0.6);
+}
+
+.interests__cards .slick-track {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.interests__cards .ideas_item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: auto;
+}
+
+.interests__cards .ideas_item .ideas_item-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .interests__title {
@@ -3819,6 +3849,10 @@ textarea.form_inp {
     display: block;
   }
 
+  .article {
+    padding-bottom: 32px;
+  }
+
   .article h1 {
     margin-bottom: 16px;
     font-size: 32px;
@@ -3971,6 +4005,10 @@ textarea.form_inp {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+  }
+
+  .interests__cards .ideas_item {
+    margin-right: 19.5px;
   }
 }
 
@@ -4151,6 +4189,18 @@ textarea.form_inp {
   .selection-block .result-card .room_card-title {
     font-size: 22px;
     line-height: 26px;
+  }
+
+  .interests__cards {
+    margin-right: -15px;
+  }
+
+  .interests__cards .slick-list {
+    padding-right: 3% !important;
+  }
+
+  .interests__cards .ideas_item {
+    margin-right: 10px;
   }
 
   .interests__title {
