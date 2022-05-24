@@ -626,4 +626,35 @@
 		}
 
 	// END tags fixed on mobile
+
+	// .interests__cards slider
+	if($('.interests__cards').length > 0){
+		$('.interests__cards').slick({
+			slidesToShow: 3,
+			arrows: false,
+			responsive: [
+
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 1,
+					}	
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+					}	
+				},
+				{
+					breakpoint: 991,
+					settings: {
+						slidesToShow: 2.5
+
+					}	
+				}
+			]
+		});
+	}
+	// .END interests__cards slider
 })();

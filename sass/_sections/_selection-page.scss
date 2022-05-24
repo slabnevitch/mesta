@@ -201,33 +201,37 @@ line-height: 26px;
 	line-height: 17px;
 	color: rgba(#222222, .6);
 }
-.search-results-cards {}
-.result-card {}
-.similar_slide {}
-.similar_slide-imgs {}
-.img_slider {}
-.similar_slide-img {}
-.icon-place_type {}
-.slick-slide {}
-.similar_slide-info {}
-.similar_slide-top {}
-.room_card-title {}
-.similar_slide-like {}
-.icon-like_card {}
-.result-card__link {}
-.similar_slide-adres {}
-.icon-adres {}
-.similar_slide-adres_title {}
-.similar_slide-adres_distance {}
-.similar_slide-text {}
-.similar_slide-link {}
-.similar_slide-sutitle {}
-.similar_slide-rating {}
-.icon-rating {}
-.similar_slide-reviews {}
-.similar_slide-btn {}
-.btn {}
+
 .interests {}
+.interests__cards{
+	@include max-screen($sm){
+		margin-right: -15px;
+	}  
+	.slick-track{
+		display: flex;
+	}
+	.slick-list{
+		@include max-screen($sm){
+			padding-right: 3% !important;
+		}  
+	}
+	.ideas_item {
+		display: flex;
+		flex-direction: column;
+		height: auto;
+
+		@include max-screen(991.98px){
+			margin-right: 19.5px;
+		}
+		@include max-screen($sm){
+		  	margin-right: 10px;
+		  }    
+
+		.ideas_item-title{
+			@include dots-family-multi(2);
+		}
+	}
+}
 .interests__title {
 	margin-bottom: 40px;
 	font-weight: 500;
@@ -243,6 +247,5 @@ line-height: 26px;
 	}  
 }
 .ideas_wrapper {}
-.ideas_item {}
 .ideas_item-img {}
 /*===================== end SELECTION-PAGE======================*/ 

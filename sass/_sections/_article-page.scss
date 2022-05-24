@@ -36,6 +36,7 @@
 		}
 		
 		a{
+			font-size: 14px;
 			text-decoration: none;
 			color: rgba(34, 34, 34, 0.45);
 		}
@@ -50,6 +51,12 @@
 .article {
 	margin: 0 auto;
 	max-width: 794px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #F0F0F0;
+
+	@include max-screen($md){
+		padding-bottom: 32px;
+	}  
 
 	h1{
 		margin-bottom: 33px;
