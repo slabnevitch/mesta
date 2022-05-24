@@ -99,7 +99,7 @@
 	.icon-donwload {
 		@include absolute-center;
 		color: #886E6E;
-		font-size: 12px;
+		font-size: 15px;
 
 		@include max-screen($md){
 			font-size: 18px;
