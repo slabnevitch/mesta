@@ -1,11 +1,16 @@
 /*=====================ARTICLES-PAGE=========================*/
 .page-articles {
-	padding-top: 105px;
+	// padding-top: 105px;
 
-	@include max-screen($md){
-		padding-top: 112px;
-	} 
-
+	// @include max-screen($md){
+	// 	padding-top: 112px;
+	// } 
+	.crumbs {
+		@include max-screen($sm){
+	    margin-bottom: 12px;
+			
+		}  
+	}
 	h1{
 		margin-bottom: 32px;
 		font-weight: 500;

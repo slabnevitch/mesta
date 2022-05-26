@@ -3339,13 +3339,9 @@ textarea.form_inp {
 
 /*===================== end _payments-method-page======================*/
 /*=====================ARTICLES-PAGE=========================*/
-.page-articles {
-  padding-top: 105px;
-}
-
-@media only screen and (max-width: 991px) {
-  .page-articles {
-    padding-top: 112px;
+@media only screen and (max-width: 767.98px) {
+  .page-articles .crumbs {
+    margin-bottom: 12px;
   }
 }
 
@@ -3742,6 +3738,7 @@ textarea.form_inp {
 }
 
 .breadcrumbs li span {
+  font-size: 14px;
   color: rgba(34, 34, 34, 0.85);
 }
 
@@ -4156,7 +4153,7 @@ textarea.form_inp {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  color: #886E6E;
+  color: #7A7A7A;
   font-size: 15px;
 }
 
