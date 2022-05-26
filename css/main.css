@@ -2298,10 +2298,6 @@ textarea.form_inp {
 
 /*=====================ARTICLES-PAGE=========================*/
 
-.page-articles {
-  padding-top: 105px;
-}
-
 .page-articles h1 {
   margin-bottom: 32px;
   font-weight: 500;
@@ -2557,6 +2553,7 @@ textarea.form_inp {
 }
 
 .breadcrumbs li span {
+  font-size: 14px;
   color: rgba(34, 34, 34, 0.85);
 }
 
@@ -2797,7 +2794,7 @@ textarea.form_inp {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  color: #886E6E;
+  color: #7A7A7A;
   font-size: 15px;
 }
 
@@ -3841,10 +3838,6 @@ textarea.form_inp {
     font-size: 22px;
   }
 
-  .page-articles {
-    padding-top: 112px;
-  }
-
   .articles-card--horizontal {
     display: block;
   }
@@ -4157,6 +4150,10 @@ textarea.form_inp {
 
   .page-p-method__content {
     padding: 32px 16px;
+  }
+
+  .page-articles .crumbs {
+    margin-bottom: 12px;
   }
 
   .page-articles h1 {
