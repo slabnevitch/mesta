@@ -2794,6 +2794,7 @@ textarea.form_inp {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  margin-top: -1px;
   color: #7A7A7A;
   font-size: 15px;
 }
