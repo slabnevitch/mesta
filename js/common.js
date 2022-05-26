@@ -632,6 +632,7 @@
 		$('.interests__cards').slick({
 			slidesToShow: 3,
 			arrows: false,
+			infinite: false,
 			responsive: [
 
 				{
