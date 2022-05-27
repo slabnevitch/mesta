@@ -636,16 +636,26 @@
 			responsive: [
 
 				{
-					breakpoint: 600,
+					breakpoint: 376,
 					settings: {
 						slidesToShow: 1,
+						centerMode: true,
+                   		centerPadding: '3%',
+                   		// variableWidth: false
+					}	
+				},
+				{
+					breakpoint: 601,
+					settings: {
+						slidesToShow: 1,
+						centerMode: true,
+                   		centerPadding: '3%',
 					}	
 				},
 				{
 					breakpoint: 991,
 					settings: {
 						slidesToShow: 2
-
 					}	
 				}
 			]

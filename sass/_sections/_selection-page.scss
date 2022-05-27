@@ -71,13 +71,14 @@
 	line-height: 18px;
 	color: rgba(#222222, .4);
 
-	@include max-screen(991.98px){
+	@include max-screen($md){
 		margin-top: 0;
 		position: absolute;
 		right: 0;
 		top: 50%;
 		transform: translateY(-50%);
 	}  
+	
 }
 .page-selection__download {
 	position: relative;
@@ -87,13 +88,14 @@
 	border-radius: 50%;
 	background-color: #fff;
 
+
 	@include max-screen($md){
 		width: 42px;
 		height: 42px;
 
 	}
 	@include min-screen($md){
-		cursor: pointer;
+		display: none;
 	}  
 	
 	.icon-donwload {
@@ -104,10 +106,16 @@
 
 		@include max-screen($md){
 			font-size: 18px;
-		}  
+		}
+
 	}
 }
-.page-selection__content {}
+.page-selection__content {
+	@include max-screen($md){
+		padding-bottom: 32px;
+		border-bottom: 1px solid #F0F0F0;
+	}
+}
 .page-selection__block {
 
 	&:not(:last-child){
@@ -207,14 +215,18 @@ line-height: 26px;
 .interests__cards{
 	@include max-screen($sm){
 		margin-right: -15px;
+		margin-left: -15px;
 	}  
 	.slick-track{
 		display: flex;
 	}
 	.slick-list{
-		@include max-screen($sm){
-			padding-right: 3% !important;
-		}  
+		@include max-screen($md){
+			padding-right: 3% ;
+		}
+		// @include max-screen(600px){
+		//  	padding-right: 0;
+		//  } 
 	}
 	.ideas_item {
 		display: flex;
@@ -222,10 +234,12 @@ line-height: 26px;
 		height: auto;
 
 		@include max-screen(991.98px){
-			margin-right: 19.5px;
+			margin-right: 9.25px;
+			margin-right: 9.25px;
 		}
-		@include max-screen($sm){
-		  	margin-right: 10px;
+		@include max-screen(600px){
+		  	margin-right: 5px;
+		  	margin-left: 5px;
 		  }    
 
 		.ideas_item-title{
