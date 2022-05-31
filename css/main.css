@@ -3392,6 +3392,10 @@ textarea.form_inp {
     margin-top: 152px;
   }
 
+  .page-selection__slogan {
+    padding-top: 13px;
+  }
+
   .page-selection__download {
     display: none;
   }
