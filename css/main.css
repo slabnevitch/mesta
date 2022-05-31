@@ -4083,6 +4083,12 @@ textarea.form_inp {
   }
 }
 
+@media only screen and (min-width: 991px) {
+  .page-selection__slogan {
+    padding-top: 13px;
+  }
+}
+
 .page-selection__slogan p {
   font-size: 14px;
   line-height: 17px;

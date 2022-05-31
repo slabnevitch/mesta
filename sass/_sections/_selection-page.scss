@@ -55,6 +55,9 @@
 		@include max-screen($md){
 			flex-basis: 100%;
 		}
+		@include min-screen($md){
+			padding-top: 13px;
+		}
 
 		p{
 			font-size: 14px;
