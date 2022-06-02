@@ -634,7 +634,9 @@
 
 		if($(window).width() < 576){
 			$('.main_search-inp').blur()
-			$('body, html').addClass('active')
+			setTimeout(function() {
+				$('body, html').addClass('active')
+			}, 1);
 			$.fancybox.open({
 				src: '.mobile_seatch',
 				type: 'inline',
