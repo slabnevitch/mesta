@@ -74,6 +74,17 @@ html{
 	.place_service-item-icon {
 		color: $accent;
 	}
+
+	.interesting{
+		padding: 0;
+
+		@include max-screen(991.98px){
+			padding: 0;
+		}
+		@include max-screen(575.98px){
+			padding: 0;
+		}
+	}
 }
 .place {}
 .container {}

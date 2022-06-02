@@ -628,4 +628,21 @@
 		});
 	}
 	// .END interests__cards slider
+
+	// city list mobile click
+	$('.page-search-resuls .interesting_title-span, .page-selections .interesting_title-span').click(function () {
+
+		if($(window).width() < 576){
+			$('.main_search-inp').blur()
+			$('body, html').addClass('active')
+			$.fancybox.open({
+				src: '.mobile_seatch',
+				type: 'inline',
+				touch: false,
+				autoFocus: false,
+			});
+		}
+
+	});
+	// END city list mobile click
 })();

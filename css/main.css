@@ -526,6 +526,22 @@ html .results-filter__item--dates .item-results-filter__dd {
   color: #FC6733;
 }
 
+.page-search-resuls .interesting {
+  padding: 0;
+}
+
+@media only screen and (max-width: 991.98px) {
+  .page-search-resuls .interesting {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 575.98px) {
+  .page-search-resuls .interesting {
+    padding: 0;
+  }
+}
+
 .title-with-dd {
   padding-top: 40px;
   font-size: 42px;

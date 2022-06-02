@@ -2,8 +2,8 @@ $(document).ready(function () {
 
     const DateTime = easepick.DateTime;
     const bookedDates = [
-        '2022-04-28',
-        '2022-04-29',
+        '2022-05-28',
+        '2022-05-29',
     ].map(d => {
         if (d instanceof Array) {
           const start = new DateTime(d[0], 'YYYY-MM-DD');
@@ -20,18 +20,21 @@ $(document).ready(function () {
             element: "#datepicker",
             css: [
                 "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.2/dist/index.css",
-                "../css/calendar.css"
+                "../css/calendar.css",
             ],
             zIndex: 10,
+            strict: false,
             lang: "ru-RU",
             format: "DD MMMM YYYY",
             grid: 3,
             RangePlugin: {
                 elementEnd: "#datepicker2",
-                tooltip: false
+                tooltip: false,
+                strict: false,
+                repick: true,
             },
             LockPlugin: {
-                presets: false
+                presets: false,
             },
             plugins: [
                 "RangePlugin",
@@ -39,7 +42,7 @@ $(document).ready(function () {
             ],
             LockPlugin: {
                 minDate: new Date(),
-                minDays: 2,
+                minDays: 3,
                 inseparable: true,
                 filter(date, picked) {
                     if (picked.length === 1) {
@@ -49,10 +52,12 @@ $(document).ready(function () {
         
                     return date.inArray(bookedDates, '[)');
                   },
+                  
             },
             setup(picker) {
-    
-    
+               
+
+
                   const prices = [];
     
                   $('.calendar_item').each(function (index, value) {
@@ -60,25 +65,38 @@ $(document).ready(function () {
                     let priceTotal = $(this).attr('data-time')
                     prices[priceTotal] = title
                   })
-    
+                
+
+              
     
                 // add price to day element
                 picker.on('view', (evt) => {
+                    
                   const { view, date, target } = evt.detail;
                   const d = date ? date.format('YYYY-MM-DD') : null;
-      
                   if (view === 'CalendarDay' && prices[d]) {
                     const span = target.querySelector('.day-price') || document.createElement('span');
                     span.className = 'day-price';
                     span.innerHTML = `${prices[d]}`;
                     target.append(span);
+               
+                  }
+                  if (view === 'CalendarFooter') {
+                    const span = target.querySelector('.footer_btn') || document.createElement('span');
+                    span.className = 'footer_inner';
+                    span.innerHTML = `<div class="footer_text">Минимум 3 ночи</div>
+                    <div class="footer_subtext">Отель работает с мая</div>`;
+                    target.append(span )
+                  
                   }
                 });
+                picker.on('select', (evt) => {
+                    picker.hide()
+                });
             }
+          
         })
     }
-
-    
 
     if($('#datepicker_solo').length > 0){
         const picker = new easepick.create({
@@ -91,11 +109,14 @@ $(document).ready(function () {
             lang: "ru-RU",
             format: "DD MMMM YYYY",
             grid: 3,
+            RangePlugin: {
+                tooltip: false
+            },
             LockPlugin: {
-                presets: false
+                presets: false,
             },
             plugins: [
-                
+                "RangePlugin",
                 "LockPlugin"
             ],
             LockPlugin: {
@@ -106,57 +127,98 @@ $(document).ready(function () {
         })
     }
 
-    if($('#datepicker_solo2').length > 0){
+    if($('#filter_data').length > 0){
         const picker = new easepick.create({
-            element: "#datepicker_solo2",
+            element: "#filter_data",
             css: [
                 "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.2/dist/index.css",
-                "../css/calendar.css"
+                "../css/calendar_filter.css",
             ],
-            zIndex: 10,
+            zIndex: 1,
+            autoApply: false,
             lang: "ru-RU",
-            format: "DD MMMM YYYY",
             grid: 3,
+            format: "MM/DD/YYYY",
+            RangePlugin: {
+                elementEnd: "#filter_data2",
+                tooltip: false
+            },
+            locale: {
+                cancel: "Отменить",
+                apply: "Выбрать"
+            },
             LockPlugin: {
-                presets: false
+                presets: false,
             },
             plugins: [
-                
+                "RangePlugin",
                 "LockPlugin"
             ],
             LockPlugin: {
                 minDate: new Date(),
-                minDays: 2,
+                minDays: 3,
                 inseparable: true,
-            }
-        })
-    }
-    if($('#datepicker_solo3').length > 0){
-        const picker = new easepick.create({
-            element: "#datepicker_solo3",
-            css: [
-                "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.2/dist/index.css",
-                "../css/calendar.css"
-            ],
-            zIndex: 10,
-            lang: "ru-RU",
-            format: "DD MMMM YYYY",
-            grid: 3,
-            LockPlugin: {
-                presets: false
+                filter(date, picked) {
+                    if (picked.length === 1) {
+                      const incl = date.isBefore(picked[0]) ? '[)' : '(]';
+                      return !picked[0].isSame(date, 'day') && date.inArray(bookedDates, incl);
+                    }
+        
+                    return date.inArray(bookedDates, '[)');
+                  },
+                  
             },
-            plugins: [
-                
-                "LockPlugin"
-            ],
-            LockPlugin: {
-                minDate: new Date(),
-                minDays: 2,
-                inseparable: true,
-            },
-        })
-    }
+            
+            setup(picker) {
+               
 
+
+                  const prices = [];
+    
+                  $('.calendar_item').each(function (index, value) {
+                    let title = $(this).text()
+                    let priceTotal = $(this).attr('data-time')
+                    prices[priceTotal] = title
+                  })
+                
+
+              
+    
+                // add price to day element
+                picker.on('view', (evt) => {
+                  
+                  const { view, date, target } = evt.detail;
+                  const d = date ? date.format('YYYY-MM-DD') : null;
+                  if (view === 'CalendarDay' && prices[d]) {
+                    const span = target.querySelector('.day-price') || document.createElement('span');
+                    span.className = 'day-price';
+                    span.innerHTML = `${prices[d]}`;
+                    target.append(span);
+               
+                  }
+                  if (view === 'CalendarFooter') {
+                    const span = target.querySelector('.footer_btn') || document.createElement('span');
+                    span.className = 'footer_inner';
+                    span.innerHTML = `<div onclick="$('.mobile_filter-title').click()" class="footer_over"></div>`;
+                    target.append(span )
+                  
+                  }
+                });
+               
+            }
+          
+        })
+    }
+    $('.mobile_filter-inp').click(function (){
+        $('.mobile_filter').toggleClass('active')
+    })
+
+	$('.popup_calendar-clean').click(function (){
+
+
+
+    })
+        
 
 
 
@@ -172,7 +234,7 @@ $(document).ready(function () {
             lang: "ru-RU",
             inline: true,
             format: "DD MMMM YYYY",
-            grid: 3,
+            grid: 1,
             RangePlugin: {
                 elementEnd: "#datepicker_inline",
                 tooltip: false
@@ -226,12 +288,140 @@ $(document).ready(function () {
       
         })
     }
+    
+    if($('#datepicker_mobile').length > 0){
+        const picker = new easepick.create({
+            element: "#datepicker_mobile",
+            css: [
+                "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.2/dist/index.css",
+                "../css/calendar.css"
+            ],
+            zIndex: 10,
+            lang: "ru-RU",
+            inline: true,
+            format: "DD MMMM YYYY",
+            grid: 3,
+            RangePlugin: {
+                elementEnd: "#datepicker_mobile",
+                tooltip: false
+            },
+            LockPlugin: {
+                presets: false
+            },
+         
+            plugins: [
+                "RangePlugin",
+                "LockPlugin",
+            ],
+            LockPlugin: {
+                minDate: new Date(),
+                minDays: 2,
+                inseparable: true,
+                filter(date, picked) {
+                    if (picked.length === 1) {
+                      const incl = date.isBefore(picked[0]) ? '[)' : '(]';
+                      return !picked[0].isSame(date, 'day') && date.inArray(bookedDates, incl);
+                    }
+        
+                    return date.inArray(bookedDates, '[)');
+                  },
+            },
+            setup(picker) {
+    
+    
+                const prices = [];
+  
+                $('.calendar_item').each(function (index, value) {
+                  let title = $(this).text()
+                  let priceTotal = $(this).attr('data-time')
+                  prices[priceTotal] = title
+                })
+  
+  
+              // add price to day element
+              picker.on('view', (evt) => {
+                const { view, date, target } = evt.detail;
+                const d = date ? date.format('YYYY-MM-DD') : null;
+    
+                if (view === 'CalendarDay' && prices[d]) {
+                  const span = target.querySelector('.day-price') || document.createElement('span');
+                  span.className = 'day-price';
+                  span.innerHTML = `${prices[d]}`;
+                  target.append(span);
+                }
+              });
+            
+          }
+      
+        });
+    }
+    
+    if($('#datepicker_author').length > 0){
+        const picker = new easepick.create({
+            element: "#datepicker_author",
+            css: [
+                "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.0.2/dist/index.css",
+                "../css/calendar.css"
+            ],
+            zIndex: 10,
+            lang: "ru-RU",
+            inline: true,
+            format: "DD MM",
+            RangePlugin: {
+                elementEnd: "#datepicker_author",
+                tooltip: false
+            },
+            LockPlugin: {
+                presets: false
+            },
+            plugins: [
+                "RangePlugin",
+                "LockPlugin",
+            ],
+            LockPlugin: {
+                minDate: new Date(),
+                minDays: 0,
+                inseparable: true,
+                filter(date, picked) {
+                    if (picked.length === 1) {
+                      const incl = date.isBefore(picked[0]) ? '[)' : '(]';
+                      return !picked[0].isSame(date, 'day') && date.inArray(bookedDates, incl);
+                    }
+        
+                    return date.inArray(bookedDates, '[)');
+                  },
+            },
+    
+        });
+        $('.popup_calendar-clean').click(function (){
+            $('#author_form')[0].reset();
+            var calendarDays = document.querySelector('.easepick-wrapper').shadowRoot.querySelectorAll('.days-grid .day:not(.not-available)');
+				for (var i=0; i < calendarDays.length; i++){
+					calendarDays[i].classList.remove("in-range", "start", "end");
+				}
+        })
+       
+    }
 
+    
 
-
-
-
-
+    $('.main_search').click(function () {
+        $('.mobile_seatch').addClass('active')
+      
+        if($(window).width() < 576){
+            $('.main_search-inp').blur()
+            $('body, html').addClass('active')
+        }
+    
+    })
+    $('.mobile_seatch-close').click(function () {
+        $('.mobile_seatch').removeClass('active')
+        $('body, html').removeClass('active')
+        if($(window).width() < 576){
+            $('body, html').removeClass('active')
+        }
+        $('.mobile_seatch .city_search-wrapper').scrollTop(0)
+    })
 
 
     $('.header_inp').focus(function (){
@@ -242,6 +432,10 @@ $(document).ready(function () {
     })
     $('.header_search-delete').click(function () {
         $('.header_inp').val('')
+    })
+
+    $('.city_search-delete').click(function () {
+        $('.city_search-inp').val('')
     })
 
     $('.interesting_card-like').click(function () {
@@ -256,7 +450,7 @@ $(document).ready(function () {
 
     $('.room_slider').slick({
         infinite: false,
-        slidesToShow: 2.6,
+        slidesToShow: 2.62,
         responsive: [
             {
                 breakpoint: 992,
@@ -270,6 +464,16 @@ $(document).ready(function () {
                     arrows:false,
                     slidesToShow: 1.22,
                     variableWidth: false,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    arrows:false,
+                    slidesToShow: 0.984,
+                    variableWidth: false,
+                    centerMode: true,
+                    centerPadding: '0',
                 }
             },
         ]
@@ -294,7 +498,20 @@ $(document).ready(function () {
         // autoplaySpeed: 4000,
         dots:true,
         infinite: false,
-    })
+        
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    arrows:false,
+                }
+            },
+        ]
+    }).on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+        if (!event.target.classList.contains('similar_slider')) {
+            return;
+        }
+    });
 
     $('.faq_item-title').click(function (){
         $('.faq_item-title').not(this).next().slideUp(600)
@@ -316,6 +533,8 @@ $(document).ready(function () {
         }
     })
 
+
+    
     
 
 
@@ -350,14 +569,41 @@ $(document).ready(function () {
                 breakpoint: 767,
                 settings: {
                     arrows:false,
-                    slidesToShow: 1.22,
+                    slidesToShow: 0.984,
                     variableWidth: false,
+                    centerMode: true,
+                    centerPadding: '0',
                 }
             },
         ]
     })
 
-    $('.room_card-more, .tariffs_card-more ').click( function (){
+ 
+
+
+
+
+
+    $('.img_slider').on('touchstart', function(event) {
+        event.stopPropagation();
+      });
+
+        $.fn.extend({
+            toggleText: function (a, b) {
+                if (this.html() == a) { this.html(b) }
+                else { this.html(a) }
+            }
+        });
+
+
+
+
+
+
+
+
+
+    $('.room_card-more, .tariffs_card-more , .confirmation_subtitle .more').click( function (){
         $('.popup_rooms-slider ').slick('refresh')
       })
     
@@ -387,6 +633,15 @@ $(document).ready(function () {
             },
         ]
     })
+
+    $('.popup_rooms-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
+        if($('.popup_rooms-slider .slick-next ').hasClass('slick-disabled')){
+            $('.popup_rooms-slider').addClass('last_slide')
+        }
+        else{
+            $('.popup_rooms-slider').removeClass('last_slide')
+        }
+      });
 
 
     $('select').each(function () {
@@ -419,7 +674,7 @@ $(document).ready(function () {
                 $(this).removeClass('active').next('ul.select-options').hide();
             });
             $(this).toggleClass('active').next('ul.select-options').toggle();
-            console.log(1);
+
         });
       
         $listItems.click(function (e) {
@@ -437,22 +692,62 @@ $(document).ready(function () {
       
       });
 
-    if($('.header').length > 0){
-        window.onscroll = function showHeader() {
-            let headerFix = document.querySelector('.header');
+      $('input[type=tel]').mask('+7 (999) 999-99-99');
     
-            if (window.pageYOffset > 100 && window.pageYOffset > window.scrolltop) {
-              headerFix.classList.add('fixed');
-              } else {
-                headerFix.classList.remove('fixed');
-        
-              }
-              scrolltop = pageYOffset;
-        };
+
+      $('.form_inp-wrapper .select-options li:first-child').text('Отмена')
+
+      $('.form_inp-wrapper .select-options li:first-child').click( function (){
+          $(this).closest('.form_inp-wrapper').find('.select-styled').text('Выбрать')
+      })
+
+
+  
+  
+
+
+
+
+
+    if($('.header').length > 0){
+
+            window.onscroll = function showHeader() {
+                let headerFix = document.querySelector('.header');
+                if($('.header').hasClass('header_flex')){
+                if (window.pageYOffset > 100 && window.pageYOffset > window.scrolltop) {
+                  headerFix.classList.add('fixed');
+                  } else {
+                    headerFix.classList.remove('fixed');
+            
+                  }
+                  scrolltop = pageYOffset;
+                }
+                else{
+                    if($(window).width() <767){
+                        if (window.pageYOffset > 100 && window.pageYOffset > window.scrolltop) {
+                            headerFix.classList.add('fixed');
+                            } else {
+                              headerFix.classList.remove('fixed');
+                      
+                            }
+                            scrolltop = pageYOffset;  
+                    }
+                }
+                if (window.pageYOffset > 10) {
+                    headerFix.classList.add('scroll');
+                } else {
+                    headerFix.classList.remove('scroll');
+                }
+            };
+    
+ 
     }
 
 
-
+    $('.info_block-show').click( function (){
+        $(this).toggleText('Спрятать', 'Читать дальше');
+        $(this).prev().slideToggle(600)
+    })
 
 
       $(document).on('click', '.popup_btn', function () {
@@ -473,17 +768,24 @@ $(document).ready(function () {
              }
         });
       });   
-      $.fn.extend({
-        toggleText: function (a, b) {
-            if (this.html() == a) { this.html(b) }
-            else { this.html(a) }
-        }
-    });
+
 
       $('.servise_tab-top').click(function (){
-          $(this).next().slideToggle(600)
-          $(this).toggleClass('active')
+          if($(this).find('.servise_done').length > 0){
+
+          }
+          else{
+            $(this).next().slideToggle(600)
+            $(this).toggleClass('active')
+          }
+         
       })
+
+      $('.servise_done').click(function (){
+        $(this).next().slideToggle(300)
+      })
+
+
 
       $('.confirmation_tab-show').click( function (e){
         $(this).prev().slideToggle(600)
@@ -492,6 +794,10 @@ $(document).ready(function () {
         $('.confirmation_time').dragscroll.reset()
     })
 
+    $('.place_inner-btn').click( function (){
+        $(this).toggleClass('active')
+        $(this).find('.text').toggleText('В закладки', 'Сохранено');
+    })
 
 
     function copyToClipboard(element) {
@@ -528,8 +834,6 @@ $(document).ready(function () {
                 breakpoint: 745,
                 settings: {
                     slidesToShow: 1,
-                    autoplay: true,
-                    autoplaySpeed: 4000,
                     arrows:false,
                     variableWidth: true,
                     dots:true,
@@ -564,7 +868,7 @@ $(document).ready(function () {
 
 
 
-
+ 
 
       
 
@@ -610,6 +914,7 @@ $(document).ready(function () {
               else{
                 $('.form_inp-wrapper.people .people_value').html(`<span>${adults}</span> взрослых,  <span> ${childTotal}</span> детей`)
               }
+              $('.place_form-btn').removeClass('disable')
           }
           else{
             $('.form_inp-wrapper.people .people_value').html(' 0  взрослых, без детей ')
@@ -631,7 +936,7 @@ $(document).ready(function () {
         }
 
       $('.mobile_date').on('click',function (){
-        perem = strip_tags($("#datepicker_inline").val()).trim();
+        perem = strip_tags($("#datepicker_mobile").val()).trim();
 
         if(!perem)
 
@@ -651,17 +956,213 @@ $(document).ready(function () {
       })
 
 
-      $('.form_inp-wrapper.people').click(function (){
-          $(this).find('.people_popup').addClass('active')
+
+
+      $('.calendar_filter').on('click',function (){
+        perem = strip_tags($("#datepicker_author").val()).trim();
+
+        if(!perem)
+
+        {
+
+            $('.popup_calendar-btn').addClass('disable')
+
+        }
+
+       else
+
+       {
+
+        $('.popup_calendar-btn').removeClass('disable')
+
+       }
       })
 
+
+      $('.popup_calendar').on('click',function (){
+        perem = strip_tags($("#datepicker_inline").val()).trim();
+
+        if(!perem)
+
+        {
+
+            $('.popup_calendar-btn').addClass('disable')
+
+        }
+
+       else
+
+       {
+
+        $('.popup_calendar-btn').removeClass('disable')
+
+       }
+      })
+
+
+
+      if($('.popup_reviews').length > 0){
+        var slider = document.querySelector('.range-slider'),
+        inputMin = document.getElementById('minval').value,
+        inputMax = document.getElementById('maxval');
+            
+    var noUi = noUiSlider.create(slider, {
+        connect: [true, false],
+        behaviour: 'tap',
+        start: inputMin,
+        // padding: 50,
+        range: {
+            'min': [0, 0],
+            '0%': [   0,  0 ],
+            '10%': [   1,  1 ],
+            '20%': [  2, 2 ],
+            '30%': [  3, 3 ],
+            '40%': [  4, 4 ],
+            '50%': [  5, 5 ],
+            '60%': [  6, 6 ],
+            '70%': [  7, 7 ],
+            '80%': [  8, 8 ],
+            '90%': [  9, 9 ],
+            // '90%': [  500, 500 ],
+            'max': [ 10, 10 ]
+        },
+        pips: {mode: 'range', density: 10}
+
+    });
+
+    slider.noUiSlider.on('update', getValues);
+
+    var pips = slider.querySelectorAll('.noUi-value');
+    var markers = slider.querySelectorAll('.noUi-marker');
+    
+    for (var i = 0; i < pips.length; i++) {
+        pips[i].addEventListener('click', clickOnPip);
+    }
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].addEventListener('click', clickOnMarker);
+    }
+
+    function clickOnPip() {
+        var value = Number(this.firstChild.textContent);
+        slider.noUiSlider.set(value);
+    }
+    function clickOnMarker() {
+            var currentPipIndex = Array.prototype.slice.call(markers).indexOf(this),
+                    value = Number(pips[currentPipIndex].firstChild.textContent);
+        
+        this.classList.add('downed');
+        for (var i = 0; i < markers.length; i++) {
+            if(markers[i] !== this) markers[i].classList.remove('downed');
+        }
+        slider.noUiSlider.set(value);
+    }
+
+    function getValues() {
+        document.getElementById('minval').value = slider.noUiSlider.get();
+
+        for (var i = 0; i < slider.querySelectorAll('.noUi-value').length; i++) {
+                if(Number(slider.noUiSlider.get().slice(0, -3)) === Number(slider.querySelectorAll('.noUi-value')[i].firstChild.textContent)){
+                     slider.querySelectorAll('.noUi-marker')[i].classList.add('downed');
+                     slider.querySelectorAll('.noUi-value')[i].classList.add('active');
+                    for (var n = 0; n < slider.querySelectorAll('.noUi-marker').length; n++) {
+                        if(slider.querySelectorAll('.noUi-marker')[n] !== slider.querySelectorAll('.noUi-marker')[i]) slider.querySelectorAll('.noUi-marker')[n].classList.remove('downed');
+                    }
+                }else{
+                    slider.querySelectorAll('.noUi-value')[i].classList.remove('active');
+                }
+        }
+
+        $('.popup_reviews .noUi-pips .noUi-value-horizontal').each(function(i, item) {
+            if(Number(slider.noUiSlider.get().slice(0, -3)) >= Number(item.firstChild.textContent)){
+                $(item).prev().addClass('active');
+                // $(item).addClass('active');
+            }else{
+                $(item).prev().removeClass('active');
+                // $(item).removeClass('active');
+            }
+        });
+    }
+
+      }
+
+      
+ 
+
+    
+
+
+
+   
+      $('.popup_filter-btn').click(function (){
+        $(this).parent().removeClass('active')
+    })
+   
       $(document).mouseup( function(e){ 
-		var div = $( ".people_popup" ); // тут указываем ID элемента
+		let div = $( ".people_popup" );
+        let more = $( ".more_trigger" );
+        let priceFilter = $( ".popup_filter" );
+        let dateFilter = $( ".calendar_filter" );
+        let cityChoice = $( ".city_choice" );
+      
 		if ( !div.is(e.target)
 		    && div.has(e.target).length === 0 ) {
 			div.removeClass('active')
+            more.removeClass('active')
 		}
+        $('.city_choice-btn').click(function (){
+            $(this).parent().next().addClass('active')
+            $(this).parent().removeClass('active')
+            $('.mobile_seatch').addClass('active')
+            if($(window).width() < 576){
+                $('body, html').removeClass('active')
+            }
+         })
+        $('.price_filter').click(function (){
+            $('.popup_filter').toggleClass('active')
+        })
+        $('.date_filter').click(function (){
+            $('.calendar_filter').toggleClass('active')
+        })
+        $('.interesting_title-city span').click(function (){
+            $(this).next().next().toggleClass('active')
+            $('.mobile_seatch').addClass('active')
+            if($(window).width() < 576){
+                $('body, html').removeClass('active')
+            }
+        })
+        $('.more_trigger').click(function(event){
+            event.preventDefault();
+           
+            $(this).toggleClass('active')
+          } )
+          $('.form_inp-wrapper.people').click(function (){
+            $(this).find('.people_popup').toggleClass('active')
+        })
+        $('.city_choice-close').click(function (){
+            $(this).parent().removeClass('active')
+        })
+        if ( !$('.city_search').is(e.target)
+        && $('.city_search').has(e.target).length === 0 ) {
+            $('.city_search').removeClass('active')
+        }
+        if ( !cityChoice.is(e.target)
+        && cityChoice.has(e.target).length === 0 ) {
+            cityChoice.removeClass('active')
+        }
+        if ( !dateFilter.is(e.target)
+        && dateFilter.has(e.target).length === 0 ) {
+            dateFilter.removeClass('active')
+        }
+    
+        if ( !priceFilter.is(e.target)
+        && priceFilter.has(e.target).length === 0 ) {
+            priceFilter.removeClass('active')
+        }
+      
 	});
+    $('.popup_calendar-btn').click(function (){
+        $('.calendar_filter').removeClass('active')
+    })
 
 
 
@@ -727,7 +1228,7 @@ $(document).ready(function () {
                          'top': $('.place_wrapper').outerHeight() + 30,
                         'bottom': 'auto',
                 });
-                console.log(1);
+      
     }
           }
       })
@@ -767,11 +1268,73 @@ $(document).ready(function () {
         })
       }
        
-      $('.room_card-title.tooltip').each(function(i){
+      $('.room_card-title.tooltip, .similar_slide-title.tooltip').each(function(i){
         $(this).append("<span class='tooltip_text'>" + $(this).text() +  "</span>")
         $(this).attr('title', '')
       })
- 
 
+
+
+
+      if($('.place_img').length === 2){
+          $('.place_img-right').addClass('duo')
+      }
+      if($('.place_img').length === 3){
+        $('.place_img-right').addClass('three')
+      }
+      if($('.place_img').length === 4){
+        $('.place_img-right').addClass('four')
+      }
+      if($('.place_img').length > 4){
+        $('.place_img-right').addClass('more_imgs')
+      }
+
+      $('.popup_reviews-rating label').click( function (){
+          $(this).addClass('active')
+          $('.popup_reviews-rating label').not($(this)).removeClass('active')
+      })
+
+
+      if($('.popup_reviews-area_wrapper').length > 0){
+        $('.popup_reviews-area').keyup(function (){
+            $(this).parent().find('.area_count .current').text($(this).val().length)
+            $(this).parent().find('.area_count .total').text($(this).attr('maxlength'))
+        })
+        $('.popup_reviews-area_wrapper .area_count .total').text($('.popup_reviews-area').attr('maxlength'))
+      }
+
+  
+
+      $('.reviews_tab-title').click( function(){
+       
+            $('.popup_reviews').animate({scrollTop: 200}, 200);
+
+          $(this).next().slideToggle(600)
+          $(this).toggleClass('active')
+     
+        
+      })
+
+      $('.mobile_filter-icon').click( function (){
+          $('#filter_data').click()
+      })
+
+
+      $('.weekend_plan-tabs').on('click', '.weekend_plan-tab:not(.active)', function() {
+        $(this).addClass('active').siblings().removeClass('active')
+            .closest('.weekend_plan').find('.weekend_plan-content').removeClass('active').eq($(this).index()).addClass('active'); 
+      })
+
+      $('.weekend_plan-show').click(function (){
+          $('.weekend_plan-item').toggleClass('active')
+          $(this).toggleText('Скрыть все', 'Показать все');
+      })
+
+
+        $('.cookie_close, .cookie_btn').click(function (){
+            $(this).parent().addClass('active')
+        })
+
+   
 
 })
