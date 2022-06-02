@@ -39,9 +39,6 @@
 			  thumbnailWidth: null,
 			  thumbnailMethod: 'contain',
 			  maxThumbnailFilesize: 25,
-			  // timeout: 9000,
-			  // autoQueue: false,
-			  // autoProcessQueue: false,
 			  maxFilesize: 1024*1024*100,
 			  // filesizeBase: 1000,
 			  acceptedFiles: "image/*",
@@ -51,22 +48,10 @@
 		        console.log("File progress", progress);
 		      });
 			  	this.on("addedfile", function(file) {
-			  		console.log("addedfile");
-					  console.log(file);
-					  console.log(file.previewElement);
-					  // if(file.size > 1024*1024*10){
-					  // 	file.previewElement.classList.add('dz-error')
-					  // 	console.log(file.previewElement.querySelector('[data-dz-errormessage]'));
-					  // 	file.previewElement.querySelector('[data-dz-errormessage]').innerText = 'pizda'
-					  // }
-					  // console.log(this.files);
-					  
+				  
 					  if (this.files[5]!=null){
 				       this.removeFile(this.files[this.files.length - 1]);
-			      //       if(modalShowCount == 0){
-				     //    	showFilesErroModal();
-					  		// modalShowCount++;
-				     //    }
+	
 				     }
 			  	});
 			  },
@@ -166,32 +151,14 @@
 
 			  if(file.type.split('/')[0] !== "image"){
 			  		done('Неправильный формат файла');
-			  		// this.removeAllFiles(true)
-			  	// dropzone.removeFile(file);
-			  	// if(modalShowCount === 0) {
-				  // 	showFilesErroModal()
-					 //  modalShowCount++;
-			  	// }
-			  	// dropzone.removeFile(file);
-		  		// modalShowCount = 0;
-			  }
+				}
 
    		}
 
 			dropzone.on("thumbnail", function(file){
-			 
-			  console.log(file.type);
-			  console.log(this);
-			  console.log("thumbnail: " + modalShowCount);
+
 			  if(file.type.split('/')[0] === "video" || file.width < 1920 || file.height < 1080 || file.size > 1024*1024*10/*10MB*/){
 			  	 file.rejectDimensions();
-			  	 // this.removeFile(file);
-			  	 // this.removeAllFiles(true);
-			  	 
-			  	//  if(modalShowCount === 0) {
-				  // 	showFilesErroModal()
-					 //  modalShowCount++;
-			  	// }
 			  }else{
 			  	file.acceptDimensions();
 		  		$('#my-awesome-dropzone .dz-message').addClass('previewed');
@@ -204,7 +171,6 @@
 			  console.log("A file has been removed");
 			  if(!$('#my-awesome-dropzone .popup-place-objec__previews').children().length > 0){
 			  	$('#my-awesome-dropzone .dz-message').removeClass('previewed');
-			  	// modalShowCount = 0;
 			  }
 			});
 		}
@@ -662,4 +628,21 @@
 		});
 	}
 	// .END interests__cards slider
+
+	// city list mobile click
+	$('.page-search-resuls .interesting_title-span, .page-selections .interesting_title-span').click(function () {
+
+		if($(window).width() < 576){
+			$('.main_search-inp').blur()
+			$('body, html').addClass('active')
+			$.fancybox.open({
+				src: '.mobile_seatch',
+				type: 'inline',
+				touch: false,
+				autoFocus: false,
+			});
+		}
+
+	});
+	// END city list mobile click
 })();
