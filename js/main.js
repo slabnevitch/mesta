@@ -784,10 +784,11 @@ $(document).ready(function () {
       
       
       });
-
-      $('input[type=tel]').mask('+7 (999) 999-99-99');
-    
-
+	
+	if($('[type="tel"]').length > 0){
+		$('input[type=tel]').mask('+7 (999) 999-99-99');
+	}
+  
       $('.form_inp-wrapper .select-options li:first-child').text('Отмена')
 
       $('.form_inp-wrapper .select-options li:first-child').click( function (){
